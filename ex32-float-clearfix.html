@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex32_mycss_float-clearfix</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .image1 {
+      width: 170px;
+      height: 170px;
+      float: right;
+      margin-left: 15px;
+    }
+
+    .div1 {
+      width: 600px;
+      height: 85px;
+      padding: 5px;
+      margin-bottom: 90px;
+      border: 2px solid red;
+    }
+
+    .div2 {
+      width: 600px;
+      height: 170px;
+      overflow: auto;
+      /* added a clearfix */
+      padding: 5px;
+      margin-bottom: 90px;
+      border: 3px solid #4CAF50;
+    }
+
+    .div3 {
+      width: 600px;
+      /* changed a height */
+      height: 160px;
+      /* added a clearfix */
+      overflow: auto;
+      /* changed a padding */
+      padding: 2px;
+      margin-bottom: 90px;
+      border: 3px solid #4CAF50;
+    }
+
+    .div4 {
+      width: 600px;
+      height: 170px;
+      overflow: auto;
+      padding: 5px;
+      margin-bottom: 90px;
+      border: 3px solid green;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Layout - float and clear<h1>
+      <p>The clearfix Hack</p>
+
+      <h2>Without Clearfix</h2>
+      <div class="div1">
+        <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+        If an element is taller than the element containing it, and it is floated, it will "overflow" outside of its
+        container.
+      </div>
+
+      <h2>With Clearfix</h2>
+      <div class="div2">
+        <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+        Let's add a clearfix with overflow: auto; to the containing element, to fix this problem.<br>
+        <br>
+        Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+        ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+        dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+      </div>
+
+      <h2>With Clearfix</h2>
+      <p>But, the overflow: auto clearfix works well as long as you are able to keep control of your margins and padding
+        (else you might see scrollbars).</p>
+      <div class="div3">
+        <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+        We added a clearfix with overflow: auto; to the containing element, to fix this problem but changed height and
+        paddings.<br>
+        <br>
+        Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+        ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+        dictum nisi, sed ullamcorper ipsum dignissim ac. Praesent convallis urna a lacus interdum ut hendrerit risus
+        congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+      </div>
+
+      <h2>With Clearfix hack</h2>
+      <p>Add the clearfix hack to the containing element, to fix this problem:</p>
+      <div class="clearfix">
+        <div class="div4">
+          <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+          The new, modern clearfix hack however, is safer to use, and the code for it is used for most webpages.<br>
+          <br>
+          Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+          ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+          dictum nisi, sed ullamcorper ipsum dignissim ac. Praesent convallis urna a lacus interdum ut hendrerit risus
+          congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+        </div>
+      </div>
+
+</body>
+
+</html>

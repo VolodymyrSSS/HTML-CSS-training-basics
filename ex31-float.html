@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex31-mycss_float-left/right_clear-both/none</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    span {
+      float: left;
+      width: 0.7em;
+      font-size: 400%;
+      font-family: 'algerian', courier;
+      line-height: 80%;
+    }
+
+    .image1 {
+      float: right;
+    }
+
+    .image2 {
+      float: left;
+    }
+
+    .image3 {
+      float: none;
+    }
+
+    .div1,
+    .div3 {
+      float: left;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      border: 3px solid #73AD21;
+    }
+
+    .div2,
+    .div12 {
+      border: 2px solid red;
+    }
+
+    .div4 {
+      border: 2px solid red;
+      clear: left;
+    }
+
+    .div5 {
+      float: right;
+      margin: 0 0 12px 8px;
+      padding: 15px;
+      border: 2px dotted red;
+      text-align: center;
+    }
+
+    .div6 {
+      width: 900px;
+      height: 370px;
+    }
+
+    .div7 {
+      border: 2px solid red;
+      clear: both;
+    }
+
+    .div8,
+    .div11 {
+      float: right;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      border: 3px solid #73AD21;
+    }
+
+    .div9 {
+      border: 2px solid red;
+      clear: right;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Layout - float and clear<h1>
+      <h2>The CSS float property specifies how an element should float</h2>
+
+      <h2>float: right ex1</h2>
+      <p style="width:610px;height:300px;">
+        <img src="./img/pineapple.jpg" class="image1" alt="Pineapple"
+          style="width:160px;height:150px;margin-left:15px;">
+        In this example, the paragraph element is 610 pixels wide and 300 pixels height. Inside, the image will float to
+        the right, and the text in the paragraph will wrap around the image.<br>
+        Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue
+        ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus
+        interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero
+        sed nunc venenatis imperdiet sed ornare turpis.Fusce luctus vestibulum augue ut aliquet.
+      </p>
+
+      <h2>float: right ex2</h2>
+      <div class="div6">
+        <div class="div5">
+          <img src="./img/programmer1.jpg" width="250" height="160"><br>Programming is fun!
+        </div>
+        <p>
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+        </p>
+        <p>
+          In the paragraph above, the div element is 900 pixels wide and 370 pixels height. It contains another div with
+          the image {width="250"; height="160"}.
+          The div with image element will float to the right. Margins are added to the div to push the text away from
+          the div. Borders and padding are added to the div to frame in the picture and the caption.
+        </p>
+      </div>
+
+      <h2>float: left ex1</h2>
+      <p style="width:610px;height:300px;">
+        <img src="./img/mango.jpg" class="image2" alt="Mango" style="width:160px;height:150px;margin-right:15px;">
+        In this example, the image will float to the left in the paragraph, and the text in the paragraph will wrap
+        around the image too (to the right).<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue
+        eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu,
+        lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum
+        nisi, sed ullamcorper ipsum dignissim ac...
+      </p>
+
+      <h2>float: left ex2</h2>
+      <p>
+        <span>T</span>his is some text.
+        This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+      </p>
+
+      <p>
+        In this paragraph, the first letter of the text is embedded in a span element.
+        The span element has a width that is 0.7 times the size of the current font.
+        The font-size of the span element is 400% (quite large) and the line-height is 80%.
+        The font of the letter in the span will be in "Algerian".
+      </p>
+
+
+      <h2>float: none ex1</h2>
+      <p style="width:610px;height:300px;">
+        <img src="./img/avocado.jpg" class="image3" alt="Avocado" style="width:160px;height:150px;margin-right:15px;">
+        In this example, the image will be displayed just where it occurs in the text (float: none;).<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.
+      </p>
+
+      <h2>float: none ex2</h2>
+
+      <p style="text-align:center;">The CSS <b>clear</b> property specifies what elements can float beside the cleared
+        element and on which side.
+      </p>
+      <h3>div2 is without clear</h3>
+      <div class="div1">div1</div>
+      <div class="div2">div2<br>
+        Notice that div2 is after div1 in the HTML code. However, since div1 floats to the left,
+        the text in div2 flows around div1.<br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</div>
+      <br>
+      <h3>div4 is with clear:left</h3>
+      <div class="div3">div3</div>
+      <div class="div4">div4<br>
+        Here, div4 is clear: left; moves div4 down below the floating div3. The value "left" clears
+        elements floated to the left. You can also clear "right" and "both".<br>
+        When clearing floats, you should match the clear to the float: If an element is floated to the left, then you
+        should clear to the left.
+      </div>
+
+      <h3>div11 is with float: right but div12 is without clear </h3>
+      <div class="div11">div11</div>
+      <div class="div12">div12<br>
+        Here, the div12 is after div11 in the HTML code and since div11 floats to the right,
+        the text in div12 flows around div11.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Phasellus imperdiet, nulla et dictum
+        interdum, nisi lorem egestas odio.
+      </div>
+
+      <h3>div9 is with clear: right</h3>
+      <div class="div9">div9<br>
+        Here, div9 is clear: right; allows div9 to be above the floating div8. The value "right" clears
+        elements floated to the right.<br>
+      </div>
+      <div class="div8">div8</div>
+
+      <h3>div7 is with clear: both</h3>
+      <div class="div3">div3</div>
+      <div class="div7">div7<br>
+        Here, div7 is clear: both but since div3 has float: left, it moves div7 down below the floating div3.
+      </div>
+
+</body>
+
+</html>
