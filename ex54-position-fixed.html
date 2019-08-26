@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex54_css-position:fixed</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .symple2 {
+      width: 1000px;
+      height: 200px;
+      overflow: scroll;
+      background: #CCC;
+      margin: 0;
+      padding: 0;
+      transform: translateX(0);
+    }
+
+    .second {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      height: 50%;
+      width: 50%;
+      background: red;
+    }
+
+    .outer {
+      width: 1000px;
+      transform: translateX(0);
+      /* Для того, щоб це був предок (блок вміщення) для дочірного блоку з position:fixed*/
+      overflow: scroll;
+      background: #CCC;
+    }
+
+    .inner {
+      width: 1000px;
+      height: 200px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .fixed1 {
+      height: 100px;
+      background: dodgerblue;
+    }
+
+    .fixed2 {
+      height: 100px;
+      margin-left: 4em;
+      background: blue;
+    }
+
+    .fixed3 {
+      height: 100px;
+      margin-left: 8em;
+      background: navy;
+    }
+
+    .fx1,
+    .fx2,
+    .fx3 {
+      position: fixed;
+      background: red;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Позиціонування елементу з position: fixed</h1>
+  <p>
+    <b>position: fixed</b> - Элемент з position: fixed; фіксується в області видимості веб-сторінки чи у вікні
+    браузера чи в iframe, відстань до краю яких вказують у властивостивостях: top, right, bottom, left. Пересунути
+    елемент відносно свого місця/позиції можна за допомогою margin та transform. А розташування цього елементу над
+    іншими елементами задають властивістю z-index.<br>
+    Після того, як властивість position отримає значення fixed, розмір самого елемента може змінитись, а сусідні
+    елементи
+    зсунуться на місце, яке звільнилось.
+  </p>
+
+  <h2>Значення властивостей height, top и bottom в процентах розраховуються від висоти області видимості екрану.
+    Властивість height в процентах не замінюється на height: auto навіть коли найближчий батьківський елемент має
+    значення height: auto.<br>
+    Значення властивостей width, margin, padding, left и right в процентах розраховуються від ширини області видимості
+    екрану.
+  </h2>
+
+  <p>Тут областю видимості виступає 'ifrime' в якій розміщений блок.<br>
+    В свою чергу, блоку задано властивості: {position: fixed; top: 50%; left: 0; height: 50%; width: 50%; background:
+    red;}
+  </p>
+
+  <div class="symple2">
+    <span class="second">Fixed block</span>
+  </div>
+
+
+
+  <h2>Якщо відсутні значення: top, right, bottom, left елемент фіксується на тому місці вікна браузера чи iframe, на
+    якому знаходився до прокрутки.
+  </h2>
+  <p>Тут елементам fixed1, fixed2, fixed3 задано значення без вказання top, right, bottom, left але задано значення
+    position:fixed.<br>
+    Крім того, fixed3 знаходиться нижче області видимості 'ifrime', а тому цей елемент стає видимий тільки при скролі.
+  </p>
+  <div class="outer">
+    <div class="inner">
+      <div class="fixed1">
+        <span class="fx1">fixed1</span>
+      </div>
+      <div class="fixed2">
+        <span class="fx2">fixed2</span>
+      </div>
+      <div class="fixed3">
+        <span class="fx3">
+          <!-- Цей блок одразу не видно бо знаходитья нижче області видимості (в 'ifrime') -->fixed3</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

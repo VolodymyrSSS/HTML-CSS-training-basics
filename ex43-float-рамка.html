@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex43_css-Добавить рамку, сохранив ширину</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .left {
+      float: left;
+      width: 30%;
+      background: pink;
+    }
+
+    .right {
+      float: right;
+      width: 70%;
+
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+
+      border: 2px solid green;
+      padding-left: 10px;
+
+      background: tan;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Добавить рамку c правой стороны, сохранив ширину</h1>
+
+  <p>Есть две колонки 30%/70%:<br>
+    - Добавьте к правой колонке рамку border и отступ padding-left;<br>
+    - Двухколоночная вёрстка при этом не должна сломаться!;<br>
+    - Желательно не трогать свойство width ни слева ни справа и не создавать дополнительных элементов;<br>
+  </p>
+
+  <div class="left">
+    Левая<br>Колонка
+  </div>
+  <div class="right">
+    Правая<br>Колонка с рамкой и отступом слева<br>...
+  </div>
+
+</body>
+
+</html>

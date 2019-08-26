@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex41_css-Дерево с многострочными узлами</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      float: left;
+    }
+
+    .open .icon {
+      cursor: pointer;
+      background: url(https://js.cx/sprite-tree/minus.gif);
+    }
+
+    .closed .icon {
+      cursor: pointer;
+      background: url(https://js.cx/sprite-tree/plus.gif);
+    }
+
+    .leaf .icon {
+      cursor: text;
+      background: url(https://js.cx/sprite-tree/article.gif);
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .text {
+      margin: 6px 0 6px 16px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Дерево с многострочными узлами</h1>
+
+  <h2>Сделайте дерево при помощи семантической вёрстки и CSS-спрайта с иконками.</h2>
+  <p>Требованиями к вёрстки так же:<br>
+    - Поддержка многострочных названий узлов;<br>
+    - Над иконкой курсор становится указателем;<br>
+    Исходный документ содержит список UL/LI и ссылку на картинку.<br>
+  </p>
+
+  <!-- картинки для узлов -->
+  <img src="https://js.cx/sprite-tree/minus.gif" width="16" height="16">
+  <img src="https://js.cx/sprite-tree/plus.gif" width="16" height="16">
+  <img src="https://js.cx/sprite-tree/article.gif" width="16" height="16">
+
+
+  <ul>
+    <li class="open1">
+      <div class="icon1"></div>
+      <div class="text1">Раздел 1
+        <br>(занимает две строки)</div>
+      <ul>
+        <li class="closed1">
+          <div class="icon1"></div>
+          <div class="text1">Раздел 1.1</div>
+        </li>
+        <li class="leaf1">
+          <div class="icon1"></div>
+          <div class="text1">Страница 1.2
+            <br>(занимает две строки)</div>
+        </li>
+      </ul>
+    </li>
+    <li class="closed1">
+      <div class="icon1"></div>
+      <div class="text1">Раздел 2
+        <br>(занимает две строки)</div>
+    </li>
+  </ul>
+
+  <h2>Для решения можно применить принцип двухколоночной верстки float + margin. Иконка будет левой колонкой, а
+    содержимое – правой.</h2>
+
+  <ul>
+    <li class="open">
+      <div class="icon"></div>
+      <div class="text">Раздел 1
+        <br>(занимает две строки)
+      </div>
+      <ul>
+        <li class="closed">
+          <div class="icon"></div>
+          <div class="text">Раздел 1.1</div>
+        </li>
+        <li class="leaf">
+          <div class="icon"></div>
+          <div class="text">Страница 1.2
+            <br>(занимает две строки)</div>
+        </li>
+      </ul>
+    </li>
+    <li class="closed">
+      <div class="icon"></div>
+      <div class="text">Раздел 2
+        <br>(занимает две строки)</div>
+    </li>
+  </ul>
+
+</body>
+
+</html>

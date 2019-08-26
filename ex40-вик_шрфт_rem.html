@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex40-Використання шрифта rem</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', sans-serif;
+    }
+
+    html {
+      font-size: 14px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 22px;
+      color: blue;
+    }
+
+    li {
+      font-size: 0.8rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <p>Одиниця rem задає розмір відносно розміру шрифта саме елементу html.</p>
+
+
+  <div><button id="up">Натисніть, щоб збільшити розмір шрифту</button></div>
+
+  <img src="https://js.cx/clipart/angry_dog.png">
+
+  <ul>
+    <li>У попа
+      <ul>
+        <li>була
+          <ul>
+            <li>собака
+              <ul>
+                <li>він
+                  <ul>
+                    <li>її
+                      <ul>
+                        <li>любив</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    // За допомогою JS збільшуватимо розмір шрифта html на 2px кожен раз при натисканні на кнопку
+    var html = document.documentElement;
+    up.onclick = function () {
+      html.style.fontSize = parseInt(getComputedStyle(html, '').fontSize) + 2 + 'px';
+    };
+  </script>
+
+
+</body>
+
+</html>

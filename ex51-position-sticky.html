@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex51_слайдер з використанням властивості position:fixed</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .slider {
+      overflow: auto;
+      border: 3px solid red;
+      white-space: nowrap;
+      /* не переносить на другую строку inline-элемент */
+      margin-top: 45px;
+      background: #ccc;
+    }
+
+    .slider figure {
+      display: inline-flex;
+      margin: 0;
+    }
+
+    .slider figcaption {
+      position: sticky;
+      left: 0;
+
+      /* для IE */
+      writing-mode: tb-rl;
+
+      /* для Mozilla Firefox */
+      width: 1em;
+      padding: 1em;
+      line-height: 1;
+
+      writing-mode: vertical-rl;
+      /* перевернуть текст */
+      text-align: center;
+      /* выравнять текст по середине */
+      background: rgba(255, 255, 255, .9);
+    }
+
+    .slider img {
+      height: 300px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Приклад простого слайдера з використанням властивості position: sticky</h1>
+  <p>Элемент с position: sticky; фиксируется в рамках ближайшего родителя, когда расстояние до границы ближайшего
+    прокручиваемого родителя достигает указанного в свойствах top, right, bottom, left значения. На то, в каком месте
+    элемент прикрепится и где отцепиться, также влияют свойства padding, margin и transform. Размещение элемента над
+    другими элементами правится с помощью свойства z-index.<br>
+    После того, как свойство position примет значение sticky, размер элемента не изменится, а соседние элементы не
+    сдвинутся на освободившееся пространство.
+  </p>
+
+  <div class="slider">
+    <figure>
+      <figcaption>Якщо я програміст</figcaption>
+      <img src="img/programmer1.jpg" alt="Пацан програмує">
+    </figure>
+    <figure>
+      <figcaption>Приклад слайда</figcaption>
+      <img src="img/powerpoint-template.jpg" alt="Приклад слайда">
+    </figure>
+    <figure>
+      <figcaption>Всесвітня мережа1</figcaption>
+      <img src="img/global-computer-network1.jpg" alt="Всесвітня мережа1">
+    </figure>
+    <figure>
+      <figcaption>Всесвітня мережа2</figcaption>
+      <img src="img/global-computer-network2.jpg" alt="Всесвітня мережа2">
+    </figure>
+    <figure>
+      <figcaption>Всесвітні технології</figcaption>
+      <img src="img/technology-wallpaper1.jpg" alt="Всесвітні технології">
+    </figure>
+    <figure>
+      <figcaption>Планета Земля</figcaption>
+      <img src="img/planeta.jpg" alt="Планета Земля">
+    </figure>
+    <figure>
+      <figcaption>Поле ромашoк</figcaption>
+      <img src="img/romashky.jpg" alt="Поле ромашoк">
+    </figure>
+
+  </div>
+
+
+
+</body>
+
+</html>
