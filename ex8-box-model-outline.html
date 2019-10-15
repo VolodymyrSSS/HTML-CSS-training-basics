@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex8-mycss-box-model-outline</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial'sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    p.ex1 {
+      width: 50%;
+      border: 2px solid black;
+      outline: #4CAF50 solid 10px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    p {
+      outline-color: red;
+    }
+
+    p.dotted {
+      outline-style: dotted;
+    }
+
+    p.dashed {
+      outline-style: dashed;
+    }
+
+    p.solid {
+      outline-style: solid;
+    }
+
+    p.double {
+      outline-style: double;
+    }
+
+    p.groove {
+      outline-style: groove;
+    }
+
+    p.ridge {
+      outline-style: ridge;
+    }
+
+    p.inset {
+      outline-style: inset;
+    }
+
+    p.outset {
+      outline-style: outset;
+    }
+
+    p.ex2 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+    }
+
+    p.ex3 {
+      border: 1px solid black;
+      outline-style: double;
+      outline-color: green;
+    }
+
+    p.ex4 {
+      border: 1px solid black;
+      outline-style: outset;
+      outline-color: yellow;
+    }
+
+    p.ex5 {
+      border: 1px solid yellow;
+      outline-style: solid;
+      outline-color: invert;
+    }
+
+    p.ex6 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+      outline-width: thin;
+    }
+
+    p.ex7 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+      outline-width: medium;
+    }
+
+    p.ex8 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+      outline-width: thick;
+    }
+
+    p.ex9 {
+      border: 1px solid black;
+      outline-style: solid;
+      outline-color: red;
+      outline-width: 4px;
+    }
+
+    p.ex10 {
+      outline: dashed;
+    }
+
+    p.ex11 {
+      outline: dotted red;
+    }
+
+    p.ex12 {
+      outline: 5px solid yellow;
+    }
+
+    p.ex13 {
+      outline: thick ridge pink;
+    }
+
+    p.ex14 {
+      width: 50%;
+      margin: 30px;
+      border: 1px solid black;
+      outline: 1px solid red;
+      outline-offset: 15px;
+    }
+
+    p.ex15 {
+      width: 50%;
+      margin: 30px;
+      background: yellow;
+      border: 1px solid black;
+      outline: 10px solid red;
+      outline-offset: 15px;
+    }
+
+    p.ex16 {
+      outline-style: solid;
+      width: 30%;
+      margin: 30px auto 30px;
+      background: yellow;
+      border: 8px solid #888;
+      outline-width: 50px;
+    }
+
+    p.ex17 {
+      width: 30%;
+      margin: 10px auto 10px;
+      background: yellow;
+      border: 8px solid #888;
+      outline-style: dotted;
+      outline-width: 20px;
+    }
+
+    .ex1-outline,
+    .ex2-outline,
+    .ex4-outline {
+      width: 50%;
+      padding: 10px;
+      background-color: pink;
+      margin: 25px auto;
+    }
+
+    p.ex18 {
+      width: 30%;
+      border: 8px solid #888;
+      margin: 20px auto 25px;
+      outline: 16px solid navy;
+      outline-offset: 16px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Outline</h1>
+  <p>An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".</p>
+
+  <img src="./img/outline.jpg" alt="outline-model">
+
+  <p>CSS has the following outline properties:<br>
+    - outline-style<br>
+    - outline-color<br>
+    - outline-width<br>
+    - outline-offset<br>
+    - outline
+  </p>
+
+  <h2>CSS Outline Width</h2>
+  <p>The outline-width property specifies the width of the outline, and can have one of the following values:</p>
+  <p>CSS властивість outline-width визначає товщину контуру елемента.</p>
+
+
+  <p>The height and width properties may have the following values:<br>
+    - auto - This is default. The browser calculates the height and width<br>
+    - length - Defines the height/width in px, cm etc.<br>
+    - % - Defines the height/width in percent of the containing block<br>
+    - initial - Sets the height/width to its default value<br>
+    - inherit - The height/width will be inherited from its parent value
+  </p>
+
+  <p><b>Note:</b> Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and
+    may overlap other content. Also, the outline is NOT a part of the element's dimensions; the element's total width
+    and height is not affected by the width of the outline.</p>
+
+  <p class="ex1">This element has a 2px black border and a green outline with a width of 10px.</p>
+  <br>
+
+  <h2>CSS Outline Style</h2>
+  <p>The outline-style property specifies the style of the outline, and can have one of the following values:
+    <p class="dotted">A dotted outline</p>
+    <p class="dashed">A dashed outline</p>
+    <p class="solid">A solid outline</p>
+    <p class="double">A double outline</p>
+    <p class="groove">A groove outline. The effect depends on the outline-color value.</p>
+    <p class="ridge">A ridge outline. The effect depends on the outline-color value.</p>
+    <p class="inset">An inset outline. The effect depends on the outline-color value.</p>
+    <p class="outset">An outset outline. The effect depends on the outline-color value.</p>
+  </p>
+
+  <p><b>Note: None of the other outline properties will have any effect, unless the outline-style property is set!</b>
+  </p>
+
+  <div class="ex1-outline">
+    <p>Властивість outline-style встановлює стиль зовнішнього контуру елемента.</p>
+    <p>На відміну від кордону елемента (наприклад, встановлено за допомогою border або пов'язаних з ним властивостей),
+      контур елемента не займає зайвого місця, і може бути не прямокутним.<br>
+      Контур завжди знаходиться над блоком, і це не впливає на положення чи розмір елементу або інших елементів.
+    </p>
+  </div>
+
+  <br>
+  <p class="ex17">This element has an outline-style: dotted.</p><br><br>
+
+
+  <h2>CSS Outline Color</h2>
+  <p>The outline-color property is used to set the color of the outline.</p>
+  <p>The color can be set by:<br>
+    name - specify a color name, like "red"<br>
+    RGB - specify a RGB value, like "rgb(255,0,0)"<br>
+    Hex - specify a hex value, like "#ff0000"<br>
+    invert - performs a color inversion (which ensures that the outline is visible, regardless of color background)
+  </p>
+  <p>The following example shows some different outlines with different colors. Also notice that these elements also
+    have a thin black border inside the outline:<br>
+    <p class="ex2">A solid red outline.</p>
+    <p class="ex3">A double green outline.</p>
+    <p class="ex4">An outset yellow outline.</p>
+  </p>
+  <p>The following example uses outline-color: invert, which performs a color inversion. This ensures that the outline
+    is visible, regardless of color background:</p>
+  <p class="ex5">A solid invert outline.</p>
+
+  <h2>CSS Outline Width</h2>
+  <p>The outline-width property specifies the width of the outline, and can have one of the following values:<br>
+    - thin (typically 1px)<br>
+    - medium (typically 3px)<br>
+    - thick (typically 5px)<br>
+    - A specific size (in px, pt, cm, em, etc)
+  </p>
+
+  <p>The following example shows some outlines with different widths:</p>
+  <p class="ex6">A thin outline.</p>
+  <p class="ex7">A medium outline.</p>
+  <p class="ex8">A thick outline.</p>
+  <p class="ex9">A 4px thick outline.</p>
+
+  <div class="ex2-outline">
+    <p>CSS властивість outline-width визначає товщину контуру елемента.</p>
+    <p>Для того, щоб властивість outline-width спрацювала, необхідно:<br>
+      - Оголоситие властивість outline-style перед властивістю outline-width. Елемент повинен мати стиль, перш ніж
+      змінювати його ширину.
+      - Встановити у властивості outline-style будь-яке значення відмінне від none.
+    </p>
+  </div>
+  <br>
+  <p class="ex16">This element has an outline width of 40px outside the border edge.</p>
+
+  <h2>CSS Outline - Shorthand property</h2>
+  <p>The outline property is a shorthand property for setting the following individual outline properties:<br>
+    - outline-width<br>
+    - outline-style (required)<br>
+    - outline-color
+  </p>
+  <p>The outline property is specified as one, two, or three values from the list above. The order of the values does
+    not matter.<br>
+    The following example shows some outlines specified with the shorthand outline property:
+  </p>
+  <p>Нотатка:
+    Для задання контуру зручніше використовувати універсальну властивість outline</p>
+  <p class="ex10">A dashed outline.</p>
+  <p class="ex11">A dotted red outline.</p>
+  <p class="ex12">A 5px solid yellow outline.</p>
+  <p class="ex13">A thick ridge pink outline.</p>
+
+  <h2>CSS Outline Offset</h2>
+  <p>The outline-offset property adds space between an outline and the edge/border of an element.<br>
+    The space between an element and its outline is transparent.
+  </p>
+
+  <p>The following example specifies an outline 15px outside the border edge:</p>
+  <p class="ex14">This paragraph has an outline 15px outside the border edge.</p><br>
+  <p>The following example shows that the space between an element and its outline is transparent:</p>
+  <p class="ex15">This paragraph has an outline of 15px outside the border edge.</p>
+  <br>
+
+  <div class="ex4-outline">
+    <p>Властивість 'outline-offset' встановлює відстань між контуром та кордоном елемента (властивість border).</p>
+
+    <p>Без задання контури розташовані безпосередньо біля краю кордону.<br>
+      Використовуючи outline-offset, ви можете розмістити за межами кордону.<br>
+      Простір між елементом та його контуром прозорий; іншими словами, той же самий, що і фон батьківського елемента.
+    </p>
+  </div>
+  <br>
+  <p class="ex18">This element has an outline-offset: 16px.</p>
+  <br>
+
+</body>
+
+</html>

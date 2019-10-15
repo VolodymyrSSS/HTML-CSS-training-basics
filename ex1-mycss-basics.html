@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex1-myCSS-essence</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: verdana;
+      font-size: 15px;
+      color: blue;
+    }
+
+    .for-para {
+      width: 50%;
+      background-color: pink;
+      border: 2px dashed orange;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS</h1>
+  <p>CSS s a language that describes the style of an HTML document</p>
+
+  <h2>CSS describes how HTML elements should be displayed.</h2>
+  <p>
+    CSS stands for Cascading Style Sheets<br>
+    CSS describes how HTML elements are to be displayed on screen, paper, or in other media<br>
+    CSS saves a lot of work. It can control the layout of multiple web pages all at once<br>
+    External stylesheets are stored in CSS files
+  </p>
+
+  <h2>CSS is used to define styles for your web pages, including the design,<br>
+    layout and variations in display for different devices and screen sizes.
+  </h2>
+
+  <p>
+    HTML was NEVER intended to contain tags for formatting a web page!<br>
+    <br>
+    HTML was created to <b>describe the content</b> of a web page, like:<br>
+    <br>
+    <h2>This is a heading</h2>
+    <h3>This is a subheading - The style definitions are normally saved in external .css files</h3>
+    <p>This is a paragraph styled with CSS - With an external stylesheet file, you can change the look of an entire
+      website by changing just one file!</p><br>
+    This is a paragraph without CSS:<br>
+    When tags like font, and color attributes were added to the HTML 3.2 specification, it started a nightmare for
+    web developers.<br>
+    Development of large websites, where fonts and color information were added to every single page, became a long
+    and expensive process.<br>
+    <br>
+    To solve this problem, the <b>World Wide Web Consortium (W3C)</b> created CSS.<br>
+    CSS removed the style formatting from the HTML page!<br>
+  </p>
+
+  <h1>CSS Syntax</h1>
+  <p>A CSS rule-set consists of a selector and a declaration block:</p>
+  <img src="./img/selector.gif" alt="the img of css-rule-set">
+  <p>The <b>selector</b> points to the HTML element you want to style.</p>
+  <p>The <b>declaration block</b> contains one or more declarations separated by semicolons.<br>
+    Each declaration includes a CSS property name and a value, separated by a colon.,br>
+    A CSS declaration <b>always ends with a semicolon</b>, and <b>declaration blocks are surrounded by curly
+      braces</b>.
+  </p>
+
+  <h2>CSS Comments</h2>
+  <p>Comments are used to explain the code, and may help when you edit the source code at a later date.<br>
+    Comments are ignored by browsers.</p>
+  <div class="for-para">
+    /* This is a single-line comment */<br>
+    /* This is<br>
+    a multi-line<br>
+    comment */<br>
+  </div>
+
+  <h1>How To Add CSS</h1>
+  <p>When a browser reads a style sheet, it will format the HTML document according to the information in the style
+    sheet.</p>
+  <p>There are three ways of inserting a style sheet:<br>
+    External CSS<br>
+    Internal CSS<br>
+    Inline CSS</p>
+
+  <h2>External CSS</h2>
+  <p>With an external style sheet, you can change the look of an entire website by changing just one file!<br>
+    Each HTML page must include a reference to the external style sheet file inside the link-element, inside the head
+    section. That is like:
+  </p>
+  <div class="for-para">
+    html><br>
+    head><br>
+    link rel="stylesheet" type="text/css" href="mystyle.css"><br>
+    /head><br>
+    body><br>
+    h1>This is a heading /h1><br>
+    p>This is a paragraph. /p><br>
+    /body><br>
+    /html><br>
+  </div>
+  <p>An external style sheet can be written in any text editor, and must be saved with a .css extension.<br>
+    The external .css file should not contain any HTML tags.
+  </p>
+  <p><b>Note:</b> Do not add a space between the property value and the unit (such as margin-left: 20 px;). The correct
+    way is: margin-left: 20px;
+  </p>
+  <h2>Internal CSS</h2>
+  <p>An internal style sheet may be used if one single HTML page has a unique style.<br>
+    The internal style is defined inside the style-element, inside the head section.
+  </p>
+
+  <h2>Inline CSS</h2>
+  <p>An inline style may be used to apply a unique style for a single element.<br>
+    To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS
+    property.
+  </p>
+  <p>Inline styles are defined within the "style" attribute of the relevant element. Example:</p>
+  <div class="for-para">
+    <h2 style="color:navy;text-align:center;">This is a heading</h2>
+    <p style="color:brown;">This is a paragraph.</p>
+  </div>
+  <p><b>Tip:</b> An inline style loses many of the advantages of a style sheet (by mixing content with presentation).
+    <b>Use this method sparingly!</b></p>
+
+  <h2>Multiple Style Sheets</h2>
+  <p>If some properties have been defined for the same selector (element) in different style sheets, <b>the value from
+      the last read style sheet will be used</b>.<br>
+    For example:
+  </p>
+
+  <p>Assume that an external style sheet has the following style for the h1-element: <b>h1 {color: navy;}</b><br>
+    Then, assume that an internal style sheet also has the following style for the h1element: <b>h1 {color:
+      orange;}</b><br>
+    <br>
+    If the internal style is defined <b>after</b> the link to the external style sheet, the h1-elements will be
+    'orange'.
+  </p>
+  <br>
+  <div class="for-para">
+    html><br>
+    head><br>
+    link rel="stylesheet" type="text/css" href="mystyle.css"><br>
+    style><br>
+    h1 {<br>
+    color: orange;<br>
+    }<br>
+    /style><br>
+    /head><br>
+    body><br>
+    h1>This is a heading /h1><br>
+    p>The style of this document is a combination of an external stylesheet, and internal style /p><br>
+    /body><br>
+    /html><br>
+  </div>
+  <p>However, if the internal style is defined <b>before</b> the link to the external style sheet, the h1-elements will
+    be "navy": </p>
+  <div class="for-para">
+    html><br><br>
+    head><br><br>
+    style><br>
+    h1 {<br>
+    color: orange;<br>
+    }<br>
+    /style><br>
+    link rel="stylesheet" type="text/css" href="mystyle.css"><br>
+    /head><br>
+  </div>
+
+  <h2>Cascading Order</h2>
+  <p>What style will be used when there is more than one style specified for an HTML element?</p>
+  <p>All the styles in a page will "cascade" into a new "virtual" style sheet by the following rules, where number one
+    has the highest priority:<br>
+    Inline style (inside an HTML element)<br>
+    External and internal style sheets (in the head section)<br>
+    Browser default
+  </p>
+  <p>So, an inline style has the highest priority, and will override external and internal styles and browser defaults.
+  </p>
+
+</body>
+
+</html>

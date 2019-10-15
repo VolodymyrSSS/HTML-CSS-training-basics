@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex4_mycss-borders</title>
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    p.dotted {
+      border-style: dotted;
+    }
+
+    p.dashed {
+      border-style: dashed;
+    }
+
+    p.solid {
+      border-style: solid;
+    }
+
+    p.double {
+      border-style: double;
+    }
+
+    p.groove {
+      border-style: groove;
+    }
+
+    p.ridge {
+      border-style: ridge;
+    }
+
+    p.inset {
+      border-style: inset;
+    }
+
+    p.outset {
+      border-style: outset;
+    }
+
+    p.none {
+      border-style: none;
+    }
+
+    p.hidden {
+      border-style: hidden;
+    }
+
+    p.mix {
+      border-style: dotted dashed solid double;
+    }
+
+    p.one {
+      border-style: solid;
+      border-width: 5px;
+    }
+
+    p.two {
+      border-style: solid;
+      border-width: medium;
+    }
+
+    p.three {
+      border-style: dotted;
+      border-width: 2px;
+    }
+
+    p.four {
+      border-style: dotted;
+      border-width: thick;
+    }
+
+    p.five {
+      border-style: double;
+      border-width: 15px;
+    }
+
+    p.six {
+      border-style: double;
+      border-width: thick;
+    }
+
+    p.seven {
+      border-style: solid;
+      border-width: 2px 10px 4px 20px;
+    }
+
+    p.one-red {
+      border-style: solid;
+      border-color: red;
+    }
+
+    p.two-green {
+      border-style: solid;
+      border-color: green;
+    }
+
+    p.three-multicolor {
+      border-style: solid;
+      border-color: red green blue yellow;
+    }
+
+    p.two-dif-stl {
+      border-top-style: dotted;
+      border-right-style: solid;
+      border-bottom-style: dotted;
+      border-left-style: solid;
+    }
+
+    p.ex-shorthand1 {
+      border: 5px solid red;
+    }
+
+    p.ex-shorthand2 {
+      border-left: 6px solid red;
+      background-color: lightgrey;
+    }
+
+    p.ex-shorthand3 {
+      border-bottom: 6px solid red;
+      background-color: lightgrey;
+    }
+
+    p.normal {
+      border: 2px solid red;
+    }
+
+    p.round1 {
+      border: 2px solid red;
+      border-radius: 5px;
+    }
+
+    p.round2 {
+      border: 2px solid red;
+      border-radius: 8px;
+    }
+
+    p.round3 {
+      border: 2px solid red;
+      border-radius: 12px;
+    }
+
+    .r {
+      width: 100px;
+      height: 100px;
+      float: left;
+      border: 2px solid red;
+    }
+
+    .r1 {
+      border-radius: 0 0 20px 20px;
+    }
+
+    .r2 {
+      border-radius: 0 10px 20px;
+    }
+
+    .r3 {
+      border-radius: 10px 20px;
+    }
+
+    .r4 {
+      border-radius: 10px/20px;
+    }
+
+    .r5 {
+      border-radius: 5px 10px 15px 30px/30px 15px 10px 5px;
+    }
+
+    .r6 {
+      border-radius: 10px 20px 30px 40px/30px;
+    }
+
+    .r7 {
+      border-radius: 50%;
+    }
+
+    .r8 {
+      border-top: none;
+      border-bottom: none;
+      border-radius: 30px/90px;
+    }
+
+    .r9 {
+      border-bottom-left-radius: 100px;
+    }
+
+    .r10 {
+      border-radius: 0 100%;
+    }
+
+    .r11 {
+      border-radius: 0 50% 50% 50%;
+    }
+
+    .r12 {
+      border-top-left-radius: 100% 20px;
+      border-bottom-right-radius: 100% 20px;
+      border: 2px solid red;
+      clear: right;
+    }
+
+    #show1 {
+      width: 120px;
+      height: 120px;
+      margin: 5px;
+      /* не меньше значення, вказаного в box-shadow */
+      border: yellow dashed 1px;
+      border-radius: 4px;
+      background: red;
+      box-shadow: 0 0 0 5px red;
+      /* той самий колір, щоо і в background */
+    }
+
+    .foxef1,
+    .foxef2 {
+      width: 38%;
+      -webkit-transition: 1s;
+      transition: 1s;
+    }
+
+    .foxef1 {
+      opacity: .5;
+    }
+
+    .foxef2 {
+      outline: 200px solid rgba(255, 200, 200, .5);
+      outline-offset: -200px;
+    }
+
+    .foxef1:hover,
+    .foxef2:hover {
+      opacity: 1;
+      outline: 10px solid rgba(255, 100, 200, .5);
+      outline-offset: -10px;
+      box-shadow: 0 0 0 0 red inset;
+    }
+
+    #show3 {
+      width: 30%;
+      margin: 30px auto;
+      background: white content-box;
+      /* фон батьківського елементу за рахунок padding */
+      padding: 5px;
+      border: solid 5px yellow;
+      box-shadow: 0 0 0 5px pink;
+      /* тінь блока HTML */
+      outline: 5px solid green;
+      /* в IE підміняє box-shadow */
+      position: relative;
+    }
+
+    #show3::before {
+      border: solid 5px red;
+      position: absolute;
+      content: "";
+      top: -20px;
+      right: -20px;
+      bottom: -20px;
+      left: -20px;
+    }
+
+    #show3::after {
+      border: solid 5px blue;
+      position: absolute;
+      content: "";
+      top: -15px;
+      right: -15px;
+      bottom: -15px;
+      left: -15px;
+    }
+
+    #borderimg {
+      width: 50%;
+      border: 10px solid transparent;
+      padding: 15px;
+      border-image: url(./img/borderimg1.png) 30 round;
+    }
+
+    #borderimg1 {
+      width: 50%;
+      border: 10px solid transparent;
+      padding: 15px;
+      border-image-source: url(./img/borderimg1.png);
+      border-image-slice: 30;
+    }
+
+    #borderimg2 {
+      border: 10px solid transparent;
+      padding: 15px;
+      border-image: url(./img/borderimg1.png) 50 round;
+    }
+
+    #borderimg3 {
+      border: 10px solid transparent;
+      padding: 15px;
+      border-image: url(./img/borderimg1.png) 20% round;
+    }
+
+    #borderimg4 {
+      border: 10px solid transparent;
+      padding: 15px;
+      border-image: url(./img/borderimg1.png) 30% round;
+    }
+
+    .border-stretch {
+      position: relative;
+      width: 360px;
+      height: 200px;
+      border-style: solid;
+      border-image-width: 15px;
+      border-image-source: url('./img/borderimg2.png');
+      border-image-slice: 30;
+      border-image-repeat: stretch;
+    }
+
+    p.insidebrd1 {
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      color: brown;
+      position: absolute;
+      top: 15px;
+      left: 17px;
+      padding: 4px;
+    }
+
+    .border-round {
+      position: relative;
+      width: 360px;
+      height: 200px;
+      border-style: solid;
+      border-image-width: 15px;
+      border-image-source: url('./img/borderimg2.png');
+      border-image-slice: 30;
+      border-image-repeat: round;
+    }
+
+    .border-slice {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-style: solid;
+      border-image-width: 40px;
+      border-image-source: url("./img/borderimg3.png");
+      border-image-slice: 40;
+      border-image-repeat: round;
+    }
+
+    p.insidebrd2 {
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      color: brown;
+      position: absolute;
+      top: 35px;
+      left: 35px;
+      padding: 4px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .wrap1 {
+      height: 200px;
+      padding: 25px;
+      background: #00E4F6;
+    }
+
+    .gradient1 {
+      height: 150px;
+      width: 50%;
+      margin: 0 auto;
+      border: 10px solid transparent;
+      border-image: linear-gradient(to right, transparent 0%, #e96390 100%);
+      border-image-slice: 1;
+    }
+
+    .wrap2 {
+      height: 200px;
+      padding: 25px;
+    }
+
+    .gradient2 {
+      height: 150px;
+      width: 50%;
+      margin: 0 auto;
+      border: 10px solid transparent;
+      border-image: 10 repeating-linear-gradient(45deg, #5dcfca, #1787d1 10px, transparent 10px, transparent 20px, #f19895 20px, #F8463F 30px, transparent 30px, transparent 40px);
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Border Properties</h1>
+  <p>The CSS border properties allow you to specify the style, width, and color of an element's border.</p>
+
+  <h2>CSS Border Style</h2>
+  <p>This property specifies what kind of border to display:</p><br>
+  <p class="dotted">A dotted border. With properties:{border-style: dotted;}</p>
+  <p class="dashed">A dashed border. With properties:{border-style: dashed;}</p>
+  <p class="solid">A solid border. With properties:{border-style: solid;}</p>
+  <p class="double">A double border. With properties:{border-style: double;}</p>
+  <p class="groove">A groove border. With properties:{border-style: groove;}</p>
+  <p class="ridge">A ridge border. With properties:{border-style: ridge;}</p>
+  <p class="inset">An inset border. With properties:{border-style: inset;}</p>
+  <p class="outset">An outset border. With properties:{border-style: outset;}</p>
+  <p class="none">No border. With properties:{border-style: none;}</p>
+  <p class="hidden">A hidden border. With properties:{border-style: hidden;}</p>
+  <p class="mix">A mixed border. With properties:{border-style: dotted dashed solid double;}</p>
+  <p>The border-style property can have from one to four values (for the top border, right border, bottom border, and
+    the left border).</p>
+
+  <h2>CSS Border Width</h2>
+  <p>The 'border-width' property specifies the width of the four borders.<br>
+    The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values:
+    thin, medium, or thick.<br>
+    The 'border-width' property can have from one to four values (for the top border, right border, bottom border, and
+    the left border).
+  </p>
+  <p>This property specifies the width of the four borders:</p>
+
+  <p class="one">With properties:{border-style: solid; border-width: 5px;}</p>
+  <p class="two">With properties:{border-style: solid; border-width: medium;}</p>
+  <p class="three">With properties:{border-style: dotted; border-width: 2px;}</p>
+  <p class="four">With properties:{border-style: dotted; border-width: thick;}</p>
+  <p class="five">With properties:{border-style: double; border-width: 15px;}</p>
+  <p class="six">With properties:{border-style: double; border-width: thick;}</p>
+  <p class="seven">With properties:{border-style: solid; border-width: 2px 10px 4px 20px;}</p>
+
+  <p><b>Note:</b> The "border-width" property does not work if it is used alone.
+    Always specify the "border-style" property to set the borders first.</p>
+
+  <h2>CSS Border Color</h2>
+  <p>The border-color property is used to set the color of the four borders.<br>
+    The color can be set by:<br>
+    name - specify a color name, like "red"<br>
+    Hex - specify a hex value, like "#ff0000"<br>
+    RGB - specify a RGB value, like "rgb(255,0,0)"<br>
+    transparent<br>
+    The border-color property can have from one to four values (for the top border, right border, bottom border, and the
+    left border).<br>
+    If border-color is not set, it inherits the color of the element.
+  </p>
+  <p>This property specifies the color of the four borders:</p>
+  <p class="one-red">A solid red border. With properties:{border-style: solid; border-color: red;}</p>
+  <p class="two-green">A solid green border. With properties:{border-style: solid; border-color: green;}</p>
+  <p class="three-multicolor">A solid multicolor border. With properties:{border-style: solid; border-color: red green
+    blue yellow;}</p>
+  <p><b>Note:</b> The "border-color" property does not work if it is used alone. Use the "border-style" property to set
+    the borders first.
+  </p>
+
+  <h2>CSS Border - Individual Sides</h2>
+  <p>In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left):</p>
+  <p class="two-dif-stl">2 different border styles.</p>
+  <p>The example above gives the same result as this: 'p {border-style: dotted solid;}'</p>
+
+  <h2>CSS Border - Shorthand Property</h2>
+  <p>To shorten the code, it is also possible to specify all the individual border properties in one property.<br>
+    The border property is a shorthand property for the following individual border properties:<br>
+    border-width<br>
+    border-style (required)<br>
+    border-color<br>
+  </p>
+  <p class="ex-shorthand1">This property is a shorthand property for border-width, border-style, and border-color.</p>
+  <p>You can also specify all the individual border properties for just one side:</p>
+  <p class="ex-shorthand2">This property is a shorthand property for border-left-width, border-left-style, and
+    border-left-color.
+  </p>
+  <p class="ex-shorthand3">This property is a shorthand property for border-bottom-width, border-bottom-style, and
+    border-bottom-color.
+  </p>
+
+
+  <h2>CSS Rounded Borders</h2>
+  <p>The border-radius property is used to add rounded borders to an element:</p>
+  <p class="normal">Normal border</p>
+  <p class="round1">Round border 5px</p>
+  <p class="round2">Rounder border 8px</p>
+  <p class="round3">Roundest border 12px</p>
+  <p><b>Note:</b> The "border-radius" property is not supported in IE8 and earlier versions.</p>
+  <br>
+
+  <h1>Закруглення кутів та рамки-зображення</h1>
+
+  <h2>Закруглення кутів за допомогою властивості 'border-radius'</h2>
+  <p>Свойство позволяет закруглить углы строчных и блочных элементов. Кривая для каждого угла определяется с помощью
+    одного или двух радиусов, определяющих его форму — круга или эллипса. Радиус распространяется на весь фон, даже если
+    элемент не имеет границ, точное положение секущей определяется с помощью свойства background-clip.<br>
+    Свойство border-radius позволяет закруглить все углы одновременно, а с помощью свойств:<br> border-top-left-radius,
+    border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius<br> можно закруглить каждый угол
+    отдельно.<br>
+  </p>
+  Значення, які задані через /, визначають горизонтальні та вертикальні радіуси. Ця властивість не наслідується.
+  </p>
+  Примеры:
+  <br>
+  <img src="./img/border-radius1.png" alt="top-left-corner">
+  <br>
+  <p>При визначенні конкретного кута з використанням властивості 'border-radius' вказується цей конкретний кут
+    шляхом вказання його положення:<br>
+    <b> border-top-left-radius</b>, <b>border-top-right-radius</b>,<br>
+    <b>border-bottom-right-radius</b>, <b>border-bottom-left-radius</b><br>
+    При цьому, для прикладу, якщо задати тільки два значення властивості 'border-radius' то перше значення закруглить
+    верхній лівий та нижній правий кути, а друге — верхній правий та нижній лівий.</p>
+  Ось приклади фигур в різних значеннях властивості 'border-radius':<br>
+
+
+  <div class="r r1">r1: border-radius: 0 0 20px 20px;</div><br>
+  <div class="r r2">r2: border-radius: 0 10px 20px;</div><br>
+  <div class="r r3">r3: border-radius: 10px 20px;</div><br>
+  <div class="r r4">r4: border-radius: 10px/20px;</div><br>
+  <div class="r r5">r5: border-radius: 5px 10px 15px 30px/30px 15px 10px 5px;</div><br>
+  <div class="r r6">r6: border-radius: 10px 20px 30px 40px/30px;</div><br>
+  <div class="r r7">r7: border-radius: 50%;</div><br>
+  <div class="r r8">r8: border-top: none; border-bottom: none; border-radius: 30px/90px;</div><br>
+  <div class="r r9">r9: border-bottom-left-radius: 100px;</div><br>
+  <div class="r r10">r10: border-radius: 0 100%;</div><br>
+  <div class="r r11">r11: border-radius: 0 50% 50% 50%;</div><br>
+  <div class="r r12">r12: border-top-left-radius: 100% 20px; border-bottom-right-radius: 100% 20px;</div><br>
+  <br>
+
+  <h2>Приклад1 застосування границь і закруглення кутів</h2>
+  Створимо червоний квадрат, заокруглимо його кути та дамо границю у вигляді прошитих ниток<br>
+  <div id="show1"></div>
+
+  <h2>Приклад2 зробити рамку з декількох кольорів</h2>
+  Створимо рамку з кольорових границь, застосувавши псевдоелементи ''::fefore' та ''::after'<br>
+  <div id="show3">якийсь текстовий вміст</div>
+
+  <h2>Приклад3 застосування границь з ефектами</h2>
+  Ось візьмемо одну чудову фотографію і дамо їй різні ефекти появи границь застосувавши псевдоклас ':hover' та
+  властивість 'outline-offset'<br>
+  <div class="show2">
+    <img class="foxef1" alt="Лисиця з задоволенням нюхає ківтку" src="./img/sniffing_out_fox.jpg">
+    <img class="foxef2" alt="Лисиця з задоволенням нюхає ківтку" src="./img/sniffing_out_fox.jpg">
+  </div>
+  img {width: 38%; -webkit-transition: 1s; transition: 1s;}<br>
+  img:nth-of-type(1) {opacity: .5;}<br>
+  img:nth-of-type(2) {outline: 200px solid rgba(255,200,200,.5); outline-offset: -200px;}<br>
+  img:hover {opacity: 1; outline: 10px solid rgba(255,100,200,.5); outline-offset: -10px; box-shadow: 0 0 0 0 red
+  inset;}<br>
+  <br>
+
+
+  <h1>Рамки-зображення 'border-image' - CSS border-image Property</h1>
+  <p>The border-image-source property specifies the image to be used as the border around an element.</p>
+
+  <p>The property has three parts:<br>
+    <br>
+    The image to use as the border<br>
+    Where to slice the image<br>
+    Define whether the middle sections should be repeated or stretched
+  </p>
+  <p>The border-image property takes the image and slices it into nine sections, like a tic-tac-toe board. It then
+    places the corners at the corners, and the middle sections are repeated or stretched as you specify.</p>
+  <p>Note: For border-image to work, the element also needs the border property set!<br>
+    Here, the middle sections of the image are repeated to create the border:</p>
+
+  <p>Here, the middle sections of the image are repeated to create the border:</p>
+  <p id="borderimg">border-image: url(./img/borderimg1.png) 30 round;</p>
+
+  <p>Here, the middle sections of the image are stretched to create the border:</p>
+  <p id="borderimg1">Hello World!</p>
+
+  <p>Here is the original image:</p><img src="./img/borderimg1.png">
+  <p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not support the border-image-source
+    property.
+  </p>
+  <p><b>Tip: The border-image property is actually a shorthand property for the border-image-source, border-image-slice,
+      border-image-width, border-image-outset and border-image-repeat properties.</b></p>
+
+  <h2>CSS border-image - Different Slice Values</h2>
+  <p>
+    <p id="borderimg2">border-image: url(border.png) 50 round;</p>
+    <p id="borderimg3">border-image: url(border.png) 20% round;</p>
+    <p id="borderimg4">border-image: url(border.png) 30% round;</p>
+  </p>
+
+  <p>Отже, властивість дозволяє встановлювати рамку елементa як зображення. Основні вимоги — зображення для рамки
+    повинно бути симетричним.</p><br>
+  Ось, візьмемо таке зображення:<br>
+  <img src="./img/borderimg2.png">
+  <p>Тепер задамо необхідні значення для створення рамки-зображення, що включає в себе такі значення:<br>
+    <b> {border-image: width source slice repeat outset;}</b><br>
+    при цьому, значеннями по замовчуванню є: <b>{border-image: 1 none 100% stretch 0;}</b>.
+  </p>
+  Ось приклад де ми задали такі значення для рамки-зображення:<br>
+
+  <div class="border-stretch">
+    <p class="insidebrd1">
+      width: 360px; height: 200px; <br>
+      border-style: solid;<br>
+      border-image-width: 15px;<br>
+      border-image-source: url(шлях_до_зображення.png);<br>
+      border-image-slice: 30;<br>
+      border-image-repeat: stretch;
+    </p>
+  </div><br>
+  А тепер змінимо значення 'border-image-repeat' щоб отримати іншу рамку-зображення:<br>
+  <div class="border-round">
+    <p class="insidebrd1">
+      width: 360px; height: 200px; <br>
+      border-style: solid;<br>
+      border-image-width: 15px;<br>
+      border-image-source: url(шлях_до_зображення.png);<br>
+      border-image-slice: 30;<br>
+      border-image-repeat: round;
+    </p>
+  </div>
+
+  <h2>'border-image-width' та 'border-image-source'</h2>
+  <p><b>border-image-width</b><br>
+    Ця властивість задає ширину зображення для границь елементу. Якщо ширина не задана, то по замовчуванню вона
+    дорівнює 1.<br>
+    Ширина задається в одиницях довжини — 'px' / 'em'. Можна задати від однї до чотирьох значень одночасно.
+    Якщо задано одне значення, то ширина всіх сторін рамки одинакова, а два значення задають ширину верхньої-нижньої
+    та
+    правої-лівої і т.д.<br>
+    Якщо задано в процентах (%) то ширина рамки элемента вираховується відносно розміру зображення. Горизонтальні
+    відносно ширини, вертикальні — відносно висоты.<br>
+    Якщо задано просто в числовому значенню, то це значення на яке множиться значення border-width.<br>
+    <br>
+    <b>div {border-image-source: url(route_to_image.png);}</b><br>
+    Ця властивість визначає шлях до зображення, яке буде використовуватись для оформлення границь блока<br>
+    url('шлях_до_зображення.png') - це відносний чи абсолютний шлях до зображення.
+  </p>
+
+  <h2>Елементи рамки-зображення 'border-image-slice'</h2>
+  <p>Ця властивість визначає розмір частин зображення, які використовуються для оформлення границь елементу і ділить
+    його (зображення) на дев'ять частин:<br>
+    чотири кути, чотири краї між кутами та центральну частину.
+  </p>
+  <p>'border-image-slice' може мати такі значення:<br>
+    Число - числове значення в 'px'. ( Розмір частин рамки можна задавати за допомогою одного, двух, трьох чи чотирьох
+    значень. Одно значення встановлює границі одинакового розміру для кожної сторони елементу. Два значення: перше
+    визначає розмір верхньої та нижньої границі, друге — правої та лівої. Три значения: перше визначає розмір верхньої
+    границі, друге — правої та лівої, а третє — нижньої границі. Чотири значення: визначають разміри верхньої, правої,
+    нижньої та лівої границі).<br>
+    % - проценти. Розміри границь розраховуються відносно розміру зображення. Горизонтальні відносно ширини,
+    вертикальні
+    — відносно высоти.<br>
+    fill - Це значення задають разом з числом чи процентним значенням. Якщо воно задано то воно, не обрізається
+    всередині внутрішніми краями рамки, а заповнює також область всередині рамки.
+  </p>
+  Ось покажимо приклад з властивістю 'border-image-slice':
+  Візьмето ось цю картинку для рамки-зображення: <img src="./img/borderimg3.png"><br>
+  Та створимо рамку-зображення<br>
+  <div class="border-slice">
+    <p class="insidebrd2">
+      width: 300px; <br>
+      height: 300px; <br>
+      border-image-width: 40px;<br>
+      border-image-source: url("./img/borderimg3.png");<br>
+      border-image-slice: 40;<br>
+      border-image-repeat: round;
+    </p>
+  </div>
+
+  <h2>Зміщення рамки-зображення: 'border-image-outset'</h2>
+  <p>Відступ рамки-зображення задається за допомогою будь-якого додатнього числа, яке вказується в 'px' чи 'em'.<br>
+    Синтаксис цього значення: <b>div {border-image-outset: 10px;}</b><br>
+    Крім того, це значення може бути задане числом - це число, на яке множиться border-width.
+  </p>
+
+  <h2>Градієнтна рамка</h2>
+  <p>Значенням border-image може виступати не тільки якесь зображення, але і градієнтна заливка.<br>
+    Тoвщину рамки можна регулювати властивістю 'border-width'.
+  </p>
+
+  <div class="wrap1">
+    <div class="gradient1"></div>
+  </div>
+
+  У прикладі вище, у якості одного з кольорів виступила властивість 'transparent'. Ось значення:<br>
+  <b>border: 10px solid transparent;</b><br>
+  <b>border-image: linear-gradient(to right, transparent 0%, #e96390 100%);</b><br>
+  <b>border-image-slice: 1;</b><br>
+  Таким способом можна задавати границі одразу для всіх сторін елементу чи окремо для кажої сторони.
+  <br>
+
+  <div class="wrap2">
+    <div class="gradient2"></div>
+  </div>
+  А в цьому прикладі, у якості рамки виступила властивість повторення 10 комбінацій з 2х кольорових смуг по
+  'transparent' під кутом 45 градусів. Ось значення:<br>
+  <b>border: 10px solid transparent;</b><br>
+  <b>border-image: 10 repeating-linear-gradient(45deg, #5dcfca, #1787d1 10px, transparent 10px, transparent 20px,
+    #f19895 20px, #F8463F 30px, transparent 30px, transparent 40px);

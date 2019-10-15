@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex2-mycss-selectors</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial'sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .for-para {
+      background-color: pink;
+      border: 2px dashed orange;
+    }
+
+    p {
+      font-size: 15px;
+      color: blue;
+    }
+
+    #para2 {
+      text-align: center;
+      color: red;
+    }
+
+    .center1 {
+      text-align: center;
+      color: red;
+    }
+
+    p.center2 {
+      text-align: center;
+      color: red;
+    }
+
+    p.center3 {
+      text-align: center;
+      color: red;
+    }
+
+    p.large {
+      font-size: 300%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    table,
+    td,
+    th {
+      border: 2px solid brown;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Selectors</h1>
+  <p>CSS selectors are used to "find" (or select) HTML elements based on their element name, id, class, attribute,
+    and more.</p>
+
+  <h2>CSS Selectors</h2>
+  <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
+  <p>We can divide CSS selectors into five categories:<br>
+    Simple selectors (select elements based on name, id, class)<br>
+    Combinator selectors (select elements based on a specific relationship between them)<br>
+    Pseudo-class selectors (select elements based on a certain state)<br>
+    Pseudo-elements selectors (select and style a part of an element)<br>
+    Attribute selectors (select elements based on an attribute or attribute value)
+  </p>
+
+  <h2>The CSS element Selector</h2>
+  <p>The element selector selects HTML elements based on the element name.<br>
+    Here, all p-elements on the page will be left-aligned, with a blue text color.<br>
+    Example:
+  </p>
+  <div class="for-para">
+    <p>Every paragraph will be affected by the style.</p>
+    <p id="para1">Me too!</p>
+    <p>And me!</p>
+  </div>
+
+  <h2>The CSS id Selector</h2>
+  <p>The id selector uses the id attribute of an HTML element to select a specific element.<br>
+    The id of an element is unique within a page, so the id selector is used to select one unique element!<br>
+    To select an element with a specific id, write a hash (#) character, followed by the id of the element.<br>
+    Example:
+  </p>
+  <div class="for-para">
+    <p id="para2">Hello World!</p>
+    <p>This paragraph is not affected by the style.</p>
+  </div>
+  <p><b>Note:</b> An id name cannot start with a number!</p>
+
+  <h2>The CSS class Selector</h2>
+  <p>The class selector selects HTML elements with a specific class attribute.<br>
+    To select elements with a specific class, write a period (.) character, followed by the class name.<br>
+    Example: In this example all HTML elements with class="center" will be red and center-aligned:
+  </p>
+  <div class="for-para">
+    <h1 class="center1">Red and center-aligned heading</h1>
+    <p class="center1">Red and center-aligned paragraph.</p>
+  </div>
+  <br>
+  <p>You can also specify that only specific HTML elements should be affected by a class.<br>
+    Example: In this example only p-elements with class='center' will be center-aligned:
+  </p>
+  <div class="for-para">
+    <h3 class="center2">This heading will not be affected</h3>
+    <p class="center2">This paragraph will be red and center-aligned.</p>
+  </div>
+  <br>
+  <p>HTML elements can also refer to more than one class.</p>
+  <div class="for-para">
+    <h3 class="center3">This heading will not be affected</h3>
+    <p class="center3">This paragraph will be red and center-aligned.</p>
+    <p class="center3 large">This paragraph will be red, center-aligned, and in a large font-size.</p>
+  </div>
+  <p><b>Note:</b> A class name cannot start with a number!</p>
+
+  <h2>The CSS Universal Selector</h2>
+  <p>The universal selector (*) selects all HTML elements on the page. if you write:</p>
+  * {<br>
+  text-align: center;<br>
+  color: blue;<br>
+  }<br>
+  <p>This CSS rule will affect every HTML element on the page</p>
+
+  <h2>The CSS Grouping Selector</h2>
+  <p>The grouping selector selects all the HTML elements with the same style definitions.</p>
+  <p>To group selectors, separate each selector with a comma.</p>
+  <p>In this example we have grouped the selectors like:</p>
+  h1, h2, p {<br>
+  text-align: center;<br>
+  color: red;<br>
+  }<br>
+
+
+  <h2>CSS Selector Reference</h2>
+  <p>In CSS, selectors are patterns used to select the element(s) you want to style</p>
+  <table>
+    <tr>
+      <th>Selector:</th>
+      <th>Example:</th>
+      <th>Example description:</th>
+    </tr>
+    <tr>
+      <td>.class</td>
+      <td>.intro</td>
+      <td>Selects all elements with class="intro"</td>
+    </tr>
+    <tr>
+      <td>#id</td>
+      <td>#firstname</td>
+      <td>Selects the element with id="firstname"</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>*</td>
+      <td>Selects all elements</td>
+    </tr>
+    <tr>
+      <td>element p</td>
+      <td>p</td>
+      <td>Selects all p elements</td>
+    </tr>
+    <tr>
+      <td>element div</td>
+      <td>div</td>
+      <td>Selects all div-elements and all p-elements</td>
+    </tr>
+    <tr>
+      <td>element element</td>
+      <td>div p</td>
+      <td>Selects all p-elements inside div-elements</td>
+    </tr>
+    <tr>
+      <td>element>element</td>
+      <td>div > p</td>
+      <td>Selects all p-elements where the parent is a div-element</td>
+    </tr>
+    <tr>
+      <td>element+element</td>
+      <td>div + p</td>
+      <td>Selects all p-elements that are placed immediately after div-elements</td>
+    </tr>
+    <tr>
+      <td>element1~element2</td>
+      <td>p ~ ul</td>
+      <td>Selects every ul-element that are preceded by a p-element</td>
+    </tr>
+    <tr>
+      <td>[attribute]</td>
+      <td>[target]</td>
+      <td>Selects all elements with a target attribute</td>
+    </tr>
+    <tr>
+      <td>[attribute=value]</td>
+      <td>[target=_blank]</td>
+      <td>Selects all elements with target="_blank"</td>
+    </tr>
+    <tr>
+      <td>[attribute~=value]</td>
+      <td>[title~=flower]</td>
+      <td>Selects all elements with a title attribute containing the word "flower"</td>
+    </tr>
+    <tr>
+      <td>[attribute|=value]</td>
+      <td>[lang|=en]</td>
+      <td>Selects all elements with a lang attribute value starting with "en"</td>
+    </tr>
+    <tr>
+      <td>[attribute^=value]</td>
+      <td>a[href^="https"]</td>
+      <td>Selects every <a> element whose href attribute value begins with 'https'</td>
+    </tr>
+    <tr>
+      <td>[attribute$=value]</td>
+      <td>a[href$=".pdf"]</td>
+      <td>Selects every a-element whose href attribute value ends with '.pdf'</td>
+    </tr>
+    <tr>
+      <td>[attribute*=value]</td>
+      <td>a[href*="w3schools"]</td>
+      <td>Selects every a-element whose href attribute value contains the substring 'w3schools'</td>
+    </tr>
+    <tr>
+      <td>:active</td>
+      <td>a:active</td>
+      <td>Selects the active link</td>
+    </tr>
+    <tr>
+      <td>::after</td>
+      <td>p::after</td>
+      <td>Insert something after the content of each p-element</td>
+    </tr>
+    <tr>
+      <td>::before</td>
+      <td>p::before</td>
+      <td>Insert something before the content of each p-element</td>
+    </tr>
+    <tr>
+      <td>:checked</td>
+      <td>input:checked</td>
+      <td>Selects every checked input-element</td>
+    </tr>
+    <tr>
+      <td>:default</td>
+      <td>input:default</td>
+      <td>Selects the default input-element</td>
+    </tr>
+    <tr>
+      <td>:disabled</td>
+      <td>input:disabled</td>
+      <td>Selects every disabled input-element</td>
+    </tr>
+    <tr>
+      <td>:empty</td>
+      <td>p:empty</td>
+      <td>Selects every p-element that has no children (including text nodes)</td>
+    </tr>
+    <tr>
+      <td>:enabled</td>
+      <td>input:enabled</td>
+      <td>Selects every enabled input-element</td>
+    </tr>
+    <tr>
+      <td>:first-child</td>
+      <td>p:first-child</td>
+      <td>Selects every p-element that is the first child of its parent</td>
+    </tr>
+    <tr>
+      <td>::first-letter</td>
+      <td>p::first-letter</td>
+      <td>Selects the first letter of every p-element</td>
+    </tr>
+    <tr>
+      <td>::first-line</td>
+      <td>p::first-line</td>
+      <td>Selects the first line of every p-element</td>
+    </tr>
+    <tr>
+      <td>:first-of-type</td>
+      <td>p:first-of-type</td>
+      <td>Selects every p-element that is the first p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:focus</td>
+      <td>input:focus</td>
+      <td>Selects the input element which has focus</td>
+    </tr>
+    <tr>
+      <td>:hover</td>
+      <td>a:hover</td>
+      <td>Selects links on mouse over</td>
+    </tr>
+    <tr>
+      <td>:in-range</td>
+      <td>input:in-range</td>
+      <td>Selects input elements with a value within a specified range</td>
+    </tr>
+    <tr>
+      <td>:indeterminate</td>
+      <td>input:indeterminate</td>
+      <td>Selects input elements that are in an indeterminate state</td>
+    </tr>
+    <tr>
+      <td>:invalid</td>
+      <td>input:invalid</td>
+      <td>Selects all input elements with an invalid value</td>
+    </tr>
+    <tr>
+      <td>:lang(language)</td>
+      <td>p:lang(it)</td>
+      <td>Selects every p-element with a lang attribute equal to "it" (Italian)</td>
+    </tr>
+    <tr>
+      <td>:last-child</td>
+      <td>p:last-child</td>
+      <td>Selects every p-element that is the last child of its parent</td>
+    </tr>
+    <tr>
+      <td>:last-of-type</td>
+      <td>p:last-of-type</td>
+      <td>Selects every p-element that is the last p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:link</td>
+      <td>a:link</td>
+      <td>Selects all unvisited links</td>
+    </tr>
+    <tr>
+      <td>:not(selector)</td>
+      <td>:not(p)</td>
+      <td> Selects every element that is not a p-element</td>
+    </tr>
+    <tr>
+      <td>:nth-child(n)</td>
+      <td>p:nth-child(2)</td>
+      <td>Selects every p-element that is the second child of its parent</td>
+    </tr>
+    <tr>
+      <td>:nth-last-child(n)</td>
+      <td>p:nth-last-child(2)</td>
+      <td>Selects every p-element that is the second child of its parent, counting from the last child</td>
+    </tr>
+    <tr>
+      <td>:nth-last-of-type(n)</td>
+      <td>p:nth-last-of-type(2)</td>
+      <td>Selects every p-element that is the second p-element of its parent, counting from the last child</td>
+    </tr>
+    <tr>
+      <td>:nth-of-type(n)</td>
+      <td>p:nth-of-type(2)</td>
+      <td>Selects every p-element that is the second p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:only-of-type</td>
+      <td>p:only-of-type</td>
+      <td>Selects every p-element that is the only p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:only-child</td>
+      <td>p:only-child</td>
+      <td>Selects every p-element that is the only child of its parent</td>
+    </tr>
+    <tr>
+      <td>:optional</td>
+      <td>input:optional</td>
+      <td>Selects input elements with no "required" attribute</td>
+    </tr>
+    <tr>
+      <td>:out-of-range</td>
+      <td>input:out-of-range</td>
+      <td>Selects input elements with a value outside a specified range</td>
+    </tr>
+    <tr>
+      <td>::placeholder</td>
+      <td>input::placeholder</td>
+      <td>Selects input elements with placeholder text</td>
+    </tr>
+    <tr>
+      <td>:read-only</td>
+      <td>input:read-only</td>
+      <td>Selects input elements with the 'readonly' attribute specified</td>
+    </tr>
+    <tr>
+      <td>:read-write</td>
+      <td>input:read-write</td>
+      <td>Selects input elements with the 'readonly' attribute NOT specified</td>
+    </tr>
+    <tr>
+      <td>:required</td>
+      <td>input:required</td>
+      <td>Selects input elements with the 'required' attribute specified</td>
+    </tr>
+    <tr>
+      <td>:root</td>
+      <td>:root</td>
+      <td>Selects the document's root element</td>
+    </tr>
+    <tr>
+      <td>::selection</td>
+      <td>::selection</td>
+      <td>Selects the portion of an element that is selected by a user</td>
+    </tr>
+    <tr>
+      <td>:target</td>
+      <td>#news:target</td>
+      <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
+    </tr>
+    <tr>
+      <td>:valid</td>
+      <td>input:valid Selects all input</td>
+      <td>elements with a valid value</td>
+    </tr>
+    <tr>
+      <td>:visited</td>
+      <td>a:visited</td>
+      <td>Selects all visited links</td>
+    </tr>
+
+  </table>
+
+
+</body>
+
+</html>
