@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex20-mycss: float-left/right clear-both/none</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    .float-values {
+      list-style-type: square;
+    }
+
+    span {
+      float: left;
+      width: 0.7em;
+      font-size: 400%;
+      font-family: 'algerian', courier;
+      line-height: 80%;
+    }
+
+    .image1 {
+      float: right;
+    }
+
+    .image2 {
+      float: left;
+    }
+
+    .image3 {
+      float: none;
+    }
+
+    .clear-props {
+      list-style-type: disc;
+    }
+
+    .div1,
+    .div3 {
+      float: left;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      border: 3px solid #73AD21;
+    }
+
+    .div2,
+    .div12 {
+      border: 2px solid red;
+    }
+
+    .div4 {
+      border: 2px solid red;
+      clear: left;
+    }
+
+    .div5 {
+      float: right;
+      margin: 0 0 12px 8px;
+      padding: 15px;
+      border: 2px dotted red;
+      text-align: center;
+    }
+
+    .div6 {
+      width: 900px;
+    }
+
+    .div7 {
+      border: 2px solid red;
+      clear: both;
+    }
+
+    .div8,
+    .div11 {
+      float: right;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      border: 3px solid #73AD21;
+    }
+
+    .div9 {
+      border: 2px solid red;
+      clear: right;
+    }
+
+    .div10 {
+      float: right;
+      margin: 0 0 15px 20px;
+      padding: 15px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .block {
+      width: 25%;
+      height: 150px;
+      background-color: gold;
+      font-size: 13px;
+      padding: 4px;
+    }
+
+    .content {
+      background-color: #ccc;
+      padding: 2px 4px;
+    }
+
+    .child {
+      color: #999;
+      background-color: #222;
+      padding: 2px 4px;
+      display: inline-block;
+      float: right;
+    }
+
+    .content p {
+      margin: 0;
+    }
+
+    .block.two .content {
+      clear: right;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Layout - float and clear</h1>
+  <h2>The CSS float property specifies how an element should float</h2>
+  <p>The CSS clear property specifies what elements can float beside the cleared element and on which side.</p>
+
+  <h2>The float Property</h2>
+  <p>The float property is used for positioning and formatting content e.g. let an image float left to the text in a
+    container.</p>
+
+  <ol class="float-values">The float property can have one of the following values:
+    <li>left - The element floats to the left of its container</li>
+    <li>right - The element floats to the right of its container</li>
+    <li>none - The element does not float (will be displayed just where it occurs in the text). This is default</li>
+    <li>inherit - The element inherits the float value of its parent</li>
+  </ol>
+
+  <p>In its simplest use, the float property can be used to wrap text around images.</p>
+
+  <h2>float: right ex1</h2>
+  img {<br>
+  float: right;<br>
+  }<br>
+  <p style="color: black; text-indent: 18px;">
+    <img src="./img/pineapple2.jpg" class="image1" alt="img of pineapple, whole and in longitudinal section"
+      style="width:160px;height:150px;margin-left:15px;">
+
+    The pineapple (Ananas comosus) is a tropical plant with an edible fruit, also called a pineapple, and the most
+    economically significant plant in the family Bromeliaceae.<br>
+    Pineapples may be cultivated from the offset produced at the top of the fruit, possibly flowering in five to
+    ten months and fruiting in the following six months. Pineapples do not ripen significantly after harvest.
+    In 2016, Costa Rica, Brazil, and the Philippines accounted for nearly one-third of the world's production of
+    pineapples.
+
+    <img src="./img/pineapple3.jpg" class="image1" alt="img of a young pineapple in flower"
+      style="width:170px;height:150px;margin-left:15px;">
+    <br>
+    The word "pineapple" in English was first recorded to describe the reproductive organs of conifer trees (now termed
+    pine cones). When European explorers encountered this tropical fruit in the Americas, they called them "pineapples"
+    (first referenced in 1664, for resemblance to pine cones).
+    In the scientific binomial Ananas comosus, ananas, the original name of the fruit, comes from the Tupi word nanas,
+    meaning "excellent fruit", as recorded by André Thevet in 1555, and comosus, "tufted", refers to the stem of the
+    fruit. Other members of the genus Ananas are often called pine, as well, in other languages.
+
+    <img src="./img/pineapple4.jpg" class="image1" alt="img of pineapple in the starting stage"
+      style="width:160px;height:150px;margin-left:15px;">
+    <br>
+    The pineapple is a herbaceous perennial, which grows to 1.0 to 1.5 m (3.3 to 4.9 ft) tall, although sometimes it can
+    be taller. In appearance, the plant has a short, stocky stem with tough, waxy leaves. When creating its fruit, it
+    usually produces up to 200 flowers, although some large-fruited cultivars can exceed this. Once it flowers, the
+    individual fruits of the flowers join together to create a multiple fruit. After the first fruit is produced, side
+    shoots (called 'suckers' by commercial growers) are produced in the leaf axils of the main stem. These may be
+    removed for propagation, or left to produce additional fruits on the original plant. Commercially, suckers that
+    appear around the base are cultivated.
+
+    <img src="./img/pineaples_plant.jpg" class="image1" alt="img of pineapple plant"
+      style="width:190px;height:150px;margin-left:15px;">
+    <br>
+    The plant is indigenous to South America and is said to originate from the area between southern Brazil and
+    Paraguay; however, little is known about the origin of the domesticated pineapple (Pickersgill, 1976). MS Bertoni
+    (1919)[19] considered the Paraná–Paraguay River drainages to be the place of origin of A. comosus.The natives
+    of southern Brazil and Paraguay spread the pineapple throughout South America, and it eventually reached the
+    Caribbean, Central America, and Mexico, where it was cultivated by the Mayas and the Aztecs. Columbus encountered
+    the pineapple in 1493 on the leeward island of Guadeloupe. He called it piña de Indes, meaning "pine of the
+    Indians", and brought it back with him to Spain, thus making the pineapple the first bromeliad to be introduced by
+    humans outside of the New World. The Spanish introduced it into the Philippines, Hawaii (introduced in the 18th
+    century, first commercial plantation 1886), Zimbabwe, and Guam. The Portuguese took the fruit from Brazil and
+    introduced it into India by 1550.
+
+    <img src="./img/pineapples5.jpg" class="image1" alt="img of riped pineapples"
+      style="width:160px;height:150px;margin-left:15px;">
+    <br>
+    The pineapple was brought to northern Europe by the Dutch from their colony in Surinam. The first pineapple to be
+    successfully cultivated in Europe, is said to have been grown by Pieter de la Court at Meerburg in 1658.<br>
+    In England, the first pineapple was grown at Dorney Court, Dorney in Buckinghamshire, and a huge "pineapple stove"
+    needed to grow the plants had been built at the Chelsea Physic Garden in 1723. In France, King Louis XV was
+    presented with a pineapple that had been grown at Versailles in 1733. Catherine the Great ate pineapples grown on
+    her own estates before her death in 1796. Because of the expense of direct import and the enormous cost in
+    equipment and labour required to grow them in a temperate climate, using hothouses called "pineries", pineapples
+    soon became a symbol of wealth. They were initially used mainly for display at dinner parties, rather than being
+    eaten, and were used again and again until they began to rot. By the second half of the 18th century, the
+    production of the fruit on British estates had become the subject of great rivalry between wealthy aristocrats.
+    John Murray, 4th Earl of Dunmore built a hothouse on his estate surmounted by a huge stone cupola 14 metres tall in
+    the shape of the fruit; it is known as the Dunmore Pineapple.
+    <img src="./img/pineapple_chicken_dish.jpg" class="image1" alt="img of pineapple and chicken dish"
+      style="width:190px;height:150px;margin-left:15px;">
+  </p>
+  <p>In this example, inside, all mages will float to
+    the right, and the text in the paragraph will wrap around the each image.
+  </p>
+
+  <h2>float: right ex2</h2>
+  .div>img {<br>
+  float: right;<br>
+  margin: 0 0 12px 8px;<br>
+  padding: 15px;<br>
+  border: 2px dotted red;<br>
+  text-align: center;<br>
+  }<br>
+  <br>
+  .div {<br>
+  width: 900px;<br>
+  height: 370px;<br>
+  }<br>
+  <br>
+  <div class="div6">
+    <div class="div5">
+      <img src="./img/programmer1.jpg" width="300" height="180"><br>Programming is fun!
+    </div>
+    <p style="color: black; text-indent: 18px;">
+      Computer programming is the process of designing and building an executable computer program for accomplishing a
+      specific computing task. Programming involves tasks such as: analysis, generating algorithms, profiling
+      algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming
+      language (commonly referred to as coding). The source code of a program is written in one or more languages
+      that are intelligible to programmers, rather than machine code, which is directly executed by the central
+      processing unit. The purpose of programming is to find a sequence of instructions that will automate the
+      performance of a task (which can be as complex as an operating system) on a computer, often for solving a given
+      problem. The process of programming thus often requires expertise in several different subjects, including
+      knowledge of the application domain, specialized algorithms, and formal logic.<br>
+      Tasks accompanying and related to programming include: testing, debugging, source code maintenance, implementation
+      of build systems, and management of derived artifacts, such as the machine code of computer programs. These might
+      be considered part of the programming process, but often the term software development is used for this larger
+      process with the term programming, implementation, or coding reserved for the actual writing of code. Software
+      engineering combines engineering techniques with software development practices. Reverse engineering is the
+      opposite process. A hacker is any skilled computer expert that uses their technical knowledge to overcome a
+      problem, but it can also mean a security hacker in common language.
+    </p>
+    <p>
+      In the paragraph above, the div element is 900 pixels wide. It contains another div with
+      the image {width="250"; height="160"}.
+      The div with image element will float to the right. Margins are added to the div to push the text away from
+      the div. Borders and padding are added to the div to frame in the picture and the caption.
+    </p>
+  </div>
+
+  <h2>float: right ex3</h2>
+  .div {<br>
+  float: right;<br>
+  margin: 0 0 15px 20px;<br>
+  padding: 15px;<br>
+  border: 1px solid black;<br>
+  text-align: center;<br>
+  }<br>
+  <h3>What does computing mean?</h3>
+  <div class="div10">
+    <img src="./img/technology-wallpaper1.jpg" width="500" height="300"><br>Computing Technologies!
+  </div>
+
+  <p style="color: black; text-indent: 18px;">
+    Computing is any activity that uses computers to manage, process, and communicate information. It includes
+    development of both hardware and software. Computing is a critical, integral component of modern industrial
+    technology. Major computing disciplines include computer engineering, software engineering, computer science,
+    information systems, and information technology.<br>
+    In a general way, we can define computing to mean any goal-oriented activity requiring, benefiting from, or creating
+    computers. Thus, computing includes designing and building hardware and software systems for a wide range of
+    purposes; processing, structuring, and managing various kinds of information; doing scientific studies using
+    computers; making computer systems behave intelligently; creating and using communications and entertainment media;
+    finding and gathering information relevant to any particular purpose, and so on. The list is virtually endless, and
+    the possibilities are vast.<br>
+    However, Computing Curricula 2005 also recognizes that the meaning of "computing" depends on the context:<br>
+    Computing also has other meanings that are more specific, based on the context in which the term is used. For
+    example, an information systems specialist will view computing somewhat differently from a software engineer.
+    Regardless of the context, doing computing well can be complicated and difficult. Because society needs people to do
+    computing well, we must think of computing not only as a profession but also as a discipline.<br>
+    The term "computing" has sometimes been narrowly defined, as in a 1989 ACM report on Computing as a Discipline:<br>
+    The discipline of computing is the systematic study of algorithmic processes that describe and transform
+    information: their theory, analysis, design, efficiency, implementation, and application. The fundamental question
+    underlying all computing is "What can be (efficiently) automated?"<br>
+    The term "computing" is also synonymous with counting and calculating. In earlier times, it was used in reference to
+    the action performed by mechanical computing machines, and before that, to human computers.<br>
+    <br>
+  </p>
+
+  <p>
+    In the paragraph above, the div element is an image with caption.
+    The div element will float to the right. Margins are added to the div to push the text away from the div.
+    Borders and padding are added to the div to frame in the picture and the caption.
+  </p>
+
+
+  <h2>float: left ex1</h2>
+  img {<br>
+  float: left;<br>
+  }<br>
+  <p style="color: black; text-indent: 18px;">
+    <img src="./img/mango.jpg" class="image2" alt="Mango" style="width:160px;height:150px;margin-right:15px;">
+    Mangoes are juicy stone fruit (drupes) produced from numerous species of tropical trees belonging to the flowering
+    plant genus Mangifera, cultivated mostly for this edible fruit.<br>
+    Most of these species are found in nature as wild mangoes. The genus belongs to the cashew family Anacardiaceae.
+    Mangoes are native to South Asia, from where the "common mango" or "Indian mango", Mangifera indica, has been
+    distributed worldwide to become one of the most widely cultivated fruits in the tropics. Other Mangifera species
+    (e.g. horse mango, Mangifera foetida) are grown on a more localized basis.<br>
+    It is the national fruit of India and Pakistan, and the national tree of Bangladesh. It is the unofficial
+    national fruit of the Philippines.<br>
+    The English word "mango" (plural "mangoes" or "mangos") originated from the Malayalam word māṅṅa (or mangga) via
+    Dravidian-Tamil (mankay as man for mango tree and kay for fruit, or maangaay) during the spice trade period with
+    South India in the 15th and 16th centuries.<br>
+    The earliest known reference to the cultivation of mangoes can be traced to India up to 2000BCE[8] Mango was brought
+    to East Asia around 400–500 BCE, in the 15th century to the Philippines, and in the 16th century to Africa and
+    Brazil by Portuguese explorers. There have been several verified accounts and novels with references to the mango
+    fruit in Indian Tamil literary works, the most prominent known reference to the mango fruit being to the 5th century
+    saint Karaikkal Ammaiyar, where it is mentioned that she received a mango fruit as a boon from Lord Shiva, due to
+    her devotion when her husband requested it, after providing alms one out of two mangoes given by her husband earlier
+    to a Ascetic, disguised as Lord Shiva.<br>
+    Mango is mentioned by Hendrik van Rheede, the Dutch commander of the Malabar region in his 1678 book, Hortus
+    Malabaricus, about plants having economic value. When mangoes were first imported to the American colonies in
+    the 17th century, they had to be pickled because of lack of refrigeration. Other fruits were also pickled and came
+    to be called "mangoes", especially bell peppers, and in the 18th century, the word "mango" became a verb meaning "to
+    pickle".
+  </p>
+  <p>In this example, the image will float to the left in the paragraph, and the text in the paragraph will wrap
+    around the image too (to the right).</p>
+
+  <h2>float: left ex2</h2>
+  <p>
+    <span>T</span>his is some text.
+    This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+  </p>
+
+  <p>
+    In this paragraph, the first letter of the text is embedded in a span element.
+    The span element has a width that is 0.7 times the size of the current font.
+    The font-size of the span element is 400% (quite large) and the line-height is 80%.
+    The font of the letter in the span will be in "Algerian".
+  </p>
+
+  <h2>float: none ex1</h2>
+  img {<br>
+  float: none;<br>
+  }<br>
+  <p style="width:610px;height:300px;">
+    <img src="./img/avocado.jpg" class="image3" alt="Avocado" style="width:160px;height:150px;margin-right:15px;">
+
+    The avocado fruit is a climacteric, single-seeded berry, due to the imperceptible endocarp covering the
+    seed, rather than a drupe.
+  </p>
+  <p>In this example, the image will be displayed just where it occurs in the text (float: none;).</p>
+
+  <h2>float: none ex2</h2>
+  <p style="color: black; text-indent: 18px;">
+    Information technology (IT) is the use of computers to store, retrieve, transmit, and manipulate data, or
+    information, often in the context of a business or other enterprise. IT is considered to be a subset of
+    information and communications technology (ICT). An information technology system (IT system) is generally an
+    information system, a communications system or, more specifically speaking, a computer system – including all
+    hardware, software and peripheral equipment – operated by a limited group of users.<br>
+    Humans have been storing, retrieving, manipulating, and communicating information since the Sumerians in Mesopotamia
+    developed writing in about 3000 BC, but the term information technology in its modern sense first appeared in a
+    1958 article published in the Harvard Business Review; authors Harold J. Leavitt and Thomas L. Whisler commented
+    that "the new technology does not yet have a single established name. We shall call it information technology (IT)."
+    Their definition consists of three categories: techniques for processing, the application of statistical and
+    mathematical methods to decision-making, and the simulation of higher-order thinking through computer programs.
+    <img src="./img/global-computer-network1.jpg" class="image3" alt="img of global-computer-network"
+      style="width:420px;height:250px;margin:15px;">
+    The term is commonly used as a synonym for computers and computer networks, but it also encompasses other
+    information distribution technologies such as television and telephones. Several products or services within an
+    economy are associated with information technology, including computer hardware, software, electronics,
+    semiconductors, internet, telecom equipment, and e-commerce.<br>
+    Based on the storage and processing technologies employed, it is possible to distinguish four distinct phases of IT
+    development: pre-mechanical (3000 BC – 1450 AD), mechanical (1450–1840), electromechanical (1840–1940), and
+    electronic (1940–present).
+  </p>
+  <p>In this example, the image also is displayed just where it has occured (in the middle of the text) with the
+    property 'float: none;'</p>
+
+  <h1>The clear Property</h1>
+
+  <h2>The CSS clear property specifies what elements can float beside the cleared
+    element and on which side.</h2>
+
+  <p>The most common way to use the clear property is after you have used a float property on an element.</p>
+
+  <ol class="clear-props">The clear property can have one of the following values:</ol>
+  <li>none - Allows floating elements on both sides. This is default</li>
+  <li>left - No floating elements allowed on the left side</li>
+  <li>right- No floating elements allowed on the right side</li>
+  <li>both - No floating elements allowed on either the left or the right side</li>
+  <li>inherit - The element inherits the clear value of its parent</li>
+
+  <p>When clearing floats, you should match the clear to the float: If an element is floated to the left, then you
+    should clear to the left.</p>
+
+  <h3>div2 is without clear</h3>
+  <div class="div1">div1</div>
+  <div class="div2">div2<br>
+    Notice that div2 is after div1 in the HTML code. However, since div1 floats to the left,
+    the text in div2 flows around div1.<br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+    lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</div>
+  <br>
+  <h3>div4 is with clear:left</h3>
+  <div class="div3">div3</div>
+  <div class="div4">div4<br>
+    Here, div4 is clear: left; moves div4 down below the floating div3. The value "left" clears
+    elements floated to the left.<br>
+    If an element is floated to the left, then you should clear to the left.
+  </div>
+
+  <h3>div12 is without clear </h3>
+  <div class="div11">div11</div>
+  <div class="div12">div12<br>
+    Here, the div12 is after div11 in the HTML code and since div11 floats to the right,
+    the text in div12 flows around div11.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+    lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Phasellus imperdiet, nulla et dictum
+    interdum, nisi lorem egestas odio.
+  </div>
+
+  <h3>div9 is with clear: right</h3>
+  <div class="div9">div9<br>
+    Here, div9 is clear: right; allows div9 to be above the floating div8. The value "right" clears
+    elements floated to the right - means that no floating elements are allowed on the right side (of the div9)<br>
+  </div>
+  <div class="div8">div8</div>
+
+  <h3>div7 is with clear: both</h3>
+  <div class="div3">div3</div>
+  <div class="div7">div7<br>
+    You can also clear 'right' or 'left' or 'both'. Here, div7 is clear: both but since div3 has float: left, it
+    moves div7 down below the floating div3.
+  </div>
+
+  <h2>Отже</h2>
+  <p>Властивість <b>clear</b> встановлює, з якого боку елемента заборонено його обтікання іншими елементами.</p>
+  <p>Іншими словами, властивість визначає чи елемент має бути розміщений поруч із пливучим елементом (властивість
+    clear:none або без вказання узагалі властивості clear) чи переміщений донизу/доверху властивість clear: left чи
+    clear: right.</p>
+  <p>Ви можете вказати сторону (або обидві - властивість clear: both), з якої елемент не буде обтікатися іншими.</p>
+  <p>Якщо застосувати властивість для непливучого елементу, він переміщується донизу, доки його межа не буде нижча за
+    межі верхнього пливучого елементу. Під час цього переміщення не відбувається ефект об'єднання відступів(margin).<br>
+    Якщо застосувати властивість для пливучого елементу, його поведінка схожа, з попереднім прикладом, але у цьому
+    випадку наступні пливучі елементи, які розміщені нижче сторінкою, не можуть бути розміщені вище за попередні.</p>
+
+  <p>У першому прикладі нижче ми не вказували жодної властивості <b>clear</b> для сірого блоку (непливучий елемент) тим
+    самим дозволивши його контенту обтікати чорний блок з правої сторони</p>
+
+  <div class="block one">
+    <div class="child">float: right;</div>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </div>
+  <p>У другому прикладі за допомогою властивості <b>clear:right</b> ми відмінили обтікання контенту
+    сірого блоку з правої сторони і перемістили сам блок донизу</p>
+  <div class="block two">
+    <div class="child">float: right;</div>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

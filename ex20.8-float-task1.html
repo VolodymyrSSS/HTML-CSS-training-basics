@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex20.8_mycss: using float, task1: Дерево з вузлами у декілька рядків</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    .for-task {
+      width: 50%;
+      background-color: pink;
+      border: 2px dashed navy;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      float: left;
+    }
+
+    .open .icon {
+      cursor: pointer;
+      background: url(https://js.cx/sprite-tree/minus.gif);
+    }
+
+    .closed .icon {
+      cursor: pointer;
+      background: url(https://js.cx/sprite-tree/plus.gif);
+    }
+
+    .leaf .icon {
+      cursor: text;
+      background: url(https://js.cx/sprite-tree/article.gif);
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    .text {
+      /* float: right; */
+      margin: 6px 0 6px 16px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Завдання: створити дерево списку, гілками якого є вузли з іконками</h1>
+
+  <p>Додатковими вимогами для верстки також є:<br>
+    - Підтримка багаторядкових назв у вузлах;<br>
+    - При наведенні на іконку, курсор повинен перетворитись на вказівний палець;<br>
+  </p>
+
+  <div class="for-task">
+
+    <p>Для створення дерева надається макет-список ul/li та посилання на картинки для створення спрайта:</p>
+    <ul>
+      <li class="open1">
+        <div class="icon1"></div>
+        <div class="text1">Розділ 1
+          <br>(містить два рядки)</div>
+        <ul>
+          <li class="closed1">
+            <div class="icon1"></div>
+            <div class="text1">розділ 1.1</div>
+          </li>
+          <li class="leaf1">
+            <div class="icon1"></div>
+            <div class="text1">Сторінка 1.2
+              <br>(містить два рядки)</div>
+          </li>
+        </ul>
+      </li>
+      <li class="closed1">
+        <div class="icon1"></div>
+        <div class="text1">Розділ 2
+          <br>(містить два рядки)</div>
+      </li>
+    </ul>
+    <p>посилання на картинки для іконок вузлів надаються нижче:</p>
+    <img src="https://js.cx/sprite-tree/minus.gif" alt="image minus" width="16" height="16">
+    <img src="https://js.cx/sprite-tree/plus.gif" alt="image plus" width="16" height="16">
+    <img src="https://js.cx/sprite-tree/article.gif" alt="image article" width="16" height="16">
+
+  </div>
+
+
+
+  <p>Для вирішення задачі можна застосувати принцип двоколонкової верстки із застосуванням
+    властивості float + margin. Де іконки будуть лівою колонкою а зміст гілок дерева списку - правою колонкою. Проте, це
+    ускладнить вирішення задачі, тому можна усім іконкам задати float: left; а для контексту гілок дерева, зробити
+    відступ звичайними margin.
+  </p>
+
+  <p>спочатку потрібно створити картинку спрайта</p>
+
+  <ul>
+    <li class="open">
+      <div class="icon"></div>
+      <div class="text">Раздел 1
+        <br>(занимает две строки)
+      </div>
+      <ul>
+        <li class="closed">
+          <div class="icon"></div>
+          <div class="text">Раздел 1.1</div>
+        </li>
+        <li class="leaf">
+          <div class="icon"></div>
+          <div class="text">Страница 1.2
+            <br>(занимает две строки)</div>
+        </li>
+      </ul>
+    </li>
+    <li class="closed">
+      <div class="icon"></div>
+      <div class="text">Раздел 2
+        <br>(занимает две строки)</div>
+    </li>
+  </ul>
+
+</body>
+
+</html>

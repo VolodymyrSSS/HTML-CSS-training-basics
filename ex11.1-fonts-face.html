@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex11.1_mycss-font-face</title>
+
+  <style>
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Roboto';
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      color: brown;
+      text-align: left;
+      padding: 10px;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Приклад завантаження шрифта з зовнішнього ресурсу</h1>
+
+  <p>Шрифт "Roboto" буде завантажений тільки в тому випадку, якщо HTML-документ містить елемент, що його
+    використовує. Якщо ні, шрифт не буде завантажений.</p>
+
+  <h2>Формати шрифтів для завантаження<br>
+    <br>
+    "woff" - WOFF (Web Open Font Format) - .woff<br>
+    "truetype" - TrueType - .ttf<br>
+    "opentype" - OpenType - .ttf, .otf<br>
+    "embedded-opentype" - Embedded OpenType - .eot<br>
+    "svg" - SVG Font - .svg, .svgz
+  </h2>
+
+  <p>Формат файлу WOFF був розроблений, щоб забезпечити легке, просте у застосуванні стиснення шрифтів, придатних для
+    використання з функцією @font-face. Будь-який належним чином ліцензований TrueType / OpenType / Open Font Format
+    файл може бути упакований у форматі WOFF для використання в Інтернеті.
+  </p>
+  <p>Формат WOFF2 забезпечує поліпшене стиснення у форматі WOFF, і він спостерігається приблизно на 30% швидше (і навіть
+    на 50% швидше), ніж WOFF1, в залежності від використовуваного шрифту.
+  </p>
+
+</body>
+
+</html>

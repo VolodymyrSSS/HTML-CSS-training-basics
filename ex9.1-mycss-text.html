@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex9.1-mycss-text-effects</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .ex1 {
+      text-shadow: 2px 2px;
+    }
+
+    .ex2 {
+      text-shadow: 2px 2px red;
+    }
+
+    .ex3 {
+      text-shadow: 2px 2px 5px red;
+    }
+
+    .ex4 {
+      text-shadow: 0 0 3px #FF0000;
+    }
+
+    .ex5 {
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+    }
+
+    .ex6 {
+      text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    }
+
+    .ex7 {
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    }
+
+    .ex8 {
+      color: yellow;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    div.for-para {
+      width: 50%;
+      border: 1px solid gray;
+      padding: 8px;
+      background-color: pink;
+      margin: 20px auto;
+    }
+
+    p.test1 {
+      white-space: nowrap;
+      width: 200px;
+      border: 1px solid #000000;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    p.test2 {
+      white-space: nowrap;
+      width: 200px;
+      border: 1px solid #000000;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    div.test3,
+    div.test4 {
+      white-space: nowrap;
+      width: 200px;
+      overflow: hidden;
+      border: 1px solid #000000;
+    }
+
+    div.test3:hover,
+    div.test4:hover {
+      overflow: visible;
+    }
+
+    p.test5 {
+      width: 11em;
+      border: 1px solid #000000;
+    }
+
+    p.test6 {
+      width: 11em;
+      border: 1px solid #000000;
+      word-wrap: break-word;
+    }
+
+    p.test7 {
+      width: 140px;
+      border: 1px solid #000000;
+      word-break: keep-all;
+    }
+
+    p.test8 {
+      width: 140px;
+      border: 1px solid #000000;
+      word-break: break-all;
+    }
+
+    p.test9 {
+      writing-mode: horizontal-tb;
+    }
+
+    span.test10 {
+      writing-mode: vertical-rl;
+    }
+
+    p.test11 {
+      writing-mode: vertical-rl;
+    }
+
+    .showblock {
+      width: 70%;
+      background-color: pink;
+      padding: 15px;
+    }
+
+    .kern-para1 {
+      font-kerning: normal;
+    }
+
+    .kern-para2 {
+      font-kerning: auto;
+    }
+
+    .kern-para3 {
+      font-kerning: unset;
+    }
+
+    .kern-para4 {
+      font-kerning: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Text Effects</h1>
+
+  <h2>CSS Text Shadow</h2>
+  <p><b>Note:</b> Internet Explorer 9 and earlier versions, do not support the text-shadow property.</p>
+  <p><b>The CSS text-shadow property applies shadow to text</b></p>
+  <p>In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px)</p>
+  <div class="for-para">
+    <h3 class="ex1">Text-shadow effect!</h3>
+  </div>
+
+  <p>Next, add a color to the shadow</p>
+  <div class="for-para">
+    <h3 class="ex2">Text-shadow effect!</h3>
+  </div>
+
+  <p>Then, add a blur effect to the shadow</p>
+  <div class="for-para">
+    <h3 class="ex3">Text-shadow effect!</h3>
+  </div>
+
+  <p>The following example shows a red neon glow shadow</p>
+  <div class="for-para">
+    <h3 class="ex4">Text-shadow effect!</h3>
+  </div>
+
+  <p>The following example shows a white text with black shadow</p>
+  <div class="for-para">
+    <h3 class="ex5">Text-shadow effect!</h3>
+  </div>
+
+  <h2>Multiple Shadows</h2>
+  <p>To add more than one shadow to the text, you can add a comma-separated list of shadows</p>
+  <p>The following example shows a red and blue neon glow shadow</p>
+  <div class="for-para">
+    <h3 class="ex6">Text-shadow effect!</h3>
+  </div>
+
+  <p>The following example shows a white text with black, blue, and darkblue shadow</p>
+  <div class="for-para">
+    <h3 class="ex7">Text-shadow effect!</h3>
+  </div>
+
+  <p>You can also use the text-shadow property to create a plain border around some text (without shadows)</p>
+  <div class="for-para">
+    <h3 class="ex8">Text-shadow effect!</h3>
+  </div>
+
+
+  <h2>CSS Text Overflow</h2>
+  <p><b>The CSS text-overflow property specifies how overflowed content that is not displayed should be signaled to the
+      user</b></p>
+  <p>Example: The following two paragraphs contains a long text that will not fit in the box.</p>
+  <div class="for-para">
+    <h3>text-overflow: clip:</h3>
+    <p class="test1">This is some long text that will not fit in the box</p>
+
+    <h3>text-overflow: ellipsis:</h3>
+    <p class="test2">This is some long text that will not fit in the box</p>
+  </div>
+
+  <p>Have a look at another ones</p>
+  <div class="for-para">
+    <p>Hover over the two divs below, to see the entire text.</p>
+    <div class="test3" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+    <br>
+    <div class="test4" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+  </div>
+
+  <h2>CSS Word Wrapping</h2>
+  <p><b>The CSS word-wrap property allows long words to be able to be broken and wrap onto the next line</b></p>
+  <div class="for-para">
+    <p class="test5"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word
+      won't break and wrap to the next line.</p>
+    <p>Allow long words to be able to be broken and wrap onto the next line</p>
+    <p class="test6"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word
+      will break and wrap to the next line.</p>
+  </div>
+
+  <h2>CSS Word Breaking</h2>
+  <p>The CSS word-break property specifies line breaking rules.</p>
+  <div class="for-para">
+    <p class="test7">This paragraph contains some text. This line will-break-at-hyphens.</p>
+
+    <p class="test8">This paragraph contains some text. The lines will break at any character.</p>
+
+    <p><b>Note:</b> The word-break property is not supported in Opera 12 and earlier versions.</p>
+  </div>
+
+  <h2>CSS Writing Mode</h2>
+  <p><b>The CSS writing-mode property specifies whether lines of text are laid out horizontally or vertically</b></p>
+  <div class="for-para">
+    <p class="test9">Some text with default writing-mode.</p>
+
+    <p>Some text with a span element with a <span class="test10">vertical-rl</span> writing-mode.</p>
+
+    <p class="test11">Some text with writing-mode: vertical-rl.</p>
+  </div>
+
+  <h2>Кернинг (свойство font-kerning)</h2>
+  <p>Кернинг – это изменение межбуквенного промежутка: для каждой пары букв подбирается свой интервал. Символы могут
+    отодвигаться, придвигаться, не двигаться.<br>
+  </p>
+  <div class='showblock'>
+    В этих примерах между буквами 'ьт' и 'шт' расстояние одинаковое, а кажется как будто после мягкого знака следует
+    пробел, но слово выглядит единым целым при использовании кернинга
+    <p class="kern-para1">
+      штатгальтер, Тенотчетлан, нумо хлопці ляхів бити!
+    </p>
+    1. Здесь свойство задано font-kerning: normal - это значит что кернинг используется
+    <p class="kern-para2">
+      штатгальтер, Тенотчетлан, нумо хлопці ляхів бити!
+    </p>
+    2. Здесь свойство задано font-kerning: auto - на усмотрение браузера: кернинг используется для среднего и большого
+    размеров шрифта, не используется только для маленького размера шрифта (то же что и значение 'initial')
+    <p class="kern-para3">
+      штатгальтер, Тенотчетлан, нумо хлопці ляхів бити!
+    </p>
+    3. Здесь свойство задано font-kerning: unset - это значит что кернинг наследует значение родителя (то же что и
+    значение 'inherit')
+    <p class="kern-para4">
+      штатгальтер, Тенотчетлан, нумо хлопці ляхів бити!
+    </p>
+    4. Здесь свойство задано font-kerning: none - это значит что кернинг не используется
+  </div>
+
+
+</body>
+
+</html>

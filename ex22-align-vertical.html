@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex22_mycss: vertical-align</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    .center-padding {
+      padding: 50px 0;
+      border: 3px solid red;
+    }
+
+    .center-middle {
+      text-align: center;
+      padding: 70px 0;
+      border: 3px solid red;
+    }
+
+    .center-lineheight1,
+    .center-lineheight2 {
+      line-height: 200px;
+      height: 200px;
+      border: 3px solid brown;
+      text-align: center;
+    }
+
+    /* If the text has multiple lines, add the following: */
+    .center-lineheight2 p {
+      line-height: 1.5;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: wheat;
+    }
+
+    .center-pos-trnsf {
+      height: 200px;
+      position: relative;
+      border: 3px solid orangered;
+    }
+
+    .center-pos-trnsf p {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Layout - Vertical Align</h1>
+
+  <h2>Center Vertically - Using padding</h2>
+  <p>Simple solution is to <b>use top and bottom padding</b></p>
+  <p>In this example, we use the padding property to center the div element vertically:</p>
+  div {<br>
+  padding: 50px 0;<br>
+  border: 3px solid red;<br>
+  }<br>
+
+  <div class="center-padding">
+    <p>I am vertically centered.</p>
+  </div>
+
+  <p>In this example, we use padding and text-align to center the div element vertically and horizontally:</p>
+  .div {<br>
+  text-align: center;<br>
+  padding: 70px 0;<br>
+  border: 3px solid red;<br>
+  }<br>
+  <div class="center-middle">
+    <p>I am vertically and horizontally centered.</p>
+  </div>
+
+  <h2>Center Vertically - Using line-height</h2>
+  <p>Another trick is to <b>use the line-height property with a value that is equal to the height property</b>.</p>
+  <p>In this example, we use the line-height property with a value that is equal to the height property and text align
+    to center the div element as vertically as horizontally:</p>
+  .div {<br>
+  line-height: 200px;<br>
+  height: 200px;<br>
+  border: 3px solid green;<br>
+  text-align: center;<br>
+  }<br>
+
+  <div class="center-lineheight1">
+    <p>I am vertically and horizontally centered using line-height</p>
+  </div>
+
+  <p>If the text has multiple lines, add the following:</p>
+  .div p {<br>
+  line-height: 1.5;<br>
+  display: inline-block;<br>
+  vertical-align: middle;<br>
+  }<br>
+  <div class="center-lineheight2">
+    <p>I am vertically and horizontally centered taking in consideration two rows<br>
+      Advice is what we ask for when we already know the answer but wish we didn’t. —Erica Jong
+    </p>
+  </div>
+
+  <h2>Center Vertically - Using position & transform</h2>
+  <p>If padding and line-height are not options, a third solution is to <b>use positioning and the transform
+      property</b></p>
+  <p>In this example, we use positioning and the transform property to vertically and horizontally center the div
+    element:</p>
+  .div {<br>
+  height: 200px;<br>
+  position: relative;<br>
+  border: 3px solid green; <br>
+  }<br>
+  <br>
+  .div p {<br>
+  margin: 0;<br>
+  position: absolute;<br>
+  top: 50%;<br>
+  left: 50%;<br>
+  -ms-transform: translate(-50%, -50%);<br>
+  transform: translate(-50%, -50%);<br>
+  }<br>
+  <div class="center-pos-trnsf">
+    <p>I am vertically and horizontally centered using position & transform</p>
+  </div>
+  <p><b>Note:</b> The transform property is not supported in IE8 and earlier versions.</p>
+
+</body>
+
+</html>

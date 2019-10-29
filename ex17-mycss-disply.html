@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex17-mycss-disply-property</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    div.for-para {
+      width: 50%;
+      border: 1px solid gray;
+      padding: 8px;
+      background-color: pink;
+      margin: 20px auto;
+    }
+
+    .horisontal li {
+      display: inline;
+    }
+
+    span {
+      display: block;
+    }
+
+    .vertical a {
+      display: block;
+    }
+
+    h3.hidden {
+      display: none;
+    }
+
+    h4.hidden {
+      visibility: hidden;
+    }
+
+    .info {
+      padding: 4px 6px;
+    }
+
+    code {
+      font-weight: 700;
+      color: #444;
+      border-bottom: 2px solid #666;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .block {
+      width: 31%;
+      height: 125px;
+      background-color: gold;
+      font-size: 16px;
+      padding: 2px;
+    }
+
+    .block .child {
+      background-color: #222;
+      color: #fff;
+      padding: 4px 6px;
+    }
+
+    .block.one .child {
+      display: block;
+    }
+
+    .block.two .child {
+      display: inline-block;
+    }
+
+    .block.three .child {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Layout - The display Property</h1>
+  <p>The display property is the most important CSS property for controlling layout.</p>
+
+  <h2>The display Property</h2>
+  <p>The display property specifies if/how an element is displayed.</p>
+  <p>Every HTML element has a default display value depending on what type of element it is. The default display value
+    for most elements is block or inline.</p>
+
+  <h2>Block-level Elements</h2>
+  <p>A block-level element always starts on a new line and takes up the full width available (stretches out to the left
+
+    <p>Examples of block-level elements:</p>
+    <p>div>, h1> - h6>, p>, form>, header>, footer>, section></p>
+
+    <h2>Inline Elements</h2>
+    <p>An inline element does not start on a new line and only takes up as much width as necessary.</p>
+    <p>Examples of inline elements: span>, a>, img></p>
+
+    <h2>Display: none;</h2>
+    <p>display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them.
+    </p>
+
+
+    <h2>Override The Default Display Value</h2>
+    <p>As mentioned, every element has a default display value. However, you can override this.<br>
+      Changing an inline element to a block element, or vice versa, can be useful for making the page look a specific
+      way, and still follow the web standards.</p>
+    <p>A common example is making inline li elements for horizontal menus:</p>
+    <p>We will display a list of links as a horizontal menu:</p>
+
+    <div class="for-para">
+      <ul class="horisontal">
+        <li><a href="/html/default.asp" target="_blank">HTML</a></li>
+        <li><a href="/css/default.asp" target="_blank">CSS</a></li>
+        <li><a href="/js/default.asp" target="_blank">JavaScript</a></li>
+      </ul>
+    </div>
+
+    The CSS code for this is:
+    <div class="for-para">
+      li {<br>
+      display: inline;<br>
+      }<br>
+    </div>
+    <p><b>Note:</b> Setting the display property of an element only changes how the element is displayed, NOT what kind
+      of
+      element it is. So, an inline element with display: block; is not allowed to have other block elements inside it.
+    </p>
+    <p>The following example displays span> elements as block elements:</p>
+    <div class="for-para">
+      <span>A display property with a value of "block" results in</span> <span>a line break between the two
+        elements.</span>
+    </div>
+
+    The CSS code for this is:
+    <div class="for-para">
+      span {<br>
+      display: block;<br>
+      }<br>
+    </div>
+
+    <p>The following example displays <a> elements as block elements:</p>
+    <p>Display links as block elements:</p>
+    <div class="for-para vertical">
+      <a href="/html/default.asp" target="_blank">HTML</a>
+      <a href="/css/default.asp" target="_blank">CSS</a>
+      <a href="/js/default.asp" target="_blank">JavaScript</a>
+    </div>
+
+    The CSS code for this is:
+    <div class="for-para">
+      a {<br>
+      display: block;<br>
+      }<br>
+    </div>
+
+    <h2>Hide an Element - display:none or visibility:hidden?</h2>
+    <p><b>display:none</b> Hiding an element can be done by setting the display property to none.<br>
+      The element will be hidden, and the page will be displayed as if the element is not there:
+    </p>
+    <div class="for-para">
+      <h3>This is a visible heading</h3>
+      <h3 class="hidden">This is a hidden heading</h3>
+      <p>Notice that the h3 element with display: none; does not take up any space.</p>
+    </div>
+
+    The CSS code for this is:
+    <div class="for-para">
+      h3.hidden {<br>
+      display: none;<br>
+      }<br>
+    </div>
+
+    <p><b>visibility:hidden;</b> also hides an element.</p>
+    <p>However, the element will still take up the same space as before. The element will be hidden, but still affect
+      the
+      layout:</p>
+
+    <div class="for-para">
+      <h4>This is a visible heading</h4>
+      <h4 class="hidden">This is a hidden heading</h4>
+      <p>Notice that the hidden heading still takes up space.</p>
+    </div>
+
+    The CSS code for this is:
+    <div class="for-para">
+      h4.hidden {<br>
+      visibility: hidden;<br>
+      }<br>
+    </div>
+
+    <h2>Отже: властивість 'display' вказує тип блока, який використовується для HTML-елемента.</h2>
+    <p>У HTML тип блоку без задання виставляється браузером згідно із актуальною версією специфікації або його
+      налаштувань.<br>
+      У XML значенням без задання для всіх елементів є inline.</p>
+
+    <div class="info">
+      <p>За допомогою властивості <code>display</code> ми можемо вказати тип блока, який використовується для елемента.
+      </p>
+      <p>Для темних блоків нижче, задано значення: <em>block</em>, <em>inline-block</em> й <em>none</em> (приховано)
+        відповідно.</p>
+    </div>
+
+    <div class="wrapper">
+      <div class="block one">
+        <p class="child">block</p>
+      </div>
+      <div class="block two">
+        <p class="child">inline-block</p>
+      </div>
+      <div class="block three">
+        <p class="child">none</p>
+      </div>
+    </div>
+
+    <p>Властивість display може отримувати 20 значень. Ось основні з них:<br>
+      - <b>block</b> - Елемент показується як блоковий. Вказавши це значення для елемента span> - він почне вести себе
+      як блоковий, тобто, його вміст буде завжди починатися з нового рядка.<br>
+      - <b>inline</b> - Елемент відображається як рядковий (span>). Значення inline скасовує особливість блокових
+      елементів завжди починатися з нового рядка.<br>
+      - <b>inline-block</b> - Це значення створює блоковий елемент, який поводить себе подібно рядковому елементу. Його
+      внутрішня частина форматується як у блокового елемента, а сам елемент - як рядковий. Так себе поводить елемент
+      img><br>
+      - <b>inline-table</b> - Визначає, що елемент є таблицею table> , але при цьому таблиця поводить себе як рядковий
+      елемент і обтікається іншими елементами.<br>
+      - <b>inline-flex</b> - З'явився тільки у CSS3. Елемент поводиться як рядковий і викладає вміст згідно
+      флекс-моделі.<br>
+      - <b>flex</b> - Елемент поводиться як блоковий і викладає вміст згідно флекс-моделі<br>
+      - <b>list-item</b> - Елемент поводить себе так само як елемент li><br>
+      - <b>none</b> - Приховує елемент. Макет формується, немов елемента і не було. Зробити видимим елемент можна за
+      допомогою скриптів. При цьому відбувається переформатування даних на сторінці з урахуванням знову доданого
+      елемента.<br>
+    </p>
+
+
+
+
+
+</body>
+
+</html>
