@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex24-mycss: pseudo-classes</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      color: blue;
+    }
+
+    /* unvisited link */
+    a:link {
+      color: red;
+    }
+
+    /* visited link */
+    a:visited {
+      color: green;
+    }
+
+    /* mouse over link */
+    a:hover {
+      color: hotpink;
+    }
+
+    /* selected link */
+    a:active {
+      color: blue;
+    }
+
+    a.highlight:hover {
+      color: orange;
+    }
+
+    .symple1-div {
+      background-color: green;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .symple1-div:hover {
+      background-color: blue;
+    }
+
+    p.visible-onhover {
+      display: none;
+      color: brown;
+      background-color: yellow;
+      padding: 20px;
+    }
+
+    .symple2-div:hover p.visible-onhover {
+      display: block;
+    }
+
+    .first-p,
+    .first-i,
+    .first-i-of-p,
+    .proverb-no {
+      padding: 4px;
+      background-color: wheat;
+      border: 2px dashed brown;
+    }
+
+    .first-p p:first-child {
+      color: red;
+    }
+
+    .first-i i:first-child {
+      color: red;
+    }
+
+    .first-i-of-p p:first-child i {
+      color: red;
+    }
+
+    q:lang(no) {
+      quotes: "~""~";
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    table,
+    td,
+    th {
+      border: 2px solid brown;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS PSEUDO-CLASSES</h1>
+  <p>A pseudo-class is used to define a special state of an element.</p>
+  <p>For example, it can be used to:<br>
+    - Style an element when a user mouses over it<br>
+    - Style visited and unvisited links differently<br>
+    - Style an element when it gets focus
+  </p>
+
+  <h2>Syntax</h2>
+  <p style="color:crimson; background-color:yellow; width:25%">The syntax of pseudo-classes:<br>
+    selector:pseudo-class {<br>
+    property:value;<br>
+    }
+  </p>
+
+  <h2>Anchor pseudo-classes</h2>
+
+  <p>Links can be displayed in different ways:</p>
+  a:link { <br>
+  color: red; - for unvisited link<br>
+  }<br>
+  <br>
+  a:visited {<br>
+  color: green; - for visited link<br>
+  }<br>
+  <br>
+  a:hover {<br>
+  color: hotpink; - mouse over link<br>
+  }<br>
+  <br>
+  a:active {<br>
+  color: blue; - for selected link<br>
+  }<br>
+  <br>
+  <p><b><a href="default.asp" target="_blank">This is a link</a></b></p>
+  <p>In this case, the order of the pseudo-classes is important.</p>
+  <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+  <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+
+  <h2>Pseudo-classes and CSS Classes</h2>
+  <p>When you hover over the first link in the example, it will change color to orange.<br>
+    The second one changes it's color as it was predefined before to a:hover -> hotpink</p>
+  <p><a class="highlight" href="css_syntax.asp">CSS Syntax</a></p>
+  <p><a href="default.asp">CSS Tutorial</a></p>
+
+  <h2>Hover on 'div'</h2>
+  <p>Let's have a look at this example of using the :hover pseudo-class on a div-element:</p>
+  <p>Mouse over the div element below to change its background color:</p>
+  div {<br>
+  background-color: green;<br>
+  color: white;<br>
+  padding: 25px;<br>
+  text-align: center;<br>
+  }<br>
+  <br>
+  <div class="symple1-div">Mouse Over Me</div>
+
+  <p>Selectors can contain more than one pseudo-class, which are listed in a row through the colon, but only if their
+    actions do not contradict each other.</p>
+  <p>So, the a: visited: hover entry is correct, and the entry a: link: visited - no.</p>
+
+  <h2>Simple Tooltip Hover</h2>
+  <p>Let's have a look at this example when hover over div-element and appear inside p-element:</p>
+  p {<br>
+  display: none;<br>
+  background-color: yellow;<br>
+  padding: 20px;<br>
+  }<br>
+  <br>
+  div:hover p {<br>
+  display: block;<br>
+  }<br>
+  <div class="symple2-div" style="font-size:24px; text-align: center;">This is div-element, than hover over me to show
+    the p-element
+    <p class="visible-onhover">Tada! Here I am!</p>
+  </div>
+
+  <h2>CSS - The :first-child Pseudo-class</h2>
+  <p>The :first-child pseudo-class matches a specified element that is the first child of another element.</p>
+  <p><b>Note:</b> For :first-child to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+
+  <h3>Match the first p-element</h3>
+  <p>In the following example, the selector <b>matches any p-element</b> that is the first child of div-element:</p>
+  The code for this:<br>
+  .div p:first-child {<br>
+  color: red;<br>
+  }<br>
+  <br>
+  <div class="first-p">Example of matching the first p-element to be red color:
+    <p>Even if you’re on the right track, you’ll get run over if you just sit there. — Will Rogers</p>
+    <p>A friend is someone who gives you total freedom to be yourself. - Jim Morrison</p>
+    <p>A true friend knows your weaknesses but shows you your strengths; feels your fears but fortifies your faith; sees
+      your anxieties but frees your spirit; recognizes your disabilities but emphasizes your possibilities. - William
+      Arthur Ward</p>
+  </div>
+
+  <h3>Match the first i-element in all p-elements</h3>
+  <p>In the following example, the selector <b>matches the only first i-element</b> in all p-elements:</p>
+  The code for this:<br>
+  .div i:first-child {<br>
+  color: red;<br>
+  }<br>
+  <br>
+  <div class="first-i">Example of matching the only first i-element to be red color:
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+  </div>
+
+  <h3>Match all i-elements in all first child p-elements</h3>
+  <p>In the following example, the selector <b>matches all i-elements in p-elements that are the first child</b> of
+    another element:</p>
+  The code for this:<br>
+  .div p:first-child {<br>
+  color: red;<br>
+  }<br>
+  <br>
+  <div class="first-i-of-p">Example of matching the only first i-element of the first child p-elements to be red color:
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+  </div>
+
+  <h2>CSS - The :lang Pseudo-class</h2>
+  <p>The :lang pseudo-class allows you to define special rules for different languages.</p>
+  <p>In the example below, :lang defines the quotation marks for q-elements with lang="no":</p>
+  The code for this:<br>
+  q:lang(no) {<br>
+  quotes: "~""~";<br>
+  }<br>
+  <div class="proverb-no">
+    <p>Norwegian proverb: <q lang="no">Det er bedre å mate en katt enn mange mus.</q> - It is better to feed one cat
+      than many mice.</p>
+  </div>
+  <p><b>Note:</b> IE8 supports the :lang pseudo class only if a !DOCTYPE is specified.</p>
+
+  <h1>All CSS Pseudo Classes</h1>
+
+  <table>
+    <tr>
+      <th>Selector:</th>
+      <th>Example:</th>
+      <th>Example description:</th>
+    </tr>
+    <tr>
+      <td>:active</td>
+      <td>a:active</td>
+      <td>Selects the active link</td>
+    </tr>
+    <tr>
+      <td>:checked</td>
+      <td>input:checked</td>
+      <td>Selects every checked input-element</td>
+    </tr>
+    <tr>
+      <td>:disabled</td>
+      <td>input:disabled</td>
+      <td>Selects every disabled input-element</td>
+    </tr>
+    <tr>
+      <td>:empty</td>
+      <td>p:empty</td>
+      <td>Selects every p-element that has no children (including text nodes)</td>
+    </tr>
+    <tr>
+      <td>:enabled</td>
+      <td>input:enabled</td>
+      <td>Selects every enabled input-element</td>
+    </tr>
+    <tr>
+      <td>:first-child</td>
+      <td>p:first-child</td>
+      <td>Selects every p-element that is the first child of its parent</td>
+    </tr>
+    <td>:first-of-type</td>
+    <td>p:first-of-type</td>
+    <td>Selects every p-element that is the first p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:focus</td>
+      <td>input:focus</td>
+      <td>Selects the input element which has focus</td>
+    </tr>
+    <tr>
+      <td>:hover</td>
+      <td>a:hover</td>
+      <td>Selects links on mouse over</td>
+    </tr>
+    <tr>
+      <td>:in-range</td>
+      <td>input:in-range</td>
+      <td>Selects input elements with a value within a specified range</td>
+    </tr>
+    <tr>
+      <td>:invalid</td>
+      <td>input:invalid</td>
+      <td>Selects all input elements with an invalid value</td>
+    </tr>
+    <tr>
+      <td>:lang(language)</td>
+      <td>p:lang(it)</td>
+      <td>Selects every p-element with a lang attribute equal to "it" (Italian)</td>
+    </tr>
+    <tr>
+      <td>:last-child</td>
+      <td>p:last-child</td>
+      <td>Selects every p-element that is the last child of its parent</td>
+    </tr>
+    <tr>
+      <td>:last-of-type</td>
+      <td>p:last-of-type</td>
+      <td>Selects every p-element that is the last p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:link</td>
+      <td>a:link</td>
+      <td>Selects all unvisited links</td>
+    </tr>
+    <tr>
+      <td>:not(selector)</td>
+      <td>:not(p)</td>
+      <td> Selects every element that is not a p-element</td>
+    </tr>
+    <tr>
+      <td>:nth-child(n)</td>
+      <td>p:nth-child(2)</td>
+      <td>Selects every p-element that is the second child of its parent</td>
+    </tr>
+    <tr>
+      <td>:nth-last-child(n)</td>
+      <td>p:nth-last-child(2)</td>
+      <td>Selects every p-element that is the second child of its parent, counting from the last child</td>
+    </tr>
+    <tr>
+      <td>:nth-last-of-type(n)</td>
+      <td>p:nth-last-of-type(2)</td>
+      <td>Selects every p-element that is the second p-element of its parent, counting from the last child</td>
+    </tr>
+    <tr>
+      <td>:nth-of-type(n)</td>
+      <td>p:nth-of-type(2)</td>
+      <td>Selects every p-element that is the second p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:only-of-type</td>
+      <td>p:only-of-type</td>
+      <td>Selects every p-element that is the only p-element of its parent</td>
+    </tr>
+    <tr>
+      <td>:only-child</td>
+      <td>p:only-child</td>
+      <td>Selects every p-element that is the only child of its parent</td>
+    </tr>
+    <tr>
+      <td>:optional</td>
+      <td>input:optional</td>
+      <td>Selects input elements with no "required" attribute</td>
+    </tr>
+    <tr>
+      <td>:out-of-range</td>
+      <td>input:out-of-range</td>
+      <td>Selects input elements with a value outside a specified range</td>
+    </tr>
+    <tr>
+      <td>:read-only</td>
+      <td>input:read-only</td>
+      <td>Selects input elements with the 'readonly' attribute specified</td>
+    </tr>
+    <tr>
+      <td>:read-write</td>
+      <td>input:read-write</td>
+      <td>Selects input elements with the 'readonly' attribute NOT specified</td>
+    </tr>
+    <tr>
+      <td>:required</td>
+      <td>input:required</td>
+      <td>Selects input elements with the 'required' attribute specified</td>
+    </tr>
+    <tr>
+      <td>:root</td>
+      <td>root</td>
+      <td>Selects the document's root element</td>
+    </tr>
+    <tr>
+      <td>:target</td>
+      <td>#news:target</td>
+      <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
+    </tr>
+    <tr>
+      <td>:valid</td>
+      <td>input:valid Selects all input</td>
+      <td>elements with a valid value</td>
+    </tr>
+    <tr>
+      <td>:visited</td>
+      <td>a:visited</td>
+      <td>Selects all visited links</td>
+    </tr>
+
+  </table>
+
+</body>
+
+</html>

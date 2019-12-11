@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex23_mycss: style the images</title>
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    .code-block {
+      width: 20%;
+      float: left;
+      padding: 15px;
+      margin: 10px 15px;
+    }
+
+    .clearfix {
+      border: 2px solid brown;
+      background-color: lightgreen;
+      padding: 5px;
+    }
+
+    .image-photo1 img {
+      float: left;
+      width: 300px;
+      height: 300px;
+      border-radius: 8px;
+    }
+
+    .image-photo2 img {
+      float: left;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      margin: 25px;
+    }
+
+    .image-photo3 img {
+      float: left;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+    }
+
+    .image-photo4 img {
+      float: left;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+    }
+
+    .image-photo4 img:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }
+
+    .image-photo5 img {
+      float: left;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .image-photo6 img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-photo7 {
+      float: left;
+      width: 30%;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin: 25px;
+    }
+
+    .container1 p {
+      color: #000;
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    .opacity02,
+    .opacity05,
+    .opacity100 {
+      width: 30%;
+      float: left;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .opacity02>img {
+      opacity: 0.2;
+      filter: alpha(opacity=20);
+      /* For IE8 and earlier */
+    }
+
+    .opacity05>img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      /* For IE8 and earlier */
+    }
+
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .container2 {
+      position: relative;
+    }
+
+    .container2 img {
+      width: 100%;
+      height: auto;
+      opacity: 0.3;
+    }
+
+    .topleft {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .topright {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .bottomleft {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .bottomright {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .center {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .image-photo8 img {
+      width: 32%;
+      height: auto;
+      float: left;
+      max-width: 235px;
+    }
+
+    .blur {
+      -webkit-filter: blur(4px);
+      filter: blur(4px);
+    }
+
+    .brightness {
+      -webkit-filter: brightness(250%);
+      filter: brightness(250%);
+    }
+
+    .contrast {
+      -webkit-filter: contrast(180%);
+      filter: contrast(180%);
+    }
+
+    .grayscale {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    .huerotate {
+      -webkit-filter: hue-rotate(180deg);
+      filter: hue-rotate(180deg);
+    }
+
+    .invert {
+      -webkit-filter: invert(100%);
+      filter: invert(100%);
+    }
+
+    .opacity {
+      -webkit-filter: opacity(50%);
+      filter: opacity(50%);
+    }
+
+    .saturate {
+      -webkit-filter: saturate(7);
+      filter: saturate(7);
+    }
+
+    .sepia {
+      -webkit-filter: sepia(100%);
+      filter: sepia(100%);
+    }
+
+    .shadow {
+      -webkit-filter: drop-shadow(8px 8px 10px green);
+      filter: drop-shadow(8px 8px 10px green);
+    }
+
+    .container3 {
+      float: left;
+      position: relative;
+      width: 20%;
+    }
+
+    .image1,
+    .image3,
+    .image4,
+    .image5,
+    .image6 {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #008CBA;
+    }
+
+    .container3:hover .overlay {
+      opacity: 1;
+    }
+
+    .text1 {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    .image2 {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%)
+    }
+
+    .container3:hover .image2 {
+      opacity: 0.3;
+    }
+
+    .container3:hover .middle {
+      opacity: 1;
+    }
+
+    .text2 {
+      background-color: #008CBA;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+
+    .overlay3 {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      background-color: #008CBA;
+      overflow: hidden;
+      width: 100%;
+      height: 0;
+      transition: .5s ease;
+    }
+
+    .container3:hover .overlay3 {
+      bottom: 0;
+      height: 100%;
+    }
+
+    .text3,
+    .text4,
+    .text5,
+    .text6 {
+      white-space: nowrap;
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    .overlay4 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #008CBA;
+      overflow: hidden;
+      width: 100%;
+      height: 0;
+      transition: .5s ease;
+    }
+
+    .container3:hover .overlay4 {
+      height: 100%;
+    }
+
+    .overlay5 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #008CBA;
+      overflow: hidden;
+      width: 0;
+      height: 100%;
+      transition: .5s ease;
+    }
+
+    .overlay6 {
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+      right: 0;
+      background-color: #008CBA;
+      overflow: hidden;
+      width: 0;
+      height: 100%;
+      transition: .5s ease;
+    }
+
+
+    .container3:hover .overlay5 {
+      width: 100%;
+    }
+
+    .container3:hover .overlay6 {
+      width: 100%;
+      left: 0;
+    }
+
+    .image-photo9 img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .flip-img:hover {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    div.gallery {
+      border: 1px solid #ccc;
+    }
+
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .responsive {
+      padding: 4px 6px;
+      float: left;
+      width: 24.99999%;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .responsive {
+        width: 100%;
+      }
+    }
+
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #myImg:hover {
+      opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.9);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content,
+    #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0.1)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1 class="title">CSS Styling Images</h1>
+  <p>A tooltip is often used to specify extra information about something when the user moves the mouse pointer over an
+    element</p>
+  <br>
+  <br>
+
+  <h1>Rounded Images</h1>
+  <p>Use the border-radius property to create rounded images:</p>
+
+  <div class="clearfix">
+
+    <div class="image-photo1">
+      <img src="./img/img-gallery1/paris.jpg" alt="Paris">
+    </div>
+    <br>
+
+    <div class="code-block">
+      The code for it is:<br>
+      img {<br>
+      border-radius: 8px;<br>
+      }<br>
+    </div>
+
+    <div class="image-photo2">
+      <img src="./img/img-gallery1/pizza.jpeg" alt="Pizza-tower">
+    </div>
+    <br>
+
+    <div class="code-block">
+      The code for it is:<br>
+      img {<br>
+      border-radius: 50%;<br>
+      }<br>
+    </div>
+
+  </div>
+
+  <p style="content: ''; clear: both; display: table;">
+    The :hover selector is used to show the tooltip text when the user moves the mouse over the div with
+  </p>
+  <br>
+  <br>
+
+  <h1>Thumbnail Images</h1>
+  <p>Use the border property to create thumbnail images.</p>
+
+  <div class="clearfix">
+    <div class="image-photo3">
+      <img src="./img/img-gallery1/manhattan.jpeg" alt="Manhattan">
+    </div>
+    <br>
+    <div class="code-block">
+      The code for it is:<br>
+      img {<br>
+      border: 1px solid #ddd;<br>
+      border-radius: 4px;<br>
+      padding: 5px;<br>
+      width: 150px;<br>
+      }<br>
+    </div>
+
+    <h3>Thumbnail Image as Link:</h3>
+    <p>
+      <p>Use the border property to create thumbnail images.<br>
+        Wrap an anchor around the image to use it as a link.</p>
+      <p>Hover over the image and click on it to see the effect.</p>
+    </p>
+    <div class="image-photo4">
+      <a target="_blank" href="./img/img-gallery1/oldcathedral.jpeg">
+        <img src="./img/img-gallery1/oldcathedral.jpeg" alt="oldcathedral-img">
+      </a>
+    </div>
+    <br>
+
+    <div class="code-block">
+      The code for it is:<br>
+      img {<br>
+      border: 1px solid #fff;<br>
+      border-radius: 4px;<br>
+      padding: 5px;<br>
+      width: 150px;<br>
+      }<br>
+      <br>
+      img:hover {<br>
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Responsive Images</h1>
+  <p>Responsive images will automatically adjust to fit the size of the screen.</p>
+  <p>Resize the browser window to see the effect:</p>
+
+  <div class="clearfix">
+
+    <div class="image-photo5">
+      <img src="./img/italy.jpg" alt="Italy coast" width="800px;" height="280px;">
+    </div>
+
+    <div class="code-block">
+      The code for it is:<br>
+      img {<br>
+      max-width: 100%;<br>
+      height: auto;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Center an Image</h1>
+
+  <div class="clearfix">
+    <div class="image-photo6">
+      <img src="./img/img-gallery1/lioness.jpeg" alt="lioness" width="800px;" height="550px;">
+    </div>
+    <p style="content: ''; clear: both; display: table;">To center an image, set left and right margin to auto and make
+      it into a block element:</p>
+    <div class="code-block">
+      The code for it is:<br>
+      img {<br>
+      display: block;<br>
+      margin-left: auto;<br>
+      margin-right: auto;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Polaroid Images / Cards</h1>
+  <p>Let's make the images or cards look like polaroid-made and responsive.</p>
+
+  <div class="clearfix">
+    <div class="image-photo7">
+      <img src="./img/italy2.jpg" alt="italy coast at night" style="width:100%">
+      <div class="container1">
+        <p>Italy coast at night</p>
+      </div>
+    </div>
+    <div class="image-photo7">
+      <img src="./img/sky-lights.jpg" alt="northern lights" style="width:100%">
+      <div class="container1">
+        <p>Northern Lights</p>
+      </div>
+    </div>
+    <p style="content: ''; clear: both; display: table;">The parts of the code for it are:</p>
+    <div class="code-block">
+      div.polaroid { <br>
+      width: 30%;<br>
+      background-color: white;<br>
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);<br>
+      margin-bottom: 25px;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      div.container {<br>
+      text-align: center;<br>
+      padding: 10px 20px;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      img {<br>
+      width: 100%;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Transparent Image</h1>
+  <p>The opacity property specifies the transparency of an element. The opacity property can take a value from 0.0 -
+    1.0. The lower value, the more transparent:
+  </p>
+  <div class="clearfix">
+    <div class="opacity02">
+      <p>Image with 20% opacity:0.2</p>
+      <img src="./img/sniffing_out_fox.jpg" alt="Fox" width="230" height="160">
+    </div>
+    <div class="opacity05">
+      <p>Image with 50% opacity:0.5</p>
+      <img src="./img/sniffing_out_fox.jpg" alt="Fox" width="230" height="160">
+    </div>
+    <div class="opacity100">
+      <p>Image is not transparent, opacity:1 (default)</p>
+      <img src="./img/sniffing_out_fox.jpg" alt="Fox" width="230" height="160">
+    </div>
+    <p style="content: ''; clear: both; display: table;">Note: IE8 and earlier use filter:alpha(opacity=x). The x can
+      take a value from 0 - 100. A lower value makes the element more transparent.</p>
+    <p style="content: ''; clear: both; display: table;">The parts of the code for it are:</p>
+    <div class="code-block">
+      div { <br>
+      width: 30%;<br>
+      float: left;<br>
+      text-align: center;<br>
+      margin: 5px;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      div.opacity02>img {<br>
+      opacity: 0.2;<br>
+      /* For IE8 and earlier */<br>
+      filter: alpha(opacity=20);<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      div.opacity05>img {<br>
+      opacity: 0.5;<br>
+      /* For IE8 and earlier */<br>
+      filter: alpha(opacity=50);<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      img {<br>
+      width: 230%;<br>
+      height: 160px;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Image Text</h1>
+  <div class="clearfix">
+    <div class="container2">
+      <img src="./img/img_5terre_wide.jpg" alt="Cinque Terre" width="1000" height="300">
+      <div class="topleft">Top Left</div>
+      <div class="topright">Top Right</div>
+      <div class="bottomleft">Bottom Left</div>
+      <div class="bottomright">Bottom Right</div>
+      <div class="center">Centered</div>
+    </div>
+    <p style="content: ''; clear: both; display: table;">The parts of the code for it are:</p>
+    <div class="code-block">
+      container2 { <br>
+      position: relative;<br>
+      }<br>
+      <br>
+      container2 img {<br>
+      width: 100%;<br>
+      height: auto;<br>
+      opacity: 0.3;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      topleft {<br>
+      position: absolute;<br>
+      top: 8px;<br>
+      left: 16px;<br>
+      font-size: 20px;<br>
+      font-weight: bold;<br>
+      color: #222;<br>
+      }<br>
+      <br>
+      topright {<br>
+      position: absolute;<br>
+      top: 8px;<br>
+      right: 16px;<br>
+      font-size: 20px;<br>
+      font-weight: bold;<br>
+      color: #222;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      bottomleft {<br>
+      position: absolute;<br>
+      bottom: 8px;<br>
+      left: 16px;<br>
+      font-size: 20px;<br>
+      font-weight: bold;<br>
+      color: #222;<br>
+      }<br>
+      <br>
+      bottomright {<br>
+      position: absolute;<br>
+      bottom: 8px;<br>
+      right: 16px;<br>
+      font-size: 20px;<br>
+      font-weight: bold;<br>
+      color: #222;<br>
+    </div>
+    <div class="code-block">
+      center {<br>
+      position: absolute;<br>
+      left: 0;<br>
+      top: 50%;<br>
+      width: 100%;<br>
+      text-align: center;<br>
+      font-size: 20px;<br>
+      font-weight: bold;<br>
+      color: #222;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Image Filters</h1>
+  <p>The CSS filter property adds visual effects (like blur and saturation) to an element.<br>
+    Note: The filter property is not supported in Internet Explorer, Edge 12, or Safari 5.1 and earlier.
+  </p>
+  <div class="clearfix">
+    <div class="image-photo8">
+      <img src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        For all images:<br>
+        .div img {<br>
+        width: 32%;<br>
+        height: auto;<br>
+        float: left;<br>
+        max-width: 235px;<br>
+        }<br>
+        But has no filter property<br>
+      </div>
+      <img class="blur" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .blur {<br>
+        -webkit-filter: blur(4px);<br>
+        filter: blur(4px);<br>
+        }<br>
+      </div>
+      <p style="content: ''; clear: both; display: table;"></p>
+      <img class="brightness" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .brightness {<br>
+        -webkit-filter: brightness(250%);<br>
+        filter: brightness(250%);<br>
+        }<br>
+      </div>
+      <img class="contrast" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .contrast {<br>
+        -webkit-filter: contrast(180%);<br>
+        filter: contrast(180%);<br>
+        }<br>
+      </div>
+      <p style="content: ''; clear: both; display: table;"></p>
+      <img class="grayscale" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .grayscale {<br>
+        -webkit-filter: grayscale(100%);<br>
+        filter: grayscale(100%);<br>
+        }<br>
+      </div>
+      <img class="huerotate" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .huerotate {<br>
+        -webkit-filter: hue-rotate(180deg);
+        filter: hue-rotate(180deg);
+        }<br>
+      </div>
+      <p style="content: ''; clear: both; display: table;"></p>
+      <img class="invert" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .invert {<br>
+        -webkit-filter: invert(100%);<br>
+        filter: invert(100%);<br>
+        }<br>
+      </div>
+      <img class="opacity" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .opacity {<br>
+        -webkit-filter: opacity(50%);<br>
+        filter: opacity(50%);<br>
+        }<br>
+      </div>
+      <p style="content: ''; clear: both; display: table;"></p>
+      <img class="saturate" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .saturate {<br>
+        -webkit-filter: saturate(7);<br>
+        filter: saturate(7);<br>
+        }<br>
+      </div>
+      <img class="sepia" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .sepia {<br>
+        -webkit-filter: sepia(100%);<br>
+        filter: sepia(100%);<br>
+        }<br>
+      </div>
+      <p style="content: ''; clear: both; display: table;"></p>
+      <img class="shadow" src="./img/pineapple.jpg" alt="Pineapple" width="300" height="300">
+      <div class="code-block">
+        The code for it is:<br>
+        .shadow {<br>
+        -webkit-filter: drop-shadow(8px 8px 10px green);<br>
+        filter: drop-shadow(8px 8px 10px green);<br>
+        }<br>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Image Hover Overlay</h1>
+  <p>Create an overlay effect on hover: <b>fade in text</b> example:</p>
+  <div class="clearfix">
+    <div class="container3">
+      <img src="./img/avatar1.png" alt="avatar man" class="image1">
+      <div class="overlay">
+        <div class="text1">Hello World<br>
+          That is me Walter!</div>
+      </div>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .container3 {<br>
+      position: relative;<br>
+      width: 50%;<br>
+      }<br>
+      <br>
+      .image1 {<br>
+      display: block;<br>
+      width: 100%;<br>
+      height: auto;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .overlay {<br>
+      position: absolute;<br>
+      top: 0;<br>
+      bottom: 0;<br>
+      left: 0;<br>
+      right: 0;<br>
+      height: 100%;<br>
+      width: 100%;<br>
+      opacity: 0;<br>
+      transition: .5s ease;<br>
+      background-color: #008CBA;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .container3:hover .overlay {<br>
+      opacity: 1;<br>
+      }<br>
+      <br>
+      .text {<br>
+      color: white;<br>
+      font-size: 20px;<br>
+      position: absolute;<br>
+      top: 50%;<br>
+      left: 50%;<br>
+      transform: translate(-50%, -50%);<br>
+      -ms-transform: translate(-50%, -50%);<br>
+      }<br>
+    </div>
+  </div>
+  <p>Create an overlay effect on hover: <b>fade in box</b> example:</p>
+  <div class="clearfix">
+    <div class="container3">
+      <img src="./img/avatar1.png" alt="avatar man" class="image2" style="width:100%">
+      <div class="middle">
+        <div class="text2">Walter Owl</div>
+      </div>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .image2 {<br>
+      opacity: 1;<br>
+      display: block;<br>
+      width: 100%;<br>
+      height: auto;<br>
+      transition: .5s ease;<br>
+      backface-visibility: hidden;<br>
+      }<br>
+      <br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .middle {<br>
+      transition: .5s ease;<br>
+      opacity: 0;<br>
+      position: absolute;<br>
+      top: 50%;<br>
+      left: 50%;<br>
+      transform: translate(-50%, -50%);<br>
+      -ms-transform: translate(-50%, -50%)<br>
+      }<br>
+      <br>
+      .container3:hover .image2 {
+      opacity: 0.3;
+      }
+      <br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .container:hover .middle {<br>
+      opacity: 1;<br>
+      }<br>
+      <br>
+      .text {<br>
+      background-color: #4CAF50;<br>
+      color: white;<br>
+      font-size: 16px;<br>
+      padding: 16px 32px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Create an overlay effect on hover: <b>slide in (top)</b> example:</p>
+  <div class="clearfix">
+    <div class="container3">
+      <img src="./img/avatar2.png" alt="avatar female" class="image3">
+      <div class="overlay3">
+        <div class="text3">Mariana Owl</div>
+      </div>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .image3 {<br>
+      display: block;<br>
+      width: 100%;<br>
+      height: auto;<br>
+      }<br>
+      <br>
+      .container3:hover .overlay3 {<br>
+      bottom: 0;<br>
+      height: 100%;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .overlay3 {<br>
+      position: absolute;<br>
+      bottom: 100%;<br>
+      left: 0;<br>
+      right: 0;<br>
+      background-color: #008CBA;<br>
+      overflow: hidden;<br>
+      width: 100%;<br>
+      height:0;<br>
+      transition: .5s ease;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .text3 {<br>
+      white-space: nowrap;<br>
+      color: white;<br>
+      font-size: 20px;<br>
+      position: absolute;<br>
+      overflow: hidden;<br>
+      top: 50%;<br>
+      left: 50%;<br>
+      transform: translate(-50%, -50%);<br>
+      -ms-transform: translate(-50%, -50%);<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Create an overlay effect on hover: <b>slide in (bottom)</b> example:</p>
+  <div class="clearfix">
+    <div class="container3">
+      <img src="./img/avatar2.png" alt="avatar female" class="image4">
+      <div class="overlay4">
+        <div class="text4">Mariana Owl</div>
+      </div>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .image4 {<br>
+      display: block;<br>
+      width: 100%;<br>
+      height: auto;<br>
+      }<br>
+      <br>
+      .container3:hover .overlay4 {<br>
+      height: 100%;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .overlay4 {<br>
+      position: absolute;<br>
+      bottom: 0;<br>
+      left: 0;<br>
+      right: 0;<br>
+      background-color: #008CBA;<br>
+      overflow: hidden;<br>
+      width: 100%;<br>
+      height: 0;<br>
+      transition: .5s ease;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .text3 {<br>
+      white-space: nowrap;<br>
+      color: white;<br>
+      font-size: 20px;<br>
+      position: absolute;<br>
+      overflow: hidden;<br>
+      top: 50%;<br>
+      left: 50%;<br>
+      transform: translate(-50%, -50%);<br>
+      -ms-transform: translate(-50%, -50%);<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Create an overlay effect on hover: <b>slide in (left)</b> example:</p>
+  <div class="clearfix">
+    <div class="container3">
+      <img src="./img/avatar3.png" alt="avatar boy" class="image5">
+      <div class="overlay5">
+        <div class="text5">Max Owl</div>
+      </div>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .image6 {<br>
+      display: block;<br>
+      width: 100%;<br>
+      height: auto;<br>
+      }<br>
+      <br>
+      .container3:hover .overlay5 {<br>
+      width: 100%;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .overlay6 {<br>
+      position: absolute;<br>
+      bottom: 0;<br>
+      left: 0;<br>
+      right: 0;<br>
+      background-color: #008CBA;<br>
+      overflow: hidden;<br>
+      width: 0;<br>
+      height: 100%;<br>
+      transition: .5s ease;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .text5 {<br>
+      white-space: nowrap;<br>
+      color: white;<br>
+      font-size: 20px;<br>
+      position: absolute;<br>
+      overflow: hidden;<br>
+      top: 50%;<br>
+      left: 50%;<br>
+      transform: translate(-50%, -50%);<br>
+      -ms-transform: translate(-50%, -50%);<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Create an overlay effect on hover: <b>slide in (right)</b> example:</p>
+  <div class="clearfix">
+    <div class="container3">
+      <img src="./img/avatar3.png" alt="avatar boy" class="image6">
+      <div class="overlay6">
+        <div class="text6">Max Owl</div>
+      </div>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .image6 {<br>
+      display: block;<br>
+      width: 100%;<br>
+      height: auto;<br>
+      }<br>
+      <br>
+      .container3:hover .overlay5 {<br>
+      width: 100%;<br>
+      left: 0;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .overlay6 {<br>
+      position: absolute;<br>
+      bottom: 0;<br>
+      left: 100%;<br>
+      right: 0;<br>
+      background-color: #008CBA;<br>
+      overflow: hidden;<br>
+      width: 0;<br>
+      height: 100%;<br>
+      transition: .5s ease;<br>
+      }<br>
+    </div>
+    <div class="code-block">
+      The part of the code for it is:<br>
+      .text6 {<br>
+      white-space: nowrap;<br>
+      color: white;<br>
+      font-size: 20px;<br>
+      position: absolute;<br>
+      overflow: hidden;<br>
+      top: 50%;<br>
+      left: 50%;<br>
+      transform: translate(-50%, -50%);<br>
+      -ms-transform: translate(-50%, -50%);<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Flip an Image</h1>
+  <p>Move your mouse over the image:</p>
+
+  <div class="clearfix">
+    <div class="code-block">
+      The part of the code for it is:<br>
+      div img {<br>
+      display: block;<br>
+      margin-left: auto;<br>
+      margin-right: auto;<br>
+      }<br>
+      <br>
+      img:hover {<br>
+      -webkit-transform: scaleX(-1);<br>
+      transform: scaleX(-1);<br>
+      }<br>
+    </div>
+
+    <div class="image-photo9">
+      <img src="./img/img-gallery1/paris.jpg" alt="Paris" class="flip-img" width="400" height="300">
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <h1>Responsive Image Gallery</h1>
+  <p>CSS can be used to create image galleries.</p>
+  <p>This example use media queries to re-arrange the images on different screen sizes. Resize the browser window to see
+    the effect</p>
+
+  <h3>Resize the browser window to see the effect.</h3>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="./img/italy.jpg">
+        <img src="./img/italy.jpg" alt="Cinque Terre" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="./img/forest1.jpg">
+        <img src="./img/forest1.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="./img/sky-lights.jpg">
+        <img src="./img/sky-lights.jpg" alt="Northern Lights" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="./img/mountains1.jpg">
+        <img src="./img/mountains1.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+  <p>
+    <p>This example use media queries to re-arrange the images on different screen sizes:<br>
+      for screens larger than 700px wide, it will show four images side by side;<br>
+      for screens smaller than 700px, it will show two images side by side;<br>
+      for screens smaller than 500px, the images will stack vertically (100%).
+    </p>
+  </p>
+  <br>
+  <br>
+  <h1>Image Modal (Advanced)</h1>
+  <p>Let's look at the example to demonstrate how CSS and JavaScript can work together.<br>
+    First, use CSS to create a modal window (dialog box), and hide it by default.<br>
+    Then, use a JavaScript to show the modal window and to display the image inside the modal, when a user clicks on the
+    image:
+  </p>
+
+  <img id="myImg" src="./img/sky-lights.jpg" alt="Northern Lights, Norway" width="300" height="200">
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">×</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+  </script>
+
+  <p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+  <p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on.
+    Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+
+  <div class="clearfix">
+    <div class="code-block">
+      The part of the code for it is:<br>
+      div img {<br>
+      display: block;<br>
+      margin-left: auto;<br>
+      margin-right: auto;<br>
+      }<br>
+      <br>
+      img:hover {<br>
+      -webkit-transform: scaleX(-1);<br>
+      transform: scaleX(-1);<br>
+      }<br>
+    </div>
+
+
+</body>
+
+</html>

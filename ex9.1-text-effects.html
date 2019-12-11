@@ -5,14 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ex9.1-mycss-text-effects</title>
+  <title>ex9.1_mycss: text effects</title>
 
   <style>
     body {
       background-color: lightblue;
       font-family: 'Helvetica', 'Arial', sans-serif;
       font-size: 18px;
-      color: blue;
     }
 
     h1.title {
@@ -24,6 +23,12 @@
       color: green;
       text-align: left;
       padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
     }
 
     .ex1 {
@@ -56,9 +61,18 @@
       text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     }
 
+    div.for-para.addwidth {
+      width: 70%;
+    }
+
     .ex8 {
       color: yellow;
       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .ex9 {
+      color: pink;
+      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     }
 
     div.for-para {
@@ -85,16 +99,16 @@
       text-overflow: ellipsis;
     }
 
-    div.test3,
-    div.test4 {
+    p.test3,
+    p.test4 {
       white-space: nowrap;
       width: 200px;
       overflow: hidden;
       border: 1px solid #000000;
     }
 
-    div.test3:hover,
-    div.test4:hover {
+    p.test3:hover,
+    p.test4:hover {
       overflow: visible;
     }
 
@@ -166,44 +180,49 @@
   <p><b>Note:</b> Internet Explorer 9 and earlier versions, do not support the text-shadow property.</p>
   <p><b>The CSS text-shadow property applies shadow to text</b></p>
   <p>In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px)</p>
-  <div class="for-para">
+  <div class="for-para">The code: {text-shadow: 2px 2px;}
     <h3 class="ex1">Text-shadow effect!</h3>
   </div>
 
-  <p>Next, add a color to the shadow</p>
-  <div class="for-para">
+  <p>Next, add a color to the shadow - three parameters</p>
+  <div class="for-para"> The code: {text-shadow: 2px 2px red;}
     <h3 class="ex2">Text-shadow effect!</h3>
   </div>
 
-  <p>Then, add a blur effect to the shadow</p>
-  <div class="for-para">
+  <p>Then, add a blur effect to the shadow - four parameters</p>
+  <div class="for-para"> The code: {text-shadow: 2px 2px 5px red;}
     <h3 class="ex3">Text-shadow effect!</h3>
   </div>
 
-  <p>The following example shows a red neon glow shadow</p>
-  <div class="for-para">
+  <p>The following example shows a red neon glow shadow. We specified the horizontal and vertical shadows to 0px but
+    gave blur and color</p>
+  <div class="for-para"> The code: {text-shadow: 0 0 3px #FF0000;}
     <h3 class="ex4">Text-shadow effect!</h3>
   </div>
 
   <p>The following example shows a white text with black shadow</p>
-  <div class="for-para">
+  <div class="for-para"> The code: {color: white; text-shadow: 2px 2px 4px #000000;}
     <h3 class="ex5">Text-shadow effect!</h3>
   </div>
 
   <h2>Multiple Shadows</h2>
   <p>To add more than one shadow to the text, you can add a comma-separated list of shadows</p>
   <p>The following example shows a red and blue neon glow shadow</p>
-  <div class="for-para">
+  <div class="for-para"> The code: {text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;}
     <h3 class="ex6">Text-shadow effect!</h3>
   </div>
 
-  <p>The following example shows a white text with black, blue, and darkblue shadow</p>
-  <div class="for-para">
+  <p>The following example shows a white text with black, blue, and darkblue shadow. But in the second we changed only
+    the text-color to pink:</p>
+  <div class="for-para addwidth"> The code for the first text: {color: white; text-shadow: 1px 1px 2px black, 0 0 25px
+    blue, 0 0 5px darkblue;}
     <h3 class="ex7">Text-shadow effect!</h3>
+    <h3 class="ex9">Text-shadow effect!</h3>
   </div>
 
   <p>You can also use the text-shadow property to create a plain border around some text (without shadows)</p>
-  <div class="for-para">
+  <div class="for-para addwidth"> The code for first: {color: yellow; text-shadow: -1px 0 black, 0 1px black, 1px 0
+    black, 0 -1px black;}
     <h3 class="ex8">Text-shadow effect!</h3>
   </div>
 
@@ -212,20 +231,65 @@
   <p><b>The CSS text-overflow property specifies how overflowed content that is not displayed should be signaled to the
       user</b></p>
   <p>Example: The following two paragraphs contains a long text that will not fit in the box.</p>
-  <div class="for-para">
-    <h3>text-overflow: clip:</h3>
-    <p class="test1">This is some long text that will not fit in the box</p>
 
-    <h3>text-overflow: ellipsis:</h3>
-    <p class="test2">This is some long text that will not fit in the box</p>
+  <h3>text-overflow: clip:</h3>
+
+  <div class="for-para">
+    <p class="test1">This is some long text that will not fit in the box</p>
+    The code for this:<br>
+    white-space: nowrap;<br>
+    width: 200px;<br>
+    border: 1px solid #000000;<br>
+    overflow: hidden;<br>
+    text-overflow: clip;<br>
+    <br>
   </div>
 
-  <p>Have a look at another ones</p>
+  <h3>text-overflow: ellipsis:</h3>
+
   <div class="for-para">
-    <p>Hover over the two divs below, to see the entire text.</p>
-    <div class="test3" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+    <p class="test2">This is some long text that will not fit in the box</p>
+    The code for this:<br>
+    white-space: nowrap;<br>
+    width: 200px;<br>
+    border: 1px solid #000000;<br>
+    overflow: hidden;<br>
+    text-overflow: ellipsis;<br>
+  </div>
+
+  Have a look at text-overflow:ellipsis with hover over<br>
+
+  <div class="for-para">
+    <p class="test3" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</p>
     <br>
-    <div class="test4" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+    The code for this:<br>
+    white-space: nowrap;<br>
+    width: 200px;<br>
+    overflow: hidden;<br>
+    text-overflow:ellipsis;<br>
+    border: 1px solid #000000;<br>
+    <br>
+    p:hover {<br>
+    overflow: visible;<br>
+    }<br>
+  </div>
+
+  Have a look at text-overflow:clip with hover over<br>
+
+  <div class="for-para">
+    <p class="test4" style="text-overflow:clip;">Do not go where the path may lead; go instead where there is no
+      path and leave a trail</p>
+    <br>
+    The code for this:<br>
+    white-space: nowrap;<br>
+    width: 200px;<br>
+    overflow: hidden;<br>
+    text-overflow:clip;<br>
+    border: 1px solid #000000;<br>
+    <br>
+    p:hover {<br>
+    overflow: visible;<br>
+    }<br>
   </div>
 
   <h2>CSS Word Wrapping</h2>
@@ -233,29 +297,68 @@
   <div class="for-para">
     <p class="test5"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word
       won't break and wrap to the next line.</p>
-    <p>Allow long words to be able to be broken and wrap onto the next line</p>
+    The code for it:<br>
+    p {<br>
+    width: 11em;<br>
+    border: 1px solid #000000;<br>
+    }<br>
+    <br>
+    Allow long words to be able to be broken and wrap onto the next line
     <p class="test6"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word
       will break and wrap to the next line.</p>
+    The code for it:<br>
+    p {<br>
+    width: 11em;<br>
+    border: 1px solid #000000;<br>
+    word-wrap: break-word;<br>
+    }<br>
+    <br>
   </div>
 
   <h2>CSS Word Breaking</h2>
-  <p>The CSS word-break property specifies line breaking rules.</p>
+  <p>The CSS word-break property specifies line breaking rules.<br>
+    <b>Note:</b> The word-break property is not supported in Opera 12 and earlier versions</p>
+
   <div class="for-para">
     <p class="test7">This paragraph contains some text. This line will-break-at-hyphens.</p>
-
+    The code for it:<br>
+    p {<br>
+    width: 140px;<br>
+    border: 1px solid #000000;<br>
+    word-break: keep-all;<br>
+    }<br>
+    <br>
     <p class="test8">This paragraph contains some text. The lines will break at any character.</p>
-
-    <p><b>Note:</b> The word-break property is not supported in Opera 12 and earlier versions.</p>
+    The code for it:<br>
+    p {<br>
+    width: 140px;<br>
+    border: 1px solid #000000;<br>
+    word-break: break-all;<br>
+    }<br>
   </div>
 
   <h2>CSS Writing Mode</h2>
   <p><b>The CSS writing-mode property specifies whether lines of text are laid out horizontally or vertically</b></p>
   <div class="for-para">
     <p class="test9">Some text with default writing-mode.</p>
-
+    The code for it:<br>
+    p {<br>
+    writing-mode: horizontal-tb;<br>
+    }<br>
+    <br>
     <p>Some text with a span element with a <span class="test10">vertical-rl</span> writing-mode.</p>
-
+    The code for it:<br>
+    span {<br>
+    writing-mode: vertical-rl;<br>
+    }<br>
+    <br>
     <p class="test11">Some text with writing-mode: vertical-rl.</p>
+    The code for it:<br>
+    p {<br>
+    writing-mode: vertical-rl;<br>
+    }<br>
+    <br>
+
   </div>
 
   <h2>Кернинг (свойство font-kerning)</h2>

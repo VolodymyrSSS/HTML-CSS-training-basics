@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex20_mycss: transition</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    ul {
+      width: 50%;
+      padding: 5px;
+      margin: 0 auto;
+      border: 2px solid green;
+    }
+
+    li {
+      padding: 5px;
+    }
+
+    .ex1,
+    .ex3 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin-left: 40px;
+      -webkit-transition: width 2s;
+      /* For Safari 3.1 to 6.0 */
+      transition: width 2s;
+    }
+
+    .ex1:hover,
+    .ex3:hover {
+      width: 400px;
+    }
+
+    .ex2 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin-left: 105px;
+      -webkit-transition: width 2s, height 4s;
+      /* For Safari 3.1 to 6.0 */
+      transition: width 2s, height 4s;
+    }
+
+    .ex2:hover {
+      width: 300px;
+      height: 300px;
+    }
+
+    .base {
+      width: 100px;
+      height: 100px;
+      background: red;
+      padding: 4px;
+      margin-left: 40px;
+      -webkit-transition: width 2s;
+      /* Safari */
+      transition: width 2s;
+    }
+
+    /* For Safari 3.1 to 6.0 */
+    #div1 {
+      -webkit-transition-timing-function: linear;
+    }
+
+    #div2 {
+      -webkit-transition-timing-function: ease;
+    }
+
+    #div3 {
+      -webkit-transition-timing-function: ease-in;
+    }
+
+    #div4 {
+      -webkit-transition-timing-function: ease-out;
+    }
+
+    #div5 {
+      -webkit-transition-timing-function: ease-in-out;
+    }
+
+    /* Standard syntax */
+    #div1 {
+      transition-timing-function: linear;
+    }
+
+    #div2 {
+      transition-timing-function: ease;
+    }
+
+    #div3 {
+      transition-timing-function: ease-in;
+    }
+
+    #div4 {
+      transition-timing-function: ease-out;
+    }
+
+    #div5 {
+      transition-timing-function: ease-in-out;
+    }
+
+    .base:hover {
+      width: 400px;
+    }
+
+    .forCode {
+      width: 40%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+
+    .ex3 {
+      transition-delay: 1s;
+    }
+
+    .ex4 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin: 0 auto;
+      -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+      /* Safari */
+      transition: width 2s, height 2s, transform 2s;
+    }
+
+    .ex4:hover {
+      width: 300px;
+      height: 300px;
+      -webkit-transform: rotate(180deg);
+      /* Safari */
+      transform: rotate(180deg);
+    }
+
+    .ex5 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin-left: 40px;
+      /* For Safari 3.1 to 6.0 */
+      -webkit-transition-property: height;
+      -webkit-transition-duration: 2s;
+      -webkit-transition-timing-function: linear;
+      -webkit-transition-delay: 1s;
+      /* Standard syntax */
+      transition-property: height;
+      transition-duration: 2s;
+      transition-timing-function: linear;
+      transition-delay: 1s;
+    }
+
+    .ex5:hover {
+      height: 300px;
+    }
+
+    .ex6 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin-left: 40px;
+      -webkit-transition: width 2s linear 1s;
+      /* For Safari 3.1 to 6.0 */
+      transition: width 2s linear 1s;
+    }
+
+    .ex6:hover {
+      width: 400px;
+    }
+
+    .ex7 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      -webkit-transition: background 2s, -webkit-transform 2s;
+      /* Safari */
+      transition: background 2s, transform 2s;
+    }
+
+    .ex7:hover {
+      background: blue;
+      transform: rotate(270deg);
+    }
+
+    ol.styledlist {
+      width: 850px;
+      padding: 3px 8px;
+      list-style-type: disc;
+      border: 2px dashed red;
+      background-color: tan;
+    }
+
+    ol.styledlist li {
+      list-style-position: inside;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Transitions</h1>
+  <p>CSS transitions allows you to change property values smoothly, over a given duration.<br>
+    Some older browsers need specific prefixes (-webkit-) to understand the transition properties
+  </p>
+
+  <h2>How to Use CSS Transitions?</h2>
+  <ul>To create a transition effect, you must specify two things:
+    <li>the CSS property you want to add an effect to</li>
+    <li>the duration of the effect</li>
+  </ul>
+
+  <p>Note: If the duration part is not specified, the transition will have no effect, because the default value is 0.
+  </p>
+
+  <p>The following example-code shows a 100px * 100px red div-element. The div-element has also specified a transition
+    effect for the width property, with a duration of 2 seconds
+  </p>
+
+  <div class="forCode">
+    div {<br>
+    width: 100px;<br>
+    height: 100px;<br>
+    background: red;<br>
+    transition: width 2s;<br>
+    }<br>
+  </div>
+
+  <p>Now, let us specify a new value for the width property when a user mouses over the div-element</p>
+  <div class="forCode">
+    div:hover {<br>
+    width: 400px;<br>
+    }<br>
+  </div>
+
+  <p>Hover over the div element below, to see the transition effect:</p>
+  <div class="ex1">Ex1</div>
+
+  <p>Notice that when the cursor mouses out of the element, it will gradually change back to its original style.</p>
+
+  <h2>Change Several Property Values</h2>
+  <p>The following example adds a transition effect for both the width and height property, with a duration of 2 seconds
+    for the width and 4 seconds for the height
+  </p>
+
+  <p>Hover over the div element below, to see the transition effect:</p>
+  <div class="ex2">Ex2</div>
+
+  <div class="forCode">
+    div {<br>
+    width: 100px;<br>
+    height: 100px;<br>
+    background: red;<br>
+    -webkit-transition: width 2s, height 4s;
+    /* For Safari 3.1 to 6.0 */<br>
+    transition: width 2s, height 4s;<br>
+    }<br>
+    <br>
+    div:hover {<br>
+    width: 300px;<br>
+    height: 300px;<br>
+    }<br>
+  </div>
+
+  <h2>The transition-timing-function Property</h2>
+  <p>
+    The transition-timing-function property specifies the speed curve of the transition effect
+  </p>
+  <ul>The transition-timing-function property can have the following values:
+    <li>ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)</li>
+    <li>linear - specifies a transition effect with the same speed from start to end</li>
+    <li>ease-in - specifies a transition effect with a slow start</li>
+    <li>ease-out - specifies a transition effect with a slow end</li>
+    <li>ease-in-out - specifies a transition effect with a slow start and end</li>
+    <li>cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function</li>
+  </ul>
+
+  <p>Let specify the Speed Curve of the Transition</p>
+
+  <p>Hover over the div elements below, to see the different speed curves:</p>
+
+  <div id="div1" class="base">linear</div><br>
+  div {<br>
+  transition-timing-function: linear;<br>
+  }<br>
+  <div id="div2" class="base">ease</div><br>
+  div {<br>
+  transition-timing-function: ease;<br>
+  }<br>
+  <div id="div3" class="base">ease-in</div><br>
+  div {<br>
+  transition-timing-function: ease-in;<br>
+  }<br>
+  <div id="div4" class="base">ease-out</div><br>
+  div {<br>
+  transition-timing-function: ease-out;<br>
+  }<br>
+  <div id="div5" class="base">ease-in-out</div><br>
+  div {<br>
+  transition-timing-function: ease-in-out;<br>
+  }<br>
+  <br>
+
+  <h2>The transition-delay Property</h2>
+  <p>The transition-delay property specifies a delay (in seconds) for the transition effect.</p>
+  <p>The following example has a 1 second delay before starting:</p>
+
+  <div class="ex3">Ex3</div>
+
+  <div class="forCode">
+    div {<br>
+    transition-delay: 1s;<br>
+    }<br>
+  </div>
+
+  <h2>Transition + Transformation</h2>
+  <p>The following example adds a transition effect to the transformation.</p>
+
+  <div class="ex4">Ex4</div>
+
+  <p>Hover over the div element above right:</p>
+
+  <div class="forCode">
+    div {<br>
+    width: 100px;<br>
+    height: 100px;<br>
+    background: red;<br>
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */<br>
+    transition: width 2s, height 2s, transform 2s;<br>
+    }<br>
+    <br>
+    div:hover {<br>
+    width: 300px;<br>
+    height: 300px;<br>
+    -webkit-transform: rotate(180deg); /* Safari */<br>
+    transform: rotate(180deg);<br>
+    }<br>
+  </div>
+
+  <p>another example to change background with rotation to 270deg</p>
+
+  <div class="ex7">Ex7</div>
+
+  <h2>The transition Properties Specified One by One</h2>
+  <p>Have a look at this code:</p>
+  <div class="forCode">
+    div {<br>
+    width: 100px;<br>
+    height: 100px;<br>
+    background: red;<br>
+    <br>
+    /* For Safari 3.1 to 6.0 */<br>
+    -webkit-transition-property: height;<br>
+    -webkit-transition-duration: 2s;<br>
+    -webkit-transition-timing-function: linear;<br>
+    -webkit-transition-delay: 1s;<br>
+    <br>
+    /* Standard syntax */<br>
+    transition-property: height;<br>
+    transition-duration: 2s;<br>
+    transition-timing-function: linear;<br>
+    transition-delay: 1s;<br>
+    }<br>
+    <br>
+    div:hover {<br>
+    height: 300px;<br>
+    }<br>
+    <br>
+  </div>
+  <p>Hover over the div element below, to see the transition effect:<br>
+    <p><b>Note:</b> The transition effect has a 1 second delay before starting.</p>
+  </p>
+
+  <div class="ex5">Ex5</div>
+
+  <p>or by using the shorthand property transition:</p>
+
+  <div class="ex6">Ex6</div>
+
+  <p>And shorthand code is:</p>
+
+  <div class="forCode">
+    .ex6 {<br>
+    width: 100px;<br>
+    height: 100px;<br>
+    background: red;<br>
+    margin-left: 40px;<br>
+    -webkit-transition: width 2s linear 1s; /* For Safari 3.1 to 6.0 */<br>
+    transition: width 2s linear 1s;<br>
+    }<br>
+    <br>
+    .ex6:hover {<br>
+    width: 400px;<br>
+    }<br>
+    <br>
+  </div>
+
+  <h2>CSS Transition Properties</h2>
+
+  <ol class="styledlist">The following table lists all the CSS transition properties:
+    <li>transition - A shorthand property for setting the four transition properties into a single property</li>
+    <li>transition-delay - Specifies a delay (in seconds) for the transition effect</li>
+    <li>transition-duration - Specifies how many seconds or milliseconds a transition effect takes to complete</li>
+    <li>transition-property - Specifies the name of the CSS property the transition effect is for</li>
+    <li>transition-timing-function - Specifies the speed curve of the transition effect</li>
+  </ol>
+
+
+</body>
+
+</html>

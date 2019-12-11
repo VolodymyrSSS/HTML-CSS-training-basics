@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex35_mycss: website layouts</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', Arial, sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    .common-layout {
+      width: 70%;
+      background-color: #bebebebe;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin: 0px;
+      padding: 30px 0;
+      text-align: center;
+      border: 7px solid cornsilk
+    }
+
+    .navbar {
+      margin: 0px;
+      padding: 10px 0;
+      text-align: center;
+      border: 7px solid cornsilk
+    }
+
+    .main {
+      height: 150px;
+      text-align: center;
+      border: 8px solid cornsilk;
+      padding: 108px 15px 100px 15px;
+    }
+
+    .footer {
+      margin: 0px;
+      padding: 18px 0;
+      text-align: center;
+      border: 8px solid cornsilk;
+    }
+
+    /* Style the header */
+    .header2 {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 15px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width:600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    /* Create three unequal columns that floats next to each other */
+    .column2 {
+      float: left;
+      padding: 10px;
+    }
+
+    /* Left and right column */
+    .column2.side {
+      width: 25%;
+    }
+
+    /* Middle column */
+    .column2.middle {
+      width: 50%;
+    }
+
+    /* Create three unequal columns that floats next to each other */
+    .column {
+      float: left;
+      padding: 10px;
+    }
+
+    /* Left and right column */
+    .column.side {
+      width: 25%;
+    }
+
+    /* Middle column */
+    .column.middle {
+      width: 50%;
+    }
+
+    /*Clear floats after the columns */
+    .row2:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+      .column2.side,
+      .column2.middle {
+        width: 100%;
+      }
+    }
+
+    /* Style the footer */
+    .footer2 {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Website Layout</h1>
+  <p>A website is often divided into headers, menus, content and a footer.</p>
+
+  <div class="common-layout">
+    <div class="header">Header</div>
+    <div class="navbar">Navigation Menu</div>
+    <div class="main">Main Content</div>
+    <div class="footer">Footer</div>
+  </div>
+  <p>There are tons of different layout designs to choose from. However, the structure above, is
+    one of the most common.
+  </p>
+
+  <h2>Header</h2>
+  <p>A header is usually located at the top of the website (or right below a top navigation menu). It often contains a
+    logo or the website name:</p>
+  <div class="header2">
+    <h1>Header</h1>
+  </div>
+
+  <h2>Navigation Bar</h2>
+  <p>A navigation bar contains a list of links to help visitors navigating through your website:</p>
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+
+  <h2>Content</h2>
+  <p>The layout in this section, often depends on the target users. The most common layout is one (or combining them) of
+    the following:<br>
+
+    1-column (often used for mobile browsers)<br>
+    2-column (often used for tablets and laptops)<br>
+    3-column layout (only used for desktops)<br>
+  </p>
+
+  <p>We will create a 3-column layout, and change it to a 1-column layout on smaller screens:</p>
+
+  <div class="row">
+    <div class="column">
+      <h3>Column</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
+        velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus
+        leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+
+    <div class="column">
+      <h3>Column</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
+        velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus
+        leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+
+    <div class="column">
+      <h3>Column</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
+        velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus
+        leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+  </div>
+
+  The code for this:<br>
+  .column {<br>
+  float: left;<br>
+  width: 33.33%; - Create three equal columns that floats next to each other<br>
+  }<br>
+  <br>
+  .row:after {<br>
+  content: "";<br>
+  display: table;<br>
+  clear: both; - Clear floats after the columns<br>
+  }<br>
+  <br>
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller
+  screens (600px wide or less) */<br>
+  @media screen and (max-width: 600px) {<br>
+  .column {<br>
+  width: 100%;<br>
+  }<br>
+  }<br>
+
+  <p>Tip: To create a 2-column layout, change the width to 50%. To create a 4-column layout, use 25%, etc.</p>
+  <p>Tip: A more modern way of creating column layouts, is to use CSS Flexbox.<br>
+    However, it is not supported in Internet Explorer 10 and earlier versions. If you require IE6-10 support, use floats
+    (as shown above).
+  </p>
+
+  <h2>Unequal Columns</h2>
+  <p>The main content is the biggest and the most important part of your site.<br>
+    It is common with unequal column widths, so that most of the space is reserved for the main content. The side
+    content (if any) is often used as an alternative navigation or to specify information relevant to the main content.
+    Change the widths as you like, only remember that it should add up to 100% in total.
+  </p>
+
+  <div class="row2">
+    <div class="column2 side">
+      <h3>Side</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+    </div>
+
+    <div class="column2 middle">
+      <h3>Main Content</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
+        velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus
+        leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
+        velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus
+        leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+
+    <div class="column2 side">
+      <h3>Side</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+    </div>
+  </div>
+  The code for this:<br>
+  .column {<br>
+  float: left;<br>
+  }<br>
+  <br>
+  /* Left and right column */
+  .column.side {<br>
+  width: 25%;<br>
+  }<br>
+  <br>
+  /* Middle column */
+  .column.middle {<br>
+  width: 50%;<br>
+  }<br>
+  <br>
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {<br>
+  .column.side, .column.middle {<br>
+  width: 100%;<br>
+  }<br>
+  }<br>
+
+  <h2>Footer</h2>
+  <p>The footer is placed at the bottom of your page. It often contains information like copyright and contact info:</p>
+
+  <div class="footer2">
+    <h3>Footer</h3>
+  </div>
+  <br>
+
+  The code for this:<br>
+  .footer {<br>
+  background-color: #f1f1f1;<br>
+  padding: 10px;<br>
+  text-align: center;<br>
+  }<br>
+
+</body>
+
+</html>

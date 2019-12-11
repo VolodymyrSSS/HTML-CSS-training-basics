@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex4.1_mycss: rounded borders</title>
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    #rcorners1 {
+      border-radius: 25px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners2 {
+      border-radius: 25px;
+      border: 2px solid #73AD21;
+      padding: 20px;
+      width: 220px;
+      height: 150px;
+    }
+
+    #rcorners3 {
+      border-radius: 25px;
+      background: url(./img/paper.gif);
+      background-position: left top;
+      background-repeat: repeat;
+      padding: 20px;
+      width: 240px;
+      height: 190px;
+    }
+
+    #rcorners4 {
+      border-radius: 15px 50px 30px 5px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners5 {
+      border-radius: 15px 50px 30px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners6 {
+      border-radius: 15px 50px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners7 {
+      border-radius: 15px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners8 {
+      border-radius: 50%;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners9 {
+      border-radius: 50px / 15px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #rcorners10 {
+      border-radius: 15px / 50px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+    }
+
+    #example1 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-bottom-left-radius: 25px;
+    }
+
+    #example2 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-bottom-left-radius: 50px 20px;
+    }
+
+    #example3 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-bottom-right-radius: 25px;
+    }
+
+    #example4 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-bottom-right-radius: 50px 20px;
+    }
+
+    #example5 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-top-right-radius: 25px;
+    }
+
+    #example6 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-top-right-radius: 50px 20px;
+    }
+
+    #example7 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-top-left-radius: 25px;
+    }
+
+    #example8 {
+      border: 2px solid red;
+      width: 70%;
+      padding: 10px;
+      border-top-left-radius: 50px 20px;
+    }
+
+    .r {
+      width: 100px;
+      height: 100px;
+      float: left;
+      border: 2px solid red;
+    }
+
+    .r1 {
+      border-radius: 0 0 20px 20px;
+    }
+
+    .r2 {
+      border-radius: 0 10px 20px;
+    }
+
+    .r3 {
+      border-radius: 10px 20px;
+    }
+
+    .r4 {
+      border-radius: 10px/20px;
+    }
+
+    .r5 {
+      border-radius: 5px 10px 15px 30px/30px 15px 10px 5px;
+    }
+
+    .r6 {
+      border-radius: 10px 20px 30px 40px/30px;
+    }
+
+    .r7 {
+      border-radius: 50%;
+    }
+
+    .r8 {
+      border-top: none;
+      border-bottom: none;
+      border-radius: 30px/90px;
+    }
+
+    .r9 {
+      border-bottom-left-radius: 100px;
+    }
+
+    .r10 {
+      border-radius: 0 100%;
+    }
+
+    .r11 {
+      border-radius: 0 50% 50% 50%;
+    }
+
+    .r12 {
+      border-top-left-radius: 100% 20px;
+      border-bottom-right-radius: 100% 20px;
+      border: 2px solid red;
+      clear: right;
+    }
+
+    #show1 {
+      width: 120px;
+      height: 120px;
+      margin: 5px;
+      /* не меньше значення, вказаного в box-shadow */
+      border: yellow dashed 1px;
+      border-radius: 4px;
+      background: red;
+      box-shadow: 0 0 0 5px red;
+      /* той самий колір, щоо і в background */
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Rounded Corners</h1>
+
+  <h2>CSS border-radius Property</h2>
+  <p>The CSS border-radius property defines the radius of an element's corners.</p>
+
+  <p>Tip: This property allows you to add rounded corners to elements!</p>
+  <p>Here are three examples:</p>
+
+  <p>Rounded corners for an element with a specified background color:</p>
+  <p id="rcorners1">Rounded corners!<br>
+    The code for this:<br>
+    border-radius: 25px;<br>
+    background: #73AD21;<br>
+    padding: 20px;<br>
+    width: 200px;<br>
+    height: 150px;<br>
+  </p>
+  <p>Rounded corners for an element with a border:</p>
+  <p id="rcorners2">Rounded corners!<br>
+    The code for this:<br>
+    border-radius: 25px;<br>
+    border: 2px solid #73AD21;<br>
+    padding: 20px;<br>
+    width: 220px;<br>
+    height: 150px;</p>
+
+  <p>Rounded corners for an element with a background image:</p>
+  <p id="rcorners3">Rounded corners!<br>
+    border-radius: 25px;<br>
+    background: url(./img/paper.gif);<br>
+    background-position: left top;<br>
+    background-repeat: repeat;<br>
+    padding: 20px;<br>
+    width: 240px;<br>
+    height: 190px;
+  </p>
+  <br>
+  <p>Tip: The border-radius property is actually a shorthand property for the border-top-left-radius,
+    border-top-right-radius, border-bottom-right-radius and border-bottom-left-radius properties.
+  </p>
+
+  <h2>CSS border-radius - Specify Each Corner</h2>
+  <p>The border-radius property can have from one to four values. Here are the rules:</p>
+  <p><b>Four values - border-radius: 15px 50px 30px 5px;</b> (first value applies to top-left corner, second value
+    applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left
+    corner):
+  </p>
+
+  <p>Four values - border-radius: 15px 50px 30px 5px:</p>
+  <p id="rcorners4" style="margin: 0 auto;">The code for this:<br>
+    border-radius: 15px 50px 30px 5px;</p>
+
+  <p><b>Three values - border-radius: 15px 50px 30px;</b> (first value applies to top-left corner, second value applies
+    to top-right and bottom-left corners, and third value applies to bottom-right corner):</p>
+
+  <p>Three values - border-radius: 15px 50px 30px:</p>
+  <p id="rcorners5" style="margin: 0 auto;">The code for this:<br>
+    border-radius: 15px 50px 30px;</p>
+  </p>
+
+  <p><b>Two values - border-radius: 15px 50px;</b> (first value applies to top-left and bottom-right corners, and the
+    second value applies to top-right and bottom-left corners):</p>
+
+  <p>Two values - border-radius: 15px 50px:</p>
+  <p id="rcorners6" style="margin: 0 auto;">The code for this:<br>
+    border-radius: 15px 50px;</p>
+
+  <p><b>One value - border-radius: 15px;</b> (the value applies to all four corners, which are rounded equally:</p>
+  <p>One value - border-radius: 15px:</p>
+  <p id="rcorners7" style="margin: 0 auto;">The code for this:<br>
+    border-radius: 15px;</p>
+
+  <p>You could also create elliptical corners:</p>
+  <p>Ellipse border - border-radius: 50%:</p>
+  <p id="rcorners8" style="margin: 0 auto;"><br>
+    The code for this:<br>
+    border-radius: 50%;
+  </p>
+
+  <h2>The border-radius Property</h2>
+
+  <p>Elliptical border - border-radius: 50px / 15px:</p>
+  <p id="rcorners9">The code for this:<br>
+    border-radius: 50px / 15px
+  </p>
+
+  <p>Elliptical border - border-radius: 15px / 50px:</p>
+  <p id="rcorners10">The code for this:<br>
+    border-radius: 15px / 50px
+  </p>
+
+  <h2>CSS border-bottom-left-radius Property</h2>
+  <p>Defines the shape of the border of the bottom-left corner</br>
+    Add rounded borders to the bottom-left corner of two div-elements:</p>
+
+  <h3>border-bottom-left-radius: 25px:</h3>
+  <div id="example1">
+    <p>The border-bottom-left-radius property defines the radius of the bottom-left corner.</p>
+  </div>
+
+  <h3>border-bottom-left-radius: 50px 20px:</h3>
+  <div id="example2">
+    <p>If two values are set; the first one is for the bottom border, the second one for the left border.</p>
+  </div>
+
+  <h2>CSS border-bottom-right-radius Property</h2>
+  <p>Defines the shape of the border of the bottom-right corner<br>
+    Add rounded borders to the bottom-right corner of two <div> elements:</p>
+
+  <h3>border-bottom-right-radius: 25px:</h3>
+  <div id="example3">
+    <p>The border-bottom-right-radius property defines the radius of the bottom-right corner.</p>
+  </div>
+
+  <h3>border-bottom-right-radius: 50px 20px:</h3>
+  <div id="example4">
+    <p>If two values are set; the first one is for the bottom border, the second one for the right border.</p>
+  </div>
+
+  <h2>CSS border-top-right-radius Property</h2>
+  <p>Defines the shape of the border of the top-right corner<br>
+    Add rounded borders to the top-right corner of two div-elements:</p>
+
+  <h3>border-top-right-radius: 25px:</h3>
+  <div id="example5">
+    <p>The border-top-right-radius property defines the radius of the top-right corner.</p>
+  </div>
+
+  <h3>border-top-right-radius: 50px 20px:</h3>
+  <div id="example6">
+    <p>If two values are set; the first one is for the top border, the second one for the right border.</p>
+  </div>
+
+  <h2>CSS border-top-left-radius Property</h2>
+  <p>Defines the shape of the border of the top-left corner<br>
+    Add rounded borders to the top-left corner of two div-elements:
+  </p>
+
+  <h3>border-top-left-radius: 25px:</h3>
+  <div id="example7">
+    <p>The border-top-left-radius property defines the radius of the top-left corner.</p>
+  </div>
+
+  <h3>border-top-left-radius: 50px 20px:</h3>
+  <div id="example8">
+    <p>If two values are set; the first one is for the top border, the second one for the left border.</p>
+  </div>
+
+  <h1>Закруглення кутів</h1>
+
+  <h2>Закруглення кутів за допомогою властивості 'border-radius'</h2>
+  <p>Свойство позволяет закруглить углы строчных и блочных элементов. Кривая для каждого угла определяется с помощью
+    одного или двух радиусов, определяющих его форму — круга или эллипса. Радиус распространяется на весь фон, даже если
+    элемент не имеет границ, точное положение секущей определяется с помощью свойства background-clip.<br>
+    Свойство border-radius позволяет закруглить все углы одновременно, а с помощью свойств:<br> border-top-left-radius,
+    border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius<br> можно закруглить каждый угол
+    отдельно.<br>
+  </p>
+  Значення, які задані через /, визначають горизонтальні та вертикальні радіуси. Ця властивість не наслідується.
+  </p>
+  Примеры:
+  <br>
+  <img src="./img/border-radius1.png" alt="top-left-corner">
+  <br>
+  <p>При визначенні конкретного кута з використанням властивості 'border-radius' вказується цей конкретний кут
+    шляхом вказання його положення:<br>
+    <b> border-top-left-radius</b>, <b>border-top-right-radius</b>,<br>
+    <b>border-bottom-right-radius</b>, <b>border-bottom-left-radius</b><br>
+    При цьому, для прикладу, якщо задати тільки два значення властивості 'border-radius' то перше значення закруглить
+    верхній лівий та нижній правий кути, а друге — верхній правий та нижній лівий.</p>
+
+  Ось приклади фигур із різними значеннями властивості 'border-radius':<br>
+  <br>
+  <div class="r r1"><br>r1: border-radius: 0 0 20px 20px;</div><br>
+  <div class="r r2"><br>r2: border-radius: 0 10px 20px;</div><br>
+  <div class="r r3"><br>r3: border-radius: 10px 20px;</div><br>
+  <div class="r r4"><br>r4: border-radius: 10px/20px;</div><br>
+  <div class="r r5">r5: border-radius: 5px 10px 15px 30px/30px 15px 10px 5px;</div><br>
+  <div class="r r6"><br>r6: border-radius: 10px 20px 30px 40px/30px;</div><br>
+  <div class="r r7"><br><br>r7: border-radius: 50%;</div><br>
+  <div class="r r8">r8: border-top: none; border-bottom: none; border-radius: 30px/90px;</div><br>
+  <div class="r r9">r9: border-bottom-left-radius: 100px;</div><br>
+  <div class="r r10">r10: border-radius: 0 100%;</div><br>
+  <div class="r r11"><br>r11: border-radius: 0 50% 50% 50%;</div><br>
+  <div class="r r12">r12: border-top-left-radius: 100% 20px; border-bottom-right-radius: 100% 20px;</div><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  Тут створимо червоний квадрат, заокруглимо його кути та дамо границю у вигляді прошитих ниток<br>
+  <br>
+  <div id="show1"></div>
+
+</body>
+
+</html>

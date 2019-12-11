@@ -8,6 +8,10 @@
   <title>ex7-mycss_box-model_box-sizing</title>
 
   <style>
+    /* * {
+      box-sizing: border-box;
+    } */
+
     body {
       background-color: lightblue;
       font-family: 'Helvetica', 'Arial'sans-serif;
@@ -82,6 +86,95 @@
     input,
     textarea {
       width: 50%;
+    }
+
+    .div5 {
+      width: 300px;
+      height: 100px;
+      padding: 15px;
+      margin: 0 auto;
+      background-color: yellow;
+      box-shadow: 10px 10px;
+    }
+
+    .div6 {
+      width: 300px;
+      height: 100px;
+      padding: 15px;
+      margin: 0 auto;
+      background-color: yellow;
+      box-shadow: 10px 10px grey;
+    }
+
+    .div7 {
+      width: 300px;
+      height: 100px;
+      padding: 15px;
+      margin: 0 auto;
+      background-color: yellow;
+      box-shadow: 10px 10px 5px grey;
+    }
+
+    #boxshadow {
+      position: relative;
+      -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+      padding: 10px;
+      background: white;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    /* Make the image fit the box */
+    #boxshadow img {
+      width: 100%;
+      border: 1px solid #8a4419;
+      border-style: inset;
+    }
+
+    #boxshadow::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      /* hide shadow behind image */
+      -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+      width: 70%;
+      left: 15%;
+      /* one half of the remaining 30% */
+      height: 100px;
+      bottom: 0;
+    }
+
+    div.card {
+      width: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+    }
+
+    div.header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 40px;
+    }
+
+    div.container1 {
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    div.polaroid {
+      width: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    div.container2 {
+      padding: 10px;
     }
   </style>
 
@@ -207,6 +300,60 @@
   <p><strong>Tip:</strong> If you remove the box-sizing property from the style element width of input(with=100%),
     textarea, and submit button will go outside of the screen.</p>
   <p></p>
+
+  <h1>CSS Box-Shadow</h1>
+  <p>The CSS box-shadow property applies shadow to elements.</p>
+
+  <p>In its simplest use, you only specify the horizontal shadow and the vertical shadow:</p>
+  <div class="div5">This is a div-element with a box-shadow<br>
+    <br>
+    The code for shadow is:<br>
+    {box-shadow: 10px 10px;}
+  </div>
+
+  <p>Next, add a color to the shadow:</p>
+  <div class="div6">This is a div-element with a box-shadow<br>
+    <br>
+    The code for shadow is:<br>
+    {box-shadow: 10px 10px grey;}
+  </div>
+
+  <p>Next, add a blur effect to the shadow:</p>
+  <div class="div7">This is a div-element with a box-shadow<br>
+    <br>
+    The code for shadow is:<br>
+    {box-shadow: 10px 10px 5px grey;}
+  </div>
+
+  <h2>An example of using the box-shadow property to create paper-like card (text-card):</h2>
+  <div class="card">
+    <div class="header">
+      <h1>1</h1>
+    </div>
+
+    <div class="container1">
+      <p>November 1, 2019</p>
+    </div>
+  </div>
+
+  <h2>An example of using the box-shadow property to create paper-like card (image-card):</h2>
+  <div class="polaroid">
+    <img src="./img/rock600x400.jpg" alt="Norway" style="width:100%">
+    <div class="container2">
+      <p>Hardanger, Norway</p>
+    </div>
+  </div>
+
+  <h2>You can also add shadows to the ::before and ::after pseudo-elements, to create an interesting effect:</h2>
+  <p>Here, the shadow for div-element is: {box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);}</p>
+  <p>After, we add '::after pseudo-element' to create other shadow: {box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    width: 70%;} and hide behind image: {z-index: -1;}
+  </p>
+  <div id="boxshadow">
+    <img src="./img/rock600x400.jpg" alt="Norway" width="600" height="400">
+  </div>
+  <br>
+
 
 
 

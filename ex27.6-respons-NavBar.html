@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex27.6_mycss: Responsive Topnav Example</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    .responsive-topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .responsive-topnav li {
+      float: left;
+    }
+
+    .responsive-topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .responsive-topnav li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .responsive-topnav li a.active {
+      background-color: #4CAF50;
+    }
+
+    .responsive-topnav li.right {
+      float: right;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .responsive-topnav li.right,
+      .responsive-topnav li {
+        float: none;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Navigation Bar example - Fixed Full-height Side Nav</h1>
+
+  <ul class="responsive-topnav">
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li class="right"><a href="#about">About</a></li>
+  </ul>
+
+  <div style="padding:0 16px;">
+    <h2>Some Famous Sayings of All Time</h2>
+    <h3>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</h3>
+    <br>
+    <p> To the man who only has a hammer, everything he encounters begins to look like a nail.<br>
+      — Abraham Maslow</p>
+    <p>We are what we repeatedly do; excellence, then, is not an act but a habit.<br>
+      — Aristotle</p>
+    <p>All men are frauds. The only difference between them is that some admit it. I myself deny it.<br>
+      — H. L. Mencken</p>
+    <p>Don’t ever wrestle with a pig. You’ll both get dirty, but the pig will enjoy it.<br>
+      — Cale Yarborough</p>
+    <p>Just the fact that some geniuses were laughed at does not imply that all who are laughed at are geniuses. They
+      laughed at Columbus, they laughed at Fulton, they laughed at the Wright brothers. But they also laughed at Bozo
+      the Clown.<br>
+      — Carl Sagan</p>
+    <h3>Resize the browser window to see the effect.</h3>
+  </div>
+
+</body>
+
+</html>

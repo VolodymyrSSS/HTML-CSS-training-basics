@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex23.1_mycss: image style modal</title>
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    .code-block {
+      /* width: 40%; */
+      float: left;
+      padding: 15px;
+      margin: 10px 15px;
+    }
+
+    .clearfix {
+      width: 75%;
+      border: 2px solid brown;
+      background-color: lightgreen;
+      padding: 5px;
+    }
+
+
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Position for the image */
+    #myImg {
+      /* to show placed image in a page */
+      display: block;
+      /* Position on the middle of the page */
+      margin-left: auto;
+      /* Position on the middle of the page */
+      margin-right: auto;
+      /* Round the corner of the image */
+      border-radius: 5px;
+      /* change cursor into pointer */
+      cursor: pointer;
+      /* time while transit */
+      transition: 0.3s;
+    }
+
+    #myImg:hover {
+      /* change opacity on hover */
+      opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      /* Hidden by default */
+      display: none;
+      /* Stay in place */
+      position: fixed;
+      /* Sit on top */
+      z-index: 1;
+      /* Location of the box */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      /* Location of the box */
+      top: 0;
+      /* Full width */
+      width: 100%;
+      /* Full height */
+      height: 100%;
+      /* Enable scroll if needed */
+      overflow: auto;
+      /* Fallback color */
+      background-color: rgb(0, 0, 0);
+      /* Black w/ opacity */
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      /* to show placed image in a modal */
+      display: block;
+      /* full width of the image im a modal */
+      width: 80%;
+      /* max width of the image im a modal */
+      max-width: 700px;
+      /* place image on a middle of the modal*/
+      margin: auto;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+      /* display caption in the modal */
+      display: block;
+      /* full width of the caption in a modal */
+      width: 80%;
+      /* max width of the caption in a modal */
+      max-width: 700px;
+      /* aligne the text of the caption in the modal */
+      text-align: center;
+      /* text-color of the caption */
+      color: #ccc;
+      /* position caption in the modal */
+      padding: 10px 0;
+      /* full height of the caption */
+      height: 150px;
+      /* place caption in a middle of the page */
+      margin: auto;
+    }
+
+    /* Add Animation */
+    .modal-content,
+    #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0.1)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Image Modal (Advanced)</h1>
+  <p>Let's look at the example to demonstrate how CSS and JavaScript can work together.<br>
+    First, use CSS to create a modal window (dialog box), and hide it by default.<br>
+    Then, use a JavaScript to show the modal window and to display the image inside the modal, when a user clicks on the
+    image:
+  </p>
+
+  <img id="myImg" src="./img/sky-lights.jpg" alt="Northern Lights, Norway" width="300" height="200">
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">×</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+  </script>
+
+  <p>In this example, we use CSS to style the <b>image</b> itself and to create a <b>Modal</b> (modal window or dialog
+    box) that is hidden by default.</p>
+  <div class="clearfix">
+    <div class="code-block">
+      /*Style the image*/<br>
+      <b>#myImg</b> {<br>
+      display: block; /* to show placed image in a page */<br>
+      margin-left: auto; /* position on the middle of the page */<br>
+      margin-right: auto; /* position on the middle of the page */<br>
+      border-radius: 5px; /* round the corner of the image */<br>
+      cursor: pointer; /* change cursor into pointer */<br>
+      transition: 0.3s; /* time while transit */<br>
+      }<br>
+      <br>
+      #myImg:hover {<br>
+      opacity: 0.7; /* change opacity on hover */<br>
+      }<br>
+      <br>
+    </div>
+    <div class="code-block">
+      <b>.modal</b> { /* the Modal (background) */<br>
+      display: none; /* hidden by default */<br>
+      position: fixed; /* stay in place */<br>
+      z-index: 1; /* sit on top */<br>
+      padding-top: 100px; /* location of the box */<br>
+      left: 0; /* location of the box */<br>
+      top: 0; /* location of the box */<br>
+      width: 100%; /* full width */<br>
+      height: 100%; /* full height */<br>
+      overflow: auto; /* enable scroll if needed */<br>
+      background-color: rgb(0, 0, 0); /* fallback color */<br>
+      background-color: rgba(0, 0, 0, 0.9); /* black w/ opacity */<br>
+      }<br>
+    </div>
+  </div>
+
+  <div class="clearfix:after"></div>
+  <p>We use again CSS to create <b>Modal Content</b> (that is our image) and <b>Caption</b>, after add animation</p>
+  <div class="clearfix">
+    <div class="code-block">
+      <b>.modal-content</b> {<br>
+      display: block; /* to show placed image in a modal */<br>
+      width: 80%; /* full width of the image im a modal */<br>
+      max-width: 700px; /* max width of the image im a modal */<br>
+      margin: auto; /* place image on a middle of the modal*/<br>
+      }<br>
+      <br>
+      <b>#caption</b> {<br>
+      display: block; /* display caption in the modal */<br>
+      width: 80%; /* full width of the caption in a modal */<br>
+      max-width: 700px; /* max width of the caption in a modal */<br>
+      height: 150px; /* full height of the caption */<br>
+      text-align: center; /* aligne the text of the caption in the modal */<br>
+      color: #ccc; /* text-color of the caption */<br>
+      padding: 10px 0; /* position caption in the modal */<br>
+      margin: auto;/* place caption in a middle of the page */<br>
+      }<br>
+      <br>
+      /* <b>Add Animation</b> */<br>
+      .modal-content,<br>
+      #caption {<br>
+      -webkit-animation-name: zoom;<br>
+      -webkit-animation-duration: 0.6s;<br>
+      animation-name: zoom;<br>
+      animation-duration: 0.6s;<br>
+      }<br>
+      <br>
+    </div>
+    <div class="code-block">
+      @-webkit-keyframes zoom {<br>
+      from {<br>
+      -webkit-transform: scale(0) /* Safari prior 9.0 */<br>
+      }<br>
+      <br>
+      to {<br>
+      -webkit-transform: scale(1) /* Safari prior 9.0 */<br>
+      }<br>
+      }<br>
+      <br>
+      @keyframes zoom {<br>
+      from {<br>
+      transform: scale(0.1)<br>
+      }<br>
+      <br>
+      to {<br>
+      transform: scale(1)<br>
+      }<br>
+      }<br>
+      <br>
+    </div>
+  </div>
+
+  <div class="clearfix:after"></div>
+  <p>Then, create <b>like-close button</b> and forsee the use <b>in small-screen devices</b> (makes it responsive)</p>
+  <div class="clearfix">
+    <div class="code-block">
+      <b>.close</b> {<br>
+      position: absolute;<br>
+      top: 15px;<br>
+      right: 35px;<br>
+      color: #f1f1f1;<br>
+      font-size: 40px;<br>
+      font-weight: bold;<br>
+      transition: 0.3s;<br>
+      }<br>
+      <br>
+      .close:hover,<br>
+      .close:focus {<br>
+      color: #bbb;<br>
+      text-decoration: none;<br>
+      cursor: pointer;<br>
+      }<br>
+    </div>
+
+    <div class="code-block">
+      /* <b>100% Image Width on Smaller Screens</b> */<br>
+      @media only screen and (max-width: 700px) {<br>
+      .modal-content {<br>
+      width: 100%;<br>
+      }<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Only after that, we use <b>JavaScript</b> to trigger the modal and to display the current image inside the modal
+    when it is clicked on.<br>
+    Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.
+  </p>
+  <div class="clearfix">
+    <div class="code-block">
+      // Get the modal<br>
+      var modal = document.getElementById('myModal');<br>
+      <br>
+      // Get the image and insert it inside the modal - use its "alt" text as a caption<br>
+      var img = document.getElementById('myImg');<br>
+      var modalImg = document.getElementById("img01");<br>
+      var captionText = document.getElementById("caption");<br>
+      img.onclick = function(){<br>
+      modal.style.display = "block";<br>
+      modalImg.src = this.src;<br>
+      captionText.innerHTML = this.alt;<br>
+      }<br>
+      <br>
+      // Get the span-element that closes the modal<br>
+      var span = document.getElementsByClassName("close")[0];<br>
+      <br>
+      // When the user clicks on 'span' (x), close the modal<br>
+      span.onclick = function() {<br>
+      modal.style.display = "none";<br>
+      }<br>
+    </div>
+
+
+
+
+</body>
+
+</html>

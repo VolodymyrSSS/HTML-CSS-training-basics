@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex19_mycss: 2D Transforms Methods</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      height: 500vh;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    ol.styledlist {
+      list-style-type: lower-alpha;
+      width: 350px;
+      padding: 3px 8px;
+      list-style-type: disc;
+      border: 2px dashed red;
+      background-color: tan;
+    }
+
+    ol.styledlist li {
+      list-style-position: inside;
+    }
+
+    .ex1,
+    .ex2 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px dotted black;
+      margin: 0 auto;
+    }
+
+    #myDiv1 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: rotate(20deg);
+      /* IE 9 */
+      -webkit-transform: rotate(20deg);
+      /* Safari prior 9.0 */
+      transform: rotate(20deg);
+      /* Standard syntax */
+      margin: 0 auto;
+    }
+
+    .ex4 {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px dotted black;
+    }
+
+    #myDiv2 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: rotate(-20deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-20deg);
+      /* Safari prior 9.0 */
+      transform: rotate(-20deg);
+      /* Standard syntax */
+      margin: 0 auto;
+    }
+
+    .ex3 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px dotted black;
+      margin: 0 auto;
+    }
+
+    #myDiv3 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: translate(50px, 20px);
+      /* IE 9 */
+      -webkit-transform: translate(50px, 20px);
+      /* Safari prior 9.0 */
+      transform: translate(50px, 20px);
+      /* Standard syntax */
+      padding: 4px;
+      margin: 0 auto;
+    }
+
+    .forCode {
+      width: 38%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+
+    .ex4.myDiv4 {
+      -ms-transform: scale(2, 3);
+      /* IE 9 */
+      -webkit-transform: scale(2, 3);
+      /* Safari prior 9.0 */
+      transform: scale(2, 3);
+      /* Standard syntax */
+      margin: 50px auto;
+    }
+
+    .ex4.myDiv5 {
+      -ms-transform: scale(0.5, 0.5);
+      /* IE 9 */
+      -webkit-transform: scale(0.5, 0.5);
+      /* Safari prior 9.0 */
+      transform: scale(0.5, 0.5);
+      /* Standard syntax */
+      margin: 10px auto;
+    }
+
+    #myDiv6 {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: scaleX(2);
+      /* IE 9 */
+      -webkit-transform: scaleX(2);
+      /* Safari prior 9.0 */
+      transform: scaleX(2);
+      /* Standard syntax */
+      margin: 50px auto;
+    }
+
+    #myDiv7 {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: scaleX(0.5);
+      /* IE 9 */
+      -webkit-transform: scaleX(0.5);
+      /* Safari prior 9.0 */
+      transform: scaleX(0.5);
+      /* Standard syntax */
+      margin: 0.5px auto;
+    }
+
+    #myDiv8 {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: scaleY(3);
+      /* IE 9 */
+      -webkit-transform: scaleY(3);
+      /* Safari prior 9.0 */
+      transform: scaleY(3);
+      /* Standard syntax */
+      margin: 60px auto;
+    }
+
+    #myDiv9 {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -ms-transform: scaleY(0.5);
+      /* IE 9 */
+      -webkit-transform: scaleY(0.5);
+      /* Safari prior 9.0 */
+      transform: scaleY(0.5);
+      /* Standard syntax */
+      margin: 0.5px auto;
+    }
+
+    .ex11.myDiv10 {
+      -ms-transform: skewX(20deg);
+      /* IE 9 */
+      -webkit-transform: skewX(20deg);
+      /* Safari prior 9.0 */
+      transform: skewX(20deg);
+      /* Standard syntax */
+      margin: 60px auto;
+    }
+
+    .ex11 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      /* margin: 60px auto; */
+    }
+
+    .ex11.myDiv11 {
+      -ms-transform: skewY(20deg);
+      /* IE 9 */
+      -webkit-transform: skewY(20deg);
+      /* Safari prior 9.0 */
+      transform: skewY(20deg);
+      /* Standard syntax */
+      margin: 60px auto;
+    }
+
+    .ex12,
+    .ex13 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      margin: 0 auto;
+    }
+
+    .ex12#myDiv12 {
+      -ms-transform: skew(20deg, 10deg);
+      /* IE 9 */
+      -webkit-transform: skew(20deg, 10deg);
+      /* Safari prior 9.0 */
+      transform: skew(20deg, 10deg);
+      /* Standard syntax */
+    }
+
+
+    .ex13#myDiv13 {
+      -ms-transform: matrix(1, -0.3, 0, 1, 0, 0);
+      /* IE 9 */
+      -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0);
+      /* Safari prior 9.0 */
+      transform: matrix(1, -0.3, 0, 1, 0, 0);
+      /* Standard syntax */
+    }
+
+    .ex13#myDiv14 {
+      -ms-transform: matrix(1, 0, 0.5, 1, 150, 0);
+      /* IE 9 */
+      -webkit-transform: matrix(1, 0, 0.5, 1, 150, 0);
+      /* Safari prior 9.0 */
+      transform: matrix(1, 0, 0.5, 1, 150, 0);
+      /* Standard syntax */
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Transforms Methods</h1>
+  <p>CSS transforms allow you to move, rotate, scale, and skew elements.</p>
+
+  <h2>CSS 2D Transforms Methods</h2>
+  <ol class="styledlist">With the CSS transform property you can use the following 2D transformation methods:
+    <li>translate()</li>
+    <li>rotate()</li>
+    <li>scaleX()</li>
+    <li>scaleY()</li>
+    <li>scale()</li>
+    <li>skewX()</li>
+    <li>skewY()</li>
+    <li>skew()</li>
+    <li>matrix()</li>
+  </ol>
+
+  <p>Some older browsers need specific prefixes (-ms- or -webkit-) to understand the 2D transform properties:</p>
+
+  <h2>The translate() Method</h2>
+  <p>The translate() method <b>moves an element from its current position</b> (according to the parameters given
+    for the X-axis and the Y-axis):</p>
+
+  <img src="./img/transform_translate1.gif" alt="translate demo">
+
+  <p>The following example moves the div-element 50 pixels to the right, and 20 pixels down from its current position:
+  </p>
+  <div class="ex3">
+    We have a div element on its current position.
+  </div>
+
+  <div id="myDiv3">
+    This div element is moved 50 pixels to the right, and 20 pixels down from its current position.
+  </div>
+
+  <div class="forCode">
+    The code for moved element:<br>
+    div {<br>
+    width: 300px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px solid black;<br>
+    -ms-transform: translate(50px,20px); /* IE 9 */<br>
+    -webkit-transform: translate(50px,20px); /* Safari prior 9.0 */<br>
+    transform: translate(50px,20px); /* Standard syntax */<br>
+    }<br>
+  </div>
+  <br>
+  <br>
+
+  <h2>The rotate() Method</h2>
+  <p></p>
+  <p>The rotate() method <b>rotates an element clockwise or counter-clockwise</b>.</p>
+
+  <img src="./img/transform_rotate1.gif" alt="rotate demo">
+
+  <div class="ex1">
+    This a normal div element.
+  </div>
+
+  <div id="myDiv1">
+    This div element is rotated clockwise 20 degrees.
+  </div>
+  <br>
+  <div class="forCode">
+    div {<br>
+    -ms-transform: rotate(20deg); /* IE 9 */<br>
+    -webkit-transform: rotate(20deg); /* Safari prior 9.0 */<br>
+    transform: rotate(20deg); /* Standard syntax */<br>
+    }<br>
+  </div>
+
+  <p>Using negative values will rotate the element counter-clockwise.</p>
+
+  <div class="ex2">
+    This a normal div element.
+  </div>
+
+  <div id="myDiv2">
+    This div element is rotated counter-clockwise 20 degrees.
+  </div>
+  <br>
+  <br>
+  <div class="forCode">
+    div {<br>
+    -ms-transform: rotate(20deg); /* IE 9 */<br>
+    -webkit-transform: rotate(20deg); /* Safari prior 9.0 */<br>
+    transform: rotate(-20deg); /* Standard syntax */<br>
+    }<br>
+  </div>
+
+  <h2>The scale() Method</h2>
+  <p>The scale() method <b>increases or decreases the size of an element</b> (according to the parameters given for the
+    width and height).</p>
+
+  <img src="./img/transform_scale1.gif" alt="scale demo">
+
+  <p>The following example increases the div-element to be two times of its original width, and three times of its
+    original height: </p>
+  <br>
+  <br>
+  <div class="ex4 myDiv4">
+    This div element is two times of its original width, and three times of its original height.
+  </div>
+  <br>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: scale(2,3); /* IE 9 */<br>
+    -webkit-transform: scale(2,3); /* Safari prior 9.0 */<br>
+    transform: scale(2,3); /* Standard syntax */<br>
+  </div>
+
+  <p>Have a look at original element:</p>
+  <div class="ex4">
+    We had a div element with its original width=200px and height=100px.
+  </div>
+
+  <p>The following example decreases the div-element to be half of its original width and height: </p>
+  <div class="ex4 myDiv5">
+    This div element is decreased to be half of its original width and height.
+  </div>
+  <div class="forCode">
+    The code for decreased div-element:<br>
+    div {<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: scale(0.5,0.5); /* IE 9 */<br>
+    -webkit-transform: scale(0.5,0.5); /* Safari prior 9.0 */<br>
+    transform: scale(0.5,0.5); /* Standard syntax */<br>
+  </div>
+
+  <h2>The scaleX() Method</h2>
+  <p>The scaleX() method <b>increases or decreases the width</b> of an element.</p>
+
+  <div id="myDiv6">
+    This div element is two times of its original width.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: scaleX(2); /* IE 9 */<br>
+    -webkit-transform: scaleX(2); /* Safari prior 9.0 */<br>
+    transform: scaleX(2); /* Standard syntax */<br>
+  </div>
+
+
+  <p>Have a look at original element:</p>
+  <div class="ex4">
+    We had a div element with its original width=200px and height=100px.
+  </div>
+
+  <div id="myDiv7">
+    This div element is half of its original width.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: scaleX(0.5); /* IE 9 */<br>
+    -webkit-transform: scaleX(0.5); /* Safari prior 9.0 */<br>
+    transform: scaleX(0.5); /* Standard syntax */<br>
+  </div>
+
+  <h2>The scaleY() Method</h2>
+  <p>The scaleY() method <b>increases or decreases the height</b> of an element.</p>
+
+  <p>The following example increases the div-element to be three times of its original height:</p>
+  <br>
+  <br>
+
+  <div id="myDiv8">
+    This div element is three times of its original height.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: scaleY(3); /* IE 9 */<br>
+    -webkit-transform: scaleY(3); /* Safari prior 9.0 */<br>
+    transform: scaleY(3); /* Standard syntax */<br>
+  </div>
+
+  <p>Have a look at original element:</p>
+  <div class="ex4">
+    We had a div element with its original width=200px and height=100px.
+  </div>
+
+  <div id="myDiv9">
+    This div element is half of its original height.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: scaleY(0.5);/* IE 9 */<br>
+    -webkit-transform: scaleY(0.5);/* Safari prior 9.0 */<br>
+    transform: scaleY(0.5);/* Standard syntax */<br>
+  </div>
+
+
+  <h2>The skewX() Method and The skewY() Method</h2>
+  <p>The skewX() method <b>skews an element along the X-axis</b> by the given angle.</p>
+
+  <p>The following example skews the div-element 20 degrees along the X-axis:</p>
+  <div class="ex11 myDiv10">
+    This div element is skewed 20 degrees along the X-axis.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 300px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: skewX(20deg); /* IE 9 */<br>
+    -webkit-transform: skewX(20deg); /* Safari prior 9.0 */<br>
+    transform: skewX(20deg); /* Standard syntax */<br>
+  </div>
+
+  <div class="ex11">
+    We had a div element with no skew.
+  </div>
+
+  <p>The skewY() method <b>skews an element along the Y-axis</b> by the given angle.</p>
+  <div class="ex11 myDiv11">
+    This div element is skewed 20 degrees along the Y-axis.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 300px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: skewY(20deg); /* IE 9 */<br>
+    -webkit-transform: skewY(20deg); /* Safari prior 9.0 */<br>
+    transform: skewY(20deg); /* Standard syntax */<br>
+  </div>
+
+  <h2>The skew() Method</h2>
+  <p>The skew() method skews an element along the X and Y-axis by the given angles.</p>
+  <p>If the second parameter is not specified, it has a zero value. So, the following example skews the div-element 20
+    degrees along the X-axis</p>
+
+  <div class="ex12">
+    This a normal div element.
+  </div>
+
+  <p>The following example skews the div-element 20 degrees along the X-axis, and 10 degrees along the Y-axis:</p>
+  <br>
+  <div class="ex12" id="myDiv12">
+    This div element is skewed 20 degrees along the X-axis, and 10 degrees along the Y-axis.
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    width: 300px;<br>
+    height: 100px;<br>
+    background-color: yellow;<br>
+    border: 1px dotted black;<br>
+    -ms-transform: skew(20deg,10deg); /* IE 9 */<br>
+    -webkit-transform: skew(20deg,10deg); /* Safari prior 9.0 */<br>
+    transform: skew(20deg,10deg); /* Standard syntax */<br>
+  </div>
+
+
+  <h2>The matrix() Method</h2>
+  <p>The matrix() method combines all the 2D transform methods into one.<br>
+    The matrix() method take six parameters, containing mathematic functions, which allows you to rotate, scale, move
+    (translate), and skew elements.</p>
+  <p><b>The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())</b></p>
+
+  <div class="ex13">
+    This a normal div element.
+  </div>
+
+  <div class="ex13" id="myDiv13">
+    Using the matrix() method.
+  </div>
+
+  <div class="ex13" id="myDiv14">
+    Another use of the matrix() method.
+  </div>
+
+  <div class="forCode">
+    #myDiv1 {<br>
+    -ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */<br>
+    -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari prior 9.0 */<br>
+    transform: matrix(1, -0.3, 0, 1, 0, 0); /* Standard syntax */<br>
+    }<br>
+    <br>
+    #myDiv2 {<br>
+    -ms-transform: matrix(1, 0, 0.5, 1, 150, 0); /* IE 9 */<br>
+    -webkit-transform: matrix(1, 0, 0.5, 1, 150, 0); /* Safari prior 9.0 */<br>
+    transform: matrix(1, 0, 0.5, 1, 150, 0); /* Standard syntax */<br>
+    }<br>
+  </div>

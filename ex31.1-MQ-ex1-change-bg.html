@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex31.1_mycss: media query example1</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      color: black;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    .forCode {
+      float: left;
+      width: 30%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+
+
+
+    /* On screens that are 992px wide or less, the background color is blue */
+    @media screen and (max-width: 992px) {
+      body {
+        background-color: blue;
+        color: white;
+      }
+    }
+
+    /* On screens that are 600px wide or less, the background color is olive */
+    @media screen and (max-width: 600px) {
+      body {
+        background-color: olive;
+        color: navy;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Media Queries - change the background color for different devices</h1>
+
+  <p>In this <b>example1</b>, we can change the background color for different devices</p>
+
+  <h3>Resize the browser window to see the effect!<br>
+    By default, the background color of the document is "lightblue".<br>
+    If the screen size is 992px or less, the color will change to "blue".<br>
+    If it is 600px or less, it will change to "olive".</h3>
+
+  <div class="forCode">
+    The code for main body-background is:<br>
+    body {<br>
+    background-color: lightblue;<br>
+    }<br>
+    <br>
+    The code for media queries are:<br>
+    /* On screens that are 992px wide or less, the background color is blue */<br>
+    <b>@media screen and (max-width: 992px)</b> {<br>
+    body {<br>
+    background-color: blue;<br>
+    color: white;<br>
+    }<br>
+    }<br>
+    <br>
+    /* On screens that are 600px wide or less, the background color is olive */<br>
+    <b>@media screen and (max-width: 600px)</b> {<br>
+    body {<br>
+    background-color: olive;<br>
+    color: navy;<br>
+    }<br>
+    }<br>
+  </div>
+
+  <p>
+  </p>
+
+  <h2>Do you wonder why we use exactly 992px and 600px?<br>
+    They are what we call "typical breakpoints" for devices. </h2>
+
+</body>
+
+</html>

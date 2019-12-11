@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex24.2-mycss: pseudo-classes_symple: mouse over the links</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .ps-cl-links {
+      width: 35%;
+      padding: 4px;
+      margin: 0 auto;
+      border: 2px solid green;
+    }
+
+    a.one:link {
+      color: #ff0000;
+    }
+
+    a.one:visited {
+      color: #0000ff;
+    }
+
+    a.one:hover {
+      color: #ffcc00;
+    }
+
+    a.two:link {
+      color: #ff0000;
+    }
+
+    a.two:visited {
+      color: #0000ff;
+    }
+
+    a.two:hover {
+      font-size: 150%;
+    }
+
+    a.three:link {
+      color: #ff0000;
+    }
+
+    a.three:visited {
+      color: #0000ff;
+    }
+
+    a.three:hover {
+      background: #66ff66;
+    }
+
+    a.four:link {
+      color: #ff0000;
+    }
+
+    a.four:visited {
+      color: #0000ff;
+    }
+
+    a.four:hover {
+      font-family: monospace;
+    }
+
+    a.five:link {
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    a.five:visited {
+      color: #0000ff;
+      text-decoration: none;
+    }
+
+    a.five:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Pseudo-classes symples:</h1>
+  <h2>Mouse over the links and watch them change layout:</h2>
+
+  <div class="ps-cl-links">
+
+    <p><b><a class="one" href="default.asp" target="_blank">This link changes color</a></b></p>
+    The code for this:<br>
+    a.one:hover {<br>
+    color: #ffcc00;<br>
+    }<br>
+    <br>
+    <p><b><a class="two" href="default.asp" target="_blank">This link changes font-size</a></b></p>
+    The code for this:<br>
+    a.two:hover {<br>
+    font-size: 150%;<br>
+    }<br>
+    <br>
+    <p><b><a class="three" href="default.asp" target="_blank">This link changes background-color</a></b></p>
+    The code for this:<br>
+    a.three:hover {<br>
+    background: #66ff66;<br>
+    }<br>
+    <br>
+    <p><b><a class="four" href="default.asp" target="_blank">This link changes font-family</a></b></p>
+    The code for this:<br>
+    a.four:hover {<br>
+    font-family: monospace;<br>
+    color: #ffcc00;<br>
+    }<br>
+    <br>
+    <p><b><a class="five" href="default.asp" target="_blank">This link changes text-decoration</a></b></p>
+    The code for this:<br>
+    a.five:link {<br>
+    color: #ff0000;<br>
+    text-decoration: none;<br>
+    }<br>
+    than<br>
+    a.five:hover {<br>
+    text-decoration: underline;<br>
+    }<br>
+    <br>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex28_mycss: User Interface</title>
+  <style>
+    body {
+      background-color: lightblue;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    ol.styledlist {
+      width: 590px;
+      padding: 3px 8px;
+      list-style-type: disc;
+      border: 2px dashed red;
+      background-color: tan;
+      margin: 0 auto;
+    }
+
+    ol.styledlist li {
+      list-style-position: inside;
+    }
+
+    .forCode {
+      width: 30%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+
+    .ex1 {
+      border: 2px solid;
+      padding: 20px;
+      width: 300px;
+      resize: horizontal;
+      overflow: auto;
+      margin: 0 auto;
+    }
+
+    .ex2 {
+      border: 2px solid;
+      padding: 20px;
+      width: 300px;
+      resize: vertical;
+      overflow: auto;
+      margin: 0 auto;
+    }
+
+    .ex3 {
+      border: 2px solid;
+      padding: 20px;
+      width: 300px;
+      resize: both;
+      overflow: auto;
+      margin: 0 auto;
+    }
+
+    textarea#test1 {
+      resize: none;
+    }
+
+    div.ex4 {
+      width: 65%;
+      margin: 20px auto;
+      border: 1px solid black;
+      outline: 4px solid red;
+      outline-offset: 15px;
+    }
+
+    div.ex5 {
+      width: 65%;
+      margin: 10px auto;
+      border: 1px solid black;
+      outline: 5px dashed blue;
+      outline-offset: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS User Interface</h1>
+
+  <ol class="styledlist">The following CSS user interface properties:
+    <li>resize</li>
+    <li>outline-offset</li>
+  </ol>
+
+  <h2>CSS Resizing</h2>
+  <p>The resize property specifies if (and how) an element should be resizable by the user.</p>
+  <p><b>Note:</b> Internet Explorer does not support the resize property.</p>
+
+  <p style="text-align: center;">The following example <b>lets the user resize only the width</b> of a div-element:</p>
+
+  <div class="ex1">
+    <p>Let the user resize only the width of this div element.</p>
+    <p>To resize: Click and drag the bottom right corner of this div element.</p>
+  </div>
+  <br>
+  <div class="forCode ">
+    div {<br>
+    border: 2px solid;<br>
+    padding: 20px;<br>
+    width: 300px;<br>
+    <b>resize: horizontal;</b><br>
+    overflow: auto;<br>
+    }<br>
+  </div>
+  <br>
+
+  <p style="text-align: center;">The following example <b>lets the user resize only the height</b> of a div-element:</p>
+
+  <div class="ex2">
+    <p style="text-align: center;">Let the user resize only the height of this div element.</p>
+    <p>To resize: Click and drag the bottom right corner of this div element.</p>
+  </div>
+  <br>
+  <div class="forCode ">
+    div {<br>
+    border: 2px solid;<br>
+    padding: 20px;<br>
+    width: 300px;<br>
+    <b>resize: vertical;</b><br>
+    overflow: auto;<br>
+    }<br>
+  </div>
+  <br>
+
+  <p style="text-align: center;">The following example <b>lets the user resize both the height and width</b> of a
+    div-element:</p>
+
+  <div class="ex3">
+    <p>Let the user resize both the height and the width of this div element.</p>
+    <p>To resize: Click and drag the bottom right corner of this div element.</p>
+  </div>
+  <br>
+  <div class="forCode ">
+    div {<br>
+    border: 2px solid;<br>
+    padding: 20px;<br>
+    width: 300px;<br>
+    <b>resize: both;</b><br>
+    overflow: auto;<br>
+    }<br>
+  </div>
+  <br>
+
+  <p>In many browsers, <b>'textarea' is resizable by default</b>.</p>
+  <p>Here, we have used the resize property <b>to disable the resizability</b>:</p>
+  <textarea id="test1">Textarea - Not resizable</textarea>
+  <div class="forCode ">
+    textarea#test {<br>
+    resize: none;<br>
+    }<br>
+  </div>
+  <textarea id="test2">Textarea - Resizable (default)</textarea>
+  <div class="forCode ">
+    but here we have nothing,<br>
+    only define tag-textarea in HTML<br>
+  </div>
+
+
+  <h2>CSS Outline Offset</h2>
+  <p>The outline-offset property adds space between an outline and the edge or border of an element.</p>
+  <p>Note: Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may
+    overlap other content. Also, the outline is NOT a part of the element's dimensions; the element's total width and
+    height is not affected by the width of the outline.</p>
+
+  <p>The following example uses the outline-offset property to add space between the border and the outline:</p>
+  <br>
+  <div class="ex4">This div has a 4 pixels solid red outline 15 pixels outside the border edge.</div>
+  <br>
+  <div class="forCode ">
+    div {<br>
+    margin: 20px auto;<br>
+    border: 1px solid black;<br>
+    <b>outline: 4px solid red;</b><br>
+    <b>outline-offset: 15px;</b><br>
+    }<br>
+  </div>
+  <br>
+  <div class="ex5">This div has a 5 pixels dashed blue outline 5 pixels outside the border edge.</div>
+  <br>
+  <div class="forCode ">
+    div {<br>
+    margin: 10px auto;<br>
+    border: 1px solid black;<br>
+    <b>outline: 5px dashed blue;</b><br>
+    <b>outline-offset: 5px;</b><br>
+    }<br>
+  </div>
+
+
+</body>
+
+</html>

@@ -57,31 +57,31 @@
 
     #example4 {
       width: 80%;
-      height: 300px;
+      height: 420px;
       background-image: url("./img/bggradientex.jpeg");
     }
 
     #example5 {
       width: 80%;
-      height: 300px;
+      height: 330px;
       background-image: url("./img/bggradientex.jpeg");
       background-repeat: repeat-x;
     }
 
     #example6 {
       width: 80%;
-      height: 300px;
-      background-image: url("./img/owl_tree.jpeg");
+      height: 330px;
+      background-image: url("./img/img_tree.gif");
       background-repeat: no-repeat;
     }
 
     #example7 {
       width: 80%;
       height: 300px;
-      background-image: url("./img/owl_tree.jpeg");
+      background-image: url("./img/img_tree.gif");
       background-repeat: no-repeat;
       background-position: right top;
-      margin-right: 200px;
+      padding-right: 200px;
     }
 
     #example8 {
@@ -257,8 +257,9 @@
     }<br>
     /style><br>
   </div>
-  <p>But, the example above shows a bad combination of text and background image. The text is hardly readable</p>
-  <p><b>Note:</b> When using a background image, <b>use an image that does not disturb the text</b>.</p>
+  <p>But, the example above shows a bad combination of text and background image. The text is hardly readable</br>
+    When using a background image, <b>use an image that does not disturb the text</b>, like in the following example:
+  </p>
   <div id="example3">
     style><br>
     body {<br>
@@ -270,47 +271,52 @@
   </div>
 
   <h2>CSS background-repeat</h2>
-  <p><b>By default</b>, the background-image property repeats an image both horizontally and vertically.<br>
+  <p><b>By default, the background-image property repeats an image both horizontally and vertically</b>.<br>
     Some images should be repeated only horizontally or vertically, or they will look strange, like this:
   </p>
   <div id="example4">
-    style><br>
-    body {<br>
-    style><br>
+    <br>
     body {<br>
     background-image: url("./img/gradient_bg1.jpg");<br>
     }<br>
-    /style><br>
-    <h2>Hello World!</h2>
-    <p>Strange background image...</p>
+    <br>
+    <br>
+    <h3>Hello World!</h3>
+    <br>
+    Strange background image, isn't it?
   </div>
-  <p>If the image above is repeated only horizontally (background-repeat: repeat-x;), the background will look better:
-  </p>
+  <p>But, if the image above is repeated only horizontally (background-repeat: repeat-x;), the background will look
+    better, have a look at this example:</p>
   <div id="example5">
-    style><br>
-    body {<br>
-    style><br>
+    <br>
     body {<br>
     background-image: url("./img/gradient_bg1.jpg");<br>
     background-repeat: repeat-x;<br>
     }<br>
-    /style><br>
-    <h2>Hello World!</h2>
+    <br>
+    <h3>Hello World!</h3>
+    <br>
+    This background image looks a bit better!
   </div>
   <p>Tip: <b>To repeat an image vertically</b>, set background-repeat: repeat-y;</p>
 
   <h2>CSS background-repeat: no-repeat</h2>
-  <p><b>Showing the background image only once</b> is also specified by the background-repeat property:</p>
-
+  <p><b>Showing the background image only once</b>is also specified by the background-repeat property:</p>
+  <p>Background image example.</p>
   <div id="example6">
+    <br>
     body {<br>
     background-image: url("./img/owl_tree.jpeg");<br>
     background-repeat: no-repeat;<br>
     }<br>
+    <br>
+    <br>
+    <br>
     <h2>Hello World!</h2>
     <p>We used here the property: 'background-repeat: no-repeat'</p>
-    <p>Background image example.</p>
   </div>
+  <br>
+  <br>
   <p>The background image is placed in the same place as the text.<br>
     Despite the background image is only showing once, it is disturbing the reader!<br>
   </p>
@@ -323,12 +329,16 @@
     background-image: url("./img/owl_tree.jpeg");<br>
     background-repeat: no-repeat;<br>
     background-position: right top;<br>
-    margin-right: 200px;<br>
+    padding-right: 200px;<br>
     }<br>
-    <h2>Hello World!</h2>
+
+    <h3>Hello World!</h3>
     <p>Now the background image is only shown once, and positioned away from the text.</p>
-    <p>In this example we have also added a margin on the right side, so the background image will never disturb the
-      text.</p>
+    <p>In this example we have also added a padding on the right side, so the background image will never disturb the
+      text.<br>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad distinctio et eveniet consequatur praesentium
+      inventore omnis odit impedit adipisci eligendi. Dicta facilis similique quae dolore repellendus? Consectetur
+      minima non placeat?</p>
   </div>
 
   <h2>CSS background-attachment</h2>
@@ -339,7 +349,7 @@
   <p><b>background-attachment: scroll;</b></p>
   <div id="example8">
     body {<br>
-    background-image: url("./img/global-computer-network1.jpg");<br>
+    background-image: url("./img/global-computer-network2.jpg");<br>
     background-repeat: no-repeat;<br>
     background-position: right top;<br>
     margin-right: 20px;<br>

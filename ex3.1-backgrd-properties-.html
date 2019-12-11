@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex3.1_mycss: background property</title>
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', Arial, sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    #example1 {
+      background: yellow url("./img/img_tree.gif") no-repeat fixed center;
+    }
+
+    #example2 {
+      background-image: url("./img/img_tree.gif");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #example3 {
+      background-image: url("./img/img_tree.gif");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+
+    #example4 {
+      width: 100%;
+      height: 200px;
+      background-image: url("./img/paper.gif");
+      background-color: #cccccc;
+    }
+
+    #example5 {
+      height: 715px;
+      background-image: url("./img/img_tree.gif"), url("./img/paper.gif");
+      background-color: #cccccc;
+    }
+
+    #example6 {
+      width: 70%;
+      border: 10px double black;
+      padding: 25px;
+      background: url(./img/paper.gif);
+      background-repeat: no-repeat;
+      background-origin: padding-box;
+    }
+
+    #example7 {
+      width: 70%;
+      border: 10px double black;
+      padding: 25px;
+      background: url(./img/paper.gif);
+      background-repeat: no-repeat;
+      background-origin: border-box;
+    }
+
+    #example8 {
+      width: 70%;
+      border: 10px double black;
+      padding: 25px;
+      background: url(./img/paper.gif);
+      background-repeat: no-repeat;
+      background-origin: content-box;
+    }
+
+    #example9 {
+      width: 75%;
+      border: 10px double black;
+      padding: 25px;
+      background: url(./img/img_tree.gif), url(./img/paper.gif);
+      background-repeat: no-repeat;
+      background-origin: content-box, padding-box;
+    }
+
+    #example10 {
+      width: 75%;
+      border: 10px double black;
+      padding: 25px;
+      background: url(./img/img_tree.gif), url(./img/paper.gif);
+      background-repeat: no-repeat;
+      background-origin: content-box, border-box;
+    }
+
+    #example11 {
+      width: 75%;
+      border: 10px double black;
+      padding: 25px;
+      background: url(./img/img_tree.gif), url(./img/paper.gif);
+      background-repeat: no-repeat;
+      background-origin: content-box, content-box;
+    }
+
+    #example12 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: auto;
+    }
+
+    #example13 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: 300px 100px;
+    }
+
+    #example14 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    #example15 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: 75% 50%;
+    }
+
+    #example16 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #example17 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    #example18 {
+      border: 2px solid black;
+      padding: 25px;
+      background: url(./img/img_tree.gif), url(./img/mountain.jpg);
+      background-repeat: no-repeat;
+      background-size: contain, cover;
+    }
+
+    #example19 {
+      border: 10px dotted black;
+      padding: 15px;
+      background: tomato;
+      background-clip: border-box;
+    }
+
+    #example20 {
+      border: 10px dotted black;
+      padding: 15px;
+      background: yellow;
+      background-clip: padding-box;
+    }
+
+    #example21 {
+      border: 10px dotted black;
+      padding: 15px;
+      background: lightgreen;
+      background-clip: content-box;
+    }
+
+    .fixed-bg {
+      /* The background image */
+      background-image: url("./img/img_tree.gif");
+      /* Set a specified height, or the minimum height for the background image */
+      min-height: 500px;
+      /* Set background image to fixed (don't scroll along with the page) */
+      background-attachment: fixed;
+      /* Center the background image */
+      background-position: center;
+      /* Set the background image to no repeat */
+      background-repeat: no-repeat;
+      /* Scale the background image to be as large as possible */
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS background property</h1>
+  <ul>The background property is a shorthand property for:
+    <li>background-color</li>
+    <li>background-image</li>
+    <li>background-position</li>
+    <li>background-size</li>
+    <li>background-repeat</li>
+    <li>background-origin</li>
+    <li>background-clip</li>
+    <li>background-attachment</li>
+  </ul>
+  <p>It does not matter if one of the values above are missing, e.g. background:#ff0000 url(smiley.gif); is allowed.</p>
+
+  <p>If one of the properties in the shorthand declaration is the bg-size property, you must use a / (slash) to
+    separate it from the bg-position property, e.g. background:url(smiley.gif) 10px 20px/50px 50px; will result in a
+    background image, positioned 10 pixels from the left, 20 pixels from the top, and the size of the image will be 50
+    pixels wide and 50 pixels high.<br>
+    <br>
+    Note: If using multiple background-image sources but also want a background-color, the background-color parameter
+    needs to be last in the list.
+  </p>
+
+  <h3>But we shall look closer at some of background properties</h3>
+
+  <h2>Background shorthand property</h2>
+  <p>Set different background properties in one declaration.</p>
+  <p>Let's div-element simulates body:</p>
+
+  <div id="example1">
+    <h3>The background shorthand property example:</h3>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+    The code: background: yellow url("./img/img_tree.gif") no-repeat fixed center;<br>
+    <p>This is some text</p>
+  </div>
+
+  <h1>CSS background-image property</h1>
+
+  <p>The background-image property sets one or more background images for an element.<br>
+    By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and
+    horizontally.
+  </p>
+  <p>Note: Internet Explorer 8 and earlier versions do not support multiple background images on one element.</p>
+
+  <p><b>Tip</b>: The background of an element is the total size of the element, including padding and border (but not
+    the margin).<br>
+    Tip: Always set a background-color to be used if the image is unavailable.</p>
+
+  <p>Let's div-element simulates body:</p>
+
+  <h2>Set one background-image for the body-element:</h2>
+
+  <div id="example4">
+    <br>
+    <h3>The background-image Property</h3>
+    The code for this: background-image: url("./img/paper.gif");<br>
+    <br>
+    Don’t succumb to excuses. Go back to the job of making the corrections and forming the habits that will make your
+    goal possible.<br>
+    A team that thinks it’s going to lose is going to lose.
+  </div>
+
+  <h2>Set two background images for the body-element:</h2>
+  <p>The first image is the tree (img_tree.gif) and the second one is the background image (paper.gif).</p>
+  <p>Let's this div-element simulates body too:</p>
+  <div id="example5">The code for this: background-image: url("./img/img_tree.gif"), url("./img/paper.gif");</div>
+  <br>
+
+
+  <h1>CSS background-origin Property</h1>
+  <p>The background-origin property specifies the origin position (the background positioning area) of a background
+    image.</p>
+  <p>Note: This property has no effect if background-attachment is "fixed".</p>
+
+  <h2>background-origin: padding-box (default)</h2>
+  <div id="example6">
+    <h2>Hello World</h2>
+    <p>The background image starts from the upper left corner of the padding edge. The code: background-origin:
+      padding-box;</p>
+  </div>
+
+  <h2>background-origin: border-box</h2>
+  <div id="example7">
+    <h2>Hello World</h2>
+    <p>The background image starts from the upper left corner of the border.</p>
+    The code: background: url(./img/paper.gif); background-repeat: no-repeat; background-origin: border-box;
+  </div>
+
+  <h2>background-origin: content-box</h2>
+  <div id="example8">
+    <h2>Hello World</h2>
+    <p>The background image starts from the upper left corner of the content.</p>
+    The code: background: url(./img/paper.gif); background-repeat: no-repeat; background-origin: content-box;
+  </div>
+
+  <h2>background-origin: content-box, padding-box:</h2>
+  <div id="example9">
+    <h2>Hello World</h2>
+    <p>The "paper.gif" background image starts from the upper left corner of the padding edge.</p>
+    <p>The "img_tree.gif" background image starts from the upper left corner of the content.</p>
+    The code: background: url(./img/img_tree.gif), url(./img/paper.gif); background-repeat: no-repeat;
+    background-origin: content-box, padding-box;
+  </div>
+
+  <h2>background-origin: content-box, border-box:</h2>
+  <div id="example10">
+    <h2>Hello World</h2>
+    <p>The "paper.gif" background image starts from the upper left corner of the border.</p>
+    <p>The "img_tree.gif" background image starts from the upper left corner of the content.</p>
+    The code: background: url(./img/img_tree.gif), url(./img/paper.gif); background-repeat: no-repeat;
+    background-origin: content-box, border-box;
+  </div>
+
+  <h2>background-origin: content-box, content-box:</h2>
+  <div id="example11">
+    <h2>Hello World</h2>
+    <p>Both background images starts from the upper left corner of the content.</p>
+    The code: background: url(./img/img_tree.gif), url(./img/paper.gif); background-repeat: no-repeat;
+    background-origin: content-box, content-box;
+  </div>
+  <br>
+  <br>
+
+  <h1>CSS background-size property</h1>
+  <p>The background-size property specifies the size of the background images.</p>
+  <p>There are four different syntaxes you can use with this property: the keyword syntax ("auto", "cover" and
+    "contain"), the one-value syntax (sets the width of the image (height becomes "auto"), the two-value syntax (first
+    value: width of the image, second value: height), and the multiple background syntax (separated with comma).
+  </p>
+
+  <h2>background-size: auto (default):</h2>
+  <div id="example12">
+    <h2>Hello World</h2>
+    <p>The background image is displayed in its original size.</p>
+    The code: background: url(./img/mountain.jpg); background-repeat: no-repeat; background-size: auto;
+  </div>
+
+  <h2>background-size: 300px 100px:</h2>
+  <div id="example13">
+    <h2>Hello World</h2>
+    <p>Here, the background image is set to 300px wide and 100px high.</p>
+    The code: background: url(./img/mountain.jpg); background-repeat: no-repeat; background-size: 300px 100px;
+  </div>
+
+  <h2>background-size: 100% 100%:</h2>
+  <div id="example14">
+    <h2>Hello World</h2>
+    <p>The size of the background image is set in percent of the parent element; 100% width and 100% height.</p>
+    The code: background: url(./img/mountain.jpg); background-repeat: no-repeat; background-size: 100% 100%;
+  </div>
+
+  <h2>background-size: 75% 50%:</h2>
+  <div id="example15">
+    <h2>Hello World</h2>
+    <p>The size of the background image is set in percent of the parent element; 75% width and 50% height.</p>
+    The code: background: url(./img/mountain.jpg); background-repeat: no-repeat; background-size: 75% 50%;
+  </div>
+
+  <h2>background-size: cover:</h2>
+  <div id="example16">
+    <h2>Hello World</h2>
+    <p>The background image is resized to cover the entire container, even if it has to stretch the image or cut a
+      little bit off one of the edges.</p>
+    The code: background: url(./img/mountain.jpg); background-repeat: no-repeat; background-size: cover;
+  </div>
+
+  <h2>background-size: contain:</h2>
+  <div id="example17">
+    <h2>Hello World</h2>
+    <p>The background image is resized to make sure the image is fully visible.</p>
+    The code: background: url(./img/mountain.jpg); background-repeat: no-repeat; background-size: contain;
+  </div>
+
+  <h2>background-size: contain, cover:</h2>
+  <div id="example18">
+    <h2>Hello World</h2>
+    <p>Here we have two background images. We specify the size of the first background image with "contain", and the
+      second background-image with "cover".</p>
+    The code: background: url(./img/img_tree.gif), url(./img/mountain.jpg); background-repeat: no-repeat;
+    background-size: contain, cover;
+  </div>
+
+  <p><strong>Note:</strong> The background-size property is not supported in Internet Explorer 8 and earlier versions.
+  </p>
+
+  <h1>CSS background-clip property</h1>
+
+  <p>The background-clip property defines how far the background should extend within an element.</p>
+
+  <h2>background-clip: border-box (this is default):</h2>
+  <div id="example19">
+    <p>The background extends behind the border.</p>
+  </div>
+
+  <h2>background-clip: padding-box:</h2>
+  <div id="example20">
+    <p>The background extends to the inside edge of the border.</p>
+  </div>
+
+
+  <h2>background-clip: content-box:</h2>
+  <div id="example21">
+    <p>The background extends to the edge of the content box.</p>
+  </div>
+
+  <p><strong>Note:</strong> The background-clip property is not supported in Internet Explorer 8 and earlier versions.
+  </p>
+  <br>
+  <br>
+
+  <h1>CSS background-attachment Property</h1>
+  <p>The background-attachment property sets whether a background image scrolls with the rest of the page, or is fixed.
+  </p>
+  <p>Let's div-element simulates body:</p>
+
+  <h2>A background-image that will not scroll with the page (fixed):</h2>
+  <div id="example2">
+    <h3>A background-image that is fixed example:</h3>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("img_tree.gif"); background-repeat: no-repeat; background-attachment: fixed;<br>
+  </div>
+
+  <h2>A background-image that will scroll with the page (scroll). This is default:</h2>
+  <div id="example3">
+    <h3>A background-image that is scrolled with the page example:</h3>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("./img/img_tree.gif"); background-repeat: no-repeat; background-attachment:
+    scroll;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("./img/img_tree.gif"); background-repeat: no-repeat; background-attachment:
+    scroll;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("./img/img_tree.gif"); background-repeat: no-repeat; background-attachment:
+    scroll;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("./img/img_tree.gif"); background-repeat: no-repeat; background-attachment:
+    scroll;<br>
+    <p>The background-image is fixed. Try to scroll down the page.</p>
+    The code: background-image: url("./img/img_tree.gif"); background-repeat: no-repeat; background-attachment:
+    scroll;<br>
+  </div>
+
+  <h1>Simple parallax scrolling effect (create an illusion of 3D depth):</h1>
+  <p>Let's div-element simulates body:</p>
+
+  <div id="example22">
+    <p>In this example, we have created a fixed background image that will disappear slowly on scroll. Scroll the page
+      to see the effect. <strong>Note:</strong> Try to remove the background-attachment property to really understand
+      this example.
+    </p>
+
+    <div class="fixed-bg">
+      <br>
+      <br>
+      The code: <br>
+      /* The background image */<br>
+      background-image: url("./img/img_tree.gif");<br>
+      /* Set a specified height, or the minimum height for the background image */<br>
+      min-height: 500px;<br>
+      /* Set background image to fixed (don't scroll along with the page) */<br>
+      background-attachment: fixed;<br>
+      /* Center the background image */<br>
+      background-position: center;<br>
+      /* Set the background image to no repeat */<br>
+      background-repeat: no-repeat;<br>
+      /* Scale the background image to be as large as possible */<br>
+      background-size: cover;<br>
+
+    </div>
+
+    <div style="height:800px;background-color:yellow;">This div is only here to enable scrolling (height = 800 pixels).
+    </div>
+  </div>
+
+
+</body>
+
+</html>

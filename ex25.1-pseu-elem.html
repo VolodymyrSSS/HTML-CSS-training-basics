@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex25.1_css-Застосування псевдо-елементів</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', Arial, sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    p.new::after {
+      content: " - Новий спосіб!";
+      /* Додамо після тексту абзаца з класом 'new'*/
+      font-family: 'Aerial', sans-serif;
+      font-size: 20px;
+      color: red;
+    }
+
+    ul {
+      padding-left: 0;
+      /* заберемо відступ зліва */
+      list-style-type: none;
+      /* Не будемо давати маркери списку */
+    }
+
+    ul.withel-ps li::before {
+      content: "\20aa";
+      /* додамо перед елементом списку символ в юнікоді */
+      color: red;
+    }
+
+    p.text5::first-letter {
+      float: left;
+      display: block;
+      color: brown;
+      font-family: 'Arial', sans-serif;
+      font-size: 48px;
+      margin-top: 15px;
+      margin-bottom: 18px;
+    }
+
+    p.text1::first-letter {
+      font-family: 'Times New Roman', Times, serif;
+      /* шрифт першого символу */
+      font-size: 200%;
+      /* роззмір шрифта першого символу */
+      color: red;
+      /* колір першого символу */
+    }
+
+    p.text2:first-line {
+      color: red;
+      /* колір тексту першого рядка */
+      font-style: italic;
+      /* шрифт - курсив */
+    }
+
+    .demo-line::before,
+    .demo-line::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: green;
+      margin-top: 5px;
+      margin-bottom: 6px;
+    }
+
+    blockquote {
+      width: 30%;
+    }
+
+    blockquote::before {
+      content: open-quote;
+      font-size: 24pt;
+      text-align: center;
+      line-height: 42px;
+      color: #fff;
+      background: #ddd;
+      float: left;
+      position: relative;
+      top: -15px;
+      border-radius: 25px;
+
+      /* define it as a block element - Створені елементи за замовчуванням inline-елементи, 
+      тому при заданні висоти або ширини необхідно встановити display-> block*/
+      display: block;
+      height: 25px;
+      width: 25px;
+    }
+
+    blockquote::after {
+      content: close-quote;
+      font-size: 24pt;
+      text-align: center;
+      line-height: 42px;
+      color: #fff;
+      background: #ddd;
+      float: right;
+      position: relative;
+      bottom: -5px;
+      border-radius: 25px;
+
+      /* define it as a block element - Створені елементи за замовчуванням inline-елементи, 
+      тому при заданні висоти або ширини необхідно встановити display-> block*/
+      display: block;
+      height: 25px;
+      width: 25px;
+    }
+
+    blockquote:hover::after,
+    blockquote:hover::before {
+      color: red;
+      background-color: green;
+    }
+
+    p.blockquote2 {
+      width: 30%;
+    }
+
+    p.blockquote2::before {
+      content: "";
+      font-size: 24px;
+      text-align: center;
+      line-height: 42px;
+      color: #fff;
+      float: left;
+      position: relative;
+      top: -15px;
+      border-radius: 45px;
+      background: url("./img/quot-mark-open.png") -3px -3px #ddd;
+      display: block;
+      height: 45px;
+      width: 45px;
+    }
+
+    p.blockquote2::after {
+      content: "";
+      font-size: 24px;
+      text-align: center;
+      line-height: 42px;
+      color: #fff;
+      float: right;
+      position: relative;
+      bottom: -10px;
+      border-radius: 45px;
+      background: url("./img/quot-mark-close.png") -1px -32px #ddd;
+      display: block;
+      height: 45px;
+      width: 45px;
+    }
+
+    p.blockquote2:hover::after,
+    p.blockquote2:hover::before {
+      background-color: #555;
+      transition: all 550ms;
+      -o-transition: all 550ms;
+      -moz-transition: all 550ms;
+      -webkit-transition: all 550ms;
+    }
+
+    .text4::selection {
+      width: 65%;
+      background: #fff;
+      color: orange;
+    }
+
+    p.text6::selection {
+      color: yellow;
+      background: #bebebe;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Застосування псевдо-елементів (pseudo-elements)</h1>
+
+  <h2>Застосування псевдоелементу ::after</h2>
+
+  <h3>Застосовується для вставки визначеного контенту після основного вмісту елементу.<br>
+    Цей псевдоелемент працює разом з стилевою властивістю content, яка визначає вміст цієї вставки.</h3>
+
+  <p>Спосіб зловити лева в пустелі за допомогою методу золотого січення.</p>
+  Додамо після тексту параґрафа псевдоелемент з текстом, ось так:<br>
+  p.new::after {<br>
+  content: " - Новий спосіб!";<br>
+  }<br>
+  В результаті отримаємо:<br>
+  <p class="new">Спосіб зловити лева в пустелі за допомогою методу золотого січення.</p>
+
+  <h2>Застосування псевдоелементу ::before</h2>
+
+  <h3>По свїй дії :before аналогічний псевдоелементу :after, але вставляється контент до вмісту основного елементу.<br>
+    В якості аргумента не обов'язково може бути тільки текст, тут також можуть бути застосовані символи юнікоду.</h3>
+
+  Ось маємо простий список:
+  <ul>
+    <li style="font-size: 18px; color: blue;">Чебуреки</li>
+    <li style="font-size: 18px; color: blue;">Пиріжки</li>
+    <li style="font-size: 18px; color: blue;">Піца</li>
+    <li style="font-size: 18px; color: blue;">Тортики</li>
+  </ul>
+
+  Тепер додамо спереду до списку псевдоелемент з контентом символу юнікоду, ось так:<br>
+  ul.withel-ps li::before {<br>
+  }<br>
+  В результаті отримаємо:<br>
+
+  <ul class="withel-ps">
+    <li style="font-size: 18px; color: blue;">Чебуреки</li>
+    <li style="font-size: 18px; color: blue;">Пиріжки</li>
+    <li style="font-size: 18px; color: blue;">Піца</li>
+    <li style="font-size: 18px; color: blue;">Тортики</li>
+  </ul>
+
+  <h2>Застосування псевдоелементу ::first-letter</h2>
+
+  <h3>Визначає стиль першого символу елемента в тексті, до якого він додається. Це дозволяє створити в тексті буквицю
+    (збільшена перша буква, базова лінія якої нижче на одну чи декілька рядків базової лінії основного тексту) та
+    виступаючий ініціал (збільшена прописна буква, базова лінія якої співпадає з базовою лінією основного тексту).<br>
+  </h3>
+
+  <p class="text5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti facere non ad? Vero, optio?<br>
+    Necessitatibus ex perferendis eius illo dolorem rem pariatur molestiae quas, distinctio exercitationem.<br>
+    Distinctio harum in aperiam! Amet consectetur adipisicing elit. Corrupti facere non ad? Vero, optio?<br>
+    Necessitatibus ex perferendis eius illo dolorem rem pariatur molestiae quas, distinctio exercitationem.<br>
+  </p>
+
+  The code for this:<br>
+  p.text5::first-letter {<br>
+  float: left;<br>
+  display: block;<br>
+  color: brown;<br>
+  font-family: 'Arial', sans-serif;<br>
+  font-size: 48px;<br>
+  margin-top: 15px;<br>
+  margin-bottom: 18px;<br>
+  }<br>
+  <br>
+
+  <p class="text1">Луч фонарика высветил старые скрипучие ступени, по которым не далее
+    как пять минут назад в дом поднялся Паша. Оля осторожно приоткрыла дверь
+    и посветила внутрь дома. Луч света, словно нехотя, пробивался сквозь тугую
+    завесу из мрака и пыли. </p>
+  <p class="text1">Взгляд Оли опустился на пол, и она вскрикнула. В пустом помещении никого
+    не было, и лишь на полу валялась порванная туфля Паши.</p>
+
+  The code for these:<br>
+  p.text1::first-letter {<br>
+  font-family: 'Times New Roman', Times, serif; - шрифт першого символу<br>
+  font-size: 200%; - роззмір шрифта першого символу<br>
+  color: red; - колір першого символу<br>
+  }<br>
+
+  <h2>Застосування псевдоелементу ::first-line</h2>
+
+  <h3>Визначає стиль першого рядка блочного тексту. Довжина цього рядка залежить від багатьох факторів, таких як
+    шрифт, що використовується, розмір вікна браузера, ширина блока, мова і т.д..<br>
+  </h3>
+
+
+  <p class="text2">Интересно, а существует ли способ действительно практичного применения
+    свойства first-line?<br>
+    Нет, не такого, чтобы можно было бы показать, что это возможно, а чтобы воистину захватило
+    дух от красоты решения, загорелись глаза от скрытых перспектив, после чего остается только
+    сказать себе, что вот это вот, это самое сделать по-другому, также изящно и эффектно просто
+    невозможно.
+  </p>
+  The code for this:<br>
+  p.text2:first-line {<br>
+  color: red; - колір тексту першого рядка<br>
+  font-style: italic; - шрифт першого рядка: курсив<br>
+  }<br>
+
+
+  <h2>Застосування псевдоелементів ::before і ::after</h2>
+  <h3>К псевдоэлементом можно применять такие же стили, как и к «реальным»: изменение цвета, добавление фона,
+    регулировка
+    размера шрифта, выравнивание текста и т.д. Созданные элементы по умолчанию inline-элементы, поэтому при указании
+    высоты или ширины необходимо установить
+    display: block.</h3>
+  <p>Также внутри псевдоэлемента можно использовать картинку вместо обычного текста, и даже добавлять фоновое
+    изображение.</p>
+
+  <p class="demo-line">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In commodi nam enim odit tempora?<br>
+    Cupiditate, nobis. Exercitationem, ratione voluptatibus, numquam, asperiores eum sapiente iusto laborum in vero<br>
+    excepturi commodi architecto.Qui quos autem sed quaerat accusantium quo inventore ducimus unde accusamus,<br>
+    dignissimos nostrum amet vero ipsam ea tempore error culpa non dolores pariatur quis officia distinctio
+    corporis.<br>
+    Nulla, similique quod?
+  </p>
+  The code for this:<br>
+  .demo-line::before,<br>
+  .demo-line::after {<br>
+  content: "";<br>
+  display: block;<br>
+  width: 100%;<br>
+  height: 2px;<br>
+  background: green;<br>
+  margin-top: 5px;<br>
+  margin-bottom: 6px;<br>
+  }<br>
+
+  <p>Розглянемо інший приклад - цитата в лапках де в контенті псевдоелементів задано відкриваючі та закриваючі лапки:
+  </p>
+
+  <blockquote>
+    Design is a funny word.<br>
+    Some people think design means how it looks.<br>
+    But of course, if you dig deeper, it's really how it works.
+  </blockquote>
+  <br>
+  <br>
+
+  <p class="blockquote2">
+    Digital design is like painting, except the paint never dries.<br>
+    - Neville Brody
+  </p>
+
+  <h2>Застосування псевдоелементу ::selection</h2>
+  <p class="text4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dolor blanditiis cum fugit
+    maiores fugiat deserunt dicta consequatur enim quaerat autem ut quos vel, eligendi non obcaecati aliquid voluptatum
+    nihil?
+  </p>
+  <p class="text6">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+    Sit nesciunt in fuga maiores, provident recusandae expedita hic impedit nobis quasi quibusdam velit illum illo
+    itaque?<br>
+    Delectus nesciunt magnam expedita totam.
+  </p>
+
+</body>
+
+</html>
