@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex16.4_mycss-tables for restaurants menu</title>
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      line-height: 1.1;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      background: radial-gradient(farthest-corner at 50% 50%, white, rgb(227, 248, 220));
+      color: #0C213B;
+      margin: 30px auto 30px;
+    }
+
+    caption {
+      font-family: annabelle, cursive;
+      font-weight: bold;
+      font-size: 2em;
+      padding: 10px;
+      color: brown;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+    }
+
+    caption:before,
+    caption:after {
+      content: "\274B";
+      color: #F3CD26;
+      margin: 0 10px;
+    }
+
+    th {
+      padding: 10px;
+      border: 3px solid #A9E2CC;
+    }
+
+    td {
+      font-size: 0.8em;
+      padding: 5px 7px;
+      border: 1px solid #A9E2CC;
+    }
+
+    .first {
+      font-size: 1em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .secondtable {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      border-collapse: collapse;
+      color: #686461;
+    }
+
+    .secondtable caption {
+      padding: 10px;
+      color: white;
+      background: #8FD4C1;
+      font-size: 18px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .secondtable th {
+      border-bottom: 3px solid #B9B29F;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .secondtable td {
+      padding: 10px;
+    }
+
+    .secondtable tr:nth-child(odd) {
+      background: white;
+    }
+
+    .secondtable tr:nth-child(even) {
+      background: #E8E6D1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Tables symples</h1>
+
+  <h2>The restaurant menu</h2>
+
+  <table>
+    <caption>Меню ресторана "Ромашка"</caption>
+    <tr>
+      <th rowspan="2" class="first">Кухня</th>
+      <th colspan="2">Холодные блюда</th>
+      <th colspan="2">Горячие блюда</th>
+      <th rowspan="2">Десерты</th>
+    </tr>
+    <tr>
+      <td class="first">Салаты</td>
+      <td class="first">Закуски</td>
+      <td class="first">Первые блюда</td>
+      <td class="first">Вторые блюда</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="first">Украинская</td>
+      <td>Салат с капустой и морковью</td>
+      <td>Язык с хреном</td>
+      <td>Борщь</td>
+      <td>Вареники с картошкой</td>
+      <td>Печеные яблоки с медом</td>
+    </tr>
+    <tr>
+      <td>Оливье</td>
+      <td>Студень говяжий</td>
+      <td>Бограч</td>
+      <td>Караси запеченые в сметане</td>
+      <td>Блинчатый пирог</td>
+    </tr>
+    <tr>
+      <td>Сельдь под "шубой"</td>
+      <td>Судак заливной</td>
+      <td>Мамалыга</td>
+      <td>Котлеты "По-Киевски"</td>
+      <td>Львовские пляцки</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="first">Испанская</td>
+      <td>Севиче из гребешков</td>
+      <td>Эмпанадас</td>
+      <td>Хлебный суп с чесноком</td>
+      <td>Паэлья с морепродуктами</td>
+      <td>Чуррос</td>
+    </tr>
+    <tr>
+      <td>Тимбал из авокадо и тунца</td>
+      <td>Ахотомате</td>
+      <td>Астурийская фабада</td>
+      <td>Свиное раксо</td>
+      <td>Альмойшавена</td>
+    </tr>
+    <tr>
+      <td>Фасоль с ветчиной</td>
+      <td>Чанфайна</td>
+      <td>Рыбный суп с манными клецками </td>
+      <td>Тортилья картофельная</td>
+      <td>Бунуэлос</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="first">Французская</td>
+      <td>Вогезский салат</td>
+      <td>Рийет из курицы</td>
+      <td>Баклажанный крем-суп "Ренуар"</td>
+      <td>Картофель огратен</td>
+      <td>Бриоши</td>
+    </tr>
+    <tr>
+      <td>Салат "Панзанелла"</td>
+      <td>Делисьез из сыра</td>
+      <td>Французский тыквенный суп</td>
+      <td>Гратин из птицы</td>
+      <td>Лигурийский лимонный пирог</td>
+    </tr>
+    <tr>
+      <td>Тар-тар</td>
+      <td>Маринованный лосось</td>
+      <td>Суп "Конти"</td>
+      <td>Тартифлетт</td>
+      <td>Саварен "Триумф"</td>
+    </tr>
+  </table>
+
+  <h2>Separate part of the menu</h2>
+
+  <table class="secondtable">
+    <caption>
+      Холодные закуски
+    </caption>
+    <tr>
+      <th>Наименование</th>
+      <th>Выход, гр.</th>
+      <th>Цена, грн.</th>
+    </tr>
+    <tr>
+      <td>Ассорти из овощей, зелени и сыра</td>
+      <td>250</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>Ассорти мясное</td>
+      <td>250</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>Ассорти рыбное (семга с/с, форель с/с)</td>
+      <td>250</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>Ассорти грибное</td>
+      <td>120</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Соления из бочки (помидоры, огурцы, перец, чеснок, капуста)</td>
+      <td>250</td>
+      <td>27</td>
+    </tr>
+  </table>
+
+
+</body>
+
+</html>

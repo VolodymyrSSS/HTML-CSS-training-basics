@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex16.2_mycss-tables_</title>
+  <link rel="stylesheet" href="./fontello-714847fa/css/my-fonts-icons.css" />
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    .iconblock {
+      width: 50%;
+      background-color: pink;
+      padding: 15px;
+    }
+
+    .secondtable,
+    .secondtable th,
+    .secondtable td {
+      border: 1px solid black;
+    }
+
+    .thirdtable,
+    .thirdtable th,
+    .thirdtable td {
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+
+    .fourthtable,
+    .fourthtable th,
+    .fourthtable td {
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+
+    .fourthtable th,
+    .fourthtable td {
+      padding: 12px;
+    }
+
+    .fifthtable,
+    .fifthtable th,
+    .fifthtable td {
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+
+    .fifthtable th,
+    .fifthtable td {
+      padding: 12px;
+    }
+
+    .fifthtable th {
+      text-align: left;
+    }
+
+    .sixthtable,
+    .sixthtable th,
+    .sixthtable td {
+      border: 2px solid black;
+      padding: 4px;
+    }
+
+    .sixthtable td {
+      text-align: center;
+    }
+
+    .sixthtable {
+      border-spacing: 12px;
+    }
+
+    .seventhtable,
+    .seventhtable th,
+    .seventhtable td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    .seventhtable th,
+    .seventhtable td {
+      padding: 5px;
+      text-align: left;
+    }
+
+    .eighthtable,
+    .eighthtable th,
+    .eighthtable td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    .eighthtable th,
+    .eighthtable td {
+      padding: 5px;
+      text-align: left;
+    }
+
+    .ninthtable,
+    .ninthtable th,
+    .ninthtable td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    .ninthtable th,
+    .ninthtable td {
+      padding: 5px;
+      text-align: left;
+    }
+
+    .tenthtable,
+    .tenthtable th,
+    .tenthtable td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    .tenthtable th,
+    .tenthtable td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    table#t01,
+    table#t01 th,
+    table#t01 td {
+      width: 70%;
+      border: 1px solid black;
+      border-collapse: collapse;
+      /* background-color: #f1f1c1; */
+    }
+
+    table#t01 th,
+    table#t01 td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    table#t01 th {
+      background-color: black;
+      color: white;
+    }
+
+    table#t01 tr:nth-child(even) {
+      background-color: #f1f1c1;
+    }
+
+    table#t01 tr:nth-child(odd) {
+      background-color: yellow;
+    }
+
+    .eleventhtable,
+    .eleventhtable td,
+    .eleventhtable th {
+      border: 1px solid black;
+    }
+
+    .eleventhtable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .eleventhtable td {
+      height: 50px;
+      vertical-align: bottom;
+    }
+
+    .twelfthtable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .twelfthtable th,
+    .twelfthtable td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid brown;
+    }
+
+    .thirteenthtable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .thirteenthtable th,
+    .thirteenthtable td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid brown;
+    }
+
+    .thirteenthtable tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .fourteenth {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .fourteenth th,
+    .fourteenth td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    .fourteenth tr:nth-child(even) {
+      background-color: wheat;
+    }
+
+    .fourteenth tr:nth-child(odd) {
+      background-color: rgb(209, 186, 144);
+    }
+
+    .fourteenth th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .fifteenth {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .fifteenth th,
+    .fifteenth td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    .fifteenth tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Tables</h1>
+
+  <h2>Defining an HTML Table</h2>
+  <p>
+    Each table row is defined with the 'tr' tag.<br>
+    A table header is defined with the 'th' tag.<br>
+    By default, table headings are bold and centered.<br>
+    A table data/cell is defined with the 'td' tag.<br>
+  </p>
+  <div class="iconblock">
+    <table style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+  </div>
+  <p>The 'td' elements are the data containers of the table.
+    They can contain all sorts of HTML elements; text, images, lists, other tables, etc.
+  </p>
+
+  <h2>HTML Table - Adding a Border</h2>
+  <p>If you do not specify a border for the table, it will be displayed without borders.
+    A border is set using the <b>border: 1px solid black;</b> property.
+  </p>
+  <div class="iconblock">
+    <table class="secondtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+  </div>
+  <p>Remember to define borders for both the table and the table cells.</p>
+
+  <h2>HTML Table - Collapsed Borders</h2>
+  <p>If you want the borders to collapse into one border, add the <b>border-collapse: collapse;</b> property</p>
+  <div class="iconblock">
+    <table class="thirdtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Adding Cell Padding</h2>
+  <p>Cell padding specifies the space between the cell content and its borders.<br>
+    If you do not specify a padding, the table cells will be displayed without padding.<br>
+    To set the padding, use the <b>padding: 12px;</b> property
+  </p>
+  <div class="iconblock">
+    <table class="fourthtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Left-align Headings</h2>
+  <p>By default, table headings are bold and centered.
+    To left-align the <b>table headings</b>, use the <b>text-align: left;</b> property
+  </p>
+  <div class="iconblock">
+    <table class="fifthtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Adding Border Spacing</h2>
+  <p>Border spacing specifies the space between the cells.
+    To set the border spacing for a table, use the <b>border-spacing: 4px;</b> property.<br>
+    If the table has collapsed borders, border-spacing has no effect.</p>
+  <div class="iconblock">
+    <table class="sixthtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Cells that Span Many Columns</h2>
+  <p>To make a cell span more than one column, use the <b>colspan</b> attribute</p>
+  <div class="iconblock">
+    <table class="seventhtable" style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th colspan="2">Telephone</th>
+      </tr>
+      <tr>
+        <td>Bill Gates</td>
+        <td>55577854</td>
+        <td>55577855</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Cells that Span Many Rows</h2>
+  <p>To make a cell span more than one row, use the <b>rowspan</b> attribute</p>
+  <div class="iconblock">
+    <table class="eighthtable" style="width:100%">
+      <tr>
+        <th>Name:</th>
+        <td>Bill Gates</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Telephone:</th>
+        <td>55577854</td>
+      </tr>
+      <tr>
+        <td>55577855</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Adding a Caption</h2>
+  <p>To add a caption to a table, use the 'caption' tag</p>
+  <div class="iconblock">
+    <table class="ninthtable" style="width:100%">
+      <caption>Monthly savings</caption>
+      <tr>
+        <th>Month</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>February</td>
+        <td>$50</td>
+      </tr>
+    </table>
+  </div>
+  <p>The 'caption' tag must be inserted immediately after the 'table' tag.</p>
+
+  <h2>A Special Style for One Table</h2>
+  <p>To define a special style for a special table, add an 'id' attribute to the table</p>
+  <div class="iconblock">
+    <table class="tenthtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+    <br>
+    <table id="t01">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Incomes per year</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>150 000</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>65 000</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>72 000</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Vertical Alignment</h2>
+  <p>The vertical-align property sets the vertical alignment (like top, bottom, or middle) of the content in 'th' or
+    'td'.<br>
+    By default, the vertical alignment of the content in a table is middle (for both 'th' and 'td' elements).
+    The following example sets the vertical text alignment to bottom for 'td' elements</p>
+  <div class="iconblock">
+    <table class="eleventhtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>$300</td>
+      </tr>
+      <tr>
+        <td>Cleveland</td>
+        <td>Brown</td>
+        <td>$250</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Bordered Table Dividers</h2>
+  <p>Add the border-bottom property to 'th' and 'td' for horizontal dividers</p>
+  <div class="iconblock">
+    <table class="twelfthtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>$300</td>
+      </tr>
+      <tr>
+        <td>Cleveland</td>
+        <td>Brown</td>
+        <td>$250</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Hoverable Table</h2>
+  <p>Use the :hover selector on 'tr' to highlight table rows on mouse over</p>
+  <div class="iconblock">
+    <table class="thirteenthtable" style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>$300</td>
+      </tr>
+      <tr>
+        <td>Cleveland</td>
+        <td>Brown</td>
+        <td>$250</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>HTML Table - Striped Tables and Colored Table Header</h2>
+  <p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows.
+  </p>
+  <p>The example below specifies the background color and text color of 'th' elements.</p>
+  <div class="iconblock">
+    <table class="fourteenth" style="width:100%">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points/Total</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>100/7850</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+        <td>150/9234</td>
+      </tr>
+      <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>300/5991</td>
+      </tr>
+      <tr>
+        <td>Cleveland</td>
+        <td>Brown</td>
+        <td>250/7122</td>
+      </tr>
+    </table>
+    </table>
+  </div>
+
+  <h2>HTML Table - Responsive Table</h2>
+  <p>A responsive table will display a horizontal scroll bar if the screen is too small to display the full content.</p>
+  <p>To create a responsive table, add a container element (like div) with <strong>overflow-x:auto</strong> around the
+    table element:</p>
+  <div class="iconblock">
+    <div style="overflow-x:auto;">
+      <table class="fifteenth">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+        </tr>
+        <tr>
+          <td>Adam</td>
+          <td>Johnson</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

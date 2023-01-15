@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex20.4_mycss: using float to create horisontal navbar</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      margin-top: 55px;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Use float with a list of hyperlinks to create a horizontal NAVIGATION MENU</h1>
+
+  <p>Here a property of 'float: left;' was applied to each list-item</p>
+  li {<br>
+  float: left;<br>
+  }<br>
+  <br>
+  <p>The each link has property as 'display: inline-block;' to ensure the inline-block behavior and not simple
+    text-inline one</p>
+
+  li a {<br>
+  display: inline-block;<br>
+  color: white;<br>
+  text-align: center;<br>
+  padding: 14px 16px;<br>
+  text-decoration: none;<br>
+  }<br>
+  <br>
+  <ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+</body>
+
+</html>

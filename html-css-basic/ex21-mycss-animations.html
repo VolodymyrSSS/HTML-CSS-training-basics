@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex21_mycss: animations basics</title>
+  <style>
+    body {
+      background-color: lightblue;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    ol.styledlist {
+      width: 550px;
+      padding: 3px 8px;
+      list-style-type: disc;
+      border: 2px dashed red;
+      background-color: tan;
+      margin: 0 auto;
+    }
+
+    ol.styledlist li {
+      list-style-position: inside;
+    }
+
+    .clearfix {
+      width: 100%;
+      border: 2px solid brown;
+      margin: 0 auto;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .forCode {
+      width: 30%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+
+    .animation-ex1 {
+      float: left;
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      -webkit-animation-name: example1;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example1;
+      animation-duration: 4s;
+    }
+
+    .forCode.ex1,
+    .forCode.ex3,
+    .forCode.ex5,
+    .forCode.ex7,
+    .forCode.ex13,
+    .forCode.ex15 {
+      float: left;
+      padding-left: 25px;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example1 {
+      from {
+        background-color: red;
+      }
+
+      to {
+        background-color: yellow;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example1 {
+      from {
+        background-color: red;
+      }
+
+      to {
+        background-color: yellow;
+      }
+    }
+
+    .animation-ex2 {
+      float: left;
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      margin-right: 25px;
+      -webkit-animation-name: example2;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example2;
+      animation-duration: 4s;
+      /* margin: 0 auto; */
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example2 {
+      0% {
+        background-color: red;
+      }
+
+      25% {
+        background-color: yellow;
+      }
+
+      50% {
+        background-color: blue;
+      }
+
+      100% {
+        background-color: green;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example2 {
+      0% {
+        background-color: red;
+      }
+
+      25% {
+        background-color: yellow;
+      }
+
+      50% {
+        background-color: blue;
+      }
+
+      100% {
+        background-color: green;
+      }
+    }
+
+    .forCode.ex2,
+    .forCode.ex4,
+    .forCode.ex6,
+    .forCode.ex8,
+    .forCode.ex12,
+    .forCode.ex14 {
+      float: left;
+      padding-right: 25px;
+    }
+
+    .animation-ex3 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      margin-right: 170px;
+      -webkit-animation-name: example3;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example3;
+      animation-duration: 4s;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example3 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example3 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    .animation-ex4 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      margin-right: 25px;
+      -webkit-animation-name: example4;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-delay: 2s;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example4;
+      animation-duration: 4s;
+      animation-delay: 2s;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example4 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: -200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: -200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example4 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: -200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: -200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    .animation-ex5 {
+      float: left;
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      position: relative;
+      margin-right: 25px;
+      -webkit-animation-name: example5;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-delay: 2s;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example5;
+      animation-duration: 4s;
+      animation-delay: -2s;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example5 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example5 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    .animation-ex6 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      margin-right: 25px;
+      -webkit-animation-name: example6;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-iteration-count: 3;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example6;
+      animation-duration: 4s;
+      animation-iteration-count: 3;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example6 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example6 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    .animation-ex7 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      margin-right: 160px;
+      -webkit-animation-name: example7;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-direction: reverse;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example7;
+      animation-duration: 4s;
+      animation-direction: reverse;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example7 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example7 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    .animation-ex8 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      /* margin-left: 25px; */
+      -webkit-animation-name: example8;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-iteration-count: 2;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-direction: alternate;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example8;
+      animation-duration: 4s;
+      animation-iteration-count: 2;
+      animation-direction: alternate;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example8 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example8 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    .animation-ex9 {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      font-weight: bold;
+      position: relative;
+      -webkit-animation: mymove 5s 3;
+      /* Safari 4.0 - 8.0 */
+      animation: mymove 5s 3;
+      margin: 3px;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    .animation-ex9.el1 {
+      -webkit-animation-timing-function: linear;
+    }
+
+    .animation-ex9.el2 {
+      -webkit-animation-timing-function: ease;
+    }
+
+    .animation-ex9.el3 {
+      -webkit-animation-timing-function: ease-in;
+    }
+
+    .animation-ex9.el4 {
+      -webkit-animation-timing-function: ease-out;
+    }
+
+    .animation-ex9.el5 {
+      -webkit-animation-timing-function: ease-in-out;
+    }
+
+    /* Standard syntax */
+    .animation-ex9.el1 {
+      animation-timing-function: linear;
+    }
+
+    .animation-ex9.el2 {
+      animation-timing-function: ease;
+    }
+
+    .animation-ex9.el3 {
+      animation-timing-function: ease-in;
+    }
+
+    .animation-ex9.el4 {
+      animation-timing-function: ease-out;
+    }
+
+    .animation-ex9.el5 {
+      animation-timing-function: ease-in-out;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes mymove {
+      from {
+        left: 0px;
+      }
+
+      to {
+        left: 900px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes mymove {
+      from {
+        left: 0px;
+      }
+
+      to {
+        left: 900px;
+      }
+    }
+
+    .forCode2 {
+      width: 25%;
+      background-color: lightgreen;
+      padding: 4px;
+    }
+
+    .forCode2.ex9,
+    .forCode2.ex10,
+    .forCode2.ex11 {
+      float: left;
+      margin: 4px;
+    }
+
+    .animation-ex10 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      -webkit-animation-name: example10;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 3s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-fill-mode: forwards;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example10;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example10 {
+      from {
+        top: 0px;
+      }
+
+      to {
+        top: 200px;
+        background-color: blue;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example10 {
+      from {
+        top: 0px;
+      }
+
+      to {
+        top: 300px;
+        background-color: blue;
+      }
+    }
+
+    .animation-ex11 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      -webkit-animation-name: example11;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 3s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-delay: 2s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-fill-mode: backwards;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example11;
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-fill-mode: backwards;
+      margin: 0 auto;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example11 {
+      from {
+        top: 0px;
+      }
+
+      to {
+        top: 300px;
+        background-color: blue;
+      }
+    }
+
+    @keyframes example11 {
+      from {
+        top: 0px;
+      }
+
+      to {
+        top: 300px;
+        background-color: blue;
+      }
+    }
+
+    .animation-ex12 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      -webkit-animation-name: example12;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 3s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-delay: 2s;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-fill-mode: both;
+      /* Safari 4.0 - 8.0 */
+      animation-name: example12;
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-fill-mode: both;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example12 {
+      from {
+        top: 0px;
+        background-color: yellow;
+      }
+
+      to {
+        top: 300px;
+        background-color: blue;
+      }
+    }
+
+    @keyframes example12 {
+      from {
+        top: 0px;
+        background-color: yellow;
+      }
+
+      to {
+        top: 300px;
+        background-color: blue;
+      }
+    }
+
+    .animation-ex13 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      margin-right: 170px;
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-name: example13;
+      -webkit-animation-duration: 5s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-delay: 2s;
+      -webkit-animation-iteration-count: 3;
+      -webkit-animation-direction: alternate;
+      /* Standard syntax */
+      animation-name: example13;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-delay: 2s;
+      animation-iteration-count: 3;
+      animation-direction: alternate;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example13 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    /* Standard syntax */
+    @keyframes example13 {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+
+      50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+      }
+
+      75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+      }
+
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Animations</h1>
+  <p>An animation lets an element gradually change from one style to another.<br>
+    CSS allows animation of HTML elements without using JavaScript or Flash!<br>
+    You can change as many CSS properties you want, as many times you want.<br>
+    To use CSS animation, you must first specify some keyframes for the animation.<br>
+    Keyframes hold what styles the element will have at certain times.
+  </p>
+
+  <ol class="styledlist">Animation of HTML elements could have the following properties:
+    <li>@keyframes - required!</li>
+    <li>animation-name - required!</li>
+    <li>animation-duration - required!</li>
+    <li>animation-delay</li>
+    <li>animation-iteration-count</li>
+    <li>animation-direction</li>
+    <li>animation-timing-function</li>
+    <li>animation-fill-mode</li>
+    <li>animation</li>
+  </ol>
+
+  <h2>The @keyframes Rules - required ones</h2>
+  <p>Some older browsers need specific prefixes (-webkit-) to understand the animation properties:</p>
+  <p>This <b>example1</b> does not work in Internet Explorer 9 and earlier versions.<br>
+    The animation will last for 4 seconds, and it will gradually change the background-color of the div element from
+    'red' to 'yellow'. When an animation is finished, it changes back to its original style - red one.</p>
+
+  <div class="clearfix>">
+
+    <div class="animation-ex1">Ex1 - Square with colours changed from red to yellow</div>
+    <div class="forCode ex1">
+      div {<br>
+      width: 150px;<br>
+      height: 150px;<br>
+      background-color: red;<br>
+      -webkit-animation-name: example1; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */n <br>
+      <b>animation-name: example1;</b> <br>
+      <b>animation-duration: 4s;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example1 {<br>
+      <b>from</b> {<br>
+      background-color: red;<br>
+      }<br>
+      <b>to</b> {<br>
+      background-color: yellow;<br>
+      }<br>
+      }<br>
+    </div>
+
+  </div>
+
+  <br>
+
+  <p>
+    To get an animation to work, you must bind the animation to an element.</br>
+    This example1 is binded to the div-element by defining the property 'animation-name: example1;'<br>
+    As well, in this example we have specified when the style will change by using the <b>keywords "from" and
+      "to"</b>.
+  </p>
+  <p>When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current
+    style to the new style at certain times.<br>
+    If the animation-duration property is not specified, no animation will occur, because the default value is 0s
+    (0 seconds).
+  </p>
+  <br>
+  <p>Again to see it - restart the brouser.</p>
+  </p>
+  <br>
+  <br>
+  <br>
+  <p style="content: ''; clear: both; display: table;">The following <b>example2</b> will change the background-color of
+    the div-element when the animation is 25% complete, 50% complete, and again when the animation is 100% complete:
+  </p>
+
+  <div class="clearfix>">
+
+    <div class="forCode ex2">
+      div {<br>
+      width: 150px;<br>
+      height: 150px;<br>
+      background-color: red;<br>
+      -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */<br>
+      animation-name: example2;<br>
+      animation-duration: 4s;<br>
+      }<br>
+      <br>
+      /* Standard syntax */ <br>
+      @keyframes example2 {<br>
+      <b>0%</b> {<br>
+      background-color: red;<br>
+      }<br>
+      <b>25%</b> {<br>
+      background-color: yellow;<br>
+      }<br>
+      <b>50%</b> {<br>
+      background-color: blue;<br>
+      }<br>
+      <b>100%</b> {<br>
+      background-color: green;<br>
+      }<br>
+      }<br>
+    </div>
+
+    <div class="animation-ex2">Ex2</div>
+
+  </div>
+  <br>
+  <p>It is also possible to use percent for @keyframe rule. By using percent, you can add as many style changes
+    as you like.<br>
+    The keywords "from" and "to" - represent 0% (start) and 100% (complete) @keyframe rule.<br></p>
+
+  <p style="content: ''; clear: both; display: table;">The following <b>example3</b> will change both
+    the background-color and the position of the div-element when the animation is 25% complete, 50% complete, and again
+    when the animation is 100% complete:
+  </p>
+
+  <div class="clearfix>">
+
+    <div class="animation-ex3">Ex3</div>
+
+    <div class="forCode ex3">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      background-color: red;<br>
+      <b>position: relative;</b><br>
+      -webkit-animation-name: example3; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */ <br>
+      animation-name: example3; <br>
+      animation-duration: 4s; <br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example3 {<br>
+      0% {<br>
+      background-color: red;<br>
+      <b>left: 0px;</b><br>
+      <b>top: 0px;</b><br>
+      }<br>
+      25% {<br>
+      background-color: yellow;<br>
+      <b>left: 200px;</b><br>
+      <b>top: 0px;</b><br>
+      }<br>
+      50% {<br>
+      background-color: blue;<br>
+      <b>left: 200px;</b><br>
+      <b>top: 200px;</b><br>
+      }<br>
+      75% {<br>
+      background-color: green;<br>
+      <b>left: 0px;</b><br>
+      <b>top: 200px;</b><br>
+      }<br>
+      100% {<br>
+      background-color: red;<br>
+      <b>left: 0px;</b><br>
+      <b>top: 0px;</b><br>
+      }<br>
+      }<br>
+    </div>
+
+  </div>
+
+
+  <h2>Delay an Animation</h2>
+
+  <p>The animation-delay property specifies a delay for the start of an animation.<br>
+    The following <b>example4</b> has a 2 seconds delay before starting the animation:</p>
+
+  <div class="clearfix>">
+
+    <div class="forCode ex4">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      background-color: red;<br>
+      <b>position: relative;</b><br>
+      -webkit-animation-name: example3; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */ <br>
+      animation-name: example4; <br>
+      animation-duration: 4s; <br>
+      <b>animation-delay: 2s;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example4 {<br>
+      0% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      25% {<br>
+      background-color: yellow;<br>
+      left: 200px;<br>
+      top: 0px;<br>
+      }<br>
+      50% {<br>
+      background-color: blue;<br>
+      left: 200px;<br>
+      <b>top: -200px;</b><br>
+      }<br>
+      75% {<br>
+      background-color: green;<br>
+      left: 0px;<br>
+      <b>top: -200px;</b><br>
+      }<br>
+      100% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      }<br>
+    </div>
+
+    <div class="animation-ex4">Ex4</div>
+
+  </div>
+
+  <p>Exept the delay value, we also used negative value to move the div-element to defined direction to the next
+    position.<br>
+    With positives values it moves downwards and with negatives ones - upwards.</p>
+
+  <p style="content: ''; clear: both; display: table;">In the following <b>example5</b>, the animation will start as if
+    it had already been playing for 2 seconds:</p>
+
+  <div class="clearfix>">
+
+    <div class="animation-ex5">Ex5</div>
+
+    <div class="forCode ex5">
+      div {<br>
+      width: 150px;<br>
+      height: 150px;<br>
+      background-color: red;<br>
+      <b>position: relative;</b><br>
+      -webkit-animation-name: example5; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */ <br>
+      animation-name: example5; <br>
+      animation-duration: 4s; <br>
+      <b>animation-delay: -2s;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example5 {<br>
+      0% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      25% {<br>
+      background-color: yellow;<br>
+      left: 200px;<br>
+      top: 0px;<br>
+      }<br>
+      50% {<br>
+      background-color: blue;<br>
+      left: 200px;<br>
+      top: 200px;<br>
+      }<br>
+      75% {<br>
+      background-color: green;<br>
+      left: 0px;<br>
+      top: 200px;<br>
+      }<br>
+      100% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      }<br>
+    </div>
+
+  </div>
+
+  <p>Negative values for the delay are also allowed. <br>If using negative values, the animation will start as if it
+    had already been playing for N seconds.<br>
+  </p>
+
+  <h2>Set How Many Times an Animation Should Run</h2>
+  <p>The animation-iteration-count property specifies the number of times an animation should run.</p>
+  <p>The following <b>example6</b> will run the animation 3 times before it stops, have a look:</p>
+
+  <div class="clearfix>">
+
+    <div class="forCode ex6">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      background-color: red;<br>
+      position: relative;<br>
+      -webkit-animation-name: example3; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */ <br>
+      animation-name: example6; <br>
+      animation-duration: 4s; <br>
+      <b>animation-iteration-count: 3;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example6 {<br>
+      0% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      25% {<br>
+      background-color: yellow;<br>
+      left: 200px;<br>
+      top: 0px;<br>
+      }<br>
+      50% {<br>
+      background-color: blue;<br>
+      left: 200px;<br>
+      <b>top: -200px;</b><br>
+      }<br>
+      75% {<br>
+      background-color: green;<br>
+      left: 0px;<br>
+      <b>top: -200px;</b><br>
+      }<br>
+      100% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      }<br>
+    </div>
+    <div class="animation-ex6">Ex6</div>
+
+  </div>
+
+  <p>If the property <b>animation-iteration-count</b> defined as 'infinite', the div-element makes the animation
+    continue for ever!</p>
+
+  <h2>Run Animation in Reverse Direction or Alternate Cycles</h2>
+  <p>The animation-direction property specifies whether an animation should be played forwards, backwards or in
+    alternate cycles.
+  </p>
+
+  <ol class="styledlist">The animation-direction property can have the following values:
+    <li>normal - The animation is played as normal (forwards). This is default</li>
+    <li>reverse - The animation is played in reverse direction (backwards)</li>
+    <li>alternate - The animation is played forwards first, then backwards</li>
+    <li>alternate-reverse - The animation is played backwards first, then forwards</li>
+  </ol>
+
+
+  <p>The following <b>example7</b> will run the animation in reverse direction (backwards):</p>
+
+
+  <div class="clearfix>">
+
+    <div class="animation-ex7">Ex7</div>
+
+    <div class="forCode ex7">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      background-color: red;<br>
+      position: relative;<br>
+      -webkit-animation-name: example7; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */ <br>
+      animation-name: example7; <br>
+      animation-duration: 4s; <br>
+      <b>animation-direction: reverse;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example7 {<br>
+      0% {<br>
+      ........etc as before
+      }<br>
+    </div>
+
+  </div>
+
+  <p style="content: ''; clear: both; display: table;">The following <b>example8</b> uses the value 'alternate' to make
+    the animation run forwards first, then backwards:
+  </p>
+
+  <div class="clearfix>">
+
+    <div class="forCode ex8">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      background-color: red;<br>
+      position: relative;<br>
+      -webkit-animation-name: example8; /* Safari 4.0 - 8.0 */ <br>
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */ <br>
+      animation-name: example8; <br>
+      animation-duration: 4s; <br>
+      <b>animation-direction: alternate;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example8 {<br>
+      0% {<br>
+      ........etc as before
+      }<br>
+    </div>
+
+    <div class="animation-ex8">Ex8</div>
+
+  </div>
+
+  <h2>Specify the Speed Curve of the Animation</h2>
+  <p>The animation-timing-function property specifies the speed curve of the animation.<br>
+    <strong>Note:</strong> The animation-timing-funtion property is not supported in Internet Explorer 9 and earlier
+    versions.</p>
+
+  <ol class="styledlist">The animation-timing-function property can have the following values:
+    <li>ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)</li>
+    <li>linear - Specifies an animation with the same speed from start to end</li>
+    <li>ease-in - Specifies an animation with a slow start</li>
+    <li>ease-out - Specifies an animation with a slow end</li>
+    <li>ease-in-out - Specifies an animation with a slow start and end</li>
+    <li>cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function</li>
+  </ol>
+  <p>The following <b>example9</b> shows some of the different speed curves that can be used:</p>
+  <div class="animation-ex9 el1">linear</div>
+  <div class="animation-ex9 el2">ease</div>
+  <div class="animation-ex9 el3">ease-in</div>
+  <div class="animation-ex9 el4">ease-out</div>
+  <div class="animation-ex9 el5">ease-in-out</div>
+
+  <p>Have a look at the code of these examples:</p>
+
+  <div class="clearfix>">
+
+    <div class="forCode2 ex9">
+      div {<br>
+      width: 100px;<br>
+      height: 50px;<br>
+      background-color: red;<br>
+      font-weight: bold;<br>
+      position: relative;<br>
+      -webkit-animation: mymove 5s 3; /* Safari 4.0 - 8.0 */ <br>
+      <b>animation: mymove 5s 3;</b><br>
+      }<br>
+      <br>
+    </div>
+
+    <div class="forCode2 ex10">
+      /* Standard syntax */<br>
+      div.el1 {<br>
+      animation-timing-function: linear;<br>
+      }<br>
+      div.el2 {<br>
+      animation-timing-function: ease;<br>
+      }<br>
+      div.el3 {<br>
+      animation-timing-function: ease-in;<br>
+      }<br>
+      div.el4 {<br>
+      animation-timing-function: ease-out;<br>
+      }<br>
+      div.el5 {<br>
+      animation-timing-function: ease-in-out;<br>
+      }<br>
+      <br>
+    </div>
+
+    <div class="forCode2 ex11">
+      /* Standard syntax */<br>
+      @keyframes mymove {<br>
+      from {<br>
+      left: 0px;<br>
+      }<br>
+      to { <br>
+      left: 900px;<br>
+      }<br>
+      }<br>
+      <br>
+    </div>
+
+  </div>
+
+  <h2>Specify the fill-mode For an Animation</h2>
+  <p>CSS animations do not affect an element before the first keyframe is played or after the last keyframe is played.
+    'The animation-fill-mode property' can override this behavior.<br>
+    The animation-fill-mode property specifies a style for the target element when the animation is not playing
+    (before it starts, after it ends, or both).<br>
+    <strong>Note:</strong> The animation-fill-mode property is not supported in Internet Explorer 9 and earlier
+    versions as well.
+  </p>
+
+  <ol class="styledlist">The animation-fill-mode property can have the following values:
+    <li>none - Default value. Animation will not apply any styles to the element before or after it is executing</li>
+    <li>forwards - The element will retain the style values that is set by the last keyframe (depends on
+      animation-direction and animation-iteration-count)</li>
+    <li>backwards - The element will get the style values that is set by the first keyframe (depends on
+      animation-direction), and retain this during the animation-delay period</li>
+    <li>both - The animation will follow the rules for both forwards and backwards, extending the animation
+      properties in both directions</li>
+  </ol>
+
+  <p>The following <b>example10</b> lets the div-element retain the style values from the last keyframe when the
+    animation ends:</p>
+
+  <div class="clearfix>">
+
+    <div class="forCode ex12">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      background: red;<br>
+      position: relative;<br>
+      -webkit-animation-name: example10; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */<br>
+      animation-name: example10;<br>
+      animation-duration: 3s;<br>
+      <b>animation-fill-mode: forwards;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example10 {<br>
+      from {<br>
+      top: 0px;<br>
+      }<br>
+      to {<br>
+      top: 300px;<br>
+      background-color: blue;<br>
+      }<br>
+      }<br>
+    </div>
+    <div class="animation-ex10">Ex10</div>
+
+  </div>
+
+  <p></p>
+  <p style="content: ''; clear: both; display: table;">In the <b>example11</b>, let the div-element get the style values
+    set by the first keyframe before the animation starts (during the animation-delay period):</p>
+
+
+  <div class="clearfix>">
+
+    <div class="animation-ex11">Ex11</div>
+
+    <div class="forCode ex13">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      <b>background: red;</b><br>
+      position: relative;<br>
+      -webkit-animation-name: example11; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */<br>
+      animation-name: example11;<br>
+      animation-duration: 3s;<br>
+      <b>animation-fill-mode: backwards;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example11 {<br>
+      from {<br>
+      top: 0px;<br>
+      }<br>
+      to {<br>
+      top: 300px;<br>
+      <b>background-color: blue;</b><br>
+      }<br>
+      }<br>
+    </div>
+
+  </div>
+
+
+  <p style="content: ''; clear: both; display: table;">The following <b>example12</b> lets the div-element get the style
+    values set by the first keyframe before the animation starts, and retain the style values from the last keyframe
+    when the animation ends:</p>
+
+  <div class="clearfix>">
+
+    <div class="forCode ex14">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      <b>background: red;</b><br>
+      position: relative;<br>
+      -webkit-animation-name: example12; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */<br>
+      animation-name: example12;<br>
+      animation-duration: 3s;<br>
+      <b>animation-fill-mode: both;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example12 {<br>
+      from {<br>
+      top: 0px;<br>
+      <b>background-color: yellow;</b><br>
+      }<br>
+      to {<br>
+      top: 300px;<br>
+      <b>background-color: blue;</b><br>
+      }<br>
+      }<br>
+    </div>
+    <div class="animation-ex12">Ex12</div>
+
+  </div>
+
+  <h2>Animation Shorthand Property</h2>
+  <p>The <b>example13</b> below uses six of the animation properties (each, is defined separately):<br>
+    animation-name: example13;<br>
+    animation-duration: 5s;<br>
+    animation-timing-function: linear;<br>
+    animation-delay: 2s;<br>
+    animation-iteration-count: 3;<br>
+    animation-direction: alternate;<br>
+  </p>
+  <div class="clearfix>">
+
+    <div class="animation-ex13">Ex13</div>
+
+    <div class="forCode ex15">
+      div {<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      <b>background: red;</b><br>
+      position: relative;<br>
+      /* Safari 4.0 - 8.0 */<br>
+      -webkit-animation-name: example13;<br>
+      -webkit-animation-duration: 5s;<br>
+      -webkit-animation-timing-function: linear;<br>
+      -webkit-animation-delay: 2s;<br>
+      -webkit-animation-iteration-count: 3;<br>
+      -webkit-animation-direction: alternate;<br>
+      /* Standard syntax */<br>
+      <b>animation-name: example13;<br>
+        animation-duration: 5s;<br>
+        animation-timing-function: linear;<br>
+        animation-delay: 2s;<br>
+        animation-iteration-count: 3;<br>
+        animation-direction: alternate;</b><br>
+      }<br>
+      <br>
+      /* Standard syntax */<br>
+      @keyframes example13 {<br>
+      0% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      25% {<br>
+      background-color: yellow;<br>
+      left: 200px;<br>
+      top: 0px;<br>
+      }<br>
+      50% {<br>
+      background-color: blue;<br>
+      left: 200px;<br>
+      top: 200px;<br>
+      }<br>
+      75% {<br>
+      background-color: green;<br>
+      left: 0px;<br>
+      top: 200px;<br>
+      }<br>
+      100% {<br>
+      background-color: red;<br>
+      left: 0px;<br>
+      top: 0px;<br>
+      }<br>
+      }<br>
+    </div>
+
+  </div>
+
+  <p>The same animation effect as above can be achieved by using the shorthand animation property like:<br>
+    <b>animation: example13 5s linear 2s 3 alternate;</b></p>
+
+</body>
+
+</html>

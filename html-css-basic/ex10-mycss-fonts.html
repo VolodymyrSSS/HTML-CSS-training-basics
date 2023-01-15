@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex10_mycss: font families</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+
+    }
+
+    h1 {
+      color: red;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+      text-transform: uppercace;
+    }
+
+
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    p.serif {
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p.sansserif {
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p.monospace {
+      font-family: 'Courier New', Courier, monospace, sans-serif;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p.normal1 {
+      font-style: normal;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p.italic {
+      font-style: italic;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p.oblique {
+      font-style: oblique;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    h3.heading1 {
+      font-size: 40px;
+      color: black;
+    }
+
+    h4.heading1 {
+      font-size: 30px;
+      color: black;
+    }
+
+    .para1 {
+      font-size: 14px;
+      color: black;
+    }
+
+    h3.heading2,
+    h3.heading3 {
+      font-size: 2.5em;
+      /* 40px/16=2.5em */
+      color: black;
+    }
+
+    h4.heading2,
+    h4.heading3 {
+      font-size: 1.875em;
+      /* 30px/16=1.875em */
+      color: black;
+    }
+
+    .para2,
+    .para3 {
+      font-size: 0.875em;
+      /* 14px/16=0.875em */
+      color: black;
+    }
+
+    div.for-para {
+      width: 50%;
+      border: 1px solid gray;
+      padding: 8px;
+      background-color: pink;
+      margin: 20px auto;
+    }
+
+    .combo {
+      /* place it into the body */
+      font-size: 100%;
+    }
+
+    p.ex2 {
+      font: italic bold 12px/30px Georgia, serif;
+      color: black;
+    }
+
+    p.normal2 {
+      font-weight: normal;
+      color: black;
+    }
+
+    p.light {
+      font-weight: lighter;
+      color: black;
+    }
+
+    p.thick {
+      font-weight: bold;
+      color: black;
+    }
+
+    p.thicker {
+      font-weight: 900;
+      color: black;
+    }
+
+    p.normal3 {
+      font-variant: normal;
+      color: black
+    }
+
+    p.small {
+      font-variant: small-caps;
+      color: #000;
+    }
+
+    div.for-para {
+      width: 50%;
+      border: 1px solid gray;
+      padding: 8px;
+      background-color: pink;
+      margin: 20px auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Fonts</h1>
+
+  <p><b>The CSS font properties define the font family, boldness, size, and the style of a text.</b></p>
+
+  <h2>CSS Font Families</h2>
+
+  <p>In CSS, there are two types of font family names:<br>
+    <b>generic family</b> - a group of font families with a similar look (like 'Serif', 'Sans-serif', or
+    'Monospace')<br>
+    <b>font family</b> - a specific font family (like 'Times New Roman', 'Georgia', 'Arial', 'Verdana',
+    'Courier New', 'Lucida Console', etc)
+  </p>
+
+  <p><b>Serif fonts</b> have small lines at the ends on some characters<br>
+    <b>Sans-serif fonts</b> ("sans" means without) do not have the lines at the ends of characters<br>
+    All <b>monospace</b> characters have the same width</p>
+  <img src="./img/serif.gif" alt="image shows difference between fonts serif and sans-serif">
+  <p><b>Note</b>: On computer screens, sans-serif fonts are considered easier to read than serif fonts.</p>
+
+  <h2>Font-face Name Property - Required. Defines a name for the font</h2>
+  <p>The <b>font family</b> of a text is set with the font-family property<br>
+    The font-family property should hold several font names as a "fallback" system.<br>
+    <b>If the browser does not support the first font, it tries the next font, and so on</b><br>
+    Start with the font you want, and end with a generic family, to let the browser pick a similar font in the generic
+    family, if no other fonts are available.<br>
+    <br>
+    <b>Note</b>: If the name of a font family is more than one word, it must be in quotation marks, like: "Times New
+    Roman".<br>
+    More than one font family is specified in a comma-separated list:</p>
+  <p class="serif">This is a paragraph, shown in the Times New Roman font.</p>
+  <p class="sansserif">This is a paragraph, shown in the Arial font.</p>
+  <p class="monospace">This is a paragraph, shown in Monospace fonts</p>
+
+  <h2>Font Style Property - Optional. Defines how the font should be styled. Default is 'normal'</h2>
+  <p><b>The font-style property is mostly used to specify italic text</b><br>
+    This property has three values:<br>
+    normal - The text is shown normally<br>
+    italic - The text is shown in italics<br>
+    oblique - The text is "leaning" (oblique is very similar to italic, but less supported)<br>
+  </p>
+  <p class="normal1">This is a paragraph in normal style.</p>
+  <p class="italic">This is a paragraph in italic style.</p>
+  <p class="oblique">This is a paragraph in oblique style.</p>
+
+  <h2>Font Size Property - </h2>
+  <p><b>The font-size property sets the size of the text</b><br>
+    Being able to manage the text size is important in web design.<br>
+    However, you should not use font size adjustments to make paragraphs look like headings, or headings look like
+    paragraphs.<br>
+    Always use the proper HTML tags, like 'h1 - h6' for headings and 'p' for paragraphs.<br>
+    <br>
+    The font-size value can be an absolute, or relative size.<br>
+    Absolute size:<br>
+    - Sets the text to a specified size<br>
+    - Does not allow a user to change the text size in all browsers (bad for accessibility reasons)<br>
+    - Absolute size is useful when the physical size of the output is known<br>
+    Relative size:<br>
+    - Sets the size relative to surrounding elements<br>
+    - Allows a user to change the text size in browsers<br>
+  </p>
+  <p style="width: 60%; background-color: yellow; text-align: center;"> If you do not specify a font size, the default
+    size for normal text, like paragraphs, is 16px (16px=1em)</p>
+
+  <p><b>Font Size With Pixels</b><br>
+    Set Font Size With Pixels gives you full control over the text size</p>
+  <h3 class="heading1">This is heading 1</h3>
+  <h4 class="heading1">This is heading 2</h4>
+  <h5 class="heading1">This is heading 3</h5>
+  <p class="para1">This is a paragraph.</p>
+  <p>If you use pixels, you can still use the zoom tool to resize the entire page.</p>
+
+  <p><b>Set Font Size With Em</b><br>
+    To allow users to resize the text (in the browser menu), many developers use em instead of pixels.<br>
+    The em size unit is recommended by the W3C.<br>
+    1em is equal to the current font size. The default text size in browsers is 16px. So, the default size of 1em is
+    16px.</p>
+  <p style="width: 50%; background-color: yellow; text-align: center;">The size can be calculated from pixels to em
+    using this formula: pixels/16=em</p>
+
+  <h3 class="heading2">This is heading 1</h3>
+  <h4 class="heading2">This is heading 2</h4>
+  <p class="para2">This is a paragraph.</p>
+  <p>In the example above, the text size in em is the same as the previous example in pixels. However, with the em size,
+    it is possible to adjust the text size in all browsers.<br>
+    Unfortunately, there is still a problem with older versions of IE. The text becomes larger than it should when made
+    larger, and smaller than it should when made smaller.
+  </p>
+
+  <p><b>Use a Combination of Percent and Em</b></p>
+  <p>The solution that works in all browsers, is to set a default font-size in percent for the body-element:</p>
+  <div class="for-para">
+    body {<br>
+    font-size: 100%;<br>
+    }<br>
+    <br>
+    h1 {<br>
+    font-size: 2.5em;<br>
+    }<br>
+    <br>
+    h2 {<br>
+    font-size: 1.875em;<br>
+    }<br>
+    <br>
+    p {<br>
+    font-size: 0.875em;<br>
+    }<br>
+  </div>
+
+  <div class="combo">
+    <h3 class="heading3">This is heading 1</h3>
+    <h4 class="heading3">This is heading 2</h4>
+    <p class="para3">Our code now works great! It shows the same text size in all browsers, and allows all browsers to
+      zoom or resize the text!</p>
+    <p class="ex2">This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a
+      paragraph.</p>
+  </div>
+  <p>
+    <p>Specifying the font-size in percent and em displays the same size in all major browsers, and allows all browsers
+      to resize the text!</p>
+  </p>
+
+  <h2>Font Weight - Optional. Defines the boldness of the font. Default is 'normal'</h2>
+  <p>The font-weight property specifies the weight of a font:</p>
+
+  <p class="normal2">This is a paragraph.</p>
+  <p class="light">This is a paragraph.</p>
+  <p class="thick">This is a paragraph.</p>
+  <p class="thicker">This is a paragraph.</p>
+
+  <h2>Responsive Font Size</h2>
+  <p>The text size can be set with a <b>vw</b> unit, which means the <b>"viewport width"</b>.<br>
+    Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.<br>
+    That way the text size will follow the size of the browser window:
+  </p>
+  <h3 style="font-size:10vw;">Responsive Text</h3>
+  <p style="font-size:5vw;">Resize the browser window to see how the text size scales.</p>
+  <p style="font-size:5vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.
+  </p>
+
+  <h2>Font Variant</h2>
+  <p>The font-variant property specifies whether or not a text should be displayed in a small-caps font.<br>
+    In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase
+    letters appears in a smaller font size than the original uppercase letters in the text.</p>
+  <p class="normal3">My name is Hege Refsnes. - this is font-variany: normal</p>
+  <p class="small">My name is Hege Refsnes. - this is font-variant: small-caps;</p>
+
+  <h2>Семейство шрифтов - Serif, Sans-Serif, Monospace, Script, Fantasy</h2>
+  <p>Одним из самых простых способов воздействовать на дизайн веб-страницы являются шрифты, которые вы используете.<br>
+    Некоторые правила<br>
+    1.Не использовать более 3-4 шрифтов на одной странице.<br>
+    2.Не изменить шрифт в середине предложения, пока у вас нет очень веских оснований.<br>
+    3.Sans-Serif для онлайн версии, Serif для печати.<br>
+    4.Monospace для пишущей машинки и кодов.<br>
+    5.Script и fantasy для важных штрихов.<br>
+    <br>
+    Sans-serif шрифты являются основой Вашего Сайта.
+    Sans-serif это те шрифты, которые не имеют "засечки": маленькие крючки в конце письма. Если у вас были какие-либо
+    курсы дизайна печати, вероятно, было сказано, что вы должны использовать только sans-serif для заголовок. Это не
+    относится к Интернету. Веб-страницы предназначены для просмотра веб-браузерами, на компьютерных мониторах. И
+    компьютерные мониторы не имеют такую же хорошую резолюцию, как бумага. Это означает, что когда ваши читатели смотрят
+    страницу с serif шрифтами на экране, маленькие засечки делают текст трудным для чтения.<br>
+    Всегда используйте sans-serif для основной копии Вашей веб-страницы.<br>
+    Хотя Serif шрифты трудно прочитать онлайн, они идеально подходят для печати.<br>
+    Monospace используется для примеров кода. Даже если ваш сайт не о вычислительной технике, вы можете использовать
+    monospace, чтобы предоставить инструкции, приводить примеры или показать машинописный текст. Monospace буквы имеют
+    одинаковую ширину для каждого символа, поэтому они всегда занимают одинаковое место на странице. Пишущие машинки
+    обычно использовали monospace шрифты.<br>
+    Используйте fantasy и cursive шрифты в изображениях и заголовках.<br>
+  </p>
+  <p>Некоторые примеры шрифтов без засечек (sans-serif):<br>
+    •Arial<br>
+    •Geneva<br>
+    •Helvetica<br>
+    •Lucida Sans<br>
+    •Trebuchet<br>
+    •Verdana<br>
+    Verdana это семейство шрифтов, который фактически был изобретен для использования в Интернете.
+  </p>
+  <p>
+    Некоторые примеры шрифтов c засечеками (serif) :<br>
+    •Garamond<br>
+    •Georgia<br>
+    •New York<br>
+    •Times<br>
+    •Times New Roman<br>
+  </p>
+  <p>
+    Некоторые примеры monospace шрифтов:<br>
+    •Courier<br>
+    •Courier New<br>
+    •Lucida Console<br>
+    •Monaco<br>
+  </p>
+  <p>Некоторые примеры fantasy шрифтов:<br>
+    •Copperplate<br>
+    •Desdemona<br>
+    •Impact<br>
+    •Kino<br>
+  </p>
+  <p>Некоторые примеры рукописных шрифтов:<br>
+    •Comic Sans MS<br>
+    •Lucida Handwriting<br>
+    •Zapf Chancery<br>
+  </p>
+
+  <p>For digital design, it’s important to know and understand how to use and how to combine different fonts.<br>
+    There’s a font for every mood!</p>
+
+  <h2>Serif Type Family</h2>
+  <p>The typeface Serif is differentiated from Sans Serif by the tiny little feet-like thingy called Serifs.<br>
+    Origins: The reason they have these tiny feet is actually because of stone carving. Back in the days when people
+    needed to carve out Latin letters in stone, the designer would usually paint the letters they wanted with a
+    paintbrush. But the stonemasons would have to carve it out from that painting. And that stone carving created these
+    serifs on the letters.<br>
+    People tend to use Serif typefaces for something quite serious. This is because of their traditional and
+    conservative look and feel.<br>
+    Serif is further divided into four typeface families.<br>
+    <br>
+    1. Old Style<br>
+    This is the oldest Serif family. It includes fonts such as Adobe Jenson, Centaur, Goudy Old style, and many more.
+    Their typeface is modeled on what text used to look like in the 1400s. Very old-looking.<br>
+    2. Transitional<br>
+    This is a bit more modern-looking. This typeface family includes Times New Roman, Baskerville, Georgia, etc.<br>
+    3. Modern<br>
+    Even more modern-looking and classy-looking. This includes Didot, which is the typeface used for the title of Vogue
+    magazine.<br>
+    4. Slab-Serif<br>
+    They’re a type family with thick serifs. Examples of slab-Serif typefaces include American Typewriter, Archer,
+    etc.
+  </p>
+
+  <h2>Now, how do you differentiate between these four major classes in the Serif Family?</h2>
+  <p>It’s actually quite easy. Look at the first three families: Old style, Transitional, and Modern. Put them
+    side-by-side. If you have a look at the thinnest versus the thickest part of the letters, you’ll see that as you
+    progress from the older to the more modern types. You’ll see an increased difference in what we call the modulation
+    of the typefaces. Concentrate on the O’s for example. Comparing the Old Style to the modern types, the thickness and
+    thinness difference will be lesser compared to Modern.<br>
+    And a lot of this modulation comes from when people used to write with flat-nibbed pens.<br>
+    <br>
+    What about Slab-Serif?<br>
+    If you have a look at a Slab-Serif font, you’ll see there’s pretty much zero difference between the thickest and the
+    thinnest parts of the font.<br>
+    And it was designed intentionally like this. It’s one of the modern members of the Serif family. Yet, it doesn’t
+    follow the rule of “more into the future you go, the greater the difference between the thickest and thinnest part
+    of the font.” Slab-Serif was created for newspaper printing for clearer reading when the quality of the paper used
+    to be poor.
+  </p>
+
+  <h2>Sans-Serif Type Family</h2>
+  <p>
+    Sans-Serif differs from the Serif. It does not have serifs (the tiny little feet) or any decorative elements along
+    the central beams and the top bars. Sans-Serif is slightly more modern than the serifs.<br>
+    They’re also subdivided into four families.
+  </p>
+  <p>
+    1. Grotesque<br>
+    The oldest one. This includes News Gothic, Franklin Gothic, and more.<br>
+    2. Neo-Grotesque:<br>
+    Slightly more modern. Helvetica and Ariel are examples.<br>
+    3. Humanist:<br>
+    Even more in the future. Gill Sans is an example.<br>
+    4. Geometric:<br>
+    They’re based on geometric shapes. Futura is an example.<br>
+  </p>
+
+  <h2>How do you differentiate between the four?</h2>
+  <p>Now, similar to the serifs, you can move from the older Grotesque family to the Neo-Grotesque to the Humanist. You
+    can see the difference in the thickest and the thinnest parts of the font get more and more exaggerated. When you
+    look at the Grotesque, it’s almost equidistant at all points. And when you look at the Humanist typefaces, you start
+    to see the variation of the modulation.<br>
+    In a Geometric typeface, the O’s are always perfectly round. The O’s look exactly like as if you draw with a
+    protractor. And this typeface is a bit like Slab-Serif type. Even though it’s one of the modern typefaces in the
+    family, it bucks the trend and pretty much has no modulation and is equidistant at all points.
+  </p>
+
+  <h2>How Typography Determines Readability</h2>
+  <p>Having a knowledge of the font families and their subfamilies helps with styling. But more importantly, it’s about
+    readability. Design is both about function and form. What makes a typeface more readable?<br>
+    Humanist Sans-Serif is considered to be more readable than Grotesque. And the reasons are:<br>
+    Humanist typeface has more open shapes.<br>
+    The inter-character spacing in the Humanist typeface is more than in Grotesque, making it slightly easier to
+    read.<br>
+    In the Grotesque typeface, the characters are ambiguous from each other. A lowercase ‘g’ and 9 in Grotesque look
+    pretty similar, they’re all very square, adding more confusion and making it less readable. Whereas in the Humanist
+    typeface, you can clearly differentiate between the characters.<br>
+    These are some factors that make fonts more readable. Now you can choose the typeface depending on the purpose.
+  </p>
+
+  <h2>How to combine fonts</h2>
+  <p>When you’re combining different typefaces, usually you’ll have a different typeface for the heading and a different
+    one for the body. And this is to create a slight contrast and interest in your designs.<br>
+    <br>
+    Some of the common rules that designers use when they combine different fonts :<br>
+    The Serifs and Sans-Serif work really well together. It tends to create a good design. Sans-Serif have slightly
+    increased readability compared to Serifs. Which is why Sans-Serif is a great typeface for the body of text.
+    Don’t combine a Serif with a Serif and a Sans-Serif with a Sans-Serif because it can look a little bland and
+    undifferentiated.<br>
+    Too many fonts in one design is not a good thing. It ends up looking too strange. Stick to 2 fonts (one from Serif
+    family and the other from Sans-Serif).<br>
+    Appreciate the mood of the typeface just like colors. And don’t combine different moods together. Try to combine
+    more modern fonts with modern fonts and older fonts with more traditional ones.<br>
+    If you get the mood of your typefaces, you start to create some incredibly beautiful designs.
+    Things that you should keep similar: Mood and Time era of the font
+    Things that you should contrast: Serif-ness (for instance, one font should be Serif and the other Sans-Serif) and
+    Weights.
+    Weight means how heavy or bold your text is. Most design software have a whole range of weights. For example, light,
+    medium, bold, extra bold, and so on. Play around with different weights contrasting them to create interesting
+    designs.<br>
+    <br>
+    NEVER EVER use — Comic Sans, Papyrus, Viner, Kristen, Curlz. No matter what you’re designing, they’ll make your
+    designs look terrible.
+  </p>
+
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex82_mycss_tables-position tables-caption </title>
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    table,
+    td,
+    th {
+      width: 50%;
+      border: 1px solid black;
+      padding: 15px;
+      margin: 30px auto 20px;
+      background-color: bisque;
+    }
+
+    caption {
+      caption-side: bottom;
+      margin-top: 20px;
+    }
+
+    .secondtable {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .secondtable th,
+    .secondtable td:first-child {
+      background: dodgerblue;
+      color: brown;
+      padding: 10px 20px;
+    }
+
+    .secondtable th,
+    .secondtable td {
+      border-style: solid;
+      border-width: 0 1px 1px 0;
+      border-color: white;
+    }
+
+    .secondtable td {
+      background: #D8E6F3;
+    }
+
+    .secondtable th:first-child,
+    .secondtable td:first-child {
+      text-align: left;
+    }
+
+    .thirdtable {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      border-radius: 10px;
+      border-spacing: 0;
+      text-align: center;
+    }
+
+    .thirdtable th {
+      background: #BCEBDD;
+      color: brown;
+      text-shadow: 0 1px 1px #2D2020;
+      padding: 10px 20px;
+    }
+
+    .thirdtable th,
+    .thirdtable td {
+      border-style: solid;
+      border-width: 0 1px 1px 0;
+      border-color: white;
+    }
+
+    .thirdtable th:first-child,
+    .thirdtable td:first-child {
+      text-align: left;
+    }
+
+    .thirdtable th:first-child {
+      border-top-left-radius: 10px;
+    }
+
+    .thirdtable th:last-child {
+      border-top-right-radius: 10px;
+      border-right: none;
+    }
+
+    .thirdtable td {
+      padding: 10px 20px;
+      background: #F8E391;
+    }
+
+    .thirdtable tr:last-child td:first-child {
+      border-radius: 0 0 0 10px;
+    }
+
+    .thirdtable tr:last-child td:last-child {
+      border-radius: 0 0 10px 0;
+    }
+
+    .thirdtable tr td:last-child {
+      border-right: none;
+    }
+
+    .fourthtable {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      text-align: left;
+      border-collapse: separate;
+      border-spacing: 5px;
+      background: #ECE9E0;
+      color: #656665;
+      border: 16px solid #ECE9E0;
+      border-radius: 20px;
+    }
+
+    .fourthtable th {
+      font-size: 18px;
+      padding: 10px;
+      background: #ECE9E0;
+    }
+
+    .fourthtable td {
+      background: #F5D7BF;
+      padding: 10px;
+    }
+
+    .table_col {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      width: 50%;
+      background: white;
+      text-align: left;
+      border-collapse: collapse;
+      color: #3E4347;
+    }
+
+    .table_col th:first-child,
+    .table_col td:first-child {
+      color: #F5F6F6;
+      border-left: none;
+      background-color: dodgerblue;
+    }
+
+    .table_col th,
+    .table_col td {
+      font-weight: normal;
+      border-bottom: 2px solid #F5E1A6;
+      border-right: 20px solid white;
+      border-left: 20px solid white;
+      padding: 12px 10px;
+      color: #8b8e91;
+      background-color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Tables symples</h1>
+
+  <h2>Tables position caption</h2>
+
+  <table>
+    <caption>Table 1.1 Customers</caption>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr class="alt">
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr class="alt">
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+  </table>
+
+  <h2>Цветная таблица</h2>
+  <p>Mожно эффектно оформить таблицу при помощи контрастных цветов, которые гармонично впишутся в цветовую гамму
+    сайта.</p>
+
+  <table class="secondtable">
+    <tr>
+      <th>Company</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td>20.3</td>
+      <td>30.5</td>
+      <td>23.5</td>
+      <td>40.3</td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>50.2</td>
+      <td>40.63</td>
+      <td>45.23</td>
+      <td>39.3</td>
+    </tr>
+    <tr>
+      <td>Apple</td>
+      <td>25.4</td>
+      <td>30.2</td>
+      <td>33.3</td>
+      <td>36.7</td>
+    </tr>
+    <tr>
+      <td>IBM</td>
+      <td>20.4</td>
+      <td>15.6</td>
+      <td>22.3</td>
+      <td>29.3</td>
+    </tr>
+  </table>
+
+  <h2>Таблица с закругленными углами</h2>
+  <p>Благодаря добавлению в спецификацию CSS3 свойства 'border-radius', появилась возможность закругления углов таблицы
+    без использования фоновых изображений. Чтобы добиться такого эффекта, нужно закруглить углы соответствующих ячеек.
+  </p>
+  <table class="thirdtable">
+    <tr>
+      <th>Company</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td>20.3</td>
+      <td>30.5</td>
+      <td>23.5</td>
+      <td>40.3</td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>50.2</td>
+      <td>40.63</td>
+      <td>45.23</td>
+      <td>39.3</td>
+    </tr>
+    <tr>
+      <td>Apple</td>
+      <td>25.4</td>
+      <td>30.2</td>
+      <td>33.3</td>
+      <td>36.7</td>
+    </tr>
+    <tr>
+      <td>IBM</td>
+      <td>20.4</td>
+      <td>15.6</td>
+      <td>22.3</td>
+      <td>29.3</td>
+    </tr>
+  </table>
+
+  <h2>Таблица с раздельными ячейками</h2>
+  <table class="fourthtable">
+    <tr>
+      <th>Company</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td>20.3</td>
+      <td>30.5</td>
+      <td>23.5</td>
+      <td>40.3</td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>50.2</td>
+      <td>40.63</td>
+      <td>45.23</td>
+      <td>39.3</td>
+    </tr>
+    <tr>
+      <td>Apple</td>
+      <td>25.4</td>
+      <td>30.2</td>
+      <td>33.3</td>
+      <td>36.7</td>
+    </tr>
+    <tr>
+      <td>IBM</td>
+      <td>20.4</td>
+      <td>15.6</td>
+      <td>22.3</td>
+      <td>29.3</td>
+    </tr>
+  </table>
+
+  <h2> Таблица с акцентом на первый столбец</h2>
+  <table class="table_col">
+    <colgroup>
+      <col style="background:#C7DAF0;">
+    </colgroup>
+    <tr>
+      <th>Comedy</th>
+      <th>Adventure</th>
+      <th>Action</th>
+      <th>Children</th>
+    </tr>
+    <tr>
+      <td>Scary Movie</td>
+      <td>Indiana Jones</td>
+      <td>The Punisher</td>
+      <td>Wall-E</td>
+    </tr>
+    <tr>
+      <td>Epic Movie</td>
+      <td>Star Wars</td>
+      <td>Bad Boys</td>
+      <td>Madagascar</td>
+    </tr>
+    <tr>
+      <td>Spartan</td>
+      <td>LOTR</td>
+      <td>Die Hard</td>
+      <td>Finding Nemo</td>
+    </tr>
+    <tr>
+      <td>Dr. Dolittle</td>
+      <td>The Mummy</td>
+      <td>300</td>
+      <td>A Bug's Life</td>
+    </tr>
+  </table>
+
+
+</body>
+
+</html>

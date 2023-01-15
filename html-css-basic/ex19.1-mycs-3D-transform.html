@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex19.1_mycss: 3D transforms methods</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    ol.styledlist {
+      list-style-type: lower-alpha;
+      width: 350px;
+      padding: 3px 8px;
+      list-style-type: disc;
+      border: 2px dashed red;
+      background-color: tan;
+    }
+
+    ol.styledlist li {
+      list-style-position: inside;
+    }
+
+    .ex1 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      margin: 0 auto;
+    }
+
+    #myDiv1 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -webkit-transform: rotateX(150deg);
+      /* Safari prior 9.0 */
+      transform: rotateX(150deg);
+      /* Standard syntax */
+      margin: 0 auto;
+    }
+
+    #myDiv2 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -webkit-transform: rotateY(150deg);
+      /* Safari prior 9.0 */
+      transform: rotateY(150deg);
+      /* Standard syntax */
+      margin: 0 auto;
+    }
+
+    #myDiv3 {
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      -webkit-transform: rotateZ(90deg);
+      /* Safari prior 9.0 */
+      transform: rotateZ(90deg);
+      /* Standard syntax */
+      margin: 0 auto;
+    }
+
+    .forCode {
+      width: 38%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS 3D Transforms</h1>
+  <p>CSS also supports 3D transformations</p>
+
+  <h2>CSS 3D Transforms Methods</h2>
+  <ol class="styledlist">With the CSS transform property you can use the following 3D transformation methods:
+    <li>rotateX()</li>
+    <li>rotateY()</li>
+    <li>rotateZ()</li>
+  </ol>
+
+  <p>Some older browsers need specific prefixes (-webkit-) to understand the 3D transform properties</p>
+
+  <h2>The rotateX() Method</h2>
+  <p>The rotateX() method rotates an element around its X-axis at a given degree<br>
+    <b>Note:</b> Internet Explorer 9 (and earlier versions) does not support the rotateX() method.
+  </p>
+
+  <img src="./img/transform_rotatex.gif" alt="rotate-X demo">
+
+  <p>Look, we have normal div-element</p>
+  <div class="ex1">
+    This is a normal div-element
+  </div>
+  <p>This div element is rotated 150 degrees around its X-axis:</p>
+
+  <div id="myDiv1">
+    This div element is rotated 150 degrees
+  </div>
+
+  <br>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    -webkit-transform: rotateX(150deg); /* Safari prior 9.0 */<br>
+    transform: rotateX(150deg); /* Standard syntax */<br>
+    }<br>
+  </div>
+
+
+  <h2>The rotateY() Method</h2>
+  <p>The rotateY() method rotates an element around its Y-axis at a given degree<br>
+    <b>Note:</b> Internet Explorer 9 (and earlier versions) does not support the rotateY() method.
+  </p>
+
+  <img src="./img/transform_rotatey.gif" alt="rotate-Y demo">
+
+  <p></p>
+
+  <p>Again, compare with normal div-element</p>
+  <div class="ex1">
+    This is a normal div-element
+  </div>
+
+  <p>This div element is rotated 150 degrees around its Y-axis</p>
+  <div id="myDiv2">
+    This div element is rotated 150 degrees
+  </div>
+
+  <br>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    -webkit-transform: rotateY(150deg); /* Safari prior 9.0 */<br>
+    transform: rotateY(150deg); /* Standard syntax */<br>
+  </div>
+
+
+
+  <h2>The rotateZ() Method</h2>
+  <p>The rotateZ() method rotates an element around its Z-axis at a given degree<br>
+    <b>Note:</b> Internet Explorer 9 (and earlier versions) does not support the rotateZ() method.
+  </p>
+
+  <p>Let's take, normal div-element</p>
+  <div class="ex1">
+    This is a normal div-element
+  </div>
+
+  <p>This div element is rotated 90 degrees around its Z-axis</p>
+  <div id="myDiv3">
+    This div element is rotated 90 degrees
+  </div>
+  <div class="forCode">
+    The code for above div-element:<br>
+    div {<br>
+    -webkit-transform: rotateZ(90deg); /* Safari prior 9.0 */<br>
+    transform: rotateZ(90deg); /* Standard syntax */<br>
+    }<br>
+  </div>
+
+</body>
+
+</html>

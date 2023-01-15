@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex18.4_mycss: position:sticky</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .raz1,
+    .raz2,
+    .raz3,
+    .raz4,
+    .raz5,
+    .raz6,
+    .raz8,
+    .raz9,
+    .raz10,
+    .raz11 {
+      width: 50%;
+      border: 1px solid red;
+      margin: 0 auto;
+      background: #ccc;
+    }
+
+    .raz7 {
+      width: 50%;
+      border: 1px solid red;
+      margin: 0 auto;
+      padding: 2em;
+      background: #ccc;
+    }
+
+    .raz12 {
+      width: 50%;
+      position: relative;
+      margin-right: 4em;
+      border: 1px solid red;
+      background: #ccc;
+    }
+
+    .raz13,
+    .raz14,
+    .raz15,
+    .raz16 {
+      overflow: auto;
+      /* добавить полосу прокрутки */
+      height: 10em;
+      width: 50%;
+      border: 1px solid red;
+      background: #ccc;
+      margin: 0 auto;
+    }
+
+    .sticky1,
+    .sticky7,
+    .sticky10,
+    .sticky13,
+    .sticky14,
+    .sticky15 {
+      position: sticky;
+      top: 0;
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky2 {
+      position: sticky;
+      top: 2em;
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky3 {
+      position: sticky;
+      top: -2em;
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky4 {
+      position: sticky;
+      top: 0;
+      margin: 2em;
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky5 {
+      position: sticky;
+      top: -2em;
+      margin-bottom: -2em;
+      padding-top: 2em;
+    }
+
+    .sticky5 div {
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky6 {
+      position: sticky;
+      top: 0;
+      transform: translate(0, 2em);
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky8 {
+      position: sticky;
+      bottom: 0;
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .sticky9 {
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      /* не рекомендуется для высоких элементов, так как на коротких устройствах он загородит собой информацию родителя */
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .relative {
+      position: relative;
+      min-height: 6em;
+      background: green;
+    }
+
+    .sticky11 {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      min-height: 2em;
+      background: lightpink;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      visibility: hidden;
+    }
+
+    .sticky12 {
+      position: sticky;
+      top: 0;
+      min-height: 2em;
+      visibility: visible;
+      background: lightpink;
+    }
+
+    .sticky16 {
+      position: sticky;
+      min-height: 2em;
+      background: lightpink;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>position: sticky</h1>
+  <p>Элемент с position: sticky; фиксируется в рамках ближайшего родителя, когда расстояние до границы ближайшего
+    прокручиваемого родителя достигает указанного в свойствах top, right, bottom, left значения. На то, в каком месте
+    элемент прикрепится и где отцепиться, также влияют свойства padding, margin и transform. Размещение элемента над
+    другими элементами правится с помощью свойства z-index.<br>
+    После того, как свойство position примет значение sticky, размер элемента не изменится, а соседние элементы не
+    сдвинутся на освободившееся пространство.
+  </p>
+  Ось приклади де вказуються різні параметри з властивістю {position: sticky; ...} :<br>
+  <br>
+
+  <div class="raz1">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky1">Прилипну к верхнему краю окна браузера, когда верхний край окна браузера будет ниже
+      первоначального расположения верхнего края элемента, а нижний край элемента — выше нижнего края ближайшего
+      родителя.</div>
+    4<br>
+    5 The code for div-element:<br>
+    6 position: sticky;<br>
+    7 top: 0;<br>
+    8 min-height: 2em;<br>
+    9 background: lightpink;<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz2">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky2">Прилипну, сделав отступ в 2em от верхнего края окна браузера, когда верхний край окна браузера
+      будет выше первоначального расположения верхнего края элемента не более чем на 2em, а нижний край элемента — выше
+      нижнего края ближайшего родителя.</div>
+    4<br>
+    5 The code for div-element:<br>
+    6 position: sticky;<br>
+    7 top: 2em; - відступ від верхнього краю<br>
+    8 min-height: 2em;<br>
+    9 background: lightpink;<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz3">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky3">Прилипну, сделав отступ в -2em от верхнего края окна браузера, когда верхний край окна браузера
+      будет ниже первоначального расположения верхнего края элемента на более чем на 2em, а нижний край элемента — выше
+      нижнего края ближайшего родителя.</div>
+    4<br>
+    5 The code for div-element:<br>
+    6 position: sticky;<br>
+    7 top: -2em; - відступ від верхнього краю мінус 2em<br>
+    8 min-height: 2em;<br>
+    9 background: lightpink;<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz4">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky4">Прилипну к верхнему краю окна браузера, когда верхний край окна браузера будет ниже
+      первоначального расположения верхнего края элемента, а нижний край элемента — выше нижнего края ближайшего
+      родителя на более чем 2em.</div>
+    4<br>
+    5 The code for div-element:<br>
+    6 position: sticky;<br>
+    7 top: 0;<br>
+    8 margin: 2em;<br>
+    9 min-height: 2em;<br>
+    10 background: lightpink;<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz5">
+    1<br>
+    2<br>
+    3<br>
+    <div style="margin-bottom: -2em;"></div>
+    <div class="sticky5">
+      <div>Прилипну к верхнему краю окна браузера, когда верхний край окна браузера будет ниже
+        первоначального расположения верхнего края элемента, а нижний край элемента — ниже нижнего края ближайшего
+        родителя не более чем на 2em.
+      </div>
+    </div>
+    <div style="margin-top: 2em;"></div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz6">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky6">Прилипну, сделав отступ в 2em от верхнего края окна браузера, когда верхний край окна браузера
+      будет выше первоначального расположения верхнего края элемента не более чем на 2em, а нижний край элемента — ниже
+      нижнего края ближайшего родителя не более чем на 2em.</div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz7">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky7">Прилипну к верхнему краю окна браузера, когда верхний край окна браузера будет ниже
+      первоначального расположения верхнего края элемента, а нижний край элемента — выше нижнего края ближайшего
+      родителя на более чем 2em.</div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz8">
+    1<br>
+    2<br>
+    3<br>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    <div class="sticky8">Прилипну к нижнему краю окна браузера, когда нижний край окна браузера будет ниже верхнего края
+      ближайшего родителя, а нижний край элемента — выше своего первоначального расположения.</div>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz9">
+    1<br>
+    2<br>
+    3<br>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    <div class="sticky9">Прилипну то к нижнему краю окна браузера, то к верхнему</div>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz10">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky10">Буду показан под зелёным блоком.</div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    <div class="relative"></div>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz11">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky11">Буду показан над зелёным блоком.</div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    <div class="relative"></div>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz12">
+    1<br>
+    2<br>
+    3<br>
+    <div class="absolute">
+      <div class="sticky12">З правої сторони</div>
+    </div>
+    4<br>
+    5 position: sticky;<br>
+    6 top: 0;<br>
+    7 min-height: 2em;<br>
+    8 visibility: visible;<br>
+    9 background: lightpink;<br>
+    10<br>
+    11<br>
+    12<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz13">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky13">Прилипну внутри блока, который можно проскроллить, а не к краю окна браузера</div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <h1>Почему не работает position: sticky</h1>
+  <div class="raz14">
+    1<br>
+    2<br>
+    3<br>
+    <div>
+      <div class="sticky14">Не прилипну, потому что высота элемента с position:sticky равна высоте ближайшего родителя.
+      </div>
+    </div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+  <br>
+  <br>
+  <div class="raz15">
+    1<br>
+    2<br>
+    3
+    <div style="overflow: hidden;">
+      <div class="sticky15">Не прилипну, потому что y не прокручиваемого родителя, стоящего внутри прокручиваемого,
+        определён overflow отличный от visible.</div>
+      4<br>
+      5<br>
+      6<br>
+      7<br>
+      8<br>
+      9<br>
+      10<br>
+      11<br>
+      12<br>
+      13<br>
+      14<br>
+      15<br>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="raz16">
+    1<br>
+    2<br>
+    3<br>
+    <div class="sticky16">Не прилипну, потому что все четыре свойства top, right, bottom, left имеют значение по
+      умолчанию auto.</div>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+  </div>
+
+</body>
+
+</html>

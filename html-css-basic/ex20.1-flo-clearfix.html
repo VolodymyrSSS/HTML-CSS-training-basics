@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex20.1_mycss: float clearfix hack</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    .image1 {
+      width: 170px;
+      height: 170px;
+      float: right;
+      margin-left: 15px;
+    }
+
+    .div1 {
+      width: 50%;
+      padding: 5px;
+      border: 2px solid red;
+    }
+
+    .div2 {
+      width: 50%;
+      overflow: auto;
+      /* added a clearfix */
+      padding: 5px;
+      border: 2px solid red;
+    }
+
+    .div3 {
+      width: 50%;
+      /* changed a height */
+      height: 160px;
+      /* added a clearfix */
+      overflow: auto;
+      /* changed a padding */
+      padding: 7px;
+      /* added margins */
+      margin-bottom: 50px;
+      border: 2px solid red;
+    }
+
+    .div1.clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Layout - float and clearfix hack</h1>
+
+  <h2>Without Clearfix</h2>
+
+  <p>If an element is taller than the element containing it, and it is floated, it will "overflow" outside of its
+    container:</p>
+
+  <div class="div1">
+    <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+    Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+    ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+    dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+  </div>
+
+  <h2>Clearfix with overflow: auto;</h2>
+
+  <p>Let's add a clearfix with <b>overflow: auto;</b> to the containing element, to fix this problem.</p>
+
+  <div class="div2">
+    <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+    Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+    ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+    dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+  </div>
+  <br>
+  <p>But, the overflow: auto clearfix works well as long as you are able to keep control of your margins and padding
+    (else you might see scrollbars).<br>
+    Let's add a clearfix overflow: auto; but changed height and paddings.</p>
+  <div class="div3">
+    <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+    Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+    ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+    dictum nisi, sed ullamcorper ipsum dignissim ac. Praesent convallis urna a lacus interdum ut hendrerit risus
+    congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+  </div>
+
+  <h1>Clearfix hack</h1>
+
+  <p>The new, modern clearfix hack however, is safer to use, and it's used for most webpages</p>
+  <br>
+  <p>Let's Add the clearfix hack to the containing element, to fix the problem by modern way:</p>
+
+  <div class="div1">
+    <h2>Without Clearfix</h2>
+    <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+    Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+    ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+    dictum nisi, sed ullamcorper ipsum dignissim ac. Praesent convallis urna a lacus interdum ut hendrerit risus
+    congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+  </div>
+
+  <p style="clear:right">Add the clearfix hack to the containing element, to fix this problem:</p>
+
+  .clearfix::after {<br>
+  content: "";<br>
+  clear: both;<br>
+  display: table;<br>
+  }<br>
+  <br>
+  Where the <b>::after</b> - is a pseudo-element<br>
+  <br>
+  <div class="div1 clearfix">
+    <h2>With Clearfix</h2>
+    <img class="image1" src="./img/pineapple.jpg" alt="Pineapple">
+    Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed
+    ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+    dictum nisi, sed ullamcorper ipsum dignissim ac. Praesent convallis urna a lacus interdum ut hendrerit risus
+    congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. Donec ...
+  </div>
+
+  <p>In general, the essence of the 'clearfix' can be explained by one picture:</p>
+  <p>Here, it was created a separate div with class clearfix where we put span with float left and second span with
+    float right</p>
+  <img src="./img/img-div-clearfix.jpeg" alt="essence of clearfix" width="400" height="200">
+
+
+</body>
+
+</html>

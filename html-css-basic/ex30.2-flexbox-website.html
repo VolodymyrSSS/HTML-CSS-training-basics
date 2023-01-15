@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex30.2_mycss: flexbox example of responsive website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      margin: 0;
+    }
+
+    .notes {
+      background: yellow;
+      padding: 5px;
+      text-align: center;
+    }
+
+    /* Header/logo Title */
+    .header {
+      padding: 60px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+    }
+
+    /* Style the top navigation bar */
+    .navbar {
+      display: flex;
+      background-color: #333;
+    }
+
+    /* Style the navigation bar links */
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Column container */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Create two unequal columns that sits next to each other */
+
+    /* Sidebar/Aside */
+    .side {
+      flex: 30%;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    /* Main column */
+    .main {
+      flex: 70%;
+      background-color: white;
+      padding: 20px;
+    }
+
+    /* Fake image, just for this example */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+    }
+
+    /* Responsive layout - when the screen is less than 700px wide, 
+    make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 700px) {
+
+      .row,
+      .navbar {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Note -->
+  <div class="notes">
+    <h1 style="color:red;">Responsive Website using Flexbox</h1>
+    <h4>Resize the browser window to see the responsive effect.</h4>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>My Website</h1>
+    <p>With a <b>flexible</b> layout.</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="#">Link1</a>
+    <a href="#">Link2</a>
+    <a href="#">Link3</a>
+    <a href="#">Link4</a>
+  </div>
+
+  <!-- The flexible grid (content) -->
+  <div class="row">
+    <aside class="side">
+      <h2>About Me</h2>
+      <h5>Photo of me:</h5>
+      <img src="./img/owl.jpeg" alt="photo_of_me" style="width: 100%; height: 200px;">
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h3>More Text</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <div class="fakeimg" style="height:60px;">Image</div><br>
+      <div class="fakeimg" style="height:60px;">Image</div><br>
+      <div class="fakeimg" style="height:60px;">Image</div>
+    </aside>
+    <main class="main">
+      <h2>New JavaScript Features Coming in ES2020 That You Can Use Now</h2>
+      <h5>Nov 27, 2019</h5>
+      <img src="./img/image-network1.jpeg" alt="funny_mans_switch_on_internet" style="width: 70%; height: 300px;">
+      <h4>New and powerful features in JavaScript: private fields in classes, optional chaining, nullish coalescing
+        operator, and BigInts.</h4>
+      <p>Since the release of ES6 in 2015, JavaScript has been evolving fast with tons of new features coming out in
+        each iteration. The new versions of the JavaScript language specification have been updated yearly, with new
+        language feature proposal being finalized faster than ever. This means that new features are getting
+        incorporated into modern browsers and other JavaScript run-time engines, like Node.js, at a pace that we haven’t
+        seen before.</br>
+        In 2019, there are many new features that are in the ‘Stage 3’ phase, which means that it’s very close to being
+        finalized, and browsers/Node are getting support for these features now. If we want to use them for production,
+        we can use something like Babel to transpile them to older versions of JavaScript so they can be used in older
+        browsers like Internet Explorer if needed.
+      </p>
+      <h4>Private Fields in Classes</h4>
+      <p>One of the latest proposals is a way to add private variables in classes. We will use the # sign to indicate
+        that a class variable is a private variable. This way, we don’t need to use closures to hide private variables
+        that we don’t want to expose to the outside world. For example, we can write a simple class to increment and
+        decrement numbers like the following code:</p>
+      <div class="fakeimg">
+        class Counter {<br>
+        #x = 0;<br>
+        increment() {<br>
+        this.#x++;<br>
+        }<br>
+        decrement() {<br>
+        this.#x--;<br>
+        }<br>
+        getNum(){<br>
+        return this.#x;<br>
+        }<br>
+        }<br>
+        const c = new Counter();<br>
+        c.increment();<br>
+        c.increment();<br>
+        c.decrement();<br>
+        console.log(c.getNum());<br>
+      </div>
+      <p>We should get the value 1 from the console.log in the last line of the code above. #x is a private variable
+        that can’t be accessed outside the class. So if we write:</p>
+      <div class="fakeimg">
+        console.log(c.#x);
+      </div>
+      <p>We’ll get <b>Uncaught SyntaxError: Private field '#x'</b>.<br>
+        Private variables are a much-needed feature of JavaScript classes. This feature is now in the latest version of
+        Chrome and Node.js v12.</p>
+      <br>
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Oct 9, 2019</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+      </p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+
+
+</body>
+
+</html>

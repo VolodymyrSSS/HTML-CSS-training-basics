@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex30_mycss: flexbox basics</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      height: 500vh;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    ol.styledlist {
+      width: 590px;
+      padding: 8px 12px;
+      list-style-type: decimal;
+      border: 2px dashed red;
+      background-color: tan;
+      margin: 0 auto;
+    }
+
+    ol.styledlist li {
+      list-style-position: inside;
+      font-size: 22px;
+    }
+
+    .simple-box1 {
+      background-color: pink;
+      margin: 20px;
+    }
+
+    .forpara {
+      box-sizing: border-box;
+      width: 400px;
+      color: black;
+      font-size: 24px;
+      background-color: #f1f1f1;
+      margin: 5px;
+    }
+
+    .flex-box1 {
+      display: flex;
+      background-color: pink;
+    }
+
+    .flex-container1 {
+      display: flex;
+      background-color: pink;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .flex-container1>div {
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    .clearfix {
+      width: 100%;
+      border: 2px solid brown;
+      margin: 0 auto;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .flex-container2 {
+      display: flex;
+      flex-direction: column;
+      background-color: pink;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .flex-container2>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container3 {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: pink;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .flex-container3>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container4 {
+      display: flex;
+      flex-direction: row;
+      background-color: pink;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .flex-container4>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container5 {
+      display: flex;
+      flex-direction: row-reverse;
+      background-color: pink;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .flex-container5>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container6 {
+      width: 700px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: pink;
+      margin: 0 auto;
+    }
+
+    .flex-container6>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container7 {
+      width: 700px;
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: pink;
+    }
+
+    .flex-container7>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container8 {
+      width: 700px;
+      display: flex;
+      flex-wrap: wrap-reverse;
+      background-color: pink;
+    }
+
+    .flex-container8>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container9 {
+      width: 1150px;
+      display: flex;
+      flex-flow: row wrap;
+      background-color: pink;
+    }
+
+    .flex-container9>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container10 {
+      display: flex;
+      justify-content: center;
+      background-color: DodgerBlue;
+      ;
+    }
+
+    .flex-container10>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container11 {
+      display: flex;
+      justify-content: flex-start;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container11>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container12 {
+      display: flex;
+      justify-content: flex-end;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container12>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container13 {
+      display: flex;
+      justify-content: space-around;
+      background-color: pink;
+    }
+
+    .flex-container13>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container14 {
+      display: flex;
+      justify-content: space-between;
+      background-color: pink;
+    }
+
+    .flex-container14>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container15 {
+      display: flex;
+      width: 50%;
+      height: 200px;
+      align-items: flex-start;
+      margin: 0 auto;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container15>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container16 {
+      display: flex;
+      width: 50%;
+      height: 200px;
+      align-items: center;
+      margin: 0 auto;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container16>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container17 {
+      display: flex;
+      width: 50%;
+      height: 200px;
+      align-items: flex-end;
+      margin: 0 auto;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container17>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container18 {
+      display: flex;
+      width: 50%;
+      height: 200px;
+      align-items: stretch;
+      margin: 0 auto;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container18>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container19 {
+      display: flex;
+      width: 50%;
+      height: 200px;
+      align-items: baseline;
+      margin: 0 auto;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container19>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container20 {
+      width: 700px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      background-color: pink;
+    }
+
+    .flex-container20>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container21 {
+      width: 700px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      background-color: pink;
+    }
+
+    .flex-container21>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container22 {
+      width: 700px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+      background-color: pink;
+    }
+
+    .flex-container22>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container23 {
+      width: 700px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      background-color: pink;
+    }
+
+    .flex-container23>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container24 {
+      width: 700px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      background-color: pink;
+    }
+
+    .flex-container24>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container25 {
+      width: 700px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      background-color: pink;
+    }
+
+    .flex-container25>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container26 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container26>div {
+      background-color: #f1f1f1;
+      color: white;
+      width: 100px;
+      height: 100px;
+    }
+
+    .flex-container27 {
+      display: flex;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container27>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container28 {
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container28>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container29 {
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container29>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container30 {
+      margin: 0 auto;
+      width: 800px;
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container30>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container31 {
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container31>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container32 {
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container32>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container33 {
+      display: flex;
+      height: 200px;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container33>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container34 {
+      display: flex;
+      height: 200px;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container34>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container35 {
+      margin: 0 auto;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+    }
+
+    .flex-container35>div {
+      -webkit-flex: 1;
+      /* Safari 6.1+ */
+      -ms-flex: 1;
+      /* IE 10 */
+      flex: 1;
+    }
+
+    .flex-container36 {
+      margin: 0 auto;
+      width: 350px;
+      height: 100px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+    }
+
+    /* Safari 6.1+ */
+    .flex-container36 div:nth-of-type(1) {
+      -webkit-flex-grow: 1;
+    }
+
+    .flex-container36 div:nth-of-type(2) {
+      -webkit-flex-grow: 3;
+    }
+
+    .flex-container36 div:nth-of-type(3) {
+      -webkit-flex-grow: 1;
+    }
+
+    .flex-container36 div:nth-of-type(4) {
+      -webkit-flex-grow: 1;
+    }
+
+    .flex-container36 div:nth-of-type(5) {
+      -webkit-flex-grow: 1;
+    }
+
+    /* Standard syntax */
+    .flex-container36 div:nth-of-type(1) {
+      flex-grow: 1;
+    }
+
+    .flex-container36 div:nth-of-type(2) {
+      flex-grow: 3;
+    }
+
+    .flex-container36 div:nth-of-type(3) {
+      flex-grow: 1;
+    }
+
+    .flex-container36 div:nth-of-type(4) {
+      flex-grow: 1;
+    }
+
+    .flex-container36 div:nth-of-type(5) {
+      flex-grow: 1;
+    }
+
+    .flex-container37 {
+      margin: 0 auto;
+      width: 350px;
+      height: 100px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+    }
+
+    .flex-container37 div {
+      -webkit-flex-grow: 1;
+      /* Safari 6.1+ */
+      -webkit-flex-shrink: 1;
+      /* Safari 6.1+ */
+      -webkit-flex-basis: 100px;
+      /* Safari 6.1+ */
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 100px;
+    }
+
+    .flex-container37 div:nth-of-type(2) {
+      -webkit-flex-shrink: 3;
+      /* Safari 6.1+ */
+      flex-shrink: 3;
+    }
+
+    .forCode {
+      float: left;
+      width: 30%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Flexbox</h1>
+
+  <h2>CSS Flexbox Layout Module</h2>
+  <p>Before the Flexbox Layout module, there were four layout modes:<br>
+    1.Block, for sections in a webpage<br>
+    2.Inline, for text<br>
+    3.Table, for two-dimensional table data<br>
+    4.Positioned, for explicit position of an element<br>
+    The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float
+    or positioning.<br>
+  </p>
+
+  <p><b>Note:</b> Internet Explorer 9 and earlier versions do not support the flex property.<br>
+    Internet Explorer 10 supports an alternative, the -ms-flex property. IE11 and newer versions fully
+    support the flex property (do not need the -ms- prefix).</br>
+    Safari 6.1 (and newer) supports an alternative, the -webkit-flex property.
+  </p>
+
+  <h2>Flexbox Elements</h2>
+
+  <p>We had a simple div with 3 paragraphs</p>
+
+  <div class="simple-box1">
+    <P class="forpara">"That which yields is not always weak."<br>
+      -Jacqueline Carey
+    </p>
+    <p class="forpara">"Agile does not mean laissez-faire, flexibility and freedom are based on well-defined
+      principles."<br>
+      -Pearl Zhu
+    </p>
+    <p class="forpara">"The measure of intelligence is the ability to change."<br>
+      -Albert Einstein
+    </p>
+  </div>
+
+  <p>Let's stuck those paragraphs in one row without using float or positioning.</p>
+  <div class="flex-box1">
+    <P class="forpara">"That which yields is not always weak."<br>
+      -Jacqueline Carey
+    </p>
+    <p class="forpara">"Agile does not mean laissez-faire, flexibility and freedom are based on well-defined
+      principles."<br>
+      -Pearl Zhu
+    </p>
+    <p class="forpara">"The measure of intelligence is the ability to change."<br>
+      -Albert Einstein
+    </p>
+  </div>
+  <p>So, to start using the Flexbox model, you need to first define a flex container.</p>
+  <p>A Flexible Layout must have a parent element with the <b>display</b> property set to <b>flex</b>.<br>
+    Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+
+  <h2>Parent Element (Container)</h2>
+  <p>The flex container becomes flexible by setting the display property to <em>'flex'</em>:</p>
+
+  <div class="flex-container1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div{<br>
+      background-color: #f1f1f1;<br>
+      margin: 10px;<br>
+      padding: 20px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <ol class="styledlist">The flex container properties are:
+    <li>flex-direction</li>
+    <li>flex-wrap</li>
+    <li>flex-flow</li>
+    <li>justify-content</li>
+    <li>align-items</li>
+    <li>align-content</li>
+  </ol>
+
+  <h2>The flex-direction Property</h2>
+  <p>The flex-direction property defines in which direction the container wants to stack the flex items.</p>
+  <p>The <b>'flex-direction: column;</b> stacks the flex items vertically (from top to bottom):</p>
+
+  <div class="flex-container2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>flex-direction: column;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+
+  <p>The <b>'flex-direction: column-reverse;'</b> stacks the flex items vertically (but from bottom to top):</p>
+
+  <div class="flex-container3">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <p>The <b>'flex-direction: row;'</b> stacks the flex items horizontally (from left to right):</p>
+
+  <div class="flex-container4">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>flex-direction: row;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <p>The <b>'flex-direction: row-reverse;'</b> stacks the flex items horizontally (but from right to left):</p>
+
+  <div class="flex-container5">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <h2>The flex-wrap Property</h2>
+  <p>The flex-wrap property specifies whether the flex items should wrap or not.<br>
+    The examples below have 12 flex items, to better demonstrate the flex-wrap property.
+  </p>
+  <div class="flex-container6">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>flex-wrap: wrap;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+  <p>So, the <b>'flex-wrap: wrap;'</b> specifies that the flex items will wrap if necessary</p>
+
+  <p>The <b>'flex-wrap: nowrap;'</b> specifies that the flex items will not wrap (this is default):</p>
+
+  <div class="flex-container7">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+  <p>Try resizing the browser window. - you'll see that the elements desapear.</p>
+
+  <p>The <b>'flex-wrap: wrap-reverse;'</b> specifies that the flex items will wrap if necessary, in reverse order:</p>
+
+  <div class="flex-container8">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+
+  <h2>The flex-flow Property</h2>
+  <p>The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.</p>
+  <p>The <b>'flex-flow: row wrap;'</b> specifies that the flex items stacks horizontally and will wrap if the container
+    has no enough space:</p>
+  <div class="flex-container9">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>flex-flow: row wrap;</b><br>
+      width:1115px;<br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+  <h2>The justify-content Property</h2>
+  <p>The justify-content property is used to align the flex items.</p>
+
+  <p>The <b>'justify-content: flex-start'</b> aligns the flex items at the beginning of the container (this is default):
+  </p>
+  <div class="flex-container11">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>justify-content: center;</b><br>
+      background-color: DodgerBlue;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>The <b>'justify-content: center;'</b> aligns the flex items at the center of the container:</p>
+
+  <div class="flex-container10">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <p>The <b>'justify-content: flex-end;'</b> aligns the flex items at the end of the container:</p>
+
+  <div class="flex-container12">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <p>The <b>'justify-content: space-around;'</b> displays the flex items with space before, between, and after the lines
+  </p>
+
+  <div class="flex-container13">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>justify-content: space-around;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>The <b>'justify-content: space-between;</b> displays the flex items with space between the lines:</p>
+
+  <div class="flex-container14">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      <b>justify-content: space-between;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+
+  <h2>The align-items Property</h2>
+  <p>The align-items property is used to align the flex items vertically.</p>
+
+  <p>The <b>'align-items: flex-start;'</b> aligns the flex items at the top of the container:</p>
+
+  <div class="flex-container15">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <p>The <b>'align-items: center;'</b> aligns the flex items in the middle of the container:</p>
+
+  <div class="flex-container16">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <p>The <b>'align-items: flex-end;'</b> aligns the flex items at the bottom of the container:</p>
+
+  <div class="flex-container17">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      height: 200px;<br>
+      <b>align-items: flex-end;</b><br>
+      background-color: DodgerBlue;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>
+    <p>The <b>'align-items: stretch;'</b> stretches the flex items to fill the container (this is default):</p>
+
+    <div class="flex-container18">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </p>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      height: 200px;<br>
+      <b>align-items: stretch;</b><br>
+      background-color: DodgerBlue;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>The <b>'align-items: baseline;'</b> aligns the flex items such as their baselines aligns:</p>
+
+  <div class="flex-container19">
+    <div>
+      <h1>1</h1>
+    </div>
+    <div>
+      <h6>2</h6>
+    </div>
+    <div>
+      <h3>3</h3>
+    </div>
+    <div><small>4</small></div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      height: 200px;<br>
+      <b>align-items: baseline;</b><br>
+      background-color: DodgerBlue;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>The align-content Property</h2>
+  <p>The align-content property is used to align the flex lines.</p>
+  <p>The <b>'align-content: space-between;'</b> displays the flex lines with equal space between them:</p>
+
+  <div class="flex-container20">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      width: 700px;<br>
+      height: 600px;<br>
+      flex-wrap: wrap;<br>
+      <b>align-content: space-between;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>The <b>'align-content: space-around;'</b> displays the flex lines with space before, between, and after them:</p>
+
+  <div class="flex-container21">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+
+  <p>The <b>'align-content: stretch;'</b> stretches the flex lines to take up the remaining space (this is default):</p>
+
+  <div class="flex-container22">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+
+  <p>The <b>'align-content: flex-start;'</b> displays the flex lines at the start of the container:</p>
+
+  <div class="flex-container23">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      width: 700px;<br>
+      height: 600px;<br>
+      flex-wrap: wrap;<br>
+      <b>align-content: flex-start;</b><br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>The <b>'align-content: center;'</b> displays the flex lines in the middle of the container:</p>
+
+  <div class="flex-container24">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+
+  <p>The <b>'align-content: flex-end;'</b> displays the flex lines at the end of the container:</p>
+
+  <div class="flex-container25">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+
+  <h2>Perfect Centering</h2>
+  <p>A container with both the justify-content and the align-items properties set to <b>center</b> will align the
+    item(s) in the center (in both axis).</p>
+  <div class="flex-container26">
+    <div></div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      justify-content: center;<br>
+      align-items: center;<br>
+      height: 300px;<br>
+      background-color: DodgerBlue;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the elements of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: #f1f1f1;<br>
+      color: white;<br>
+      width: 100px;<br>
+      height: 100px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>Child Elements (Items)</h2>
+
+  <ol class="styledlist">The flex item properties are:
+    <li><b>order</b></li>
+    <li><b>flex-grow</b></li>
+    <li><b>flex-shrink</b></li>
+    <li><b>flex-basis</b></li>
+    <li><b>flex</b></li>
+    <li><b>align-self</b></li>
+  </ol>
+
+  <p>The direct child elements of a flex container automatically becomes flexible (flex) items.</p>
+  <div class="flex-container27">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the items of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: DodgerBlue;<br>
+      color: white;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>The order Property</h2>
+  <p>The <b>order property</b> specifies the order of the flex items.<br>
+    The first flex item in the code does not have to appear as the first item in the layout.<br>
+    The order value must be a number, default value is 0.
+  </p>
+
+  <p>So, use the order property to sort the flex items as you like:</p>
+
+  <div class="flex-container28">
+    <div style="order: 3">1</div>
+    <div style="order: 2">2</div>
+    <div style="order: 4">3</div>
+    <div style="order: 1">4</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container28"
+      div style="order: 3">1 /div<br>
+      div style="order: 2">2 /div<br>
+      div style="order: 4">3 /div<br>
+      div style="order: 1">4 /div<br>
+      /div<br>
+      <br>
+      The code for the container is:<br>
+      flex-container {<br>
+      display: flex;<br>
+      align-items: stretch;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+    </div>
+    <div class="forCode">
+      The code for the items of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: DodgerBlue;<br>
+      color: white;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>The flex-grow Property</h2>
+  <p>The f<b>lex-grow property</b> specifies how much a flex item will grow relative to the rest of the flex items.
+  </p>
+
+  <p>The value must be a number, <b>default value is 0</b>.</p>
+
+  <p>Example1: make the third flex item grow eight times faster than the other flex items:</p>
+
+  <div class="flex-container29">
+    <div style="flex-grow: 1">1</div>
+    <div style="flex-grow: 1">2</div>
+    <div style="flex-grow: 8">3</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container"<br>
+      div style="flex-grow: 1" 1 /div<br>
+      div style="flex-grow: 1" 2 /div<br>
+      <b>div style="flex-grow: 8" 3 /div</b><br>
+      /div<br>
+      <br>
+      The code for the container is:<br>
+      flex-container {<br>
+      <b>display: flex;</b><br>
+      align-items: stretch;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+    </div>
+    <div class="forCode">
+      The code for the items of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: DodgerBlue;<br>
+      color: white;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Example2: Let the second(violet) flex-item grow three times wider than the rest:</p>
+  <div class="flex-container36">
+    <div style="background-color:coral;"></div>
+    <div style="background-color:blueviolet;"></div>
+    <div style="background-color:khaki;"></div>
+    <div style="background-color:pink;"></div>
+    <div style="background-color:lightgrey;"></div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the flex-container is:<br>
+      flex-container {<br>
+      width: 350px;<br>
+      height: 100px;<br>
+      border: 1px solid #c3c3c3;<br>
+      display: -webkit-flex; /* Safari */<br>
+      <b>display: flex;</b><br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the items of the container is:<br>
+      /* Standard syntax */<br>
+      flex-container > div {<br>
+      flex-container div:nth-of-type(1) {flex-grow: 1;}<br>
+      <b>flex-container div:nth-of-type(2) {flex-grow: 3;}</b><br>
+      flex-container div:nth-of-type(3) {flex-grow: 1;}<br>
+      flex-container div:nth-of-type(4) {flex-grow: 1;}<br>
+      flex-container div:nth-of-type(5) {flex-grow: 1;}<br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>The flex-shrink Property</h2>
+  <p>The <b>flex-shrink property</b> specifies how much a flex item will shrink relative to the rest of the flex
+    items.
+  </p>
+  <p>The value must be a number, <b>default value is 1</b>.</p>
+
+  <p>Example1: do not let the third flex item shrink as much as the other flex items:</p>
+
+  <div class="flex-container30">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex-shrink: 0">3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container"<br>
+      div 1 /div<br>
+      div 2 /div<br>
+      <b>div style="flex-shrink: 0" 3 /div</b><br>
+      div 4 /div<br>
+      div 5 /div<br>
+      div 6 /div<br>
+      div 7 /div<br>
+      div 8 /div<br>
+      div 9 /div<br>
+      div 10 /div<br>
+      /div<br>
+      <br>
+    </div>
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      <b>display: flex;</b><br>
+      align-items: stretch;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+      The code for the items of the flex-container is:<br>
+      flex-container > div {<br>
+      background-color: DodgerBlue;<br>
+      color: white;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Example2: let the second flex-item shrink three times more than the rest:</p>
+  <div class="flex-container37">
+    <div style="background-color:coral;"></div>
+    <div style="background-color:blue;"></div>
+    <div style="background-color:khaki;"></div>
+    <div style="background-color:pink;"></div>
+    <div style="background-color:lightgrey;"></div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the container is:<br>
+      flex-container {<br>
+      width: 350px;<br>
+      height: 100px;<br>
+      border: 1px solid #c3c3c3;<br>
+      display: -webkit-flex; /* Safari */<br>
+      <b>display: flex;</b><br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the items of the flex-container is:<br>
+      flex-container > div {<br>
+      -webkit-flex-grow: 1; /* Safari 6.1+ */<br>
+      -webkit-flex-shrink: 1; /* Safari 6.1+ */<br>
+      -webkit-flex-basis: 100px; /* Safari 6.1+ */<br>
+      flex-grow: 1;<br>
+      <b>flex-shrink: 1;</b><br>
+      flex-basis: 100px;<br>
+      }<br>
+      <br>
+      The code for the second item of the flex-container is:<br>
+      flex-container div:nth-of-type(2) {<br>
+      -webkit-flex-shrink: 3; /* Safari 6.1+ */<br>
+      <b>flex-shrink: 3;</b><br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>The flex-basis Property</h2>
+  <p>The <b>flex-basis property</b> specifies the initial length of a flex item.</p>
+  <p>Set the initial length of the third flex item to 200 pixels:</p>
+
+  <div class="flex-container31">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex-basis:200px">3</div>
+    <div>4</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container"<br>
+      div 1 /div<br>
+      div 2 /div<br>
+      <b>div style="flex-basis:200px" 3 /div</b><br>
+      div 4 /div<br>
+      /div<br>
+      <br>
+      The code for the flex-container is:<br>
+      flex-container {<br>
+      <b>display: flex;</b><br>
+      align-items: stretch;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+    </div>
+    <div class="forCode">
+      The code for the items of the container is:<br>
+      flex-container > div {<br>
+      background-color: DodgerBlue;<br>
+      color: white;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <h2>The flex Property</h2>
+  <p>The flex property is a shorthand property for the <b>flex-grow, flex-shrink, and flex-basis</b>
+    properties.<br>
+    <b>flex-grow</b> - A number specifying how much the item will grow relative to the rest of the flexible items<br>
+    <b>flex-shrink</b> - A number specifying how much the item will shrink relative to the rest of the flexible
+    items<br>
+    <b>flex-basis</b> - The length of the item. Legal values: "auto", "inherit", or a number followed by "%", "px",
+    "em"
+    or any other length unit
+  </p>
+  <p>Other way - the flex property sets the flexible length on flexible items.<br>
+    If the element is not a flexible item, the flex property has no effect.<br>
+    <br>
+    <b>CSS Syntax: <em>flex: flex-grow flex-shrink flex-basis | auto | initial | inherit;</em></b><br>
+    <br>
+    Default value: 0 1 auto<br>
+    flex:auto - Same as 1 1 auto<br>
+    flex:initial - Same as 0 1 auto<br>
+    flex:none - Same as 0 0 auto.<br>
+    flex:inherit - Inherits this property from its parent element.
+  </p>
+  <p> </p>
+
+  <p>Example1: Make the third flex item not growable (0), not shrinkable (0), and with an initial length of 350
+    pixels:
+  </p>
+
+  <div class="flex-container32">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex: 0 0 350px">3</div>
+    <div>4</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container"<br>
+      div>1 /div<br>
+      div>2 /div<br>
+      <b>div style="flex: 0 0 350px" /div</b><br>
+      div>4 /div<br>
+      /div<br>
+      <br>
+      The code for the flex-container is:<br>
+      flex-container {<br>
+      <b>display: flex;</b><br>
+      align-items: stretch;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+    </div>
+    <div class="forCode">
+      The code for the items of the container is:<br>
+      flex-container > div {<br>
+      background-color: DodgerBlue;<br>
+      color: white;<br>
+      width: 100px;<br>
+      margin: 10px;<br>
+      text-align: center;<br>
+      line-height: 75px;<br>
+      font-size: 30px;<br>
+      }<br>
+    </div>
+  </div>
+
+  <p>Example2: Let all the flexible items be the same length, regardless of its content:</p>
+  <div class="flex-container35">
+    <div style="background-color:coral;">RED</div>
+    <div style="background-color:blue;">BLUE</div>
+    <div style="background-color:lightgreen;">Green div with more content. But this doesn't matter to flex-container
+      itself.</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      The code for the flex-container is:<br>
+      flex-container {<br>
+      width: 300px;<br>
+      height: 300px;<br>
+      border: 1px solid black;<br>
+      display: -webkit-flex;/* Safari */<br>
+      <b>display: flex;</b><br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for the items of the container is:<br>
+      flex-container > div {<br>
+      -webkit-flex: 1;/* Safari 6.1+ */<br>
+      -ms-flex: 1;/* IE 10 */<br>
+      <b>flex: 1;</b><br>
+      }<br>
+    </div>
+
+  </div>
+
+  <h2>The align-self Property</h2>
+  <p>The <b>align-self property</b> specifies the alignment for the selected item inside the flexible container.<br>
+    The align-self property overrides the default alignment set by the container's align-items property.
+  </p>
+  <p>The "align-self: center;" aligns the selected flex item in the middle of the container:</p>
+
+  <div class="flex-container33">
+    <div>1</div>
+    <div>2</div>
+    <div style="align-self: center">3</div>
+    <div>4</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container"<br>
+      div>1 /div<br>
+      div>2 /div<br>
+      div style="align-self: center">3 /div<br>
+      div>4 /div<br>
+      /div<br>
+      <br>
+      The code for the container is:<br>
+      display: flex;<br>
+      height: 200px;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+    </div>
+  </div>
+
+  <p>The "align-self: flex-start;" aligns the selected flex item at the top of the container.</p>
+  <p>The "align-self: flex-end;" aligns the selected flex item at the bottom of the container.</p>
+
+  <div class="flex-container34">
+    <div>1</div>
+    <div style="align-self: flex-start">2</div>
+    <div style="align-self: flex-end">3</div>
+    <div>4</div>
+  </div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      In the HTML-code we define inline-style for the items:<br>
+      div class="flex-container"<br>
+      div>1 /div<br>
+      div style="align-self: flex-start">2 /div>
+      div style="align-self: flex-end">3 /div>
+      div>4 /div<br>
+      /div<br>
+      <br>
+      The code for the container is:<br>
+      display: flex;<br>
+      height: 200px;<br>
+      background-color: #f1f1f1;<br>
+      }<br>
+      <br>
+    </div>
+  </div>
+</body>
+
+</html>

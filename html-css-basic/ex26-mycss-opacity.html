@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex26_mycss: opacity_basics</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    .wrapper1,
+    .wrapper2,
+    .wrapper3 {
+      height: 280px;
+      border: 3px solid green;
+    }
+
+    .opacity02,
+    .opacity05,
+    .opacity100 {
+      width: 30%;
+      float: left;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .opacity02>img {
+      opacity: 0.2;
+      filter: alpha(opacity=20);
+      /* For IE8 and earlier */
+    }
+
+    .opacity05>img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      /* For IE8 and earlier */
+    }
+
+    .op-03,
+    .op-05 {
+      width: 30%;
+      float: left;
+      text-align: center;
+      margin: 15px;
+    }
+
+    .op-05>img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      /* For IE8 and earlier */
+    }
+
+    .op-05>img:hover {
+      opacity: 1.0;
+      filter: alpha(opacity=100);
+      /* For IE8 and earlier */
+    }
+
+    .op-03>img {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      /* For IE8 and earlier */
+    }
+
+    .op-03>img:hover {
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+      /* For IE8 and earlier */
+    }
+
+    div.wrapper4 {
+      background-color: #4CAF50;
+      padding: 10px;
+    }
+
+    div.wrapper4 div.first {
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      /* For IE8 and earlier */
+    }
+
+    div.wrapper4 div.second {
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+      /* For IE8 and earlier */
+    }
+
+    div.wrapper4 div.third {
+      opacity: 0.6;
+      filter: alpha(opacity=60);
+      /* For IE8 and earlier */
+    }
+
+    div.wrapper5 {
+      background: rgb(76, 175, 80);
+      padding: 10px;
+    }
+
+    div.wrapper5 div.first1 {
+      background: rgba(76, 175, 80, 0.1);
+    }
+
+    div.wrapper5 div.second1 {
+      background: rgba(76, 175, 80, 0.3);
+    }
+
+    div.wrapper5 div.third1 {
+      background: rgba(76, 175, 80, 0.6);
+    }
+
+    div.background {
+      background: url(./img/klematis.jpg) repeat;
+      border: 2px solid black;
+    }
+
+    div.transbox {
+      margin: 30px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 0.6;
+      filter: alpha(opacity=60);
+      /* For IE8 and earlier */
+    }
+
+    div.transbox p {
+      margin: 5%;
+      font-weight: bold;
+      color: #000000;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">CSS Opacity / Transparency</h1>
+  <p>The opacity property specifies the opacity/transparency of an element.</p>
+
+  <h2>Transparent Image</h2>
+  <p>The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent:</p>
+  The code for this:<br>
+  .opacity02>img {<br>
+  opacity: 0.2;<br>
+  filter: alpha(opacity=20); - for IE8 and earlier<br>
+  }<br>
+  <br>
+  .opacity05>img {<br>
+  opacity: 0.5;<br>
+  filter: alpha(opacity=50); - for IE8 and earlier<br>
+  }<br>
+  <br>
+  <div class="wrapper1">
+    <div class="opacity02">
+      <p>Image with 20% opacity:0.2</p>
+      <img src="./img/sniffing_out_fox.jpg" alt="Fox" width="230" height="160">
+    </div>
+    <div class="opacity05">
+      <p>Image with 50% opacity:0.5</p>
+      <img src="./img/sniffing_out_fox.jpg" alt="Fox" width="230" height="160">
+    </div>
+    <div class="opacity100">
+      <p>Image is not transparent, opacity:1 (default)</p>
+      <img src="./img/sniffing_out_fox.jpg" alt="Fox" width="230" height="160">
+    </div>
+  </div>
+
+  <p>Note: IE8 and earlier use filter:alpha(opacity=x). The x can take a value from 0 - 100. A lower value makes the
+    element more transparent.</p>
+
+  <h2>Transparent Hover Effect</h2>
+  <p>The opacity property is often used together with the :hover selector to change the opacity on mouse-over:</p>
+  The code for this:<br>
+  .op-05>img {<br>
+  opacity: 0.5;<br>
+  filter: alpha(opacity=50); - for IE8 and earlier<br>
+  }<br>
+  <br>
+  .op-05>img:hover {<br>
+  opacity: 1.0;<br>
+  filter: alpha(opacity=100); - for IE8 and earlier<br>
+  }<br>
+  <br>
+  <div class="wrapper2">
+    <div class="op-05">
+      <img src="./img/forest1.jpg" alt="forest" width="300" height="230">
+    </div>
+    <div class="op-05">
+      <img src="./img/mountains1.jpg" alt="mountains" width="300" height="230">
+    </div>
+    <div class="op-05">
+      <img src="./img/italy.jpg" alt="taly coast" width="300" height="230">
+    </div>
+  </div>
+
+  <p><b>Note:</b> In IE, a !DOCTYPE must be added for the :hover selector to work on other elements than the a element.
+  </p>
+
+  <h3>An example of reversed hover effect</h3>
+  The code for this:<br>
+  .op-03>img {<br>
+  opacity: 1.0;<br>
+  filter: alpha(opacity=100); - for IE8 and earlier<br>
+  }<br>
+  <br>
+  .op-03>img:hover {<br>
+  opacity: 0.3;<br>
+  filter: alpha(opacity=30); - for IE8 and earlier<br>
+  }<br>
+  <br>
+  <div class="wrapper3">
+    <div class="op-03">
+      <img src="./img/klematis4_big.jpg" alt="klematis" width="300" height="230">
+    </div>
+    <div class="op-03">
+      <img src="./img/romashky.jpg" alt="romashky" width="300" height="230">
+    </div>
+    <div class="op-03">
+      <img src="./img/flowers-by-barbara-florchik-2.jpg" alt="barbara-florchik" width="300" height="230">
+    </div>
+  </div>
+
+  <h2>Transparent Box</h2>
+  <h3>With opacity:</h3>
+  <p>When using the opacity property to add transparency to the background of an element, all of its child elements
+    inherit the same transparency. This can make the text inside a fully transparent element hard to read:</p>
+  <div class="wrapper4">
+    <div class="first">
+      <p>opacity 0.1</p>
+    </div>
+    <div class="second">
+      <p>opacity 0.3</p>
+    </div>
+    <div class="third">
+      <p>opacity 0.6</p>
+    </div>
+    <div>
+      <p>opacity 1 (default)</p>
+    </div>
+  </div>
+
+  <h3>With RGBA color values:</h3>
+
+  <p>If you do not want to apply opacity to child elements, like in our example above, use RGBA color values.<br>
+    The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).<br>
+    The following example sets the opacity for the background color and not the text:</p>
+
+  <div class="wrapper5">
+    <div class="first1">
+      <p>10% opacity</p>
+    </div>
+    <div class="second1">
+      <p>30% opacity</p>
+    </div>
+    <div class="third1">
+      <p>60% opacity</p>
+    </div>
+    <div>
+      <p>default</p>
+    </div>
+  </div>
+
+  <h2>Text in Transparent Box with a background image</h2>
+
+  <p>First, we create a div-element (class="background") with a background image, and a border. Then we create another
+    'div' (class="transbox") inside the first 'div'. The div-class='transbox' have a background color, and a border -
+    the div is transparent. Inside the transparent 'div', we add some text inside a p-element.
+  </p>
+
+  <div class="background">
+    <div class="transbox">
+      <p>This is some text that is placed in the transparent box.</p>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

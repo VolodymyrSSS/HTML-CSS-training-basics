@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex33-mycss: form basics_1</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: "Verdana", Arial, sans-serif;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: blue;
+    }
+
+    .accented {
+      font-family: "Verdana", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: brown;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=text2] {
+      width: 210px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin: 12px auto;
+      outline: none;
+      background-color: wheat;
+      background-image: url('img/icons8-search-48.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 20px 25px 20px 65px;
+      -webkit-transition: width 0.4s ease-in-out;
+      /* animated effect */
+      transition: width 0.4s ease-in-out;
+      /* animated effect */
+    }
+
+    input[type=text2]:focus {
+      /* works with animated effect */
+      width: 100%;
+    }
+
+    input[type=password] {
+      width: 70%;
+      background-color: yellow;
+      color: brown;
+      padding: 14px 20px;
+      margin: 15px auto;
+      border: 2px solid black;
+      border-radius: 5px;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    input[type=password]:focus {
+      background-color: lightpink;
+    }
+
+    input[type=number] {
+      width: 50%;
+      padding: 8px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: none;
+      border-bottom: 2px solid red;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      margin: 12px auto;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: blue;
+      border: 3px solid orangered;
+    }
+
+    select {
+      width: 100%;
+      padding: 16px;
+      display: inline-block;
+      border: 1px solid darkgreen;
+      border-radius: 4px;
+      background-color: lawngreen;
+    }
+
+    textarea {
+      width: 100%;
+      height: 50px;
+      padding: 10px 10px;
+      margin: 15px auto;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      font-size: 16px;
+      /* resize: none; якщо потрібно щоб неможливо було змінювати - розкоментуйте */
+    }
+
+    input[type=button] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    div {
+      width: 50%;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title">Using CSS to style an HTML Form</h1>
+
+  <div>
+    <form action="/action_page.php">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <label for="pass">Password</label>
+      <input type="password" id="passw" name="password" placeholder="Your password with 8 characters">
+      <br>
+      <label for="pass">ID Number</label>
+      <input type="number" id="num" name="numbers" placeholder="Here, put your ID..">
+      <br>
+      <label for="avatar">Your avatar</label>
+      <input type="text2" id="avtr" name="avatar" placeholder="Find your avatar..">
+      <br>
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+        <option value="britain">Great Britain</option>
+        <option value="france">France</option>
+        <option value="spain">Spain</option>
+        <option value="japan">Japan</option>
+        <option value="germany">Germany</option>
+      </select>
+
+      <textarea>Some text...</textarea>
+
+      <input type="button" value="Reset">
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <h2>Styling Input Fields</h2>
+
+  <p>Use the 'width' property to determine the width of the input field.</p>
+  An example of the code:<br>
+  input {<br>
+  width: 100%; -> A full-width input field<br>
+  }<br>
+  <br>
+  <p>But this code will apply to all 'input' elements.</p>
+
+  <p>If you only want <span class="accented">to style a specific input type</span>, you can use attribute
+    selectors:<br>
+    input[type=text] -> will only select text fields<br>
+    input[type=password] -> will only select password fields<br>
+    input[type=number] -> will only select number fields<br>
+    etc...
+  </p>
+
+  <h2>Padded Inputs</h2>
+  <p>Use the padding property <span class="accented">to add space inside the text field</span>.<br>
+    When you have many inputs after each other, you might also want to add some margin, <span class="accented">to add
+      more space outside</span> of them.
+  </p>
+  The example of the code:<br>
+  input[type=text] {<br>
+  width: 100%;<br>
+  padding: 12px 20px;<br>
+  margin: 8px 0;<br>
+  box-sizing: border-box;<br>
+  }<br>
+  <br>
+  <p>Note that we have set the box-sizing property to <span class="accented">border-box</span>.<br>
+    This makes sure that the padding and eventually borders are included in the total width and height
+    of the elements.
+  </p>
+
+  <h2>Bordered Inputs</h2>
+  <p>Use the border property <span class="accented">to change the border size and color</span>, and use the
+    border-radius property to add rounded corners.</p>
+  The example of the code:<br>
+  input[type=text] {<br>
+  border: 2px solid red;<br>
+  border-radius: 4px;<br>
+  }<br>
+  <br>
+  <p>If you only want a bottom border, use the border-bottom property, like in the field for input ID number of the form
+    above:</p>
+  The example of the code:<br>
+  input[type=number] {<br>
+  border: none;<br>
+  border-bottom: 2px solid red;<br>
+  }<br>
+  <br>
+
+  <h2>Colored Inputs</h2>
+  <p>Use the background-color property to add a <span class="accented">background color to the input</span>, and the
+    color property to change the text color</p>
+  The example of the code:<br>
+  input[type=text] {<br>
+  background-color: #3CBC8D;<br>
+  color: white;<br>
+  }<br>
+  <br>
+  Or the code like in the field for input password of the form above:<br>
+  input[type=password]:focus {<br>
+  background-color: lightpink;<br>
+  }<br>
+  <br>
+
+  <h2>Focused Inputs</h2>
+  <p>By default, some browsers will add a <span class="accented">blue outline around</span> the input when
+    it gets focus (clicked on).<br>
+    You can remove this behavior by adding outline: none;
+  </p>
+  <p>Use the :focus selector to do something with the input field when it gets focus:</p>
+  First example of the code:<br>
+  input[type=text] {<br>
+  width: 100%;<br>
+  padding: 12px 20px;<br>
+  margin: 8px 0;<br>
+  box-sizing: border-box;<br>
+  border: 1px solid #555;<br>
+  outline: none;<br>
+  }<br>
+  <br>
+  input[type=text]:focus { -> to add a background color to the text field when it gets focused (clicked on)<br>
+  background-color: lightblue;<br>
+  }<br>
+  <br>
+  Second example of the code:<br>
+  input[type=text] {<br>
+  width: 100%;<br>
+  padding: 12px 20px;<br>
+  margin: 8px 0;<br>
+  box-sizing: border-box;<br>
+  border: 3px solid #ccc;<br>
+  -webkit-transition: 0.5s;<br>
+  transition: 0.5s; -> to animate the border color (takes 0.5 seconds to change the color on focus)<br>
+  outline: none;<br>
+  }<br>
+  <br>
+  input[type=text]:focus { -> to add a black border color to the text field when it gets focused (clicked on)<br>
+  border: 3px solid #555;<br>
+  }<br>
+  <br>
+
+  <h2>Input with icon/image</h2>
+  <p>If you want an <span class="accented">icon inside the input</span>, use the background-image property
+    and position it with the background-position property.<br>
+    Also notice that we add a large left padding to reserve the space of the icon
+  </p>
+  The example of the code:<br>
+  input[type=text] {<br>
+  width: 100%;<br>
+  box-sizing: border-box;<br>
+  border: 2px solid #ccc;<br>
+  border-radius: 4px;<br>
+  font-size: 16px;<br>
+  background-color: white;<br>
+  background-image: url('searchicon.png');<br>
+  background-position: 10px 10px;<br>
+  background-repeat: no-repeat;<br>
+  padding: 12px 20px 12px 40px;<br>
+  }<br>
+  <br>
+
+  <h2>Animated Search Input</h2>
+  <p>In this example we use the CSS transition property to animate the width of the search input when it gets focus.</p>
+  The example of the code:<br>
+  input[type=text] {<br>
+  width: 130px; -> this is initial width of the field<br>
+  box-sizing: border-box;<br>
+  border: 2px solid #ccc;<br>
+  border-radius: 4px;<br>
+  font-size: 16px;<br>
+  background-color: white;<br>
+  background-image: url('searchicon.png');<br>
+  background-position: 10px 10px;<br>
+  background-repeat: no-repeat;<br>
+  padding: 12px 20px 12px 40px;<br>
+  -webkit-transition: width 0.4s ease-in-out;<br>
+  transition: width 0.4s ease-in-out;<br>
+  }<br>
+  <br>
+  input[type=text]:focus {<br>
+  width: 100%; -> this is width when it gets focus<br>
+  }<br>
+  <br>
+
+  <h2>Styling Textareas</h2>
+  <p></p>
+  The example of the code:<br>
+  textarea {<br>
+  width: 100%;<br>
+  height: 150px;<br>
+  padding: 12px 20px;<br>
+  box-sizing: border-box;<br>
+  border: 2px solid #ccc;<br>
+  border-radius: 4px;<br>
+  background-color: #f8f8f8;<br>
+  resize: none;<br>
+  }<br>
+  <br>
+  <p>Use the resize property to <span class="accented">prevent textareas from being resized</span> (disable
+    the "grabber" in the bottom right corner).
+  </p>
+
+  <h2>Styling Select Menus</h2>
+  <p>A styled select menu.</p>
+  The example of the code:<br>
+  select {<br>
+  width: 100%;<br>
+  padding: 16px 20px;<br>
+  border: none;<br>
+  border-radius: 4px;<br>
+  background-color: #f1f1f1;<br>
+  }<br>
+  <br>
+
+  <h2>Styling Input Buttons</h2>
+  <p><b>Tip:</b> use width: 100% for full-width buttons</p>
+  The example of the code:<br>
+  input[type=button], input[type=submit], input[type=reset] {<br>
+  background-color: #4CAF50;<br>
+  border: none;<br>
+  color: white;<br>
+  padding: 16px 32px;<br>
+  text-decoration: none;<br>
+  margin: 4px 2px;<br>
+  cursor: pointer;<br>
+  }<br>
+  <br>
+
+</body>
+
+</html>

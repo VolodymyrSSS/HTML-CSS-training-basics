@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex18.10_mycss: блок по центру екрана з використанням position:fixed та position: absolute;</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', Arial, sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    #fixed {
+      width: 100%;
+      height: 100%;
+      background: rgba(173, 216, 230, .7);
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .modal-block {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: wheat;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      margin-top: -150px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Позиціонування елементу з position: fixed та position: absolute</h1>
+  <p>
+    <b>position: fixed</b> - Элемент з position: fixed; фіксується в області видимості веб-сторінки чи у вікні
+    браузера чи в iframe, відстань до краю яких вказують у властивостивостях: top, right, bottom, left. Пересунути
+    елемент відносно свого місця/позиції можна за допомогою margin та transform. А розташування цього елементу над
+    іншими елементами задають властивістю z-index.<br>
+    Після того, як властивість position отримає значення fixed, розмір самого елемента може змінитись, а сусідні
+    елементи зсунуться на місце, яке звільнилось.
+  </p>
+
+  <h2>Eлемент з position: fixed and absolute; блок по центру екрана</h2>
+  <style>
+
+  </style>
+
+  <div id="fixed">
+    <div class="modal-block">
+      <p>Це відцентрований<br>
+        елемент у якому<br>
+        використано<br>
+        в батьківському блоці<br>
+        position:fixed<br>
+        а в модальному - <br>
+        position:absolute<br>
+        і властивості<br>
+        margin-left: -150px;<br>
+        та margin-top: -150px;<br>
+
+      </p>
+    </div>
+  </div>
+
+</body>
+
+</html>

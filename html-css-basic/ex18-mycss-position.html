@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex18-mycss: position properties</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 18px;
+      color: blue;
+    }
+
+    h1.title {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    div.for-para {
+      width: 40%;
+      border: 1px solid gray;
+      padding: 8px;
+      background-color: #bebebebe;
+      margin: 20px auto;
+    }
+
+    .position-values {
+      list-style-type: decimal;
+    }
+
+    div.static {
+      position: static;
+      border: 3px solid red;
+    }
+
+    div.relative {
+      position: relative;
+      left: 30px;
+      border: 3px solid red;
+    }
+
+    /* div.for-demo-block {
+      width: 50%;
+      height: 200px;
+      background-color: #bebebebe;
+    } */
+
+    div.fixed {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      border: 3px solid red;
+    }
+
+    div.relative2 {
+      position: relative;
+      left: 30px;
+      width: 400px;
+      height: 200px;
+      border: 3px solid red;
+    }
+
+    div.absolute {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 200px;
+      height: 100px;
+      border: 3px solid red;
+    }
+
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 5px;
+      background-color: #cae8ca;
+      border: 3px solid red;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    div.tulipes img {
+      position: absolute;
+      width: 200px;
+      height: 240px;
+      left: 10px;
+      top: 0px;
+      z-index: -1;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      opacity: 0.3;
+    }
+
+    .topleft {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .topright {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .bottomleft {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .bottomright {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .center {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .info {
+      padding: 4px 6px;
+    }
+
+    code {
+      font-weight: 700;
+      color: #444;
+      border-bottom: 2px solid #666;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .block {
+      width: 25%;
+      height: 150px;
+      background-color: gold;
+      position: relative;
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    .block .child {
+      background-color: #222;
+      display: inline-block;
+      color: #fff;
+      top: 16px;
+      left: 16px;
+      padding: 16px;
+    }
+
+    .block.one .child {
+      position: static;
+    }
+
+    .block.two .child {
+      position: relative;
+    }
+
+    .block.three .child {
+      position: absolute;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="title"> CSS layout - the POSITION property</h1>
+  <p>The position property <b>specifies the type of positioning method</b> used for
+    an element (static, relative, fixed, absolute or sticky)</p>
+
+  <h2>The position property</h2>
+  <ol class="position-values">There are five different position values:
+    <li>static</li>
+    <li>relative</li>
+    <li>fixed</li>
+    <li>absolute</li>
+    <li>sticky</li>
+  </ol>
+  <p>Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not
+    work unless the position property is set first. They also work differently depending on the position value.
+  </p>
+
+  <h2>position: static;</h2>
+  <p>HTML elements are positioned static by default.<br>
+    Static positioned elements are not affected by the top, bottom, left, and right properties.<br>
+    <b>An element with position: static;</b> is not positioned in any special way;<br>
+    it <b>is always positioned according to the normal flow of the page</b>:
+  </p>
+  <div class="static">
+    This div element has position: static;
+  </div>
+
+  <div class="for-para">
+    div.static {<br>
+    position: static;<br>
+    border: 3px solid red;<br>
+    }<br>
+  </div>
+
+  <h2>position: relative;</h2>
+  <p><b>An element with position: relative; is positioned relative to its normal position</b>.</p>
+  <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted
+    away from its normal position.<br>
+    Other content will not be adjusted to fit into any gap left by the element.</p>
+  <div class="relative">
+    This div element has position: relative;
+  </div>
+  <div class="for-para">
+    div.relative {<br>
+    position: relative;<br>
+    left: 30px;<br>
+    border: 3px solid #73AD21;<br>
+    }<br>
+  </div>
+
+  <h2>position: fixed;</h2>
+  <p>An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same
+    place even if the page is scrolled.<br>
+    The top, right, bottom, and left properties are used to position the element.<br>
+    A fixed element does not leave a gap in the page where it would normally have been located.
+  </p>
+
+  <div class="fixed">
+    This div element has position: fixed;
+  </div>
+
+  <p><b>An element with position: fixed; is positioned relative to the viewport</b>, which means it always stays in the
+    same place even if the page is scrolled</p>
+
+  <p>Have a look, the fixed element in the lower-right corner of the page. Here is the CSS that is used:</p>
+
+  <div class="for-para">
+    div.fixed {<br>
+    position: fixed;<br>
+    bottom: 0;<br>
+    right: 0;<br>
+    width: 300px;<br>
+    border: 3px solid #73AD21;<br>
+    }<br>
+  </div>
+
+  <h2>position: absolute;</h2>
+  <p><b>An element with position: absolute; is positioned relative to the nearest positioned ancestor</b> (instead of
+    positioned relative to the viewport, like fixed).
+  </p>
+  <p>However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves
+    along
+    with page scrolling.</p>
+  <p>Note: A "positioned" element is one whose position is anything except static.</p>
+
+  <div class="relative2">This div element has position: relative;
+    <div class="absolute">This div element has position: absolute;</div>
+  </div>
+
+  <div class="for-para">
+    div.relative2 {<br>
+    position: relative;<br>
+    width: 400px;<br>
+    height: 200px;<br>
+    border: 3px solid #73AD21;<br>
+    } <br>
+    <br>
+    div.absolute {<br>
+    position: absolute;<br>
+    top: 80px;<br>
+    right: 0;<br>
+    width: 200px;<br>
+    height: 100px;<br>
+    border: 3px solid #73AD21;<br>
+    }<br>
+  </div>
+
+  <h2>position: sticky;</h2>
+  <p><b>An element with position: sticky; is positioned based on the user's scroll position</b>.</p>
+  <p>A sticky element toggles between relative and fixed, depending on the scroll position.<br>
+    It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like
+    position:fixed).
+  </p>
+
+  <p><b>Note:</b> Internet Explorer, Edge 15 and earlier versions do not support sticky positioning.<br>
+    Safari requires a -webkit- prefix (see example below). You must also specify at least one of top, right,
+    bottom or left for sticky positioning to work.
+  </p>
+
+  <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+
+  <div class="for-para">
+    div.sticky {<br>
+    position: -webkit-sticky;<br>
+    position: sticky;<br>
+    top: 0;<br>
+    padding: 5px;<br>
+    background-color: #cae8ca;<br>
+    border: 3px solid red;<br>
+    }<br>
+  </div>
+
+  <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+
+  <br>
+
+  <div class="sticky">I am sticky!</div>
+
+  <div style="padding-bottom:100px">
+
+    <p>Scroll back up to remove the stickyness.</p>
+
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  </div>
+
+  <h2>Overlapping Elements</h2>
+  <p>When elements are positioned, they can overlap other elements.</p>
+  <p>The z-index property specifies the stack order of an element (which element should be placed in front of, or
+    behind, the others).
+  </p>
+  <p>An element can have a positive or negative stack order<br>
+    An element with greater stack order is always in front of an element with a lower stack order.
+  </p>
+
+  <div class="container">
+    <h3>This is a heading</h3>
+    <div class="tulipes">
+      <img src="./img/tulip-buckey.jpeg" alt="tulip-image">
+      <p>Because the image has a z-index of -1, it will be placed behind the text.</p>
+    </div>
+  </div>
+  <br>
+  <p><b>Note:</b> If two positioned elements overlap without a z-index specified, the element positioned last in the
+    HTML code will be shown on top.
+  </p>
+  <br>
+  <br>
+  <br>
+
+  <h2>Positioning Text In an Image</h2>
+  <p>How to position text over an image:</p>
+  <div class="container">
+    <img src="./img/img_5terre_wide.jpg" alt="Cinque Terre" width="1000" height="300">
+    <div class="topleft">Top Left</div>
+    <div class="topright">Top Right</div>
+    <div class="bottomleft">Bottom Left</div>
+    <div class="bottomright">Bottom Right</div>
+    <div class="center">Centered</div>
+  </div>
+  <br>
+  <br>
+
+  <h2>Отже, властивість position визначає тип позиціювання відносно вікна браузера або інших елементів</h2>
+
+  <p>Властивість position використовується разом з top, right, bottom і left для позиціювання елементу в потрібному
+    місці.</p>
+
+  <p>Значеннями для позиціювання є: static, relative, absolute, fixed або sticky (статичний, відносний, абсолютний,
+    фіксований або клейкий)</p>
+
+  <p><b>static</b> - Елементи відображаються як зазвичай (в потоці формування документа). Використання властивостей
+    left, top, right, bottom та z-index не призводить до будь-яких результатів. Без задання.
+  </p>
+  <p><b>absolute</b> - Видаляє елемент з загального потоку (місце, що звільнив елемент заповнюється іншими елементами) і
+    вставляється відносно свого батьківського, не статично позиційованого елемента, якщо такого елемента немає, то їм
+    вважається вікно браузера (При цьому ширина елемента, без задання, встановлюється за його вмістом).<br>
+    Нове місце розраховується за допомогою властивостей left, top, right та bottom.<br>
+    На положення впливає значення властивості position батьківського елемента.<br>
+    Так, якщо у батька значення position встановлено як static або батька немає, то відлік координат ведеться від краю
+    вікна браузера.<br>
+    Якщо у батька значення position задано як relative, то відлік координат ведеться від краю батьківського елементу.
+  </p>
+  <p><b>fixed</b> - За своєю дією це значення близьке до absolute, але на відміну від нього позиціонує елемент відносно
+    вікна браузера, а не документа та не змінює свого положення при прокручуванні веб-сторінки.
+  </p>
+  <p><b>relative</b> - Відносне позиціювання. Положення елемента встановлюється відносно його поточного положення.
+    Додавання властивостей left, top, right і bottom змінює позицію елемента і зрушує його в ту чи іншу сторону. Ця
+    властивість дозволяє змінюва ти позицію елемента без зміни макету.
+  </p>
+
+  <div class="info">
+    <p>За допомогою властивості <code>position</code> ми можемо вказати тип позиціонування для елемента.</p>
+    <p>Для темних блоків нижче, задано значення: <em>static</em>, <em>relative</em> й <em>absolute</em> відповідно, а
+      також <em>16px</em> для top і left.</p>
+  </div>
+  <div class="wrapper">
+    <div class="block one">
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="child"></div>
+    </div>
+    <div class="block two">
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="child"></div>
+    </div>
+    <div class="block three">
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="child"></div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>

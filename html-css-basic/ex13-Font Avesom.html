@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex13_mycss-iconfonts_fontawesome</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      height: 500vh;
+
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      color: blue;
+      padding-left: 5px;
+    }
+
+    .iconblock {
+      background-color: pink;
+      padding: 15px;
+      margin: 0 auto;
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/61cedbffa4.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Font Awesome</h1>
+
+  <p>
+  </p>
+
+  <h2>плюсы и минусы иконочного шрифта.</h2>
+  <p>плюс - иконки из шрифтов имеют векторный формат, т.е. мы можем изменять их размер практически до бесконечности, не
+    теряя в при этом в качестве. Замечу с растровыми изображениями такой трюк не пройдет;<br>
+    плюс - один http-запрос на сервер (хотя если с картинками использовать спрайты будет тоже самое, но дело в том, что
+    собирать иконки в спрайты немного трудоемко) быстрая загрузка за счет малого веса (файл стилей можно
+    минимизировать);<br>
+    плюс - легко стилизовать посредством css-правил (изменять размер, цвет, трансформировать, анимировать и др.);
+    кроссбраузерность (включая поддержку старыми браузерами);<br>
+    минус - в первую очередь следует понимать, что иконочный шрифт это обычный шрифт, а шрифты при подключении могут
+    создавать дополнительную нагрузку в виде отправки дополнительных запросов на сервер. Причем, эта нагрузка будет
+    увеличиваться по мере роста набора ваших икнок, т.е. размер файла шрифта будет увеличиваться;<br>
+    минус - ограничение полету фантазии дизайнеру (по сути дизайнер ограничен именно тем набором иконок, что
+    присутствуют в
+    сервисах. Можно, конечно, и свою икноку загрузить, но это немного сложный процесс);<br>
+    минус - иконки могут быть только в одном цвете (например, в SVG одну иконку можно залить и сделать разноцветной, как
+    радугу), если конечно не примените различные css-трюки;
+  </p>
+
+  <p>Font Awesome — это библиотека иконок, которая изначально была придумана для фреймворка Twitter Bootstrap. Но в
+    дальнейшем разработчики решили, что ее можно использовать отдельно. С каждым выходом новой версии в набор
+    добавляются все новые иконки.</p>
+  <p>
+    Официальный сайт Font Awesome — <b>fontawesome.com</b>.<br>
+    (http://Font Awesome.ru/ — русская версия)
+  </p>
+
+  <h2>Подключение Font Awesome</h2>
+  <p>Для начала нам необходимо скачать набор иконок с официального сайта. Жмем по большой кнопке
+    «Download» на главной странице сайта. Распаковываем архив с иконками у себя на компьютере.<br>
+    Копируем папки 'css' и 'fonts' в шаблон вашего сайта.<br>
+    Далее, необходимо подключить файл стилей в главном файле шаблона (как правило это index.php).<br>
+    В архиве лежат две версии файла – сжатая (минимизированная) и разжатая. Подключаем сжатую версию —
+    font-awesome.min.css вот так:<br>
+    <br>
+    <b>link rel="stylesheet" href="/шаблон сайта/css/font-awesome.min.css"</b><br>
+    <br>
+    данный файл можно подгрузить также с CDN – BootstrapCDN или MaxCDN<br>
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"<br>
+    Это нужно для того, чтобы уменьшить количество http-запросов на сервер, снижая тем самым нагрузку.
+    Если у вас файл стилей иконочного шрифта лежит не в папке «CSS», а скажем в корне шаблона, то вам необходимо будет
+    прописать правильные пути до файлов шрифтов иконок в файле «font-awesome.min.css». Если сложно ориентироваться в
+    минимизированной версии, то можете подключить несжатую версию стилей.
+  </p>
+  <p>Проте, на теперішній час можна зареєструватись на сайті та отримати для використання 'комплект Font Awesome' ось
+    такого типу:<br>
+    kit.fontawesome.com/61cedbffa4.js"<br>
+    Copy your kit's code into the 'head' of each template or page in your project where you want to use Font Awesome.
+    Далі, підключаємо'комплект' через підключення script в head HTML-документу:
+    html<br>
+    head<br>
+    Place your kit's code here --> script src="https://kit.fontawesome.com/61cedbffa4.js" /script<br>
+    /head<br>
+    body<br>
+    Ready to use Font Awesome. Activate interlock. Dynotherms - connected. Infracells - up. Icons are go!<br>
+    /body<br>
+    /body<br>
+  </p>
+
+  <h2>Использование Font Awesome</h2>
+  <p>На официальном сайте есть руководство для начала работы, примеры реализации иконок, ну и сама база иконок, можно
+    посмотреть какие иконки входят в набор.<br>
+    Если с английским туго, то можете воспользоваться русскоязычной версией
+    сайта — http://Font Awesome.ru/get-started/.<br>
+    Итак, для того, чтобы показать икону на сайте необходимо создать тег 'i' или 'span' и задать необходимые классы.
+    Какие именно? Все зависит от того, какую иконку вы хотите вывести.<br>
+    Идем на официальный сайт в раздел с иконками 'Icons' и выбираем необходимую иконку. Для удобства поиска все иконки
+    подразделены на группы. Также можно воспользоваться поиском по ключевым словам.<br>
+    Далее, щелкаем по иконке и попадаем на страницу иконки. Здесь нам в готовом виде уже предложен html-код данной
+    иконки.<br>
+    Копируем и вставляем данный код в нужном месте на нашем сайте.<br>
+    Хотел бы отметить, что если вы захотите вставить иконку в статью через визуальный редактор, то некоторые визуальные
+    редакторы могут вырезать данный тег при сохранении материала. В данном случае в настройках редактора нужно внести
+    тег 'i' '/i' в список разрешенных тегов.
+  </p>
+  <p>Add Icons to Your Project's UI<br>
+    Your kit gives you access to 1,535 pixel-perfect icons. Start placing icons in your HTML's 'body' tag.<br>
+    Then find the right icon and add it onto your page.<br>
+    You can place Font Awesome icons just about anywhere using a style prefix and the icon’s name. We’ve tried to make
+    it so that icons will take on the characteristics and appear alongside text naturally.<br>
+    Font Awesome is designed to be used with inline elements and we recommend sticking with a consistent HTML element to
+    reference them by in your project. We like the 'i' tag for brevity and for the fact that most folks are using
+    'em' '/em' for emphasized/italicized semantic text these days. If that’s not your cup of tea, using a 'span' is
+    more semantically correct.<br>
+    <div class="iconblock">
+      <i class="fas fa-camera"></i> <!-- this icon's 1) style prefix == fas and 2) icon name == camera -->
+      <i class="fas fa-camera"></i> <!-- using an <i> element to reference the icon -->
+      <span class="fas fa-camera"></span> <!-- using a <span> element to reference the icon -->
+      <br>
+      <i class="far fa-camera"></i>
+      <i class="fal fa-camera"></i>
+      <i class="fad fa-camera"></i>
+    </div>
+    <br>
+    You need to know two bits of information to reference an icon:<br>
+    1) its name, prefixed with fa- and<br>
+    2) the style you want to use’s corresponding prefix.<br>
+    The 'fa' prefix has been deprecated in version 5. The new default is the 'fas' solid style and the 'fab' style for
+    brands.
+  </p>
+
+  <div class="iconblock">
+    <i class="fas fa-carrot"></i>
+    <i class="fas fa-pepper-hot"></i>
+    <i class="fas fa-chess"></i>
+    <i class="fas fa-bell"></i>
+    <i class="fas fa-palette"></i>
+    <i class="fas fa-volleyball-ball"></i>
+    <i class="fas fa-dumbbell"></i>
+    <i class="fas fa-gifts"></i>
+    <i class="fas fa-satellite"></i>
+    <i class="fas fa-lemon"></i>
+    <i class="fas fa-guitar"></i>
+    <i class="fas fa-jedi"></i>
+    <i class="fas fa-lightbulb"></i>
+    <i class="fas fa-cubes"></i><br>
+
+    Иконочный шрифт — это иконки, которые используются в дизайне сайта.<br>
+    Иконочный шрифт внедряется в шаблон сайта посредством подключения шрифтов, т.е. иконки — это обычный шрифт, только
+    вместо букв и цифр специальные символы, которые потом преобразуются в иконки.<br>
+    Подключается он в шаблоне также, как и нестандартный шрифт.<br>
+    Устанавливается все также, как и обычный шрифт.<br>
+    Иконочный шрифт можно использовать в фотошоп для создания иконок путем вставки специальных символов.<br>
+    Большенство иконочных шрифтов можно найти на просторах интернета в свободном доступе.
+  </div>
+
+  <h2>Что мы можем сделать с данной иконкой? Add Some Style</h2>
+  <p> Мы можем задать ей цвет через правило 'color' в css, мы можем увеличить размер иконки, мы можем задать тень через
+    правило 'text-shadow', т. е. мы можем проделать через css все те манипуляции, что и для текста.<br>
+    Если перейти на страницу «Exsamples» (примеры реализации) на официальном сайте, то мы можем увидеть дополнительные
+    возможности, которые уже заложены разработчиками иконочного шрифта.<br>
+    Что это за возможности? Например,
+  </p>
+
+  <p>Font Awesome icons automatically inherit CSS size and color. This means they blend in with text inline wherever you
+    put them. Font Awesome tries not to be too opinionated, and sets just the basic styling rules icons need to render
+    properly in context.
+  </p>
+  <div class="iconblock">
+
+    <span style="font-size: 3em; color: Tomato;">
+      <i class="fas fa-feather"></i>
+    </span>
+    <span style="font-size: 48px; color: Dodgerblue;">
+      <i class="fas fa-feather"></i>
+    </span>
+    <span style="font-size: 3rem;">
+      <span style="color: Mediumslateblue;">
+        <i class="fas fa-feather"></i>
+      </span>
+    </span>
+
+  </div>
+
+  <p>Мы можем изменить размер иконки на один из предустановленных размеров. Для это
+    просто необходимо дописать соответствующий класс: fa-xs, fa-sm, ... fa-4x, ... fa-10x</p>
+
+  <div class="iconblock">
+    <i class="fas fa-camera-retro fa-xs"></i> fa-xs
+    <i class="fas fa-camera-retro fa-sm"></i> fa-sm
+    <i class="fa fa-camera-retro fa-lg"></i> fa-lg
+    <i class="fa fa-camera-retro fa-2x"></i> fa-2x
+    <i class="fa fa-camera-retro fa-3x"></i> fa-3x
+    <i class="fa fa-camera-retro fa-4x"></i> fa-4x
+    <i class="fa fa-camera-retro fa-5x"></i> fa-5x
+    <i class="fas fa-camera-retro fa-7x"></i> fa-7x
+    <i class="fas fa-camera-retro fa-10x"></i> fa-10x
+  </div>
+
+  <p>You can also directly style an icon's size by setting a font-size in your project's CSS that targets an icon or
+    directly in the style attribute of the HTML element referencing an icon.
+  </p>
+
+  <div style="font-size: 0.5rem; background-color: pink;">
+    <i class="fas fa-camera fa-xs"></i> fa-xs
+    <i class="fas fa-camera fa-sm"></i> fa-sm
+    <i class="fas fa-camera fa-lg"></i> fa-lg
+    <i class="fas fa-camera fa-2x"></i> fa-2x
+    <i class="fas fa-camera fa-3x"></i> fa-3x
+    <i class="fas fa-camera fa-5x"></i> fa-5x
+    <i class="fas fa-camera fa-7x"></i> fa-7x
+    <i class="fas fa-camera fa-10x"></i> fa-10x
+  </div>
+
+  <div style="font-size: 24px; background-color: pink;">
+    <i class="fas fa-camera fa-xs"></i> fa-xs
+    <i class="fas fa-camera fa-sm"></i> fa-sm
+    <i class="fas fa-camera fa-lg"></i> fa-lg
+    <i class="fas fa-camera fa-2x"></i> fa-2x
+    <i class="fas fa-camera fa-3x"></i> fa-3x
+    <i class="fas fa-camera fa-5x"></i> fa-5x
+    <i class="fas fa-camera fa-7x"></i> fa-7x
+    <i class="fas fa-camera fa-10x"></i> fa-10x
+  </div>
+
+  <p>If you're using our SCSS or Less CSS pre-processor options, you can tweak the _larger.scss or _larger.less partial
+    with your own scale.</p>
+
+  <p>Мы можем повернуть иконку. Для необходимого поворота также нужно добавить соответствующий класс.</p>
+  <div class="iconblock">
+    <i class="fa fa-shield"></i> normal
+    <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90
+    <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180
+    <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270
+    <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal
+    <i class="fa fa-shield fa-flip-vertical"></i> fa-flip-vertical
+  </div>
+  <br>
+  <p>Думаю здесь подробных комментариев не нужно. Например, класс «fa-rotate-90» отвечает на поворот иконки на 90
+    градусов по часовой стрелке.</p>
+
+  <p>Sometimes you need to rotate, flip, or mirror an icon for it to work in your project or design. We’ve included some
+    quick utilities to help with that.
+    To arbitrarily rotate and flip icons, use the fa-rotate-* and fa-flip-* classes when you reference an icon.</p>
+  <div class="iconblock">
+    <div class="fa-4x">
+      <i class="fas fa-snowman"></i>
+      <i class="fas fa-snowman fa-rotate-90"></i>
+      <i class="fas fa-snowman fa-rotate-180"></i>
+      <i class="fas fa-snowman fa-rotate-270"></i>
+      <i class="fas fa-snowman fa-flip-horizontal"></i>
+      <i class="fas fa-snowman fa-flip-vertical"></i>
+      <i class="fas fa-snowman fa-flip-both"></i>
+    </div>
+  </div>
+
+  <p>Также мы можем задать анимацию иконке, добавив соответствующий класс. Например…</p>
+  <div class="iconblock">
+    <i class="fa fa-spinner fa-spin"></i>
+    <i class="fa fa-circle-o-notch fa-spin"></i>
+    <i class="fa fa-refresh fa-spin"></i>
+    <i class="fa fa-cog fa-spin"></i>
+    <i class="fa fa-spinner fa-pulse"></i>
+  </div>
+
+  <h2>Использование Font Awesome в программе Photoshop</h2>
+  <p>Здесь все очень просто — устанавливаете otf-шрифт — Font Awesome.otf. Данный шрифт сможете найти в папке fonts
+    после скачивания архива Font Awesome. Далее воспользуемся страницей-шпаргалкой, которую для нас создали
+    разработчики. Найти вы ее сможете по адресу — http://fortawesome.github.io/Font-Awesome/cheatsheet/ — на официальном
+    сайте, и также русско-язычная версия — http://Font Awesome.ru/cheatsheet/. Как советуют разработчики, сохраните
+    данную страницу в формате PDF, чтобы она всегда была под рукой. Отсюда понадобится копировать иконки юникода. Чтобы
+    отобразить иконку в программе Photoshop необходимо скопировать нужную иконку (именно выделить саму иконку, а не ее
+    название) и вставить в нужном месте в макете. Появится символ прямоугольника с крестиком внутри. Выделяем его и
+    применяем установленный ранее шрифт «Font Awesome Regular».
+  </p>
+
+  <h2>Stacked Icons</h2>
+  <p></p>
+
+</body>
+
+</html>

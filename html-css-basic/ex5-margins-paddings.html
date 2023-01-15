@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex5-mycss-height-width</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial'sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: blue;
+    }
+
+    #ex1-marging {
+      width: 300px;
+      margin: auto;
+      border: 1px solid red;
+    }
+
+    #ex2-marging {
+      margin-left: inherit;
+    }
+
+    .marg1 {
+      border: 1px solid red;
+      margin-left: 100px;
+    }
+
+    .marg2 {
+      margin: 0 0 50px 0;
+    }
+
+    .marg3 {
+      margin: 20px 0 0 0;
+    }
+
+    div.padd1 {
+      width: 300px;
+      background-color: yellow;
+    }
+
+    div.padd2 {
+      width: 300px;
+      padding: 25px;
+      background-color: orange;
+    }
+
+    div.padd3 {
+      width: 300px;
+      background-color: yellow;
+    }
+
+    div.padd4 {
+      width: 300px;
+      padding: 25px;
+      box-sizing: border-box;
+      background-color: orange;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Margins</h1>
+  <p>The CSS margin properties are used to create space around elements, outside of any defined borders.</p>
+
+  <img src="./img/box-model3.jpg" alt="box-model">
+  <p>CSS has properties for specifying the margin for each side of an element:<br>
+    - margin-top<br>
+    - margin-right<br>
+    - margin-bottom<br>
+    - margin-left<br>
+  </p>
+  <h2>Margin - Shorthand Property</h2>
+  <p><b>Tip:</b> Negative values are allowed.</p>
+  <p>To shorten the code, it is possible to specify all the margin properties in one property.</p>
+  <p>If the margin property has <b>four values:</b><br>
+    <b>margin: 25px 50px 75px 100px;</b><br>
+    top margin is 25px<br>
+    right margin is 50px<br>
+    bottom margin is 75px<br>
+    left margin is 100px
+  </p>
+  <p>If the margin property has <b>three values:</b><br>
+    <b>margin: 25px 50px 75px;</b><br>
+    top margin is 25px<br>
+    right and left margins are 50px<br>
+    bottom margin is 75px
+  </p>
+  <p>If the margin property has <b>two values:</b><br>
+    <b>margin: 25px 50px;</b><br>
+    top and bottom margins are 25px<br>
+    right and left margins are 50px<br>
+  </p>
+  <p>If the margin property has <b>one value:</b><br>
+    <b>margin: 25px;</b><br>
+    all four margins are 25px
+  </p>
+
+  <h2>The auto Value</h2>
+  <p>You can set the margin property to auto to horizontally center the element within its container.</p>
+  <p>The element will then take up the specified width, and the remaining space will be split equally between the left
+    and right margins.</p>
+
+  <div id="ex1-marging">
+    This div will be horizontally centered because it has margin: auto;
+  </div>
+
+  <h2>The inherit Value</h2>
+  <p>This example lets the left margin of the p id="ex2" element be inherited from the parent element div:</p>
+
+  <div class="marg1">
+    <p id="ex2-marging">This paragraph has an inherited left margin (from the div element).</p>
+  </div>
+
+  <h2>Margin Collapse</h2>
+  <p>Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the
+    two margins.<br>
+    This does not happen on left and right margins! Only top and bottom margins!<br>
+    Example:
+  </p>
+  <h3 class="marg2">Heading 1</h3>
+  <h4 class="marg3">Heading 2</h4>
+  <p>In this example the h3 element has a bottom margin of 50px and the h4 element has a top margin of 20px. Then, the
+    vertical margin between h3 and h4 should have been 70px (50px + 20px). However, due to margin collapse, the actual
+    margin ends up being 50px.</p>
+
+  <h1>CSS Padding</h1>
+  <p>The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+  </p>
+  <p>CSS has properties for specifying the padding for each side of an element:
+    - padding-top<br>
+    - padding-right<br>
+    - padding-bottom<br>
+    - padding-left
+  </p>
+  <p><b>Note:</b> Negative values are not allowed.</p>
+  <p>All the padding properties can have the following values:<br>
+    length - specifies a padding in px, pt, cm, etc.<br>
+    % - specifies a padding in % of the width of the containing element<br>
+    inherit - specifies that the padding should be inherited from the parent element
+  </p>
+  <h2>Padding - Shorthand Property</h2>
+  <p>To shorten the code, it is possible to specify all the padding properties in one property.</p>
+  <p>The padding property is a shorthand property for the following individual padding properties:<br>
+    - padding-top<br>
+    - padding-right<br>
+    - padding-bottom<br>
+    - padding-left
+  </p>
+
+  <p>If the padding property has <b>four values</b>:<br>
+    <b>padding: 25px 50px 75px 100px;</b><br>
+    top padding is 25px<br>
+    right padding is 50px<br>
+    bottom padding is 75px<br>
+    left padding is 100px
+  </p>
+  <p>If the padding property has <b>three values</b>:<br>
+    <b>padding: 25px 50px 75px;</b><br>
+    top padding is 25px<br>
+    right and left paddings are 50px<br>
+    bottom padding is 75px
+  </p>
+  <p>If the padding property has <b>two values</b>:<br>
+    <b>padding: 25px 50px;</b><br>
+    top and bottom paddings are 25px<br>
+    right and left paddings are 50px
+  </p>
+  <p>If the padding property has one value:<br>
+    <b>padding: 25px;</b><br>
+    all four paddings are 25px
+  </p>
+
+
+  <h2>Padding and Element Width</h2>
+  <p>The CSS width property specifies the width of the element's content area.<br>
+    The content area is the portion inside the padding, border, and margin of an element (the box model).<br>
+    So, if an element has a specified width, the padding added to that element will be added to the total width of the
+    element. This is often an undesirable result.<br>
+    Example:
+  </p>
+  <div class="padd1">This div is 300px wide.</div>
+  <br>
+
+  <div class="padd2">The width of this div is 350px, even though it is defined as 300px in the CSS.</div>
+
+  <p>To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property.<br>
+    This causes the element to maintain its width; if you increase the padding, the available content space will
+    decrease.
+  </p>
+
+  <div class="padd3">This div is 300px wide.</div>
+  <br>
+
+  <div class="padd4">The width of this div remains at 300px, in spite of the 50px of total left and right padding,
+    because of the box-sizing: border-box property.
+  </div>
+
+</body>
+
+</html>

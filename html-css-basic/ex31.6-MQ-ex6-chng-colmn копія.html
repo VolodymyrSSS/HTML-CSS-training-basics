@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex31.6_mycss: media query example3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      color: black;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+      text-align: left;
+      padding: 10px;
+      clear: both;
+    }
+
+    .forCode {
+      float: left;
+      width: 31%;
+      background-color: lightgreen;
+      padding: 4px;
+      margin: 10px 45px 15px;
+    }
+
+    .clearfix {
+      border: 2px solid brown;
+      padding: 5px;
+    }
+
+    /* Clear floats after the code-block */
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    div.example1,
+    div.example2 {
+      font-size: 1.3em;
+      font-weight: 500;
+      font-style: italic;
+      background-color: pink;
+    }
+
+    @media screen and (max-width: 900px) and (min-width: 600px) {
+      div.example1 {
+        font-size: 50px;
+        padding: 50px;
+        border: 8px solid black;
+        background: yellow;
+      }
+    }
+
+    @media screen and (max-width: 900px) and (min-width: 600px),
+    (min-width: 1100px) {
+      div.example2 {
+        font-size: 40px;
+        padding: 60px;
+        border: 5px solid black;
+        background: tan;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS Media Queries - Min Width to Max Width</h1>
+
+  <p>You can also use the (max-width: ..) and (min-width: ..) values to set a minimum width and a maximum width.</p>
+
+  <p>In this <b>example6</b>, we can change the appearance of DIV on different screen sizes.</p>
+
+  <h3>Resize the browser window to see the responsive effect!<br>
+    When the browser's width is between 600 and 900px, change the appearance of a div-element:
+  </h3>
+  <br>
+
+  <div class="example1">Example: this is the 1st DIV-element.</div>
+  <br>
+
+  <div class="clearfix">
+    <div class="forCode">
+      /* Create a div-element and style it: */<br>
+      div {<br>
+      font-size: 1.3em;<br>
+      font-weight: 500;<br>
+      font-style: italic;<br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code for media queries are:<br>
+      div {<br>
+      <b>@media screen and (max-width: 900px) and (min-width: 600px)</b> {<br>
+      div {<br>
+      font-size: 50px;<br>
+      padding: 50px;<br>
+      border: 8px solid black;<br>
+      background: yellow;<br>
+      }<br>
+      }<br>
+    </div>
+  </div>
+  <br>
+
+  <h2>Using an additional value</h2>
+  </p>We could add an additional media query to our already existing one <b>using
+    a comma (this will behave like an OR operator)</b>:</p>
+
+  <p>In the example below, when the browser's width is between 600 and 900px <b>OR above 1100px</b>, change the
+    appearance of DIV. </p>
+  <div class="example2">Example: this is the 2nd DIV-element.</div>
+  <br>
+  <div class="clearfix">
+    <div class="forCode">
+      /* That is the same div-element: */<br>
+      div {<br>
+      font-size: 1.3em;<br>
+      font-weight: 500;<br>
+      font-style: italic;<br>
+      background-color: pink;<br>
+      }<br>
+    </div>
+    <div class="forCode">
+      The code of media queries for the 2nd div-element:<br>
+      div {<br>
+      <b>@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px)</b> {<br>
+      div {<br>
+      font-size: 50px;<br>
+      padding: 50px;<br>
+      border: 8px solid black;<br>
+      background: yellow;<br>
+      }<br>
+      }<br>
+    </div>
+  </div>
+
+</body>
+
+</html>
