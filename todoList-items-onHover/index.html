@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List items on hover</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <article class="todo__container">
+        <header class="header">
+          <figure class="figure">
+            <img
+              src="https://media.istockphoto.com/photos/spiral-bound-notebook-with-todo-list-on-white-wooden-table-with-and-picture-id1193498585?b=1&k=20&m=1193498585&s=170667a&w=0&h=fqPhCl9SoRJPWI9Knz800Ctg7cxc0GCbSREAf3oV03A="
+              alt="todo list on white wooden table"
+            />
+            <figcaption class="title__caption">
+              <h1 class="title title--primary">Todo's</h1>
+              <h2 class="title title--secondary">todo list</h2>
+            </figcaption>
+          </figure>
+        </header>
+        <section class="content">
+          <ul class="list__container list__container--primary">
+            <li class="list__item list__item--primary">
+              <input type="checkbox" id="list-input1" class="list-input1" />
+              <label for="list-input1" class="list-input-label">
+                <span class="text--primary"
+                  >Groceries
+                  <span>+</span>
+                </span>
+                <span class="icon"><i class="fas fa-check"></i></span>
+              </label>
+
+              <ul class="list__container list__container--secondary">
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">3 tomatoes</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">1 bunch of cherries</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">6 onions</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">3 heads of garlic</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">1 bag spring mix</span>
+                </li>
+              </ul>
+            </li>
+            <li class="list__item list__item--primary">
+              <input type="checkbox" id="list-input2" class="list-input2" />
+              <label for="list-input2" class="list-input-label">
+                <span class="text--primary">Cancel gym membership</span>
+                <span class="icon"><i class="fas fa-check"></i></span>
+              </label>
+            </li>
+            <li class="list__item list__item--primary">
+              <input type="checkbox" id="list-input3" class="list-input3" />
+              <label for="list-input3" class="list-input-label">
+                <span class="text--primary"
+                  >Code todo list
+                  <span>+</span>
+                </span>
+                <span class="icon"><i class="fas fa-check"></i></span>
+              </label>
+              <ul class="list__container list__container--secondary">
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">modern CSS</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">Flex or Grid</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">maybe some JS</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">variables</span>
+                </li>
+                <li class="list__item list__item--secondary">
+                  <span class="text--secondary">and logical properties</span>
+                </li>
+              </ul>
+            </li>
+            <li class="list__item list__item--primary">
+              <input type="checkbox" id="list-input4" class="list-input4" />
+              <label for="list-input4" class="list-input-label">
+                <span class="text--primary"
+                  >Take package to the post office</span
+                >
+                <span class="icon"><i class="fas fa-check"></i></span>
+              </label>
+            </li>
+            <li class="list__item list__item--primary">
+              <input type="checkbox" id="list-input5" class="list-input5" />
+              <label for="list-input5" class="list-input-label">
+                <span class="text--primary"
+                  >Call avery about Ali's party (afternoon)</span
+                >
+                <span class="icon"><i class="fas fa-check"></i></span>
+              </label>
+            </li>
+            <li class="list__item list__item--primary">
+              <input type="checkbox" id="list-input6" class="list-input6" />
+              <label for="list-input6" class="list-input-label">
+                <span class="text--primary"
+                  >Sort recycling & put out trash</span
+                >
+                <span class="icon"><i class="fas fa-check"></i></span>
+              </label>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
