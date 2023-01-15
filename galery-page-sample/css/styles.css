@@ -1,0 +1,99 @@
+/*common styles*/
+html {
+  margin: 0;
+  padding: 0;
+  background: rgb(100, 98, 102);
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 0 25px;
+  font: 100% Georgia, 'Times New Roman', Times, serif;
+  background: rgb(255, 255, 255);
+  width: 900px;
+}
+
+aside,
+article,
+section,
+header,
+footer,
+nav {
+  display: block;
+}
+
+div,
+h1,
+h2,
+h3,
+p,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 20px 25px;
+  background: rgb(76, 67, 65);
+}
+
+article {
+  padding: 0 25px;
+  margin-top: 25px;
+}
+
+img {
+  margin: 10px;
+  border: 2px solid white;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+}
+
+h2 {
+  font: 1.2em Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.4em;
+}
+
+h3 {
+  font: 1.1em Arial, Helvetica, sans-serif;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.photos {
+  margin: 0 auto;
+  width: 822px;
+  padding: 10px;
+  background: rgb(100, 98, 102);
+}
+
+.normal {
+  width: 842px;
+  margin: 25px auto;
+  border: 1px solid black;
+  background: rgb(237, 228, 214);
+  font-size: 90%;
+  padding: 0;
+}
+
+.normal h2 {
+  border: none;
+  background: rgb(219, 126, 64);
+  color: white;
+  padding: 5px 10px;
+}
+
+.normal p,
+.normal h3 {
+  padding: 0 10px;
+}
