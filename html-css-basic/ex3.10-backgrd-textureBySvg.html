@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex3.10_mycss: background-bySVG</title>
+		<style>
+			body {
+				margin: 0 auto;
+			}
+			svg {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<filter id="blur">
+				<feGaussianBlur stdDeviation="1" />
+			</filter>
+			<linearGradient
+				id="v"
+				gradientTransform="rotate(30)"
+				spreadMethod="repeat"
+				x1="0%"
+				x2="1.117%"
+			>
+				<stop offset="0%" stop-color="#000" stop-opacity="1" />
+				<stop offset="25%" stop-color="#000" stop-opacity="0" />
+				<stop offset="50%" stop-color="#000" stop-opacity="1" />
+				<stop offset="75%" stop-color="#000" stop-opacity="0" />
+				<stop offset="100%" stop-color="#000" stop-opacity="1" />
+			</linearGradient>
+			<linearGradient
+				id="h"
+				gradientTransform="rotate(-60)"
+				spreadMethod="repeat"
+				x1="0%"
+				x2="1.117%"
+			>
+				<stop offset="0%" stop-color="#000" stop-opacity="1" />
+				<stop offset="25%" stop-color="#000" stop-opacity="0" />
+				<stop offset="50%" stop-color="#000" stop-opacity="1" />
+				<stop offset="75%" stop-color="#000" stop-opacity="0" />
+				<stop offset="100%" stop-color="#000" stop-opacity="1" />
+			</linearGradient>
+			<pattern
+				id="plaid"
+				width="76"
+				height="76"
+				patternUnits="userSpaceOnUse"
+				patternTransform="scale(2 2)"
+			>
+				<g>
+					<rect height="100%" width="100%" fill="red" />
+					<rect x="39" height="100" width="16" fill="url(#v)" />
+					<rect x="59" height="100" width="16" fill="url(#v)" />
+					<rect x="0" y="2" height="16" width="100" fill="url(#h)" />
+					<rect x="0" y="22" height="4" width="100" fill="url(#h)" />
+					<rect x="0" y="35" height="4" width="100" fill="url(#h)" />
+					<rect x="0" y="48" height="4" width="100" fill="url(#h)" />
+					<rect x="4" y="0" height="100" width="4" fill="url(#v)" />
+					<rect x="18" y="0" height="100" width="4" fill="url(#v)" />
+					<rect x="31" y="0" height="100" width="4" fill="url(#v)" />
+					<rect x="0" y="56" height="16" width="100" fill="url(#h)" />
+				</g>
+			</pattern>
+			<rect width="100%" height="100%" fill="url(#plaid)" />
+		</svg>
+	</body>
+</html>

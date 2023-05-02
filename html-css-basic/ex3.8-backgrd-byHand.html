@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex3.7_mycss: background-MadeByText</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sofia&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				font-family: 'Sofia', cursive;
+				box-sizing: border-box;
+				height: 100%;
+				margin: 0;
+			}
+			body {
+				margin: 0;
+				display: grid;
+				place-items: center;
+			}
+			.container {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				background: url('https://images.unsplash.com/photo-1611197072011-736d9b407c8b?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODIxMDk1ODQ&ixlib=rb-4.0.3&q=85');
+				background-size: cover;
+			}
+			.frame {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 500px;
+				height: 300px;
+				box-shadow: 5px 8px 8px 5px rgba(255, 0, 0, 0.3);
+				border-radius: 15px;
+				background: rgba(0, 0, 0, 0.3);
+				display: grid;
+				place-items: center;
+			}
+			.frame .desc {
+				display: block;
+				width: 200px;
+				height: 50px;
+				font-size: 40px;
+				color: rgba(50, 20, 0, 0.7);
+				font-weight: 600;
+				line-height: 0.9;
+				letter-spacing: 2px;
+			}
+			.title::before,
+			.title::after {
+				display: block;
+				margin: 15px;
+				content: '';
+				width: 130px;
+				height: 2px;
+				background: rgba(50, 20, 0, 0.7);
+			}
+			.subtitle {
+				position: relative;
+				top: -40px;
+			}
+			.circle {
+				position: absolute;
+				top: 55%;
+				left: 60%;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background: rgba(100, 100, 200, 0.5);
+				filter: blur(5px);
+			}
+			.square-blur {
+				position: absolute;
+				top: 0;
+				left: 60%;
+				width: 105px;
+				height: 60px;
+				background: rgba(10, 200, 200, 0.5);
+				filter: blur(5px);
+			}
+			.square-normal {
+				position: absolute;
+				top: -20%;
+				left: 60%;
+				width: 100px;
+				height: 60px;
+				background: rgba(10, 200, 200, 0.7);
+			}
+			.half-circle-normal {
+				position: absolute;
+				width: 50px;
+				height: 100px;
+				left: -10%;
+				top: 30%;
+				background: rgba(100, 20, 0, 0.7);
+				border-radius: 150px 0 0 150px;
+			}
+			.half-circle-blur {
+				position: absolute;
+				width: 50px;
+				height: 100px;
+				left: 0;
+				top: 30%;
+				background: rgba(100, 20, 0, 0.5);
+				border-radius: 0 150px 150px 0;
+				filter: blur(5px);
+			}
+			.half-triangle-blur {
+				position: absolute;
+				bottom: 0;
+				left: 10%;
+				width: 0;
+				height: 0;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				border-bottom: 100px solid rgba(10, 150, 50, 0.7);
+				filter: blur(5px);
+			}
+			.half-triangle-normal {
+				position: absolute;
+				bottom: -33%;
+				left: 10%;
+				width: 0;
+				height: 0;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				border-top: 100px solid rgba(10, 150, 50, 0.7);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="frame">
+				<div class="square-normal"></div>
+				<div class="square-blur"></div>
+				<span class="title desc">Look at</span>
+				<span class="subtitle desc">My paintings</span>
+				<div class="circle"></div>
+				<div class="half-circle-normal"></div>
+				<div class="half-circle-blur"></div>
+				<div class="half-triangle-normal"></div>
+				<div class="half-triangle-blur"></div>
+			</div>
+		</div>
+	</body>
+</html>

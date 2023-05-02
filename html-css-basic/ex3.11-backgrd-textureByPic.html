@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex3.11_mycss: background-madeWithLove</title>
+		<style>
+			body {
+				background: conic-gradient(
+							transparent 25%,
+							#e72e33 0% 50%,
+							transparent 0% 75%,
+							#020202 0%
+						)
+						0/ 4em 4em,
+					repeating-linear-gradient(45deg, #020202 0 2.83px, #e72e33 0 5.66px);
+
+				display: grid;
+				place-content: center;
+			}
+			.container {
+				bottom: 10%;
+				right: 20%;
+				width: 20vw;
+				height: 40vh;
+				position: absolute;
+				border: none;
+				border-radius: 0.375em;
+				padding: 0.05em 0.5em;
+				font-size: 4em;
+				background-color: #000;
+			}
+			.container:before,
+			.container:after {
+				--spacing: 0.125em;
+				content: '';
+				position: absolute;
+				top: var(--spacing);
+				left: var(--spacing);
+				border-radius: 0.25em;
+				width: calc(100% - var(--spacing) * 2 - 0.125em);
+				height: calc(100% - var(--spacing) * 2 - 0.125em);
+			}
+			.container:before {
+				border: 0.0625em solid rgb(0 0 0 / 0.2);
+			}
+			.container:after {
+				border: 0.0625em dashed #e4b98f;
+				box-shadow: inset 0 0 0.0625em rgba(#000, 0.6),
+					inset 0 0 0.0625em 0.125em rgba(#fff, 0.1),
+					0 0 0.0625em rgba(#000, 0.6);
+			}
+			@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+			.container p {
+				font-family: 'Lilita One', cursive;
+
+				font-size: 2rem;
+				background-image: linear-gradient(to bottom, #6663 55%, #3333 55%);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				text-shadow: 0.0625em 0.0625em 0.025em #e4b98f,
+					0.01em 0.01em 0.1em #0007;
+			}
+			/*mask from my svg test pen
+			 https://codepen.io/ghaste/pen/qBJmbmv
+			 leather texture courtesy of
+			 https://codepen.io/nicolasjesenberger/pen/ZEqBzNJ*/
+			.p2:after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				translate: -0.1em -0.1em;
+				z-index: -5;
+				background-image: url('https://assets.codepen.io/4175254/leather.png');
+				background-size: auto 300%;
+			}
+			.container,
+			.p2:after {
+				mask-size: stretch;
+				mask-repeat: no-repeat;
+				mask-image: var(--bg);
+				-webkit-mask-size: stretch;
+				-webkit-mask-repeat: no-repeat;
+				-webkit-mask-image: var(--bg);
+				--bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.05' seed='170'%3E%3C/feTurbulence%3E%3CfeColorMatrix type='hueRotate' values='0'%3E%3C/feColorMatrix%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0'/%3E%3CfeDisplacementMap scale='10' in='SourceGraphic'/%3E%3C/filter%3E%3Crect filter='url(%23noise)' width='95%25' height='95%25'/%3E%3C/svg%3E");
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<p class="p1">We make it</p>
+			<p class="p2">with Love</p>
+		</div>
+	</body>
+</html>
