@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>myCSS link onHover style</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				display: grid;
+				height: 100vh;
+				place-items: center;
+				background-color: tan;
+			}
+
+			a {
+				box-shadow: inset 0 0 0 0 #54b3d6;
+				color: #54b3d6;
+				padding: 0 0.25rem;
+				margin: 0 -0.25rem;
+				transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+			}
+			a:hover {
+				color: #ffffff;
+				box-shadow: inset 205px 0 0 0 #54b3d6;
+			}
+			a {
+				color: #000080;
+				font-family: 'Poppins', sans-serif;
+				font-size: 27px;
+				font-weight: 700;
+				line-height: 1.5;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#">Hover this link</a>
+	</body>
+</html>

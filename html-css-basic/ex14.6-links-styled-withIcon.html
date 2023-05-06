@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>myCSS link as text and icon</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				background-color: tan;
+				height: 100vh;
+			}
+
+			h2 {
+				color: green;
+				text-align: left;
+				padding: 10px;
+				text-transform: capitalize;
+			}
+
+			p {
+				font-family: 'Helvetica', sans-serif;
+				font-size: 18px;
+				color: navy;
+				padding-left: 5px;
+			}
+
+			div.for-para {
+				width: 50%;
+				border: 1px solid gray;
+				padding: 8px;
+				background-color: pink;
+				margin: 20px auto;
+			}
+
+			.container {
+				display: grid;
+				place-items: center;
+			}
+
+			/* unvisited link */
+			a:link {
+				color: red;
+				text-decoration: none;
+				background-color: yellow;
+			}
+
+			/* visited link */
+			a:visited {
+				color: green;
+				text-decoration: none;
+				background-color: cyan;
+			}
+
+			/* mouse over link */
+			a:hover {
+				color: hotpink;
+				text-decoration: underline;
+				background-color: lightgreen;
+			}
+
+			/* selected link */
+			a:active {
+				color: blue;
+				text-decoration: underline;
+				background-color: hotpink;
+			}
+
+			.externalBlock {
+				position: absolute;
+				display: inline;
+				height: 20px;
+				margin-left: 5px;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>Link as text with icon</h2>
+		<p>
+			This example demonstrates an example to display link as text with icon:
+		</p>
+
+		<div class="for-para">
+			<pre>
+			/* unvisited link */
+			a:link {
+				color: red;
+				text-decoration: none;
+				background-color: yellow;
+			}
+
+			/* visited link */
+			a:visited {
+				color: green;
+				text-decoration: none;
+				background-color: cyan;
+			}
+
+			/* mouse over link */
+			a:hover {
+				color: hotpink;
+				text-decoration: underline;
+				background-color: lightgreen;
+			}
+
+			/* selected link */
+			a:active {
+				color: blue;
+				text-decoration: underline;
+				background-color: hotpink;
+			}
+
+			.externalBlock {
+				position: absolute;
+				display: inline;
+				height: 20px;
+				margin-left: 5px;
+				text-decoration: none;
+			}
+			</pre
+			>
+		</div>
+		<p>
+			Icon is taken from the folder using appropriate way. Here the class
+			<i>externalBlock</i> is added.
+		</p>
+
+		<div class="container">
+			<a href="default.asp" target="_blank" title="Відкриється у новому вікні"
+				>зовнішня ссилка
+				<img class="externalBlock" src="./img/external-link.png"
+			/></a>
+		</div>
+	</body>
+</html>
