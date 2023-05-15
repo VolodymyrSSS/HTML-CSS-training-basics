@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex27_mycss: create Navigation bar - basics</title>
+
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: tan;
+				font-family: 'Helvetica', 'Arial', sans-serif;
+			}
+
+			.container {
+				width: 80%;
+				margin: 0 auto;
+			}
+
+			h1.title {
+				color: red;
+				text-align: center;
+			}
+
+			h2 {
+				color: green;
+				text-align: left;
+				padding: 10px;
+				margin-left: 3em;
+			}
+
+			p {
+				font-family: 'Helvetica', sans-serif;
+				font-size: 18px;
+			}
+
+			.for-code {
+				color: navy;
+				margin-left: 3em;
+			}
+
+			.menu1 {
+				width: 30%;
+				border: 2px solid brown;
+				margin-left: 3em;
+			}
+
+			.menu2,
+			.menu3 {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 30%;
+				border: 2px solid brown;
+				margin-left: 3em;
+			}
+
+			.menu3 > li a {
+				display: block;
+				width: 160px;
+				background-color: #dddddd;
+			}
+
+			.menu4,
+			.menu5,
+			.menu6 {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 30%;
+				background-color: #f1f1f1;
+				border: 2px solid brown;
+				margin-left: 3em;
+			}
+
+			.menu4 > li a,
+			.menu5 > li a,
+			.menu6 > li a {
+				display: block;
+				color: #000;
+				padding: 8px 16px;
+				text-decoration: none;
+			}
+
+			/* Change the link color on hover */
+			.menu4 > li a:hover,
+			.menu5 > li a:hover,
+			.menu6 > li a:hover {
+				background-color: #555;
+				color: white;
+			}
+
+			.menu5 > li a.active,
+			.menu6 > li a.active {
+				background-color: #4caf50;
+				color: white;
+			}
+
+			/* Exclude to change link-color on hover */
+			.menu5 > li a:hover:not(.active) {
+				background-color: #555;
+				color: white;
+			}
+
+			.menu6 > li {
+				text-align: center;
+				border-bottom: 1px solid #555;
+			}
+
+			.menu6 > li:last-child {
+				border-bottom: none;
+			}
+
+			.horiz-navbar-inline {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 30%;
+				border: 2px solid green;
+				margin-left: 3em;
+			}
+
+			.horiz-navbar-inline > li {
+				display: inline;
+			}
+
+			.horiz-navbar-float {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				width: 30%;
+				border: 2px solid green;
+				margin-left: 3em;
+			}
+
+			.horiz-navbar-float > li {
+				float: left;
+			}
+
+			.horiz-navbar-float > li a {
+				display: block;
+				padding: 8px;
+				background-color: #dddddd;
+			}
+
+			.horiz-navbar-basic,
+			.horiz-navbar-active,
+			.horiz-navbar-flright,
+			.horiz-navbar-bordered {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 30%;
+				overflow: hidden;
+				background-color: #333;
+				margin-left: 3em;
+			}
+
+			.horiz-navbar-basic > li,
+			.horiz-navbar-active > li,
+			.horiz-navbar-flright > li {
+				float: left;
+			}
+
+			.horiz-navbar-basic > li a,
+			.horiz-navbar-active > li a,
+			.horiz-navbar-flright > li a,
+			.horiz-navbar-bordered > li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+
+			/* Change the link color to #111 (black) on hover */
+			.horiz-navbar-basic > li a:hover,
+			.horiz-navbar-active > li a:hover {
+				background-color: #111;
+			}
+
+			/* Set the color to active class */
+			.horiz-navbar-active .active,
+			.horiz-navbar-flright .active,
+			.horiz-navbar-bordered .active {
+				background-color: #4caf50;
+			}
+
+			.horiz-navbar-flright > li a:hover:not(.active),
+			.horiz-navbar-bordered > li a:hover:not(.active) {
+				background-color: #111;
+			}
+
+			/* Set the borders to li-elements */
+			.horiz-navbar-bordered > li {
+				float: left;
+				border-right: 1px solid #bbb;
+			}
+
+			/* Remove the border from the last li-element */
+			.horiz-navbar-bordered > li:last-child {
+				border-right: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Navigation Bar</h1>
+
+			<p>Having easy-to-use navigation is important for any web site.</p>
+
+			<p>
+				With CSS you can transform boring HTML menus into good-looking
+				navigation bars.
+			</p>
+
+			<p>A navigation bar needs standard HTML as a base.</p>
+
+			<p>
+				A navigation bar is basically a list of <b>links</b>, so using the
+				<b><i>ul</i></b> and <b><i>li</i></b>
+				elements makes perfect sense:
+			</p>
+
+			<p class="for-code">
+				ul {<br />
+				&nbsp;&nbsp;&nbsp;width: 30%;<br />
+				&nbsp;&nbsp;&nbsp;border: 2px solid brown;<br />
+				}
+			</p>
+
+			<ul class="menu1">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<p>
+				Note: Here, I used <i>href="#"</i> for test links. In a real web site
+				this would be URLs. As well, I added the <i>border</i> property to
+				<i>'ul'</i> in order to add a border around the navbar and clearly to
+				see it.
+			</p>
+
+			<p>
+				Now let's remove the bullets and the margins and padding from the list:
+			</p>
+
+			<p class="for-code">
+				.ul {<br />
+				&nbsp;&nbsp;&nbsp;list-style-type: none;<br />
+				&nbsp;&nbsp;&nbsp;margin: 0;<br />
+				&nbsp;&nbsp;&nbsp;padding: 0;<br />
+				&nbsp;&nbsp;&nbsp;width: 30%;<br />
+				&nbsp;&nbsp;&nbsp;border: 2px solid brown;<br />
+				}
+			</p>
+
+			<ul class="menu2">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<p>
+				list-style-type: none; - Removes the bullets.
+				<b>A navigation bar does not need list markers.</b><br />
+				Set margin: 0; and padding: 0;
+				<b>to remove browser default settings</b>.
+			</p>
+
+			<h3>
+				The code in the example above is the
+				<b
+					>standard code used in both vertical, and horizontal navigation
+					bars</b
+				>.
+			</h3>
+
+			<h1 class="title">CSS Navigation Bar - vertical navbar</h1>
+
+			<p>
+				To build a vertical navigation bar, you can style the a-elements inside
+				the list, in addition to the code above:
+			</p>
+
+			<p class="for-code">
+				ul {<br />
+				&nbsp;&nbsp;&nbsp;list-style-type: none;<br />
+				&nbsp;&nbsp;&nbsp;margin: 0;<br />
+				&nbsp;&nbsp;&nbsp;padding: 0;<br />
+				}<br />
+				<br />
+				li a {<br />
+				&nbsp;&nbsp;&nbsp;display: block;<br />
+				&nbsp;&nbsp;&nbsp;width: 160px;<br />
+				&nbsp;&nbsp;&nbsp;background-color: #dddddd;<br />
+				}
+			</p>
+
+			<ul class="menu3">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<p>
+				A background color is added to the links
+				<b>to show the link area</b>.<br />
+				Notice that the whole link area is clickable, not just the text.
+			</p>
+
+			<p>
+				display:block; - Displaying the links as block elements
+				<b>makes the whole link area clickable</b> (not just the text), and
+				<b>it allows us to specify the width</b> (and padding, margin, height,
+				etc. if you want); width: 160px; - Block elements take up the full width
+				available by default. We want to specify a 160 pixels width.
+			</p>
+
+			<p>
+				You can also set the width of ul, and remove the width of a, as they
+				will take up the full width available when displayed as block elements.
+				This will produce the same result as our previous example.
+			</p>
+
+			<h2>Vertical Navigation Bar Examples</h2>
+
+			<p>
+				Create a basic vertical navigation bar with a gray background color and
+				change the background color of the links when the user moves the mouse
+				over them
+			</p>
+
+			<p class="for-code">
+				ul {<br />
+				&nbsp;&nbsp;&nbsp;list-style-type: none;<br />
+				&nbsp;&nbsp;&nbsp;margin: 0;<br />
+				&nbsp;&nbsp;&nbsp;padding: 0;<br />
+				&nbsp;&nbsp;&nbsp;width: 30%;<br />
+				&nbsp;&nbsp;&nbsp;background-color: #f1f1f1;<br />
+				}<br />
+				<br />
+				li a {<br />
+				&nbsp;&nbsp;&nbsp;display: block;<br />
+				&nbsp;&nbsp;&nbsp;color: #000;<br />
+				&nbsp;&nbsp;&nbsp;padding: 8px 16px;<br />
+				&nbsp;&nbsp;&nbsp;text-decoration: none;<br />
+				}<br />
+				<br />
+				li a:hover {<br />
+				&nbsp;&nbsp;&nbsp;background-color: #555;<br />
+				&nbsp;&nbsp;&nbsp;color: white;<br />
+				}<br />
+			</p>
+
+			<ul class="menu4">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<h2>Active/Current Navigation Link</h2>
+
+			<p>
+				Add an "active" class to the current link to let the user know which
+				page he/she is on:
+			</p>
+
+			<p>
+				In this example, we create an "active" class with a green background
+				color and a white text. The class is added to the "Home" link.
+			</p>
+
+			<p class="for-code">
+				li a.active {<br />
+				&nbsp;&nbsp;&nbsp;background-color: #4CAF50;<br />
+				&nbsp;&nbsp;&nbsp;color: white;<br />
+				}<br />
+				<br />
+				li a:hover:not(.active) {<br />
+				&nbsp;&nbsp;&nbsp;background-color: #555;<br />
+				&nbsp;&nbsp;&nbsp;color: white;<br />
+				}<br />
+			</p>
+
+			<ul class="menu5">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<h2>Center Links & Add Borders</h2>
+
+			<p>Add text-align:center to 'li' or 'a' to center the links.</p>
+			<p>
+				If you also want borders inside the navbar, add a border-bottom to all
+				li-elements, except for the last one.
+			</p>
+
+			<p class="for-code">
+				The code for this:<br />
+				li {<br />
+				text-align: center;<br />
+				border-bottom: 1px solid #555;<br />
+				}<br />
+				<br />
+				li:last-child {<br />
+				&nbsp;&nbsp;&nbsp;border-bottom: none;<br />
+				}
+			</p>
+
+			<ul class="menu6">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+			<p>
+				In this example, we center the navigation links and add a borders to
+				li-elements.
+			</p>
+
+			<h1 class="title">CSS Navigation Bar - horizontal navbar</h1>
+			<p>
+				There are two ways to create a horizontal navigation bar. Using inline
+				or floating list items.
+			</p>
+
+			<h2>Inline List Items</h2>
+			<p>
+				One way to build a horizontal navigation bar is to specify the
+				li-elements as inline, in addition to the 'standard' code.
+			</p>
+
+			<p class="for-code">
+				.ul {<br />
+				&nbsp;&nbsp;&nbsp;list-style-type: none;<br />
+				&nbsp;&nbsp;&nbsp;margin: 0;<br />
+				&nbsp;&nbsp;&nbsp;padding: 0;<br />
+				&nbsp;&nbsp;&nbsp;width: 30%;<br />
+				&nbsp;&nbsp;&nbsp;border: 2px solid green;<br />
+				}<br />
+				<br />
+				li {<br />
+				&nbsp;&nbsp;&nbsp;display: inline;<br />
+				}
+			</p>
+
+			<ul class="horiz-navbar-inline">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<p>
+				display: inline; - by default, li-elements are block elements.<br />
+				Here, we remove the line breaks before and after each list item, to
+				display them on one line.<br />
+				We added border around the list (bar) and made it 30% wide.
+			</p>
+
+			<h2>Floating List Items</h2>
+
+			<p>
+				Another way of creating a horizontal navigation bar is to float the
+				li-elements, and specify a layout for the navigation links
+			</p>
+
+			<p class="for-code">
+				.ul {<br />
+				&nbsp;&nbsp;&nbsp;list-style-type: none;<br />
+				&nbsp;&nbsp;&nbsp;margin: 0;<br />
+				&nbsp;&nbsp;&nbsp;padding: 0;<br />
+				&nbsp;&nbsp;&nbsp;overflow: hidden; - to prevent li elements from going
+				outside of the list<br />
+				&nbsp;&nbsp;&nbsp;width: 30%;<br />
+				&nbsp;&nbsp;&nbsp;border: 2px solid green;<br />
+				}<br />
+				<br />
+				li {<br />
+				&nbsp;&nbsp;&nbsp;float: left;<br />
+				}<br />
+				<br />
+				li a {<br />
+				display: block; - makes the whole link area clickable<br />
+				padding: 8px; - to style the block elements for looking good<br />
+				background-color: #dddddd; - to show the link area<br />
+				}<br />
+			</p>
+
+			<ul class="horiz-navbar-float">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<p>
+				float: left; - use float to get block elements to slide next to each
+				other<br />
+				display: block; - displaying the links as block elements makes the whole
+				link area clickable (not just the text),<br />
+				and it allows us to specify padding (and height, width, margins, etc. if
+				you want)<br />
+				padding: 8px; - since block elements take up the full width available,
+				they cannot float next to each other.<br />
+				Therefore, specify some padding to make them look good.
+				background-color: #dddddd; - add a gray background-color to each
+				a-element
+			</p>
+
+			<p>
+				<b>Note:</b> If a !DOCTYPE is not specified, floating items can produce
+				unexpected results.
+			</p>
+
+			<p>
+				Tip: Add the background-color to ul instead of each a-element if you
+				want a full-width background color
+			</p>
+
+			<h2>Horizontal Navigation Bar Examples</h2>
+
+			<p>
+				Let's create a 30% width basic horizontal navigation bar with a dark
+				background color and change the background color of the links when the
+				user moves the mouse over them.<br />
+				To the code above to create navbar with 'li' float left we add:<br />
+			</p>
+
+			<p class="for-code">
+				li a {<br />
+				&nbsp;&nbsp;&nbsp;display: block;<br />
+				&nbsp;&nbsp;&nbsp;color: white;<br />
+				&nbsp;&nbsp;&nbsp;text-align: center;<br />
+				&nbsp;&nbsp;&nbsp;padding: 14px 16px;<br />
+				&nbsp;&nbsp;&nbsp;text-decoration: none;<br />
+				}<br />
+				<br />
+				li a:hover {<br />
+				&nbsp;&nbsp;&nbsp;background-color: #111; - change the link color to
+				black on hover<br />
+				}<br />
+			</p>
+
+			<ul class="horiz-navbar-basic">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<h2>Active/Current Navigation Link for horizontal navbar</h2>
+
+			<p>
+				Add an "active" class to the current link to let the user know which
+				page he/she is on:<br />
+				The add class 'active' to the first a-link like:<br />
+			</p>
+
+			<p class="for-code">
+				a.active {<br />
+				&nbsp;&nbsp;&nbsp;background-color: #4CAF50;<br />
+				}<br />
+			</p>
+
+			<ul class="horiz-navbar-active">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<h2>Right-Align Links</h2>
+
+			<p>
+				Right-align links by floating the list items to the right
+				(float:right;). Style the last li-element in html-code, the same time
+				make it active and not change the color on hover:<br />
+			</p>
+
+			<p class="for-code">
+				li style="float:right" a class="active" href="#about">About /a /li<br />
+				in css add:<br />
+				li a:hover:not(.active) {<br />
+				&nbsp;&nbsp;&nbsp;background-color: #111;<br />
+				}<br />
+			</p>
+
+			<ul class="horiz-navbar-flright">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li style="float: right"><a class="active" href="#about">About</a></li>
+			</ul>
+
+			<h2>Border Dividers</h2>
+
+			<p>
+				Add the border-right property to 'li' to create link dividers but not to
+				the last one
+			</p>
+
+			<p class="for-code">
+				li {<br />
+				&nbsp;&nbsp;&nbsp;float: left;<br />
+				&nbsp;&nbsp;&nbsp;border-right: 1px solid #bbb;<br />
+				}<br />
+				<br />
+				li:last-child {<br />
+				&nbsp;&nbsp;&nbsp;border-right: none;<br />
+				}
+			</p>
+
+			<ul class="horiz-navbar-bordered">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+		</div>
+		<br /><br /><br />
+	</body>
+</html>

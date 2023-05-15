@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex3.12_mycss: background-stripped-blue-yellow</title>
+		<style>
+			html {
+				--sz: 16px;
+				--b1: #f7ad39;
+				--b2: #cf9130;
+				--b3: #9f6f26;
+				--r1: #3a85fb;
+				--r2: #306ecf;
+				--r3: #1b417c;
+				--ln: #1b417c80;
+				--ts: 50% / calc(var(--sz) * 10) calc(var(--sz) * 5);
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				overflow: hidden;
+				background: linear-gradient(
+							90deg,
+							#fff0 0 25%,
+							var(--ln) 0 calc(25% + 1px),
+							#fff0 0 50%,
+							var(--ln) 0 calc(50% + 1px),
+							#fff0 0 75%,
+							var(--ln) 0 calc(75% + 1px),
+							#fff0 0 calc(100% - 1px),
+							var(--ln) 0 100%
+						)
+						var(--ts),
+					conic-gradient(
+							from 180deg at 25% 50%,
+							var(--r2) 0 90deg,
+							var(--b2) 0 180deg,
+							#fff0 0 100%
+						)
+						var(--ts),
+					conic-gradient(
+							from 180deg at 50% 50%,
+							var(--b3) 0 45deg,
+							#fff0 0 100%
+						)
+						var(--ts),
+					conic-gradient(
+							from 180deg at 50% 0,
+							var(--r3) 0 45deg,
+							var(--b3) 0 90deg,
+							#fff0 0 100%
+						)
+						var(--ts),
+					conic-gradient(
+							from 135deg at 75% 50%,
+							var(--b1) 0 45deg,
+							#fff0 0 100%
+						)
+						var(--ts),
+					conic-gradient(
+							from 90deg at 75% 0,
+							var(--b1) 0 45deg,
+							var(--r1) 0 90deg,
+							#fff0 0 100%
+						)
+						var(--ts),
+					linear-gradient(180deg, var(--r2) 0 50%, var(--b2) 0 100%) var(--ts);
+			}
+		</style>
+	</head>
+
+	<body></body>
+</html>

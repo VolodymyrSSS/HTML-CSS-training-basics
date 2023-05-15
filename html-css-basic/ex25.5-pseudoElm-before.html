@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>mycss: using pseudo class & pseudo element</title>
+
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: tan;
+				font-family: 'Helvetica', 'Arial', sans-serif;
+			}
+
+			.container {
+				width: 80%;
+				margin: 0 auto;
+				/* display: grid;
+				place-content: center; */
+			}
+
+			h1.title {
+				color: red;
+				text-align: center;
+			}
+
+			h2 {
+				color: green;
+				text-align: left;
+				padding: 10px;
+			}
+
+			p {
+				font-family: 'Helvetica', sans-serif;
+				font-size: 18px;
+			}
+
+			.for-code {
+				color: navy;
+				margin-left: 3em;
+			}
+
+			pre {
+				width: 70%;
+				background-color: #bebebe;
+				padding-top: 20px;
+				margin: 0 auto;
+			}
+
+			code {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: large;
+			}
+
+			.menu {
+				display: flex;
+				flex-direction: column;
+				font-size: 2em;
+			}
+
+			.menu a {
+				display: inline-block;
+				width: 100px;
+				text-decoration: none;
+				color: brown;
+				line-height: 1.5;
+				transition: margin 0.2s ease-in-out;
+			}
+
+			.menu a:hover,
+			.menu a:focus {
+				display: inline;
+				position: relative;
+				text-shadow: 0 0 5px red;
+				margin-left: 0.5em;
+				outline: none;
+			}
+
+			.menu a::before {
+				position: absolute;
+				content: '>';
+				left: -1em;
+				color: transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Pseudo-elements</h1>
+
+			<h2>The <i>::before</i> Pseudo-element</h2>
+
+			<p>
+				A pseudo-class is used to define a special state of an element while
+				pseudo-element is used to style specified parts of an element. For
+				example, pseudo-element can be used to:<br />
+				- Style the first letter, or line, of an element;<br />
+				- Insert content before or after the content of an element;<br />
+				Pseudo-classes can be combined with HTML classes. In this example, when
+				you hover over any link, or use
+				<i>:hover</i> pseudo-class on an <i>'a'</i> elementit, it will appear
+				the angle-sign <i>'>' in front of the link</i>:
+			</p>
+
+			<p>
+				Hover over every link to see the animation appearence of the '>'-sign.
+			</p>
+
+			<div class="menu">
+				<a href="#link1">Link 1</a>
+				<a href="#link2">Link 2</a>
+				<a href="#link3">Link 3</a>
+			</div>
+
+			<p>
+				<code>
+					<pre>
+            &lt;div class="menu"&gt;
+              &lt;a href="#"&gt;Link 1&lt;/a&gt;
+              &lt;a href="#"&gt;Link 2&lt;/a&gt;
+              &lt;a href="#"&gt;Link 3&lt;/a&gt;
+            &lt;/div&gt;
+          </pre>
+				</code>
+			</p>
+
+			<p class="for-code">
+				.menu {<br />
+				&nbsp;&nbsp;&nbsp;display: flex;<br />
+				&nbsp;&nbsp;&nbsp;flex-direction: column;<br />
+				&nbsp;&nbsp;&nbsp;font-size: 2em;<br />
+				}<br />
+				<br />
+				.menu a {<br />
+				&nbsp;&nbsp;&nbsp;display: inline-block;<br />
+				&nbsp;&nbsp;&nbsp;width: 100px;<br />
+				&nbsp;&nbsp;&nbsp;text-decoration: none;<br />
+				&nbsp;&nbsp;&nbsp;color: brown;<br />
+				&nbsp;&nbsp;&nbsp;line-height: 1.5;<br />
+				&nbsp;&nbsp;&nbsp;transition: margin 0.2s ease-in-out;<br />
+				}<br />
+				<br />
+				.menu a:hover, .menu a:focus {<br />
+				&nbsp;&nbsp;&nbsp;position: relative;<br />
+				&nbsp;&nbsp;&nbsp;text-shadow: 0 0 5px red;<br />
+				&nbsp;&nbsp;&nbsp;margin-left: 0.5em;<br />
+				&nbsp;&nbsp;&nbsp;outline: none;<br />
+				}<br />
+				<br />
+				.menu a::before {<br />
+				&nbsp;&nbsp;&nbsp;display: inline-block;<br />
+				&nbsp;&nbsp;&nbsp;position: absolute;<br />
+				&nbsp;&nbsp;&nbsp;content: '>';<br />
+				&nbsp;&nbsp;&nbsp;left: -1em;<br />
+				&nbsp;&nbsp;&nbsp;color: transparent;<br />
+				}<br />
+				<br />
+			</p>
+		</div>
+	</body>
+</html>

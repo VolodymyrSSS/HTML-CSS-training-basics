@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex27.1_mycss: Fixed Full-height Side Nav</title>
+
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: tan;
+				font-family: 'Helvetica', 'Arial', sans-serif;
+			}
+
+			.container {
+				width: 80%;
+				margin: 0 auto;
+			}
+
+			h1.title {
+				color: red;
+				text-align: center;
+			}
+
+			h2 {
+				color: green;
+				text-align: left;
+				padding: 10px;
+			}
+
+			p {
+				font-size: 18px;
+			}
+
+			.for-code {
+				color: navy;
+				margin-left: 3em;
+			}
+
+			pre {
+				width: 70%;
+				background-color: #bebebe;
+				padding-top: 20px;
+				margin: 0 auto;
+			}
+
+			code {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: large;
+			}
+
+			.vertical-navbar {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 25%;
+				background-color: wheat;
+				position: fixed;
+				height: 100%;
+				overflow: auto;
+			}
+
+			.vertical-navbar > li a {
+				display: block;
+				color: #000;
+				padding: 8px 16px;
+				text-decoration: none;
+				border-bottom: 2px solid brown;
+			}
+
+			.vertical-navbar > li a.active {
+				background-color: #4caf50;
+				color: white;
+			}
+
+			.vertical-navbar > li a:hover:not(.active) {
+				background-color: #555;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">
+				CSS Navigation Bar example - Fixed Full-height Side Nav
+			</h1>
+
+			<ul class="vertical-navbar">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+
+			<div style="margin-left: 31%; padding: 1px 16px; height: 1000px">
+				<h2>Some title</h2>
+				<h3>
+					Try to scroll this area, and see how the <i>sidenav</i> sticks to the
+					page
+				</h3>
+				<p>
+					Notice that side navigation div has a left margin of 31%. This is
+					because this <i>sidenav-div</i> is set to 25% width. If you remove the
+					margin, the <i>sidenav-div</i> will overlay/sit on top of other
+					<i>div</i> with text.
+				</p>
+				<p>
+					Also notice that we have set overflow:auto to sidenav. This will add a
+					scrollbar when the sidenav is too long (for example if it has over 50
+					links inside of it).
+				</p>
+
+				<p>
+					<code>
+						<pre>
+              &lt;ul class="vertical-navbar"&gt;
+                &lt;li&gt;&lt;a class="active" href="#home">Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#news">News&lt;/a>&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact">Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about">About&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+              &lt;/ul&gt;
+            </pre>
+					</code>
+				</p>
+
+				<p class="for-code">
+					.vertical-navbar {<br />
+					&nbsp;&nbsp;&nbsp;list-style-type: none;<br />
+					&nbsp;&nbsp;&nbsp;margin: 0;<br />
+					&nbsp;&nbsp;&nbsp;padding: 0;<br />
+					&nbsp;&nbsp;&nbsp;width: 25%;<br />
+					&nbsp;&nbsp;&nbsp;background-color: wheat;<br />
+					&nbsp;&nbsp;&nbsp;position: fixed;<br />
+					&nbsp;&nbsp;&nbsp;height: 100%;<br />
+					&nbsp;&nbsp;&nbsp;overflow: auto;<br />
+					}<br />
+					<br />
+					.vertical-navbar > li a {<br />
+					&nbsp;&nbsp;&nbsp;display: block;<br />
+					&nbsp;&nbsp;&nbsp;color: #000;<br />
+					&nbsp;&nbsp;&nbsp;padding: 8px 16px;<br />
+					&nbsp;&nbsp;&nbsp;text-decoration: none;<br />
+					&nbsp;&nbsp;&nbsp;border-bottom: 2px solid brown;<br />
+					}<br />
+					<br />
+					.vertical-navbar > li a.active {<br />
+					&nbsp;&nbsp;&nbsp;background-color: #4caf50;<br />
+					&nbsp;&nbsp;&nbsp;color: white;<br />
+					}<br />
+					<br />
+					.vertical-navbar > li a:hover:not(.active) {<br />
+					&nbsp;&nbsp;&nbsp;background-color: #555;<br />
+					&nbsp;&nbsp;&nbsp;color: white;<br />
+					}<br />
+					<br />
+				</p>
+				<p>Some other text..</p>
+				<p>Some other text..</p>
+				<p>Some other text..</p>
+				<p>Some other text..</p>
+				<p>
+					<b>Note:</b> This example might not work properly on mobile devices.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
