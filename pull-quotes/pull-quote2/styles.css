@@ -1,0 +1,52 @@
+body {
+	font-size: 1.1rem;
+	font-family: sans-serif;
+	color: #545454;
+}
+
+h1,
+h2 {
+	color: #000000;
+}
+
+article {
+	width: 80vw;
+	padding: 1em;
+	margin: 0 auto;
+	padding: 1em;
+	column-count: 3;
+	column-width: 350px;
+}
+
+aside {
+	padding: 1em;
+	font-size: 1.5em;
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+	color: #000;
+	border: 5px solid #50c878;
+	border-radius: 0 90px 0 90px;
+}
+
+aside p:first-line {
+	color: #005f69;
+}
+
+aside:before,
+aside:after {
+	position: absolute;
+	font-size: 5rem;
+	color: #005f69;
+}
+
+aside:before {
+	content: open-quote;
+	top: 0;
+	left: 18px;
+}
+aside:after {
+	content: close-quote;
+	bottom: -43px;
+	right: 34px;
+}

@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Baskervville);
+
+body {
+	font-size: 1.05em;
+	font-family: 'Times new Roman';
+	background-color: #d4d4d4;
+	padding: 0;
+	margin: 0;
+}
+
+article {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 0px;
+	margin: 0 auto;
+	padding: 2rem;
+	width: 85vw;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 3rem;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+p {
+	margin: -0rem 0;
+}
+
+aside {
+	color: #cc0000;
+	font-family: 'Baskervville';
+	font-style: italic;
+	font-weight: 900;
+	padding: 1rem;
+	font-size: 2rem;
+	float: left;
+}
+
+@media only screen and (max-width: 600px) {
+	article {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

@@ -1,0 +1,94 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 1.1rem;
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+article {
+	width: 85vw;
+	max-width: 1024px;
+	padding: 1em;
+	margin: 0 auto;
+	column-count: 2;
+	column-width: 450px;
+}
+
+article h2 {
+	margin: 0;
+}
+
+.pull-quote {
+	float: left;
+	display: inline-block;
+	width: 275px;
+	vertical-align: top;
+	background-color: #dcdcdc;
+	padding: 1.5rem 1rem;
+	margin: 0 0.75rem 0.75rem 0;
+	border-left: 3px solid dodgerblue;
+	position: relative;
+	box-shadow: 0 1px 1px hsl(0deg 0% 0%/0.075), 0 2px 2px hsl(0deg 0% 0%/0.075),
+		0 4px 4px hsl(0deg 0% 0%/0.075), 0 8px 8px hsl(0deg 0% 0%/0.075),
+		0 16px 16px hsl(0deg 0% 0%/0.075);
+}
+
+.pull-quote p {
+	padding: 0 1rem;
+	font-size: 1.2em;
+}
+
+.pull-quote p::first-letter {
+	display: inline-block;
+	float: left;
+	font-size: 4em;
+	line-height: 1;
+	background-color: dodgerblue;
+	color: #fff;
+	padding: 2px 5px;
+	margin-right: 8px;
+	font-family: 'Petit Formal Script', cursive;
+}
+
+.pull-quote::before,
+.pull-quote::after {
+	color: transparent;
+	font-family: 'Gentium Book Basic', serif;
+	font-size: 50px;
+	position: relative;
+	line-height: 0;
+	-webkit-text-stroke: 2px dodgerblue;
+}
+
+.pull-quote::before {
+	content: '“';
+	float: left;
+	top: 15px;
+}
+
+.pull-quote::after {
+	content: '”';
+	float: right;
+	top: 10px;
+}
+
+@media (max-width: 700px) {
+	article {
+		padding: 1em 0;
+	}
+	.pull-quote {
+		width: 100%;
+		float: none;
+		display: block;
+		margin: 1rem 0 !important;
+		padding: 1.5rem 0.5rem;
+	}
+	.pull-quote p {
+		padding: 0;
+	}
+}
