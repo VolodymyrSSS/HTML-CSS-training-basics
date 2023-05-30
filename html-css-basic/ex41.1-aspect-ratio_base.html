@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>myCSS: aspect-ratio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			body {
+				background-color: tan;
+				height: 500vh;
+			}
+
+			h1 {
+				color: red;
+				text-align: center;
+			}
+
+			h2 {
+				color: green;
+				text-align: left;
+				padding: 10px;
+				text-transform: capitalize;
+			}
+
+			p {
+				font-family: 'Helvetica', sans-serif;
+				font-size: 18px;
+				color: navy;
+				padding-left: 5px;
+			}
+
+			div.for-para {
+				width: 50%;
+				border: 1px solid gray;
+				padding: 8px;
+				background-color: pink;
+				margin: 20px auto;
+			}
+
+			.redBox {
+				background-color: red;
+				width: 300px;
+				aspect-ratio: 3/2;
+			}
+
+			.circle {
+				inline-size: 30vmin;
+				aspect-ratio: 1;
+				border-radius: 50%;
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>CSS aspect-ratio Property</h1>
+
+		<p>
+			The aspect-ratio property allows you to define the ratio between width and
+			height of an element.<br /><br />
+			If aspect-ratio and width properties are set, the height will follow in
+			the defined aspect ratio.
+		</p>
+
+		<h2>RED BOX example</h2>
+
+		<p>So, aspect ratio is width/height.</p>
+
+		<div class="for-para">
+			div {<br />
+			&nbsp;&nbsp;&nbsp;background-color: red;<br />
+			&nbsp;&nbsp;&nbsp;width: 300px;<br />
+			&nbsp;&nbsp;&nbsp;<b>aspect-ratio: 3/2;</b><br />
+			}<br />
+		</div>
+
+		<p>
+			Aspect-ratio of 3/2 and width set to 300px makes height of red box 2/3 of
+			width in this case.
+		</p>
+
+		<div class="redBox"></div>
+
+		<h2>quick RED CIRCLE</h2>
+		<p>
+			There are lots of ways to make circles in CSS, but this is definitely the
+			most minimal - using aspect-ratio property:
+		</p>
+
+		<div class="for-para">
+			div {<br />
+			&nbsp;&nbsp;&nbsp;inline-size: 30vmin;<br />
+			&nbsp;&nbsp;&nbsp;<b>aspect-ratio: 1;</b><br />
+			&nbsp;&nbsp;&nbsp;border-radius: 50%;<br />
+			&nbsp;&nbsp;&nbsp;background-color: red;<br />
+			}<br />
+		</div>
+
+		<div class="circle"></div>
+
+		<p>
+			<i
+				><b>Tip:</b> Use the aspect-ratio property in responsive layouts where
+				elements often vary in size and you want to preserve the ratio between
+				width and height.</i
+			>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>myCSS link as push brackets</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				background-color: tan;
+				height: 100vh;
+			}
+
+			h2 {
+				color: green;
+				text-align: left;
+				padding: 10px;
+				text-transform: capitalize;
+			}
+
+			p {
+				font-family: 'Helvetica', sans-serif;
+				font-size: 18px;
+				color: navy;
+				padding-left: 5px;
+			}
+
+			div.for-para {
+				width: 50%;
+				border: 1px solid gray;
+				padding: 8px;
+				background-color: pink;
+				margin: 20px auto;
+			}
+
+			#container {
+				display: grid;
+				width: 90%;
+				margin: auto;
+				border: solid black 1px;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 10px;
+				padding: 10px;
+			}
+
+			#container > div {
+				aspect-ratio: 3 / 2;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>CSS aspect-ratio property in image gallery</h2>
+		<p>
+			The aspect-ratio property is good for controlling aspect ratio of div
+			elements if the div elements are supposed to vary in size. This can be the
+			case in an image gallery when you want div elements to be flexible in size
+			to look good on all devices, but you also want ratio between width and
+			height of the images to be preserved This example demonstrates such case:
+		</p>
+
+		<div class="for-para">
+			<pre>
+			#container {
+				display: grid;
+				width: 90%;
+				margin: auto;
+				border: solid black 1px;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 10px;
+				padding: 10px;
+			}
+				
+			#container > div {
+				<b>aspect-ratio: 3 / 2;</b>
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+			</pre>
+		</div>
+
+		<p>Resize browser window to see how the layout behaves.</p>
+
+		<div id="container">
+			<div>
+				<img
+					src="./img/img-gallery1/boat.jpeg"
+					alt="boat"
+					width="460"
+					height="345"
+				/>
+			</div>
+			<div>
+				<img
+					src="./img/img-gallery1/lioness.jpeg"
+					alt="lioness"
+					width="460"
+					height="345"
+				/>
+			</div>
+			<div>
+				<img
+					src="./img/img-gallery1/manhattan.jpeg"
+					alt="manhattan"
+					width="600"
+					height="400"
+				/>
+			</div>
+			<div>
+				<img
+					src="./img/img-gallery1/cat.jpeg"
+					alt="cat"
+					width="600"
+					height="400"
+				/>
+			</div>
+		</div>
+
+		<p>
+			Div elements with images inside are organized in responsive grid layout to
+			make it look good on all devices. CSS aspect-ratio property adjusts height
+			automatically to maintain correct ratio between width and height of div
+			element. Correct ratio between width and height of the image is also
+			maintained with the object-fit property set to cover.
+		</p>
+		<br />
+
+		<br />
+		<br />
+	</body>
+</html>
