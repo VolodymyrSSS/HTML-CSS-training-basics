@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex18_mycss_position-absolute</title>
+
+		<style>
+			.scene {
+				position: absolute;
+				box-sizing: border-box;
+				width: 90vmin;
+				height: 70vmin;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				overflow: hidden;
+				background: linear-gradient(
+					#77192b 21%,
+					#801326 21% 30%,
+					#671523 30% 36%,
+					#9c1d32 36% 37%,
+					#6a1826 37% 42%,
+					#b7182c 42% 51%,
+					#921125 51% 55%,
+					#9f0c26 55% 60%,
+					#b5102a 60% 67%,
+					#c93237 67% 68%,
+					#aa1a23 68% 74%,
+					#a4191e 74% 77%,
+					#1d080f 77% 79%,
+					#280712 79%
+				);
+			}
+			.scene::before,
+			.scene::after {
+				content: '';
+				display: block;
+				position: absolute;
+			}
+
+			.scene::before {
+				width: 15vmin;
+				height: 15vmin;
+				top: 70%;
+				right: 20%;
+				border-radius: 50%;
+				background: linear-gradient(
+					#ded8ce 14%,
+					#aa1a23 14% 17%,
+					#ded8ce 17% 20%,
+					#a4191e 20% 25%,
+					#ded8ce 27% 32%,
+					#280712 32%
+				);
+			} /*sun*/
+
+			.scene::after {
+				width: 13vmin;
+				height: 16vmin;
+				top: 79%;
+				right: 19vmin;
+				background-color: #3d1f29;
+				border-width: 0 3vmin;
+				border-color: #361621;
+				border-style: solid;
+				box-sizing: border-box;
+			} /*sun reflection*/
+		</style>
+	</head>
+
+	<body>
+		<div class="scene"></div>
+	</body>
+</html>
