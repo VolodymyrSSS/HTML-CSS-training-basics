@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex9.2_mycss: text effects</title>
+
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background-image: linear-gradient(45deg, hsl(0 0% 75%), hsl(0 0% 90%));
+				display: grid;
+				place-items: center;
+			}
+			h1 {
+				font-family: 'Luckiest Guy', cursive;
+				font-size: 20vmin;
+				line-height: 1;
+				margin: 0;
+				letter-spacing: 0.075ch;
+				color: hsl(0 0% 90%);
+				text-align: center;
+				--light-pos-x: 1; /* left: -1, center: 0, right: 1 */
+				--light-pos-y: -1; /* top: -1, center: 0, bottom: 1 */
+
+				--rim-size: 0.02ch;
+				--shadow-offset: 0.2ch;
+				--shadow-blur: 0.1ch;
+				text-shadow: calc(max(var(--rim-size), 1px) * var(--light-pos-x))
+						calc(max(var(--rim-size), 1px) * var(--light-pos-y)) hsl(0 0% 100%),
+					calc(max(var(--rim-size), 1px) * var(--light-pos-x) * -1)
+						calc(max(var(--rim-size), 1px) * var(--light-pos-y) * -1)
+						hsl(0 0% 60%),
+					calc(var(--shadow-offset) * var(--light-pos-x) * -1)
+						calc(var(--shadow-offset) * var(--light-pos-y) * -1)
+						var(--shadow-blur) hsl(0 0% 50% / 0.75);
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>shadow<br />text<br />effect</h1>
+	</body>
+</html>
