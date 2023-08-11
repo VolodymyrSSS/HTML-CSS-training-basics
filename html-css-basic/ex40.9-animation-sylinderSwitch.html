@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex40.9_mycss: sylinder switch</title>
+		<style>
+			* {
+				border: 0;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			:root {
+				--hue: 223;
+				--bg: hsl(var(--hue), 10%, 90%);
+				--fg: hsl(var(--hue), 10%, 10%);
+				--trans-dur: 0.4s;
+				font-size: calc(40px + (60 - 40) * (100vw - 320px) / (2560 - 320));
+			}
+			body,
+			input {
+				color: var(--fg);
+				font: 1em/1.5 Helvetica, sans-serif;
+			}
+			body {
+				background-color: var(--bg);
+				display: flex;
+				height: 100vh;
+				transition: background-color var(--trans-dur), color var(--trans-dur);
+			}
+			.switch,
+			.switch__input,
+			.switch__handle-sides,
+			.switch__handle-side,
+			.switch__handle-labels,
+			.switch__handle-label,
+			.switch__handle-texture {
+				display: block;
+			}
+			.switch,
+			.switch__input {
+				cursor: pointer;
+				-webkit-tap-highlight-color: transparent;
+			}
+			.switch {
+				margin: auto;
+				position: relative;
+				width: 3em;
+				height: 3em;
+			}
+			.switch__input {
+				background-color: hsl(var(--hue), 10%, 95%);
+				border-radius: 0.25em;
+				box-shadow: 0.125em 0.125em 0.125em hsl(0, 0%, 100%) inset,
+					-0.125em -0.125em 0.125em hsl(var(--hue), 10%, 85%) inset,
+					0.125em 0.125em 0.375em hsl(var(--hue), 10%, 70%);
+				outline: transparent;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				transition: background-color var(--trans-dur),
+					box-shadow var(--trans-dur);
+				-webkit-appearance: none;
+				appearance: none;
+			}
+			.switch__input:before {
+				border-radius: inherit;
+				box-shadow: 0 0 0 max(0.125em, 1px) hsla(var(--hue), 90%, 50%, 0);
+				content: '';
+				display: block;
+				position: absolute;
+				inset: 0;
+				transition: box-shadow 0.15s linear;
+			}
+			.switch__input:focus-visible:before {
+				box-shadow: 0 0 0 max(0.125em, 1px) hsla(var(--hue), 90%, 50%, 1);
+			}
+			.switch__handle,
+			.switch__handle-sides,
+			.switch__handle-side,
+			.switch__handle-labels,
+			.switch__handle-label {
+				position: absolute;
+			}
+			.switch__handle,
+			.switch__handle-label {
+				transition: transform var(--trans-dur) cubic-bezier(0.65, 0, 0.36, 1.6);
+			}
+			.switch__handle,
+			.switch__handle-sides,
+			.switch__handle-texture {
+				border-radius: 0.125em;
+			}
+			.switch__handle {
+				box-shadow: 0.25em 0.25em 0.25em hsla(var(--hue), 10%, 10%, 0.4);
+				top: 10%;
+				left: 10%;
+				width: 40%;
+				height: 80%;
+			}
+			.switch__handle-sides,
+			.switch__handle-labels,
+			.switch__handle-texture {
+				width: 100%;
+				height: 100%;
+			}
+			.switch__handle-sides,
+			.switch__handle-side {
+				background-color: hsl(var(--hue), 10%, 85%);
+				transition: background-color var(--trans-dur),
+					transform var(--trans-dur) cubic-bezier(0.65, 0, 0.36, 1.6);
+			}
+			.switch__handle-sides {
+				--side-on: hsl(123, 90%, 40%);
+				background-image: linear-gradient(
+					90deg,
+					transparent 50%,
+					var(--side-on) 50%
+				);
+				overflow: hidden;
+			}
+			.switch__handle-side {
+				background-image: linear-gradient(
+					90deg,
+					var(--side-on) 50%,
+					transparent 50%
+				);
+				transform: translateX(-50%);
+				width: 200%;
+				height: 100%;
+			}
+			.switch__handle-labels {
+				transform-style: preserve-3d;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+			.switch__handle-label {
+				backface-visibility: hidden;
+				font-size: 0.6em;
+				text-shadow: 0 0 0.125em hsla(var(--hue), 10%, 10%, 0.3);
+				line-height: 1;
+				top: 50%;
+				left: 50%;
+				text-align: center;
+				text-transform: uppercase;
+				transform: translate(-50%, -50%) rotateZ(90deg) rotateX(0)
+					translateZ(0.55rem);
+			} /*label inside sylinder*/
+			.switch__handle-label + .switch__handle-label {
+				color: hsl(0, 0%, 100%);
+				text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.3);
+				transform: translate(-50%, -50%) rotateZ(90deg) rotateX(180deg)
+					translateZ(0.55rem);
+			} /*clear off label*/
+			.switch__handle-texture {
+				background-image: linear-gradient(
+					90deg,
+					hsla(0, 0%, 100%, 0),
+					hsla(0, 0%, 100%, 0.3) 20%,
+					hsla(0, 0%, 100%, 0) 40%,
+					hsla(0, 0%, 0%, 0) 50%,
+					hsla(0, 0%, 0%, 0.4)
+				);
+				box-shadow: 0 0.0625em 0.0625em hsla(0, 0%, 100%, 0.3) inset,
+					0 -0.0625em 0.0625em hsla(0, 0%, 0%, 0.3) inset;
+				transform: translateZ(0);
+			} /*sylinder 3d view*/
+			.switch__input:checked ~ .switch__handle {
+				transform: translateX(100%);
+			}
+			.switch__input:checked ~ .switch__handle .switch__handle-side {
+				transform: translateX(0);
+			}
+			.switch__input:checked ~ .switch__handle .switch__handle-label {
+				transform: translate(-50%, -50%) rotateZ(90deg) rotateX(180deg)
+					translateZ(0.55rem);
+			}
+			.switch__input:checked
+				~ .switch__handle
+				.switch__handle-label
+				+ .switch__handle-label {
+				transform: translate(-50%, -50%) rotateZ(90deg) rotateX(360deg)
+					translateZ(0.55rem);
+			} /*sylinder 3d view shade*/
+			.switch__label {
+				overflow: hidden;
+				position: absolute;
+				width: 1px;
+				height: 1px;
+			}
+			/* Dark theme */
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--bg: hsl(var(--hue), 10%, 30%);
+					--fg: hsl(var(--hue), 10%, 90%);
+				}
+				.switch__handle-sides,
+				.switch__handle-side {
+					background-color: hsl(var(--hue), 10%, 45%);
+				}
+				.switch__handle-label {
+					text-shadow: 0 0 0.125em hsla(var(--hue), 10%, 90%, 0.3);
+				}
+				.switch__input {
+					background-color: hsl(var(--hue), 10%, 35%);
+					box-shadow: 0.125em 0.125em 0.125em hsl(var(--hue), 10%, 50%) inset,
+						-0.125em -0.125em 0.125em hsl(var(--hue), 10%, 25%) inset,
+						0.125em 0.125em 0.375em hsl(var(--hue), 10%, 20%);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<label class="switch">
+			<input class="switch__input" type="checkbox" role="switch" />
+			<span class="switch__handle">
+				<span class="switch__handle-sides">
+					<span class="switch__handle-side"></span>
+				</span>
+				<span class="switch__handle-labels">
+					<span class="switch__handle-label" aria-hidden="true">Off</span>
+					<span class="switch__handle-label" aria-hidden="true">On</span>
+				</span>
+				<span class="switch__handle-texture"></span>
+			</span>
+			<span class="switch__label">Power</span>
+		</label>
+	</body>
+</html>
