@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use :has() to filter items by category using checkboxes without JS</title>
+  <style>
+    section:has([name="snacks"]:checked) article:has([data-category="snacks"]) {
+      display: block;
+    }
+
+    section:has([name="naps"]:checked) article:has([data-category="naps"]) {
+      display: block;
+    }
+
+    section:has([name="computers"]:checked) article:has([data-category="computers"]) {
+      display: block;
+    }
+
+    :root {
+      background: oklch(99.75% 0.03 146.51);
+      font-family: system-ui;
+      line-height: 1.45;
+    }
+
+    article {
+	  /* color code by category */
+      --hue: 0;
+    }
+
+    article:has([data-category="snacks"]) {
+      --hue: 233.35;
+    }
+
+    article:has([data-category="computers"]) {
+      --hue: 91.24;
+    }
+
+    article:has([data-category="naps"]) {
+      --hue: 334.61;
+    }
+
+    article img {
+      border: 1px solid oklch(93% 0.1 var(--hue));
+    }
+
+    article .categories {
+      background: oklch(96% 0.05 var(--hue));
+      border: 1px solid oklch(93% 0.1 var(--hue));
+      color: oklch(35% 0.104 var(--hue));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    section {
+      block-size: 90cqw;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(3, min(200px, 33% - 1.5rem));
+      margin: 2rem auto 5rem;
+      place-content: start center;
+    }
+
+    form {
+      align-items: baseline;
+      background: oklch(99.62% 0.01 146.51);
+      border: 1px solid oklch(99.62% 0.2 146.51);
+      border-radius: 0.25rem;
+      color: oklch(30% 0.3 146.51);
+      display: flex;
+      gap: 1rem;
+      grid-column: 1 / span 3;
+      margin-block-end: 1rem;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    form p {
+      line-height: 1;
+      margin: 0;
+    }
+
+    label,
+    input {
+      color: inherit;
+      font-size: 1rem;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    input {
+      block-size: 1rem;
+      inline-size: 1rem;
+      position: relative;
+      inset-block-start: 0.125rem;
+    }
+
+    article {
+      container-type: inline-size;
+      display: none;
+      margin: 0;
+    }
+
+    article img {
+      aspect-ratio: 16 / 9;
+      border-radius: 0.25rem;
+      display: block;
+      inline-size: 100%;
+      object-fit: cover;
+    }
+
+    article h2 {
+      color: oklch(25% 0.104 146.51);
+      font-size: clamp(0.75rem, 9cqw, 1rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+      margin: clamp(0.125rem, 2cqw, 0.375rem) 0;
+    }
+
+    article .categories {
+      border-radius: 0.25rem;
+      display: inline-block;
+      font-size: clamp(0.4rem, 5.5cqw, 0.625rem);
+      letter-spacing: 0.15em;
+      line-height: 1;
+      margin: 0;
+      padding: clamp(0.125rem, 2cqw, 0.25rem);
+      font-variant: small-caps;
+    }
+
+    article .categories::after {
+      content: attr(data-category);
+    }
+
+  </style>
+</head>
+<body>
+  <section>
+    <form>
+      <p>Filter by category:</p>
+      <label>
+        <input type="checkbox" name="snacks" checked />
+        snacks
+      </label>
+
+      <label>
+        <input type="checkbox" name="naps" checked />
+        naps
+      </label>
+
+      <label>
+        <input type="checkbox" name="computers" checked />
+        computers
+      </label>
+    </form>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1708724195876-1156245fce21?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Afternoon Hammock</h2>
+      <p class="categories" data-category="naps"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1709625862284-b8a82d339b99?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Tomagotchi</h2>
+      <p class="categories" data-category="computers"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1643916861364-02e63ce3e52f?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Strawberry Ice Cream</h2>
+      <p class="categories" data-category="snacks"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1672217617440-1dd3e9417ce1?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Tortilla Chips</h2>
+      <p class="categories" data-category="snacks"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1699462515761-90db271d77c8?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Comfy Chair</h2>
+      <p class="categories" data-category="naps"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1709625862266-014ef072fd93?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Game Boy Advance</h2>
+      <p class="categories" data-category="computers"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1695278255455-9afc87008775?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>TI-83</h2>
+      <p class="categories" data-category="computers"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1637611331620-51149c7ceb94?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Hummus</h2>
+      <p class="categories" data-category="snacks"></p>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1688748807457-d8926e351596?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+      <h2>Sneaky Desk</h2>
+      <p class="categories" data-category="naps"></p>
+    </article>
+
+  </section>
+</body>
+</html>
