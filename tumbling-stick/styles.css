@@ -1,0 +1,151 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 40em;
+  overflow: hidden;
+  font-size: 2vh;
+  
+  * {
+    transform-style: preserve-3d;
+  }
+}
+
+.scene {
+  position: relative;
+  animation: scene 60s infinite linear;
+  
+  --duration: 4s;
+}
+
+@keyframes scene {
+  to { rotate: y -1turn; }
+}
+
+.mainStick {
+  --angle: asin(3/5);
+  position: absolute;
+  inset: -0px -10em;
+  background-color: #fff;
+  animation: poleBase var(--duration) infinite ease-in;
+
+  .stick {
+    position: absolute;
+    inset: 0em;
+    background-color: #f00;
+    animation: poleTranslate var(--duration) calc(var(--duration) * -0) infinite cubic-bezier(.4,0,.6,2.3);
+
+    i {
+      position: absolute;
+      inset: -0.4em -3em;
+      background-color: hsl(0 0% calc((sin(var(--i) * 45deg) + 1) * 40% + 20%) );
+      box-shadow: 0 0 0.5em #0005 inset;
+      transform: translateY(-2em) rotateX(calc(var(--i) * 45deg)) translateZ(0.95em);
+    }
+  }
+}
+
+@keyframes poleBase {
+  0% { 
+    transform-origin: right;
+    transform: translate(-2em, 0em) rotate(calc(var(--angle) * -1));
+    animation-timing-function: ease-out;
+  }
+  4% { 
+    transform-origin: right;
+    transform: translate(-2em, 0em) rotate(calc(var(--angle) * -0.9));
+    animation-timing-function: ease-in;
+  }
+  10% { 
+    transform-origin: right;
+    transform: translate(-2em, 0em) rotate(calc(var(--angle) * -1));
+  }
+  25% { 
+    transform-origin: left;
+    transform: translate(2em, 12em) rotate(calc(var(--angle) * -1));
+  }
+  50% { 
+    transform-origin: left;
+    transform: translate(2em, 12em) rotate(var(--angle));
+    animation-timing-function: ease-out;
+  }
+  54% { 
+    transform-origin: left;
+    transform: translate(2em, 12em) rotate(calc(var(--angle) * 0.9));
+    animation-timing-function: ease-in;
+  }
+  60% { 
+    transform-origin: left;
+    transform: translate(2em, 12em) rotate(var(--angle));
+  }
+  75% {
+    transform-origin: right;
+    transform: translate(-2em, 24em) rotate(var(--angle));
+  }
+  100% {
+    transform-origin: right;
+    transform: translate(-2em, 24em) rotate(calc(var(--angle) * -1));
+  }
+  
+  0% { translate: 0 0; animation-timing-function: linear; }
+  100% { translate: 0 -24em; }
+}
+
+@keyframes poleTranslate {
+  0%, 100% { translate: 3em; }
+  50% { translate: -3em; }
+}
+
+.sticks {
+  .stick {
+    position: absolute;
+    animation: stick calc(var(--duration) * 4) calc(var(--duration) / -2 * var(--s)) infinite linear;
+
+    &:nth-child(even) {
+      --translateX: -8em;
+    }
+
+    i {
+      position: absolute;
+      inset: -0.4em -10em;
+      background-color: hsl(calc(var(--s) * 45) 100% calc((sin(var(--i) * 45deg) + 1) * 25% + 25%));
+      box-shadow: 0 0 0.5em #0005 inset;
+      transform: rotateY(90deg) rotateX(calc(var(--i) * 45deg)) translateZ(0.95em);
+  
+      &:nth-child(2)::after,
+      &:nth-child(3)::after,
+      &:nth-child(4)::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        background-image: radial-gradient(circle at var(--bgPosition, center), var(--shadowColor, #000), transparent 2em);
+        animation: shadow calc(var(--duration) * 4) calc(var(--duration) / -2 * var(--s)) infinite;
+      }
+      
+      &:nth-child(2)::after { --bgPosition: 50% -1.2em; }
+      &:nth-child(3)::after { --shadowColor: #0008; }
+      &:nth-child(4)::after { --bgPosition: 50% 2em; }
+    }
+  }  
+}
+
+@keyframes stick {
+  0% { transform: translate(var(--translateX, 8em), 48em); }
+  37.5%, 38% { transform: translate(var(--translateX, 8em), 12em); }
+  39% { transform: translate(var(--translateX, 8em), 10.56em); }
+  100% { transform: translate(var(--translateX, 8em), -48em); }
+}
+
+@keyframes shadow {
+  0%, 36%, 60%, 100% { opacity: 0; }
+  40%, 55% { opacity: 1;}
+}
