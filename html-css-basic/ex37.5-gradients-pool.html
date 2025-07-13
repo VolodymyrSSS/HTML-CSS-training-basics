@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ex37.5_mycss: gradients - pool</title>
+		<style>
+			.container {
+  				position: relative;
+  				height: 800px;
+  				width: 100%;
+  				overflow-y: scroll;
+			}
+			.pool {
+				--s: 50px; /* control the size */
+				--c1: #81d4fa;
+				--c2: #E1F5FE;
+				--_g: calc(2 * var(--s)) calc(2 * var(--s))
+					radial-gradient(25% 25%, var(--c1) 99%, #0000 101%);
+				background: 0 var(--s) / var(--_g), var(--s) 0 / var(--_g),
+					radial-gradient(50% 50%, var(--c2) 97%, #0000) calc(var(--s) / 2)
+					calc(var(--s) / 2) / var(--s) var(--s),
+					linear-gradient(90deg, var(--c1) 50%, var(--c2) 0) 0 0 / calc(2 * var(--s));
+
+				height: 300vh;
+				width: 100%;
+				position: relative;
+			}
+			.lifebuoy {
+				position: fixed;
+				top: 60px;
+				left: 60px;
+				height: 100px;
+				width: 100px;
+				background-image: url("https://cdn-icons-png.flaticon.com/512/1239/1239062.png");
+				background-size: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="pool">
+				<div class="lifebuoy"></div>
+			</div>
+		</div>
+	</body>
+</html>
