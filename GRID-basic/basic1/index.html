@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Grid Layout</title>
+  </head>
+  <body>
+    <h2>CSS Grid Layout, Columns, Rows, Gaps</h2>
+
+    <p>The Grid Layout Module offers a grid-based layout system, with rows and columns. The Grid Layout Module makes it easier to design a responsive layout structure, without using float or positioning.<br>
+      A Grid Layout must have a parent element with the <b><em>display</em></b> property set to <em>grid</em> or <em>inline-grid</em>.<br>
+      A grid always consists of:<br>
+      - a Grid Container - the parent (container) div element<br>
+      - Grid Items - the items inside the container div<br>
+      A grid container contains one or more grid items arranged in columns and rows.
+    </p>
+    <p>Direct child element(s) of the grid container automatically becomes grid items.</p>
+
+    <div class="code-sample">
+      <b>.container {<br>
+        &nbsp;&nbsp;&nbsp;display: grid;<br>
+        &nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto;<br>
+        &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+        &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      }</b>
+    </div>
+
+  <div class="container-one container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <b>.container {<br>
+      &nbsp;&nbsp;&nbsp;display: inline-grid;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+    }</b>
+  </div>
+  
+  <div class="container-two container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+  <h2>CSS Grid Columns, Rows and Gaps</h2>
+
+  <p>The vertical lines of grid items are called columns and the horizontal lines of grid items are called rows.<br>
+  The spaces between each column/row are called gaps. The column-gap property specifies the gap between the columns in a grid. The row-gap property specifies the gap between the rows in a grid. The gap property is a shorthand property for row-gap and column-gap.<br>
+  The lines between columns are called column lines and the lines between rows are called row lines.
+  </p>
+
+
+  <p>
+    We can specify where to start and end a grid item by using the following properties:<br>
+  - grid-column-start - specifies where to start a grid item.<br>
+  - grid-column-end - specifies where to end a grid item.<br>
+  - grid-row-start - specifies where to start a grid item.<br>
+  - grid-row-end - specifies where to end a grid item.<br>
+  - grid-column - is a shorthand property for the grid-column-start and the grid-column-end properties.<br>
+  - grid-row - is a shorthand property for the grid-row-start and the grid-row-end properties.<br>
+    You can refer to line numbers when placing a grid item in a grid container and you can span items.<br>
+  </p>
+
+  <h2>The grid-column-start and grid-column-end properties</h2>
+
+  
+  <div class="code-sample">
+    <p>Place the first grid item at column-line 1, and let it end on column-line 3:</p>
+    <b>.item1 {<br>
+      &nbsp;&nbsp;&nbsp;grid-column-start: 1;<br>
+      &nbsp;&nbsp;&nbsp;grid-column-end: 3;<br>
+    }</b><br>
+    Or place the first grid item at column-line 1, and let it span 2 columns:<br> 
+    <b>.item1 {<br>
+      &nbsp;&nbsp;&nbsp;grid-column: 1 / span 2;<br>
+    }</b><br>
+  </div>
+  
+
+  <div class="container-three container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>  
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+  </div>
+
+  <h2>The grid-row-start and grid-row-end property</h2>
+
+    <div class="code-sample">
+      <p>Place the first grid item at row line 1, and let it end on row line 3:</p>
+      <b>.item1 {<br>
+        &nbsp;&nbsp;&nbsp;grid-row-start: 1;<br>
+        &nbsp;&nbsp;&nbsp;grid-row-end: 3;<br>
+        }
+      </b><br>
+      Or place the first grid item at row-line 1, and let it span 2 rows:<br> 
+      <b>.item1 {<br>
+        &nbsp;&nbsp;&nbsp;grid-row: 1 / span 2;<br>
+      }</b><br>
+    </div>
+  
+
+  <div class="container-four container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>  
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+  </div>
+
+</body>
+</html>

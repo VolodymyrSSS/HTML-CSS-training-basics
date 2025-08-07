@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Grid Container</title>
+  </head>
+  <body>
+    <h2>CSS Grid Container</h2>
+
+    <p>A grid container contains one or more grid items arranged in columns and rows.<br>
+      Direct child elements(s) of the grid container automatically becomes grid items.<br>
+      An element becomes a grid container when its display property is set to <b>grid</b> or <b>inline-grid</b>.
+    </p>
+    <p>The rows and columns of a grid is defined with the <b><em>grid-template-rows</em></b> and the <b><em>grid-template-columns</em></b> properties (or the shorthand grid or grid-template properties).
+       These define the grid tracks. A grid track is the space between two adjacent grid lines.
+    </p>
+
+    <h2>The grid-template-columns property</h2>
+
+    <p>The grid-template-columns property defines the number of columns in your grid layout, and it can define the width of each column.
+      The value is a space-separated-list, where each value defines the width of the respective column.
+      If you want your grid layout to contain 4 columns, specify the width of the 4 columns, or "auto" if all columns should have the same width.
+    </p>
+
+    <div class="code-sample">
+      <p>Make a grid with 4 columns of equal width:</p>
+      .grid-container {<br>
+        &nbsp;&nbsp;&nbsp;display: grid;<br>
+        <b>&nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto auto;</b><br>
+        &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+        &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+        &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      }<br>
+    </div>
+    
+    <div class="grid-container container-one">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>  
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>  
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>So, you can use the <em>grid-template-columns</em> property to specify the number of columns in your grid layout.<br>
+    The grid-template-columns property can also be used to specify the exact size (width) of the columns, or a mix of fixed size and auto.</p>
+
+    <div class="code-sample">
+      <p>Set a fixed size for column 1, 2, and 4, and keep column 3 as auto size:</p>
+      .grid-container {<br>
+        &nbsp;&nbsp;&nbsp;display: grid;<br>
+        <b>&nbsp;&nbsp;&nbsp;grid-template-columns: 80px 200px auto 40px;</b><br>
+        &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+        &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+        &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      }<br>
+    </div>
+  
+  <div class="grid-container container-two">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <p>Note: If you have more than 4 grid items in a 4 columns grid, the grid will automatically add a new row to put the items in.</p>
+
+  <h2>Cell sizing with the fr unit</h2>
+
+  <p>The fr unit can be used when defining grids, like any other CSS length such as %, px or em.<br>
+    The fr unit stands for "fraction". This unit automatically divides the available space into fractions.<br>
+    Example: 1fr will take 1 fraction of the available space, while 2fr will take 2 fractions of the available space.
+  </p>
+
+  <div class="code-sample">
+      <p>Here, each column will take up 25% of the container width, splitting it equally:</p>
+      .grid-container {<br>
+        &nbsp;&nbsp;&nbsp;display: grid;<br>
+        <b>&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 1fr 1fr 1fr;</b><br>
+        &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+        &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+        &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      }<br>
+    </div>
+  
+  <div class="grid-container container-three">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+      <p>Here, the second column will be twice as big as the others:</p>
+      .grid-container {<br>
+        &nbsp;&nbsp;&nbsp;display: grid;<br>
+        <b>&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 2fr 1fr 1fr;</b><br>
+        &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+        &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+        &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      }<br>
+    </div>
+  
+  <div class="grid-container container-four">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <h2>The grid-template-rows property</h2>
+
+  <p>The grid-template-rows property defines the height of each row.<br>
+     The value is a space-separated-list, where each value defines the height of the respective row:
+  </p>
+
+  <div class="code-sample">
+    <p>Here, the first row in the grid is 80px high and the second row is 200px high. The next rows will use auto as default:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      <b>&nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-rows: 80px 200px;</b><br>
+      &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+    }<br>
+  </div>
+  
+  <div class="grid-container container-five">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <h2>The justify-content property</h2>
+
+  <p>The justify-content property is used to align the grid items when they do not use all available space on the main-axis (horizontally).<br>
+     The justify-content property can have one of the following values:<br>
+      - space-evenly<br>
+      - space-around<br>
+      - space-between<br>
+      - center<br>
+      - start<br>
+      - end<br>
+     Note: The grid item's total width has to be less than the container's width for the justify-content property to have any effect.
+  </p>
+
+  <div class="code-sample">
+    <p>The space-evenly value displays the grid items with equal space around them:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp; <b>justify-content: space-evenly;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-six">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <p>The space-between value displays the grid items with space between them:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp; <b>justify-content: space-between;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-seven">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <p>The center value positions the grid items in the center of the container:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp; <b>justify-content: center;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-eight">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <p>The end value positions the grid items at the end of the container:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp; <b>justify-content: end;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-nine">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <h2>The align-content property</h2>
+  <p>The align-content property is used to align the grid items when they do not use all available space on the cross-axis (vertically).<br>
+     The align-content property can have one of the following values:<br>
+      - space-evenly<br>
+      - space-around<br>
+      - space-between<br>
+      - center<br>
+      - start<br>
+      - end<br>
+     Note: The grid item's total height has to be less than the container's height for the align-content property to have any effect.
+  </p>
+  <p>In the following examples I used a 400 pixels high container, to better demonstrate the align-content property.</p>
+
+  <div class="code-sample">
+    <p>The center value positions the grid items in the middle of the container:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp;height: 400px;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto;<br>
+      &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      &nbsp;&nbsp;&nbsp; <b>align-content: center;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-ten">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <p>With space-between, the space between the grid lines are<br>
+      equal, but the first grid item is flush with the start edge<br>
+      of the container, and the last grid item is flush with the<br>
+      end edge of the container:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp;height: 400px;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto;<br>
+      &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      &nbsp;&nbsp;&nbsp; <b>align-content: space-between;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-eleven">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <p>The start value positions the grid items at the start of the container:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp;height: 400px;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-columns: auto auto auto;<br>
+      &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      &nbsp;&nbsp;&nbsp; <b>align-content: start;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-eleven">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <h2>The place-content property</h2>
+
+  <p>The place-content property is a shorthand property for the align-content and the justify-content properties.<br>
+     If the place-content property has two values:<br>
+     <b><em>place-content: start center;</em></b> - the <b>align-content</b> value is 'start' and <b>justify-conten</b>t value is 'center'<br>
+     If the place-content property has one value:<br>
+     <b><em>place-content: end;</em></b> - both <b>align-content</b> and <b>justify-conten</b>t values are 'end'<br><br>
+     Note: The grid item's total height and width has to be less than the container's height and width for the place-content property to have any effect.
+  </p>
+
+  <div class="code-sample">
+    <p>The end space-between value aligns the grid lines towards the bottom of the grid container, and aligns the grid items with the same space between them horizontally:</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp;height: 400px;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-columns: 70px 70px 70px;<br>
+      &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      &nbsp;&nbsp;&nbsp; <b>place-content: end space-between;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-twelve">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+  <div class="code-sample">
+    <p>The center value positions the grid items in the middle of the container (both vertically and horizontally):</p>
+    .grid-container {<br>
+      &nbsp;&nbsp;&nbsp;display: grid;<br>
+      &nbsp;&nbsp;&nbsp;height: 400px;<br>
+      &nbsp;&nbsp;&nbsp;grid-template-columns: 70px 70px 70px;<br>
+      &nbsp;&nbsp;&nbsp;gap: 10px;<br>
+      &nbsp;&nbsp;&nbsp;background-color: dodgerblue;<br>
+      &nbsp;&nbsp;&nbsp;padding: 10px;<br>
+      &nbsp;&nbsp;&nbsp; <b>place-content: center;</b><br>
+      }
+    <br>
+  </div>
+  
+  <div class="grid-container container-thirteen">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+
+</body>
+</html>

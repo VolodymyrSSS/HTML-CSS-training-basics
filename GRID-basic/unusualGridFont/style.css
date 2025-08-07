@@ -1,0 +1,49 @@
+:root {
+  --c1: 1fr;
+  --c2: 1fr;
+  --c3: 8fr;
+
+  --r1: 1fr;
+  --r2: 1fr;
+  --r3: 2fr;
+
+  --fillX: 40%;
+  --fillY: 20%;
+}
+
+body {
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: tan;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: var(--c1) var(--c2) var(--c3);
+  grid-template-rows: var(--r1) var(--r2) var(--r3);
+  width: 64px;
+  height: 64px;
+}
+
+.cell {
+  background: black;
+  position: relative;
+}
+
+.cell.top {
+  height: var(--fillY);
+}
+.cell.bottom {
+  top: calc(100% - var(--fillY));
+  height: var(--fillY);
+}
+.cell.left {
+  width: var(--fillX);
+}
+.cell.empty {
+  height: 0%;
+}
