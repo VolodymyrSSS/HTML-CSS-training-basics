@@ -1,0 +1,53 @@
+# Node modules (if your project includes a Node.js environment or dependencies)
+node_modules/
+
+# Logs
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files and directories
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# Compiled files or output
+output/
+dist/
+
+# Environment or configuration files
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+
+# Build tools (if applicable)
+coverage/
+*.log
+
+# Cache
+.cache/
+*.bak
+
+# Images and icons (ignore raw image sources but not final ones)
+raw-images/
+
+# Generated files
+*.html.map
+*.css.map
+*.js.map
+
+# Optional: Ignore generated HTML if the source is Pug and you don't want to version control the output
+index.html
+*.html
