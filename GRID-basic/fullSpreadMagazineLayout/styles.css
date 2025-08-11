@@ -1,0 +1,201 @@
+/* Base Styles */
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #F9F9F9;
+}
+
+/* App Layout */
+@media (min-width: 1200px) {
+    #app {
+        display: flex; /* Enable flexbox layout for the parent container */
+        flex-direction: row; /* Arrange children inline */
+        align-items: center; /* Vertically align children */
+        gap: 2rem; /* Add spacing between children */
+    }
+    /* Grid layout supported via @supports */
+    @supports (display: grid) {
+        #app {
+            display: grid; /* Modern layout */
+            grid-template-columns: 1fr 1fr;
+            align-items: center; /* Vertically align in grid */
+            gap: 2rem; /* Add spacing between grid items */
+        }
+    }
+}
+
+h1, h2 {
+    color: white;
+}
+
+.article-header {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/blake-cheek-631519-unsplash_resized.jpg);
+    background-size: cover; /* Fill the container completely */
+    background-position: center center; /* Center the image inside the container */
+    background-repeat: no-repeat; /* Prevent tiling of the image */
+    aspect-ratio: 16 / 9; /* Use the natural aspect ratio of the image */
+    height: 60vh; /* Default small height */
+    position: relative;
+    margin: 0 auto; /* Center by default for smaller screens */
+}
+
+@media (min-width: 600px) {
+    .article-header {
+        height: auto; /* Adjust dynamically */
+        max-height: 75vh; /* Cap the height for medium screens */
+        width: calc(100% - 2rem); /* Adjust width based on the article's padding */
+        margin: 1rem auto; /* Center the header visually */
+    }
+}
+
+@media (min-width: 1200px) {
+    .article-header {
+        height: 100vh; /* Full height for large screens */
+        width: 50vw;   /* Half width for two-column layout */
+        display: block; /* Ensure predictable block-level layout */
+        margin: -204px 0 0 1rem; /* margin for spacing */
+    }
+}
+
+.article-header-text {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-align: right;
+    max-width: 40%;
+}
+
+.article-header-text h1,
+.article-header-text h2 {
+    color: white;
+}
+
+@media (min-width: 600px) {
+    .article-header-text {
+        max-width: 70%; /* Wider header text for medium+ screens */
+        text-align: right;
+    }
+}
+
+.article-header-title {
+    text-transform: uppercase;
+    font-size: 2rem; /* Default title size */
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+    .article-header-title {
+        font-size: 5.25rem; /* Scale up for medium & large screens */
+    }
+}
+
+.article-header-byline {
+    font-weight: 400;
+    font-size: 0.9rem; /* Default size */
+}
+
+@media (min-width: 600px) {
+    .article-header-byline {
+        font-size: 1.5rem; /* Larger text for medium+ screens */
+    }
+}
+
+.article-text {
+    padding: 1rem;
+    max-width: 650px;
+    margin: auto; /* Center-align the text */
+}
+
+.article-text-lead {
+    padding: 2rem 1rem;
+}
+
+.article-text-lead h3 {
+    font-weight: 300;
+    text-align: center; /* Center heading by default */
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (min-width: 600px) {
+    .article-text-lead {
+        padding: 3rem 0 3rem 2rem;
+    }
+
+    .article-text-lead h3 {
+        font-size: 1.5rem;
+        text-align: right; /* Align text to the right for visual balance */
+        font-size: 1.5rem; /* Enhanced text size at medium screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .article-text-lead {
+        padding: 2rem 0 5rem 3rem;
+    }
+
+    .article-text-lead h3 {
+        font-size: 1.1rem; /* Adjust text size for large screens */
+    }
+}
+
+@media (min-width: 600px) {
+    .article-text-content {
+        columns: 2;           /* Two columns for medium+ screens */
+        column-gap: 2rem;     /* Add spacing between columns */
+    }
+
+    .article-text-content p:first-of-type {
+        margin-top: 0; /* Adjust content alignment */
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .article-text-content {
+        columns: 3;           /* Three columns for large screens */
+        column-width: 100px;  /* Min width per column */
+        column-gap: 2rem;     /* Consistent spacing */
+    }
+
+    .article-text-content p {
+        font-size: 0.95rem; /* Adjust paragraph font size */
+    }
+}
+
+@media (max-width: 600px) {
+    #app {
+        display: block; /* Switch back to block layout for responsiveness */
+    }
+
+    .article-header {
+        width: calc(100% - 2rem); /* Add margins for small screens */
+        margin: 1rem auto; /* align the header */
+        max-height: 75vh; /* Limit height for small screens */
+    }
+
+    .article-header-title {
+        font-size: 1.5rem;
+    }
+
+    .article-text {
+        margin: auto;
+        padding: 0 1rem; /* Add balanced padding */
+    }
+
+    .article-text-lead h3 {
+        font-size: 1rem; /* Adjust font size for readability */
+        text-align: center; /* Center-align on small screens */
+        margin: 0.5rem 0; /* Add consistent margin */
+    }
+}
+
+@media (max-width:320px) {
+    .article-header-title {
+        font-size: 1rem;
+    }
+    .article-header-byline {
+        font-size: 0.8rem;
+    }
+}
