@@ -1,0 +1,107 @@
+/*HEADER STARTS*/
+
+.container {
+    width:1170px; 
+    margin: 0 auto; 
+}
+.header {
+    background-image: url(../images/very_top_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 531px;
+    padding-bottom: 145px;
+}
+.header-company-name {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700px;
+    margin-bottom: 16px;
+}
+.header-company-description {
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+.header-slogan {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    color:  #fff;
+    font-size: 54px;
+    font-weight: 700;
+    padding: 44px 43px;
+    border: 1px solid #fff;
+    background-color: rgba (0, 0, 0, 0.3);    
+}
+.text-orange {
+    color:  #f1ad1d;
+    padding-right: 51px;
+}
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    color:  #333333;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+.section-description {
+    font-family: 'Lato', sans-serif;
+    color:  #4d4943;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 112px; 
+}
+/* HEADER END*/
+
+/*ABOUT US START*/
+
+.about-us{
+    padding-top: 69px;
+}
+.about-us-awards {
+    text-align: center
+}
+.about-us-award {
+    max-width: 100%;
+}
+.under_line::after{
+    content:"";
+    display:block;
+    width: 60px;
+    height: 3px;
+    background-color: #f1ad1d;
+    margin: 52px auto 0;
+   }
+
+/*ABOUT US END*/
+
+
+/*Navbar starts*/
+
+.navbar {
+
+}
+.navbar-logo img {
+    max-width: 100%;
+    float: left;
+}
+.navbar-nav {
+    float: right;
+    margin-top: 4px;
+}
+.navbar-nav-item {
+    display: inline-block;
+    margin-right: 70px; 
+}
+.navbar-nav-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: ‘Lato’, sans-serif;
+    color: #3d3d3d;
+    font-size: 18px;
+    font-weight: 400;
+}
+/*NAVBAR END*/

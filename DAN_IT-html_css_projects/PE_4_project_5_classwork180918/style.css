@@ -1,0 +1,31 @@
+body, header, section, aside, footer {
+    margin: 0px;
+    padding: 0px;
+}
+header {
+    width: 100%;
+    height: 200px;
+    background-color: brown;
+    overflow: hidden;
+}
+section {
+    display: inline-block;
+    width: 30%;
+    height: 600px;
+    background-color: aqua;
+    overflow: hidden;
+    
+}
+aside {
+    display: inline-block;
+    width:70%;
+    height: 600px;
+    background-color: yellow;
+    overflow: hidden;
+    
+}
+footer {
+    width: 100%;
+    height: 150px;
+    background-color: bisque;
+}

@@ -1,0 +1,795 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat"); /*подключать с помощью import в начале файла*/
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/latoregular.ttf");
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.text-orange {
+    color: #f1ad1d;
+}
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    color:  #333333;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.slogan-title {
+    font-family: 'Montserrat', sans-serif;
+    color:  #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+.section-description {
+    font-family: 'Lato', sans-serif;
+    color:  #4d4943;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 57px;
+}
+
+.under_line::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f1ad1d;
+    margin: 52px auto 0;
+}
+
+.orange-btn {
+    display: inline-block;
+    background: #f1ad1d;
+    color: #ffffff;
+    padding: 20px 27px ;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+
+}
+/*HEADER START*/
+.header {
+    background-image: url(../images/very_top_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 531px;
+    padding-bottom: 145px;
+}
+.header-company-name {
+    font-family: 'Montserrat', sans-serif;
+    color:  #fff;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.header-company-description {
+    font-family: "Lato", sans-serif;
+    color:  #fff;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+.header-slogan{
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    color:  #fff;
+    font-size: 54px;
+    font-weight: 700;
+    padding: 44px 43px;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/* HEADER END*/
+
+/*ABOUT US START*/
+
+.about-us {
+    padding-top: 69px;
+    padding-bottom: 95px;
+}
+.about-us-awards {
+    text-align: center;
+}
+
+.about-us-award {
+    max-width: 100%;
+}
+/*ABOUT US END*/
+
+/*NAVBAR START*/
+
+.navbar-logo {
+    float: left;
+}
+
+.navbar-logo img{
+    max-width: 100%;
+}
+
+.navbar-nav{
+    float: right;
+    margin-top: 4px;
+}
+
+.navbar-nav-item{
+    display: inline-block;
+    margin-right: 70px;
+}
+.navbar-nav-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #3d3d3d;
+    font-size: 18px;
+}
+
+.navbar-nav-link:hover {
+    color:  #f1b128;
+}
+
+.navbar-nav-item:last-child {
+    margin-right: 0;
+}
+
+.navbar-nav.under_line-long::after{
+    content: "";
+    display: block;
+    width: 1169px;
+    height: 3px;
+    background-color: #f1ad1d;
+    margin-top: 22px;
+}
+/*NAVBAR END*/
+
+.about-us-lower {
+    padding-top: 100px;
+}
+
+/*FEATURES START*/
+
+.our-features {
+    padding: 0 0 125px 0;
+}
+
+.features-list {
+    float: left;
+    width: 570px;
+}
+
+.features-item {
+    position: relative;
+    width: 270px;
+    float: left;
+    margin-bottom: 22px;
+}
+
+.features-item:nth-child(odd) {
+    margin-right: 30px;
+}
+
+.mr30 {
+    margin-right: 30px;
+}
+
+.features-name {
+    width: 117px;
+    position: absolute;
+    background: #333333;;
+    font-family: 'Lato', sans-serif;
+    color:  #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 15px;
+    bottom: 11px;
+    left: 13px;
+}
+
+.features-description{
+    float: right;
+    width: 569px;
+}
+
+.features-description-title{
+    font-family: "Montserrat", sans-serif;
+    color:  #333333;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+}
+
+.features-description-text{
+    font-family: 'Lato', sans-serif;
+    color:  #505050;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+/*FEATURES END*/
+
+/*SLOGAN-1 START*/
+
+.slogan-section-1 {
+    background-image: url(../images/slsc-1-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 151px 0;
+}
+/*SLOGAN-1 END*/
+
+/*OUR TEAM START*/
+
+.our-team{
+    padding-top: 114px;
+    padding-bottom: 104px;
+}
+
+.team-person{
+    position: relative;
+    width: 193px;
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.team-person-img{
+    max-width: 100%;
+}
+
+.team-person:nth-child(6n){
+    margin-right: 0;
+}
+
+.team-person-name{
+    position: absolute;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    color:  #ffffff;
+    font-size: 14px;
+    background-color:  #333333;
+    width: 136px;
+    padding: 15px;
+    bottom: 15px;
+    left: 14px;
+    opacity: 0;
+}
+
+.team-person:hover .team-person-name {
+ animation-name: team-person-hover;
+ animation-duration: 4s;
+ animation-fill-mode: both;
+}
+
+@keyframes team-person-hover {
+    0%{
+        background-color: rgba(0, 0, 0, 0);
+        transform: translateY(-100px);
+    }
+    50%{
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translateY(0px);
+    }
+    100%{
+        background-color: rgba(0, 0, 0, 1);
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+.team-person-link{
+    text-decoration: none;
+}
+/*OUR TEAM END*/
+
+/*OUR SERVICES START*/
+
+.our-services{
+    padding: 104px 0;
+}
+
+.services-item{
+    float: left;
+    width: 271px;
+    margin-right: 28px;
+    text-align: center;
+    padding-bottom: 34px;
+    height: 335px;
+    border-bottom: 3px solid #333333;
+}
+
+.services-item:nth-child(4n){
+    margin-right: 0;
+}
+
+.service-name{
+    padding: 19px 5px;
+    text-align: center;
+    background-color:  #333333;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;/* Approximation due to font substitution */
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.service-img {
+    height: 50px;
+    margin-bottom: 29px;
+    line-height: 50px;
+}
+
+.service-description {
+    font-family: "Lato", sans-serif;
+    color:  #505050;
+    font-size: 14px;
+    font-weight: 300;
+    height: 90px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.service-description::after {
+    content:"";
+    width: 64px;
+    height: 3px;
+    display: block;
+    background-color:#f1ad1d; 
+    position: absolute;
+    bottom: 0;
+    left: 94px;
+}
+
+.service-offer {
+    font-family: Lato;
+    color: #505050;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.subscribe {
+    padding-top: 132px;
+    padding-bottom: 88px;
+}
+
+.email-subscription {
+    text-align: center;
+}
+
+.subscribe-field {
+    border: 1px solid #c7c7c7;
+    width: 598px;
+    padding:25px 30px;
+    font-family: "Lato", sans-serif;
+    color:  #747474;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.form-orange-btn {
+    background-color: #f1ad1d;
+    padding: 25px 47px;
+    border: none;
+    font-family: "Lato", sans-serif;
+    color:  #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* OUR SERVICES END*/
+
+/*SECTION REVIEWS START*/
+
+.reviews {
+    padding-top: 75px;
+    padding-bottom: 132px;
+}
+/* .review-list {
+    position: relative;
+} */
+
+.review-item {
+    float: left;
+    width: 370px;
+    margin-right: 30px;
+}
+
+.review-item:nth-child(3n){
+    margin-right: 0;
+}
+
+.review-text {
+    position: relative;
+    font-family: Lato;
+    color:  #5b5b5b;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: justify;
+}
+.quotes::before{
+    content: "";
+    display: block;
+    background-image: url(../images/yellow-quotes.png);
+    width: 52px;
+    height: 48px;
+    bottom: 100px;
+}
+
+.quotes_line::after {
+    content: "";
+    display: block;
+    width: 305px;
+    height: 3px;
+    background-color: #f1ad1d;
+    bottom: 100px;
+    left: 65px;
+    right: 0;
+    position: absolute;
+}
+
+.review-text {
+	border-bottom: 3px solid #000;
+	padding: 29px 0;
+}
+
+.review-author-img {
+	float: left;
+}
+
+.name-review-author, .position-reiview-author {
+	display: block;
+}
+
+/*SECTION REVIEWS END*/
+
+/* CONNECT US START*/
+
+.connect-us {
+    padding-bottom: 140px;
+}
+
+.feedback-message{
+    width: 572px;
+    float: left;
+}
+
+.feedback-title{
+    background-color:  #333333;
+    width: 67%;
+    padding: 19px 15px;
+    font-family: "Montserrat", sans-serif;
+    color:  #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 23px;
+}
+
+.feedback-description{
+    margin-bottom: 25px;
+    font-family: "Lato",sans-serif;
+    color:  #505050;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.feedback-field{
+  border: 1px  #929292 solid;
+    font-family: "Lato",sans-serif;
+    color:  #505050;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    box-sizing: border-box;
+    padding:17px 13px;
+}
+
+.feedback-input{
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.feedback-input:nth-child(2n-1){
+    margin-right: 27px;
+}
+
+.feedback-textarea{
+    width: 572px;
+    height: 186px;
+    margin-bottom: 23px;
+}
+
+.feedback-send{
+    border: none;
+    padding: 16px 40px;
+    background-color:  #f1ad1d;
+    font-family: "Lato", sans-serif;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.our-contacts{
+    width: 370px;
+    float: right;
+}
+
+.contact-list-link {
+    font-family: 'Lato', sans-serif;
+    color:  #505050;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+.contact-list-link .fas {
+    color:  #f1ad1d;
+}
+
+.contact-text-icon {
+    display: inline-block;
+    width: 36px;
+    height: 32px;
+    background-color: #333333;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 12px;
+}
+
+.contact-list-item {
+    margin-bottom: 9px;
+}
+
+.social-contacts-item {
+    display: inline-block;
+}
+
+.social-contacts-link{
+    background-image: url("../images/soc-icon-sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 45px;
+    height: 40px;
+    transition: 0.4s;
+}
+
+.facebook-social-icon{
+    background-position: -75px -70px;
+}
+
+.facebook-social-icon:hover{
+    background-position: -10px -70px;
+}
+
+.twitter-social-icon{
+    background-position: -140px -70px;
+}
+
+.twitter-social-icon:hover{
+    background-position: -75px -10px;
+}
+
+.google-social-icon{
+    background-position: -10px -130px;
+}
+
+.google-social-icon:hover{
+    background-position: -10px -10px;
+}
+
+.rss-social-icon{
+    background-position: -75px -130px;
+}
+
+.rss-social-icon:hover{
+    background-position: -140px -10px;
+}
+
+/*CONNECT US END*/
+
+/*SLOGAN-3 START*/
+
+.slogan-section-3 {
+    background-image: url(../images/slsc-3-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.products-place {
+    font-family: 'OpenSans', sans-serif;
+    color:  #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.products-link {
+    font-family: 'OpenSans', sans-serif;
+    color:  #f1ad1d;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    
+}
+
+/*SLOGAN-3 END*/
+
+/*PRICE_TABLE START*/
+
+.price-plan-tittle {
+    width: 286px;
+    padding: 22px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color:  #333333;
+    text-transform: uppercase;
+    font-size: 23.99px;
+    font-weight: 700;
+    border: solid 1px #5b5b5b;
+}
+.price-plan-tittle.selected {
+    color:  #1fdab5;
+}
+.price-plan-count {
+    width: 286px;
+    padding: 34px;
+    font-family: 'Montserrat', sans-serif;
+    color:  #ffffff;
+    font-size: 39.01px;
+    font-weight: 700;
+    background-color: #303030;
+    border: solid 1px #5b5b5b;
+}
+
+/*PRICE_TABLE END*/
+
+.brands {
+    margin-top: 148px;
+}
+
+.brand-list{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*SLOGAN-SECTION-4 START*/
+
+.slogan-section-4 {
+    background-image: url(../images/slsc-4-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.products-place {
+    font-family: 'OpenSans', sans-serif;
+    color:  #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.products-link {
+    font-family: 'OpenSans', sans-serif;
+    color:  #f1ad1d;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/*SLOGAN-4 END*/
+
+
+.portfolio {
+    margin-top: 105px;
+}
+
+.portfolio-categories{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+.portfolio-categorie-item{
+    padding:15px 35px;
+    margin: 0 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    color:  #111111;
+    font-size: 14px;/* Approximation due to font substitution */
+    font-weight: 300;
+    text-align: center;
+}
+.portfolio-categorie-item:hover{
+    background-color:#303030;
+    color:#f1ad1d;
+}
+.portfolio-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.portfolio-list-item{
+    width: 281px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.portfolio-item-info {
+    position: absolute;
+    background-color: #ffffff;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+
+.portfolio-info-content {
+    text-align: center;
+}
+
+.portfolio-info-title {
+    font-family: 'Lato', sans-serif;
+    color:  #111111;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.portfolio-info-description {
+    font-family: 'Lato', sans-serif;
+    color:  #5b5b5b;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 27px;
+}
+
+.portfolio-btn-more {
+    padding: 15px 37px;
+    font-family: 'Lato', sans-serif;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    background-color: #f2af17;
+    text-decoration: none;
+}
+
+.portfolio-list-item:hover .portfolio-item-info {
+    opacity: 1;
+}

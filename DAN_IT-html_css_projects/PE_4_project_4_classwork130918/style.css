@@ -1,0 +1,38 @@
+.header {
+    background-image: url(very_top_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 531px;
+    padding-bottom: 145px;
+}
+.container {
+    width:1170px; 
+    margin: 0 auto; 
+}
+.header-company-name {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700px;
+    margin-bottom: 16px;
+}
+.header-company-description {
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+.header-slogan {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    color:  #ffffff;
+    font-size: 54px;
+    font-weight: 700;
+    padding: 44px 43px;
+    border: 1px solid #fff;
+    background-color: rgba (0, 0, 0, 0.3);    
+}
+.text-orange {
+    color:  #f1ad1d;
+    padding-right: 51px;
+}
