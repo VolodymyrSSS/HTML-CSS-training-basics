@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: hsl(25, 95%, 60%);
+  font-family: 'Arial', sans-serif;
+  color: hsl(25, 30%, 15%);
+  font-weight: 400;
+}
+
+.parent { 
+  display: grid; 
+  grid-template-columns: repeat(5, 1fr); 
+  grid-template-rows: repeat(5, 1fr); 
+  grid-column-gap: 0px; 
+  grid-row-gap: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.div1 { 
+  grid-area: 1 / 4 / 6 / 6; 
+  background: hsl(25, 85%, 50%);
+  border-left: 3px solid hsl(25, 100%, 40%);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.div2 { 
+  grid-area: 1 / 1 / 2 / 4; 
+  background: hsl(25, 90%, 58%);
+  border-bottom: 3px solid hsl(25, 100%, 40%);
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.div3 { 
+  grid-area: 2 / 1 / 4 / 3; 
+  background: hsl(25, 85%, 52%);
+  background-image: url('https://assets.codepen.io/406785/mike-hindle-65oY1l4Wsqw-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  border-right: 3px solid hsl(25, 100%, 40%);
+  border-bottom: 3px solid hsl(25, 100%, 40%);
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.div3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    hsla(25, 30%, 15%, 0.7) 0%, 
+    hsla(25, 30%, 15%, 0.3) 50%, 
+    hsla(25, 30%, 15%, 0.8) 100%);
+  z-index: 1;
+}
+
+.div4 { 
+  grid-area: 2 / 3 / 3 / 4; 
+  background: hsl(25, 80%, 48%);
+  background-image: url('https://assets.codepen.io/406785/sebastian-schuster--kRiyHDOWR0-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid hsl(25, 100%, 40%);
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.div4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    hsla(25, 30%, 15%, 0.6) 0%, 
+    hsla(25, 30%, 15%, 0.2) 40%, 
+    hsla(25, 30%, 15%, 0.7) 100%);
+  z-index: 1;
+}
+
+.div5 { 
+  grid-area: 3 / 3 / 4 / 4; 
+  background: hsl(25, 75%, 44%);
+  background-image: url('https://assets.codepen.io/406785/precious-madubuike-2Dr0zG6DUrg-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid hsl(25, 100%, 40%);
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.div5::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(225deg, 
+    hsla(25, 30%, 15%, 0.5) 0%, 
+    hsla(25, 30%, 15%, 0.3) 50%, 
+    hsla(25, 30%, 15%, 0.8) 100%);
+  z-index: 1;
+}
+
+.div6 { 
+  grid-area: 4 / 2 / 5 / 4; 
+  background: hsl(25, 78%, 46%);
+  background-image: url('https://assets.codepen.io/406785/mike-hindle-5DdjfFscfhw-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  border-left: 3px solid hsl(25, 100%, 40%);
+  border-bottom: 3px solid hsl(25, 100%, 40%);
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.div6::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(315deg, 
+    hsla(25, 30%, 15%, 0.7) 0%, 
+    hsla(25, 30%, 15%, 0.2) 60%, 
+    hsla(25, 30%, 15%, 0.6) 100%);
+  z-index: 1;
+}
+
+.div7 { 
+  grid-area: 4 / 1 / 5 / 2; 
+  background: hsl(25, 72%, 42%);
+  background-image: url('https://assets.codepen.io/406785/vince-liu-AMb2KA6m7k8-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  border-right: 3px solid hsl(25, 100%, 40%);
+  border-bottom: 3px solid hsl(25, 100%, 40%);
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.div7::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, 
+    hsla(25, 30%, 15%, 0.4) 0%, 
+    hsla(25, 30%, 15%, 0.2) 30%, 
+    hsla(25, 30%, 15%, 0.8) 100%);
+  z-index: 1;
+}
+
+.div8 { 
+  grid-area: 5 / 1 / 6 / 4; 
+  background: hsl(25, 82%, 50%);
+  background-image: url('https://assets.codepen.io/406785/daniele-franchi-gISfS1zLq7c-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.div8::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    hsla(25, 30%, 15%, 0.6) 0%, 
+    hsla(25, 30%, 15%, 0.3) 50%, 
+    hsla(25, 30%, 15%, 0.7) 100%);
+  z-index: 1;
+}
+
+.main-title {
+  font-size: clamp(3rem, 8vw, 12rem);
+  font-weight: 900;
+  color: hsl(25, 30%, 15%);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+}
+
+.project-number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: hsl(25, 30%, 15%);
+  color: hsl(25, 100%, 95%);
+  padding: 0.5rem 0.8rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(25, 100%, 95%);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+  line-height: 0.9;
+  text-shadow: 0 2px 4px hsla(25, 30%, 15%, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.project-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(25, 90%, 85%);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px hsla(25, 30%, 15%, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(25, 30%, 15%);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.sidebar-item {
+  font-size: 1rem;
+  color: hsl(25, 40%, 25%);
+  text-decoration: none;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-text {
+  font-size: 1rem;
+  color: hsl(25, 40%, 25%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
