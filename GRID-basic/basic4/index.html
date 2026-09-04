@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Masonry has limited availability</title>
+  </head>
+  <body>
+    <h2>CSS way for masonry layout implementation</h2>
+
+    <p>
+      This is just a quick copy/pasta 🍝 cheatsheet post with common use cases
+      for the<br />
+      new layout mode. Be aware of the browser support and embrace the
+      progressive enhancement<br />
+      as it works well with it.<br />
+      But The Masonry has limited availability!
+    </p>
+
+    <p>
+      If yourbrowser doesn’t support display: grid-lanes yet: use one of the
+      supported<br />
+      engines <i><b>(Safari 26.4 has a good support)</b></i
+      >.
+    </p>
+
+    <h2>Columns and rows</h2>
+
+    <p>
+      The new display mode supports columns and rows. Perfecto! We use good
+      old<br />
+      grid-template-columns and grid-template-rows to define them. Like so:
+    </p>
+
+    <div class="code-sample">
+      <p>Make a grid with 3 columns of equal width:</p>
+      .grid{<br />
+      <b>&nbsp;&nbsp;&nbsp;display: grid-lanes;</b><br />
+      &nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;div {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-size: random(2lh, 10lh);<br />
+      &nbsp;&nbsp;&nbsp;}<br />
+      }<br />
+    </div>
+
+    <div class="grid-one">
+      <div>01</div>
+      <div>02</div>
+      <div>03</div>
+      <div>04</div>
+      <div>05</div>
+      <div>06</div>
+      <div>07</div>
+      <div>08</div>
+      <div>09</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+    <br />
+
+    <p>Or with rows like this:</p>
+
+    <div class="code-sample">
+      <p>Make a grid with 12 rows of equal height:</p>
+      .grid{<br />
+      &nbsp;&nbsp;&nbsp;display: grid-lanes;<br />
+      <b>&nbsp;&nbsp;&nbsp;grid-template-rows: repeat(3, 1fr);</b><br />
+      <br />
+      &nbsp;&nbsp;&nbsp;div {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inline-size: random(2lh, 10lh);<br />
+      &nbsp;&nbsp;&nbsp;}<br />
+      }<br />
+    </div>
+
+    <div class="grid-two">
+      <div>01</div>
+      <div>02</div>
+      <div>03</div>
+      <div>04</div>
+      <div>05</div>
+      <div>06</div>
+      <div>07</div>
+      <div>08</div>
+      <div>09</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+    <br />
+
+    <h2>Variable grid items size</h2>
+
+    <p>
+      If you want to resize one of the items, you can do so by using all<br />
+      you already know. Here is an example.
+    </p>
+
+    <div class="code-sample">
+      <p>Make a grid with columns where first item spans 2 units:</p>
+      .grid{<br />
+      &nbsp;&nbsp;&nbsp;display: grid-lanes;<br />
+      &nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;div { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-size:
+      random(2lh, 10lh);<br />
+      <br />
+      <b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:first-of-type {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-column: span 2;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</b
+      ><br />
+      &nbsp;&nbsp;&nbsp;}<br />
+      }<br />
+    </div>
+
+    <div class="grid-three">
+      <div>01</div>
+      <div>02</div>
+      <div>03</div>
+      <div>04</div>
+      <div>05</div>
+      <div>06</div>
+      <div>07</div>
+      <div>08</div>
+      <div>09</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+
+    <h2>Tolerance</h2>
+
+    <p>
+      Browser tasked to draw masonry layout, iterates over the elements,<br />
+      checks which column/row has the most empty room and places the next<br />
+      item there. In some circumstances, this algorithm produces an
+      unintuitive<br />
+      results, namely it might be visually a little confusing and for
+      assistive<br />
+      tech users messed up a little. Here is where the flow-tolerance comes
+      in.<br />
+      The calculation to determine the next available column/row is adjusted
+      by<br />
+      the value of this property. The default value of flow-tolerance is 1em.
+      So,<br />
+      look at this example:
+    </p>
+
+    <div class="code-sample">
+      .grid{<br />
+      &nbsp;&nbsp;&nbsp;display: grid-lanes;<br />
+      &nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br />
+      <b>&nbsp;&nbsp;&nbsp;flow-tolerance: 1lh;</b><br />
+      <br />
+      &nbsp;&nbsp;&nbsp;div {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 0.5lh;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid currentColor;<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:nth-of-type(1) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-size: 3lh;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:nth-of-type(2) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-size: calc(3lh - 1em -
+      1px);<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:nth-of-type(3) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-size: 1lh;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&:nth-of-type(3) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-size: 6lh;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      &nbsp;&nbsp;&nbsp;}<br />
+      }<br />
+    </div>
+
+    <div class="grid-four">
+      <div>01</div>
+      <div>02</div>
+      <div>03</div>
+      <div>04</div>
+    </div>
+  </body>
+</html>

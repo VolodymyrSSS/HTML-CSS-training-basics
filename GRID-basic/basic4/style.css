@@ -1,0 +1,110 @@
+body {
+  background-color: tan;
+}
+
+.code-sample {
+  width: 400px;
+  border: 1px solid black;
+  background-color: #e0e0e0;
+  padding: 5px;
+}
+
+.grid-container {
+  display: grid;
+  background-color: dodgerblue;
+  gap: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.grid-one {
+  display: grid-lanes;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5lh;
+  margin-top: 20px;
+
+  div {
+    padding: 0.5lh;
+    border: 1px solid currentColor;
+    block-size: random(2lh, 10lh);
+    background-color: #f1f1f1;
+  }
+
+  @supports not (display: grid-lanes) {
+    display: grid;
+  }
+}
+
+.grid-two {
+  display: grid-lanes;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5lh;
+  margin-top: 20px;
+
+  div {
+    padding: 0.5lh;
+    border: 1px solid currentColor;
+    inline-size: random(2lh, 10lh);
+    background-color: #f1f1f1;
+  }
+
+  @supports not (display: grid-lanes) {
+    display: grid;
+  }
+}
+
+.grid-three {
+  display: grid-lanes;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5lh;
+  margin-top: 20px;
+
+  div {
+    padding: 0.5lh;
+    border: 1px solid currentColor;
+    block-size: random(2lh, 10lh);
+    background-color: #f1f1f1;
+
+    &:first-of-type {
+      grid-column: span 2;
+    }
+  }
+
+  @supports not (display: grid-lanes) {
+    display: grid;
+  }
+}
+
+.grid-four {
+  display: grid-lanes;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5lh;
+  margin-top: 20px;
+  flow-tolerance: 1lh;
+
+  div {
+    padding: 0.5lh;
+    border: 1px solid currentColor;
+    background-color: #f1f1f1;
+
+    &:nth-of-type(1) {
+      block-size: 3lh;
+    }
+
+    &:nth-of-type(2) {
+      block-size: calc(3lh - 1em - 1px);
+    }
+
+    &:nth-of-type(3) {
+      block-size: 1lh;
+    }
+
+    &:nth-of-type(4) {
+      block-size: 6lh;
+    }
+  }
+
+  @supports not (display: grid-lanes) {
+    display: grid;
+  }
+}
