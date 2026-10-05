@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Nunito:400,700");
+
+/* Global styles */
+html,
+body {
+  height: 100%;
+  background: #eee;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Site header */
+.site-header {
+  display: flex;
+  height: 100%;
+  background: white;
+}
+
+.header-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.hero-graphic {
+  width: 50%;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/burgers.jpg");
+  background-size: cover;
+}
+
+/* Title area */
+.title-area {
+  order: 2;
+}
+
+.title-area p {
+  color: red;
+}
+
+/* Byline */
+.byline {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+}
+
+.byline span {
+  color: #999;
+}
+
+/* Nav (Table of Contents) */
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc ul li {
+  display: inline-block;
+  counter-increment: nav;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: #222;
+}
+
+.toc ul li a::after {
+  content: "/";
+  color: red;
+  margin: 0 0.8rem;
+}
+
+.toc ul li a::before {
+  content: counter(nav);
+  margin-right: 0.25rem;
+  font-weight: bold;
+}
+
+.toc ul li a:hover,
+.toc ul li a:focus {
+  color: red;
+}
+
+.toc ul li:first-child a::after {
+  display: none;
+}
+
+/* Main content */
+.main-content {
+  max-width: 600px;
+  padding: 1rem;
+  margin: 5rem auto 2rem;
+}
+
+.main-content article {
+  margin: 0 0 10rem 0;
+}
+
+.footer {
+  background-color: #041d1a;
+  color: #ffffff;
+  position: relative;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: italic;
+}
+
+.footer-image {
+  position: absolute;
+  top: 5px;
+  right: 582px;
+
+  width: 26px;
+  height: 33px;
+  margin-bottom: 3px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Typography */
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 4px solid black;
+  margin: 0 0 0.5rem 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
